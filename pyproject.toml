@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "career-match-agent"
+version = "0.1.0"
+description = "Explainable AI agent for CV-based job search and recommendation"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { text = "MIT" }
+authors = [
+    { name = "A. Umut Gokdemir" }
+]
+dependencies = [
+    "fastapi>=0.115",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.34"
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.28",
+    "mypy>=1.14",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.9"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["career_match_agent"]
