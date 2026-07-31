@@ -6,6 +6,7 @@ from pydantic import (
     field_validator,
 )
 
+
 # Defines the accepted work-location arrangements.
 # StrEnum allows enum values to behave like normal strings.
 class WorkMode(StrEnum):
