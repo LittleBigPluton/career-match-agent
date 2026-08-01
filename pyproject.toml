@@ -14,16 +14,17 @@ authors = [
 ]
 dependencies = [
     "fastapi>=0.115",
+    "httpx>=0.28,<1",
+    "ollama>=0.6,<1",
     "pydantic>=2.10",
     "pydantic-settings>=2.7",
     "pymupdf>=1.26,<2",
     "python-multipart>=0.0.20",
-    "uvicorn[standard]>=0.34"
+    "uvicorn[standard]>=0.34",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "httpx>=0.28",
     "mypy>=1.14",
     "pytest>=8.3",
     "pytest-cov>=6.0",

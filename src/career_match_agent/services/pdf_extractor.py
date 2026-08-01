@@ -92,3 +92,9 @@ def extract_pdf(data: bytes, *, filename: str, content_type: str | None) -> PdfE
                                  word_count=len(extracted_text.split()),
                                  sha256=hashlib.sha256(data).hexdigest(),
                                  text=extracted_text)
+
+async def extract_uploaded_pdf(upload: UploadFile) -> PdfExtractionResponse:
+    """Validate and extract an uploaded PDF."""
+    safe_filename = validate_pdf_metadata(filename=upload.filename, content_type=upload.content_type)
+    pdf_bytes = await read_upload_bytes(upload)
+    return extract_pdf(pdf_bytes, filename=safe_filename, content_type=upload.content_type)

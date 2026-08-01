@@ -1,10 +1,13 @@
 from fastapi import FastAPI
 
 from career_match_agent.api.routes.documents import router as documents_router
+from career_match_agent.api.routes.profiles import router as profiles_router
 from career_match_agent.models.candidate import JobPreferences
 
-app = FastAPI(title="CareerMatch Agent API", description=("Explainable CV-based job search, ranking and recommendation API."), version="0.1.0")
+
+app = FastAPI(title="CareerMatch Agent API", description="Explainable CV-based job search, ranking and recommendation API.",version="0.1.0")
 app.include_router(documents_router)
+app.include_router(profiles_router)
 
 @app.get("/health")
 def health_check() -> dict[str, str]:
