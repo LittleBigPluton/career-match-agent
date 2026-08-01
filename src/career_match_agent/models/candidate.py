@@ -1,27 +1,48 @@
 from enum import StrEnum
+from typing import Annotated, Self
 
 from pydantic import (
     BaseModel,
+    ConfigDict,
     Field,
     field_validator,
+    model_validator,
 )
 
 
-# Defines the accepted work-location arrangements.
-# StrEnum allows enum values to behave like normal strings.
+NonEmptyText = Annotated[str, Field(min_length=1)]
+EvidenceText = Annotated[str, Field(min_length=1, max_length=300)]
+
+
+def clean_string_list(values: list[str]) -> list[str]:
+    """Strip values and remove case-insensitive duplicates."""
+    cleaned_values: list[str] = []
+    seen_values: set[str] = set()
+    for value in values:
+        cleaned_value = value.strip()
+        if not cleaned_value:
+            continue
+
+        comparison_value = cleaned_value.casefold()
+        if comparison_value in seen_values:
+            continue
+
+        seen_values.add(comparison_value)
+        cleaned_values.append(cleaned_value)
+    return cleaned_values
+
+
 class WorkMode(StrEnum):
     REMOTE = "remote"
     HYBRID = "hybrid"
     ON_SITE = "on_site"
 
-# Defines the accepted employment contract types.
 class EmploymentType(StrEnum):
     FULL_TIME = "full_time"
     PART_TIME = "part_time"
     INTERNSHIP = "internship"
     CONTRACT = "contract"
 
-# Defines the accepted experience or seniority levels.
 class SeniorityLevel(StrEnum):
     INTERNSHIP = "internship"
     ENTRY_LEVEL = "entry_level"
@@ -29,86 +50,135 @@ class SeniorityLevel(StrEnum):
     MID_LEVEL = "mid_level"
     SENIOR = "senior"
 
-# Stores the candidate's job-search preferences.
 class JobPreferences(BaseModel):
-    # At least one target role must be provided.
+    """Candidate-supplied job-search preferences."""
+    model_config = ConfigDict(extra="forbid")
     roles: list[str] = Field(min_length=1, description="Preferred job titles or role families.")
-
-    # An empty list means that no location restriction was provided.
     locations: list[str] = Field(default_factory=list, description="Preferred cities, regions or countries.")
-
-    # Uses hybrid and on-site as the default accepted work modes.
     work_modes: list[WorkMode] = Field(default_factory=lambda: [WorkMode.HYBRID, WorkMode.ON_SITE])
-
-    # Searches for full-time positions by default.
     employment_types: list[EmploymentType] = Field(default_factory=lambda: [EmploymentType.FULL_TIME])
-
-    # Targets entry-level and junior jobs by default.
     seniority_levels: list[SeniorityLevel] = Field(default_factory=lambda: [SeniorityLevel.ENTRY_LEVEL, SeniorityLevel.JUNIOR])
-
-    # Keywords that should appear in suitable job descriptions.
     required_keywords: list[str] = Field(default_factory=list)
-
-    # Keywords that should cause a job to be excluded.
     excluded_keywords: list[str] = Field(default_factory=list)
-
-    # Preferred languages for the job or workplace.
     preferred_languages: list[str] = Field(default_factory=list)
-
-    # Limits the number of returned jobs to a value between 1 and 100.
     maximum_results: int = Field(default=20, ge=1, le=100)
 
-    # Applies this validator to each listed string-list field.
     @field_validator("roles", "locations", "required_keywords", "excluded_keywords", "preferred_languages")
-
     @classmethod
     def clean_string_lists(cls, values: list[str]) -> list[str]:
-        """
-        Clean a list of strings.
+        return clean_string_list(values)
 
-        Removes surrounding whitespace, ignores blank values,
-        removes case-insensitive duplicates and preserves input order.
-        """
-        cleaned_values: list[str] = []
-        seen_values: set[str] = set()
-        for value in values:
-            # Remove whitespace from the beginning and end.
-            cleaned_value = value.strip()
-            # Ignore empty strings such as "", " " or "\n".
-            if not cleaned_value:
-                continue
+class ProfileModel(BaseModel):
+    """Base configuration for LLM-extracted profile objects."""
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
-            # casefold() allows case-insensitive duplicate comparison.
-            comparison_value = cleaned_value.casefold()
-            # Keep only the first occurrence of each value.
-            if comparison_value not in seen_values:
-                seen_values.add(comparison_value)
-                cleaned_values.append(cleaned_value)
+class SkillEvidence(ProfileModel):
+    """CV evidence supporting an extracted skill."""
+    skill: NonEmptyText
+    evidence: list[EvidenceText] = Field(default_factory=list)
 
-        return cleaned_values
+class ExperienceEntry(ProfileModel):
+    """A work or internship experience found in the CV."""
+    job_title: NonEmptyText | None = None
+    organization: NonEmptyText | None = None
+    location: NonEmptyText | None = None
+    start_date: NonEmptyText | None = None
+    end_date: NonEmptyText | None = None
+    is_current: bool = False
+    highlights: list[str] = Field(default_factory=list)
+    technologies: list[str] = Field(default_factory=list)
+    evidence: list[EvidenceText] = Field(default_factory=list)
 
-# Stores information extracted from the candidate's CV.
-class CandidateProfile(BaseModel):
-    # Optional candidate name. Defaults to None when unavailable.
-    full_name: str | None = None
+    @field_validator("highlights", "technologies")
+    @classmethod
+    def clean_lists(cls, values: list[str]) -> list[str]:
+        return clean_string_list(values)
 
-    # Optional summary extracted or generated from the CV.
-    professional_summary: str | None = None
+    @model_validator(mode="after")
+    def require_experience_identity(self) -> Self:
+        if self.job_title is None and self.organization is None:
+            raise ValueError("An experience must contain a job title or organization.")
 
-    # Candidate's technical and professional skills.
+        return self
+
+class ProjectEntry(ProfileModel):
+    """A technical, academic or personal project found in the CV."""
+    name: NonEmptyText
+    summary: NonEmptyText | None = None
+    technologies: list[str] = Field(default_factory=list)
+    highlights: list[str] = Field(default_factory=list)
+    evidence: list[EvidenceText] = Field(default_factory=list)
+
+    @field_validator("technologies", "highlights")
+    @classmethod
+    def clean_lists(cls, values: list[str]) -> list[str]:
+        return clean_string_list(values)
+
+class EducationEntry(ProfileModel):
+    """An education entry found in the CV."""
+    degree: NonEmptyText | None = None
+    field_of_study: NonEmptyText | None = None
+    institution: NonEmptyText | None = None
+    location: NonEmptyText | None = None
+    start_date: NonEmptyText | None = None
+    end_date: NonEmptyText | None = None
+    details: list[str] = Field(default_factory=list)
+    evidence: list[EvidenceText] = Field(default_factory=list)
+
+    @field_validator("details")
+    @classmethod
+    def clean_details(cls, values: list[str]) -> list[str]:
+        return clean_string_list(values)
+
+    @model_validator(mode="after")
+    def require_education_identity(self) -> Self:
+        if self.degree is None and self.institution is None:
+            raise ValueError("An education entry must contain a degree or institution.")
+
+        return self
+
+class LanguageEntry(ProfileModel):
+    """A language and its stated proficiency."""
+    language: NonEmptyText
+    proficiency: NonEmptyText | None = None
+
+class CandidateProfile(ProfileModel):
+    """Structured facts extracted from a candidate CV."""
+    full_name: NonEmptyText | None = None
+    location: NonEmptyText | None = None
+    professional_summary: Annotated[str, Field(min_length=1, max_length=1000)] | None = None
     skills: list[str] = Field(default_factory=list)
-
-    # Current and previous job titles.
-    job_titles: list[str] = Field(default_factory=list)
-
-    # Optional experience duration; negative values are rejected.
+    skill_evidence: list[SkillEvidence] = Field(default_factory=list)
+    experience: list[ExperienceEntry] = Field(default_factory=list)
+    projects: list[ProjectEntry] = Field(default_factory=list)
+    education: list[EducationEntry] = Field(default_factory=list)
+    languages: list[LanguageEntry] = Field(default_factory=list)
+    certifications: list[str] = Field(default_factory=list)
     years_of_experience: float | None = Field(default=None, ge=0)
 
-    # Education records, degrees or qualifications.
-    education: list[str] = Field(default_factory=list)
+    @field_validator("skills", "certifications")
+    @classmethod
+    def clean_lists(cls, values: list[str]) -> list[str]:
+        return clean_string_list(values)
 
-    # Languages spoken by the candidate.
-    languages: list[str] = Field(default_factory=list)
+    @model_validator(mode="after")
+    def reject_empty_profile(self) -> Self:
+        contains_information = any([self.full_name,
+                                    self.location,
+                                    self.professional_summary,
+                                    self.skills,
+                                    self.experience,
+                                    self.projects,
+                                    self.education,
+                                    self.languages,
+                                    self.certifications])
 
-    # Required nested object containing job-search preferences.
+        if not contains_information:
+            raise ValueError("The extracted candidate profile contains no information.")
+
+        return self
+
+class CandidateContext(ProfileModel):
+    """Candidate facts combined with job-search preferences."""
+    profile: CandidateProfile
     preferences: JobPreferences
