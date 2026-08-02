@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     ollama_model: str = "gemma3:4b"
     ollama_timeout_seconds: float = Field(default=300.0, gt=0)
     max_cv_text_characters: int = Field(default=30_000, ge=1)
+    max_hiring_agent_report_bytes: int = Field(default=1_048_576, ge=1024)
 
 @lru_cache
 def get_settings() -> Settings:
