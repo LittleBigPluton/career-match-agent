@@ -135,7 +135,7 @@ def require_list(value: Any, *, field_name: str) -> list[Any]:
     if not isinstance(value, list):
         raise InvalidHiringAgentReportError(f"'{field_name}' must be a JSON array.")
 
-    return cast(list[Any], value)
+    return value
 
 def string_list_from_json(value: Any, *, field_name: str) -> list[str]:
     """Validate and normalize a list of strings."""
@@ -164,9 +164,15 @@ def parse_hiring_agent_json(report_text: str, *, source_filename: str, role_name
     categories: list[HiringAgentCategoryResult] = []
     for raw_key, raw_category_value in raw_scores.items():
         raw_category = require_mapping(raw_category_value, field_name=f"scores.{raw_key}")
+        raw_max_score = raw_category.get("max")
+        if raw_max_score is None:
+            raw_max_score = raw_category.get("max_score")
+            if raw_max_score is None:
+                raise InvalidHiringAgentReportError(f"Score category '{raw_key}' does not define 'max' or 'max_score'.")
+
         try:
             score = float(raw_category["score"])
-            max_score = float(raw_category.get("max", raw_category.get("max_score")))
+            max_score = float(raw_max_score)
             evidence = str(raw_category["evidence"]).strip()
 
         except (KeyError, TypeError, ValueError) as error:
