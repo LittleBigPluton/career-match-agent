@@ -23,7 +23,7 @@ def create_pdf_bytes(page_texts: list[str]) -> bytes:
 def test_extract_pdf_returns_text_and_metadata() -> None:
     pdf_bytes = create_pdf_bytes(
         [
-            "Umut Gokdemir",
+            "Buggs Bunny",
             "Machine Learning Engineer with Python experience.",
         ]
     )
@@ -41,7 +41,7 @@ def test_extract_pdf_returns_text_and_metadata() -> None:
     assert result.character_count == len(result.text)
     assert result.word_count > 0
     assert len(result.sha256) == 64
-    assert "Umut Gokdemir" in result.text
+    assert "Buggs Bunny" in result.text
     assert "Machine Learning Engineer" in result.text
 
 

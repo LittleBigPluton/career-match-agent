@@ -65,7 +65,7 @@ def extract_pdf(data: bytes, *, filename: str, content_type: str | None) -> PdfE
         raise InvalidPdfError("The uploaded file does not contain a valid PDF header.")
 
     try:
-        with pymupdf.open(stream=data, filetype="pdf") as document:
+        with pymupdf.open(stream=data, filetype="pdf") as document: # type: ignore[no-untyped-call]
             if document.page_count < 1:
                 raise InvalidPdfError("The PDF does not contain any pages.")
 

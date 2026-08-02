@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 
-class PdfExtractionResponse(BaseModel):
+class PdfDocumentMetadata(BaseModel):
     """Metadata and text extracted from an uploaded PDF."""
     filename: str
     content_type: str | None = None
