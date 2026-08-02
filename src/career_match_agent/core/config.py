@@ -14,6 +14,12 @@ class Settings(BaseSettings):
     max_cv_text_characters: int = Field(default=30_000, ge=1)
     max_hiring_agent_report_bytes: int = Field(default=1_048_576, ge=1024)
 
+    job_provider: str = "arbeitnow"
+    arbeitnow_base_url: str = "https://www.arbeitnow.com"
+    arbeitnow_timeout_seconds: float = Field(default=20.0, gt=0)
+    arbeitnow_max_pages: int = Field(default=3, ge=1, le=10)
+    http_user_agent: str = "career-match-agent/0.1.0"
+    
 @lru_cache
 def get_settings() -> Settings:
     """Return cached application settings."""
