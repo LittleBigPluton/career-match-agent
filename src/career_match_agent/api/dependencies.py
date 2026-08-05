@@ -4,10 +4,15 @@ from career_match_agent.services.profile_extractor import (
     OllamaCandidateProfileExtractor,
 )
 
-from career_match_agent.providers.arbeitnow import (
-    ArbeitnowJobProvider
-)
+from career_match_agent.providers.arbeitnow import ArbeitnowJobProvider
 from career_match_agent.providers.base import JobProvider
+from functools import lru_cache
+
+from career_match_agent.services.embedding import (
+    EmbeddingProvider,
+    SentenceTransformerEmbeddingProvider,
+)
+
 
 def get_profile_extractor() -> CandidateProfileExtractor:
     """Create the configured candidate-profile extractor."""
@@ -27,3 +32,12 @@ def get_job_provider() -> JobProvider:
 
     raise RuntimeError(
         f"Unsupported job provider: {settings.job_provider}.")
+
+@lru_cache(maxsize=1)
+def get_embedding_provider() -> EmbeddingProvider:
+    """Return the process-wide embedding provider."""
+    settings = get_settings()
+    if settings.embedding_provider == "sentence_transformers":
+        return SentenceTransformerEmbeddingProvider(model_name=settings.embedding_model, device=settings.embedding_device, batch_size=settings.embedding_batch_size)
+
+    raise RuntimeError(f"Unsupported embedding provider: {settings.embedding_provider}.")

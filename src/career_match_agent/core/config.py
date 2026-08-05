@@ -19,7 +19,12 @@ class Settings(BaseSettings):
     arbeitnow_timeout_seconds: float = Field(default=20.0, gt=0)
     arbeitnow_max_pages: int = Field(default=3, ge=1, le=10)
     http_user_agent: str = "career-match-agent/0.1.0"
-    
+
+    embedding_provider: str = "sentence_transformers"
+    embedding_model: str = ("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+    embedding_device: str = "cpu"
+    embedding_batch_size: int = Field(default=16, ge=1, le=128)
+
 @lru_cache
 def get_settings() -> Settings:
     """Return cached application settings."""
