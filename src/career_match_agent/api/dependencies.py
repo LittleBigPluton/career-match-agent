@@ -13,6 +13,10 @@ from career_match_agent.services.embedding import (
     SentenceTransformerEmbeddingProvider,
 )
 
+from career_match_agent.services.job_evaluator import (
+    JobReportGenerator,
+    OllamaJobReportGenerator
+)
 
 def get_profile_extractor() -> CandidateProfileExtractor:
     """Create the configured candidate-profile extractor."""
@@ -41,3 +45,8 @@ def get_embedding_provider() -> EmbeddingProvider:
         return SentenceTransformerEmbeddingProvider(model_name=settings.embedding_model, device=settings.embedding_device, batch_size=settings.embedding_batch_size)
 
     raise RuntimeError(f"Unsupported embedding provider: {settings.embedding_provider}.")
+
+def get_job_report_generator() -> JobReportGenerator:
+    """Create the configured job report generator."""
+    settings = get_settings()
+    return OllamaJobReportGenerator(base_url=settings.ollama_base_url, model_name=settings.job_evaluation_model, timeout_seconds=(settings.job_evaluation_timeout_seconds))

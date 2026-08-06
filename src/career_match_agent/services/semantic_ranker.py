@@ -262,7 +262,7 @@ def calculate_available_weighted_score(*, components: dict[str, float | None], c
     contribution_total = round(math.fsum(contributions.values()), 2)
     rounding_difference = round(final_score - contribution_total, 2)
     if rounding_difference and contributions:
-        adjustment_key = max(raw_contributions, key=raw_contributions.get)
+        adjustment_key = max(raw_contributions, key=lambda name: raw_contributions[name])
         contributions[adjustment_key] = round(contributions[adjustment_key] + rounding_difference, 2)
 
     return (final_score, normalized_weights, contributions)
