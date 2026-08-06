@@ -234,27 +234,38 @@ def detect_matching_skills(profile: CandidateProfile, job: JobPosting) -> list[s
     searchable_text = create_job_searchable_text(job)
     return [skill for skill in profile.skills if contains_normalized_phrase(searchable_text, skill)]
 
-def calculate_available_weighted_score(*, components: dict[str, float | None], configured_weights: dict[str, float]) -> tuple[float, dict[str, float], dict[str, float]]:
+def calculate_available_weighted_score(*, components: dict[str, float | None], configured_weights: dict[str, float]) -> tuple[float,dict[str, float],dict[str, float]]:
     """Calculate a weighted score using available components."""
-    available_component_names = [name for name, score in components.items() if score is not None]
-    available_weight_total = sum(configured_weights[name] for name in available_component_names)
+    available_component_names = [name for name, score in components.items()if score is not None]
+    available_weight_total = math.fsum(configured_weights[name] for name in available_component_names)
     if available_weight_total <= 0:
         return 0.0, {}, {}
 
     normalized_weights: dict[str, float] = {}
-    contributions: dict[str, float] = {}
+    raw_contributions: dict[str, float] = {}
+
     for name in available_component_names:
         component_score = components[name]
+
         if component_score is None:
             continue
 
         normalized_weight = (configured_weights[name] / available_weight_total)
-        contribution = (component_score * normalized_weight)
         normalized_weights[name] = round(normalized_weight, 4)
-        contributions[name] = round(contribution, 2)
+        raw_contributions[name] = (component_score * normalized_weight)
 
-    final_score = sum(contributions.values())
-    return (round(final_score, 2), normalized_weights, contributions)
+    raw_final_score = math.fsum(raw_contributions.values())
+    final_score = round(min(100.0, max(0.0, raw_final_score)),2)
+    contributions = {name: round(value, 2) for name, value in raw_contributions.items()}
+
+    # Keep displayed contributions consistent with the final score.
+    contribution_total = round(math.fsum(contributions.values()), 2)
+    rounding_difference = round(final_score - contribution_total, 2)
+    if rounding_difference and contributions:
+        adjustment_key = max(raw_contributions, key=raw_contributions.get)
+        contributions[adjustment_key] = round(contributions[adjustment_key] + rounding_difference, 2)
+
+    return (final_score, normalized_weights, contributions)
 
 def calculate_hybrid_breakdown(*, semantic_similarity: float, decision: JobFilterDecision, profile: CandidateProfile,
                                preferences: JobPreferences, configuration: HybridRankingConfiguration) -> tuple[float, HybridScoreBreakdown]:
