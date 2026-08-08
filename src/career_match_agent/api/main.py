@@ -6,8 +6,10 @@ from career_match_agent.models.candidate import JobPreferences
 from career_match_agent.api.routes.assessments import router as assessments_router
 from career_match_agent.api.routes.jobs import router as jobs_router
 from career_match_agent.api.routes.matching import router as matching_router
+from career_match_agent.api.routes.agent import router as agent_router
 
 app = FastAPI(title="CareerMatch Agent API", description="Explainable CV-based job search, ranking and recommendation API.",version="0.1.0")
+app.include_router(agent_router)
 app.include_router(assessments_router)
 app.include_router(documents_router)
 app.include_router(jobs_router)

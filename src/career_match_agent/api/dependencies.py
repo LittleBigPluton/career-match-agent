@@ -1,7 +1,7 @@
 from career_match_agent.core.config import get_settings
 from career_match_agent.services.profile_extractor import (
     CandidateProfileExtractor,
-    OllamaCandidateProfileExtractor,
+    OllamaCandidateProfileExtractor
 )
 
 from career_match_agent.providers.arbeitnow import ArbeitnowJobProvider
@@ -10,13 +10,19 @@ from functools import lru_cache
 
 from career_match_agent.services.embedding import (
     EmbeddingProvider,
-    SentenceTransformerEmbeddingProvider,
+    SentenceTransformerEmbeddingProvider
 )
 
 from career_match_agent.services.job_evaluator import (
     JobReportGenerator,
     OllamaJobReportGenerator
 )
+
+from career_match_agent.services.search_planner import (
+    OllamaSearchPlanner,
+    SearchPlanner
+)
+
 
 def get_profile_extractor() -> CandidateProfileExtractor:
     """Create the configured candidate-profile extractor."""
@@ -50,3 +56,8 @@ def get_job_report_generator() -> JobReportGenerator:
     """Create the configured job report generator."""
     settings = get_settings()
     return OllamaJobReportGenerator(base_url=settings.ollama_base_url, model_name=settings.job_evaluation_model, timeout_seconds=(settings.job_evaluation_timeout_seconds))
+
+def get_search_planner() -> SearchPlanner:
+    """Create the configured agentic search planner."""
+    settings = get_settings()
+    return OllamaSearchPlanner(base_url=settings.ollama_base_url, model_name=settings.search_planner_model, timeout_seconds=(settings.search_planner_timeout_seconds))
