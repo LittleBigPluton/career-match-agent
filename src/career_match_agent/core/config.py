@@ -29,6 +29,9 @@ class Settings(BaseSettings):
     job_evaluation_timeout_seconds: float = Field(default=300.0, gt=0)
     maximum_evaluation_jobs: int = Field(default=5, ge=1, le=20)
 
+    search_planner_model: str = "gemma3:4b"
+    search_planner_timeout_seconds: float = Field(default=300.0, gt=0)
+
 @lru_cache
 def get_settings() -> Settings:
     """Return cached application settings."""
