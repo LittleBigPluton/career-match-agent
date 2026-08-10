@@ -1,0 +1,877 @@
+{
+  "name": "career-match-calibration",
+  "version": "1.0",
+  "profile": {
+    "full_name": null,
+    "location": "Germany",
+    "professional_summary": "Early-career machine-learning engineer with an M.Sc. in Computational Science and hands-on experience in NLP, deep learning, scientific computing, API development, model evaluation, and reproducible ML workflows.",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "scikit-learn",
+      "pandas",
+      "NumPy",
+      "FastAPI",
+      "Docker",
+      "AWS",
+      "Hugging Face Transformers",
+      "Git",
+      "Linux",
+      "C++"
+    ],
+    "skill_evidence": [
+      {
+        "skill": "Python",
+        "evidence": [
+          "Used Python across machine-learning, scientific-computing, and API projects."
+        ]
+      },
+      {
+        "skill": "PyTorch",
+        "evidence": [
+          "Used PyTorch for transformer fine-tuning and neural-network research."
+        ]
+      },
+      {
+        "skill": "FastAPI",
+        "evidence": [
+          "Built a typed API for an explainable CV-based job-search and recommendation system."
+        ]
+      },
+      {
+        "skill": "Docker",
+        "evidence": [
+          "Used Docker in ML engineering workflows and project infrastructure."
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "AI/ML Engineer Intern",
+        "organization": "NLP Engineering Team",
+        "location": null,
+        "start_date": null,
+        "end_date": null,
+        "is_current": false,
+        "highlights": [
+          "Fine-tuned a Turkish transformer model for named-entity recognition.",
+          "Improved span-level micro-F1 from 0.44 to 0.75 through preprocessing and model fine-tuning.",
+          "Worked with annotation workflows, AWS compute, Docker, and Git."
+        ],
+        "technologies": [
+          "Python",
+          "PyTorch",
+          "Hugging Face Transformers",
+          "AWS",
+          "Docker",
+          "Git"
+        ],
+        "evidence": []
+      },
+      {
+        "job_title": "Research Intern",
+        "organization": "Functional Genomics Lab",
+        "location": null,
+        "start_date": null,
+        "end_date": null,
+        "is_current": false,
+        "highlights": [
+          "Analyzed high-dimensional mass-spectrometry imaging data.",
+          "Applied PCA and K-means clustering for tissue-region analysis.",
+          "Produced reproducible Python analysis and visualization workflows."
+        ],
+        "technologies": [
+          "Python",
+          "pandas",
+          "NumPy",
+          "scikit-learn"
+        ],
+        "evidence": []
+      }
+    ],
+    "projects": [
+      {
+        "name": "CareerMatch Agent",
+        "summary": "Explainable agentic AI job-search system with CV extraction, structured profile generation, job-provider integration, deterministic filtering, semantic ranking, grounded LLM reports, and LangGraph orchestration.",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "Pydantic",
+          "LangGraph",
+          "Ollama",
+          "Sentence Transformers",
+          "PyTorch",
+          "pytest",
+          "Docker"
+        ],
+        "highlights": [
+          "Implemented provider-independent job retrieval and deterministic hard filters.",
+          "Added multilingual semantic ranking and evidence-grounded job reports.",
+          "Orchestrated the matching pipeline with a bounded LangGraph workflow."
+        ],
+        "evidence": []
+      },
+      {
+        "name": "Predictive Maintenance ML",
+        "summary": "End-to-end predictive-maintenance machine-learning project with data cleaning, feature engineering, model comparison, evaluation, and CLI/notebook workflows.",
+        "technologies": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "XGBoost"
+        ],
+        "highlights": [
+          "Built a reproducible supervised-learning workflow and compared predictive models."
+        ],
+        "evidence": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "M.Sc.",
+        "field_of_study": "Computational Science",
+        "institution": "University",
+        "location": "Germany",
+        "start_date": null,
+        "end_date": null,
+        "details": [
+          "Graduate work included machine learning, scientific computing, and neural-network research."
+        ],
+        "evidence": []
+      },
+      {
+        "degree": "B.Sc.",
+        "field_of_study": "Physics",
+        "institution": "University",
+        "location": null,
+        "start_date": null,
+        "end_date": null,
+        "details": [
+          "Physics background with numerical and computational problem solving."
+        ],
+        "evidence": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "C1"
+      },
+      {
+        "language": "German",
+        "proficiency": "A2"
+      },
+      {
+        "language": "Turkish",
+        "proficiency": "native"
+      }
+    ],
+    "certifications": [
+      "Building APIs in Python",
+      "Supervised Learning with scikit-learn",
+      "LangChain Applications"
+    ],
+    "years_of_experience": null
+  },
+  "preferences": {
+    "roles": [
+      "Machine Learning Engineer",
+      "Data Scientist",
+      "Applied ML Scientist"
+    ],
+    "locations": [
+      "Berlin",
+      "Munich"
+    ],
+    "work_modes": [
+      "remote",
+      "hybrid",
+      "on_site"
+    ],
+    "employment_types": [
+      "full_time"
+    ],
+    "seniority_levels": [
+      "entry_level",
+      "junior"
+    ],
+    "required_keywords": [],
+    "excluded_keywords": [
+      "Principal",
+      "Staff Engineer",
+      "Director"
+    ],
+    "preferred_languages": [
+      "English"
+    ],
+    "maximum_results": 20
+  },
+  "evidence_signals": [],
+  "jobs": [
+    {
+      "job": {
+        "source_id": "benchmark:001",
+        "provider": "benchmark",
+        "external_id": "001",
+        "title": "Junior Machine Learning Engineer",
+        "company": "NovaML GmbH",
+        "description": "Join our Berlin ML team to build and evaluate production machine-learning models using Python, PyTorch, and scikit-learn. You will collaborate with software engineers on inference APIs and model testing. Fluent English is required. We work in a hybrid model.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Machine Learning",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/benchmark/001",
+        "posted_at": null,
+        "fingerprint": "c876974b7f09c40afd773de132879f3e03a0f877fc1cd82aeb703fab09486b8c"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Direct junior ML engineering match with strong stack overlap."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:002",
+        "provider": "benchmark",
+        "external_id": "002",
+        "title": "Machine Learning Engineer",
+        "company": "VectorMind GmbH",
+        "description": "Develop machine-learning pipelines and inference services using Python, PyTorch, Docker, and REST APIs. Experience with experiment tracking and model evaluation is useful. English is required. The role is hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Docker",
+          "Machine Learning"
+        ],
+        "url": "https://example.com/benchmark/002",
+        "posted_at": null,
+        "fingerprint": "a17ae9488e197cdcce4c5f4251a3400b0234e2ea6eb68a5d20c4dd916ce6f7a2"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong ML engineering match; seniority is unspecified and should produce only a warning."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:003",
+        "provider": "benchmark",
+        "external_id": "003",
+        "title": "Junior Data Scientist",
+        "company": "QuantLeaf Analytics",
+        "description": "Build predictive models, clean structured datasets, perform feature engineering, and communicate results to product teams. The team uses Python, pandas, scikit-learn, and SQL. Fluent English is required. Hybrid position in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "Data Science"
+        ],
+        "url": "https://example.com/benchmark/003",
+        "posted_at": null,
+        "fingerprint": "c04a553cc9b57be55955a43c9ab627556048979daecf66fcd71b0653a5086a10"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Good data-science match with relevant modelling and data-analysis skills."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:004",
+        "provider": "benchmark",
+        "external_id": "004",
+        "title": "Applied AI Engineer",
+        "company": "NeuroForge GmbH",
+        "description": "Build AI-powered services with Python and PyTorch, prototype retrieval and LLM features, expose model capabilities through APIs, and package applications with Docker. English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "AI",
+          "FastAPI",
+          "Docker"
+        ],
+        "url": "https://example.com/benchmark/004",
+        "posted_at": null,
+        "fingerprint": "756efe44ccd58b8eec7586dd1e383a378e7d90c744605f5aba5916a1864f8499"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong applied-AI role that should match the Machine Learning Engineer alias family."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:005",
+        "provider": "benchmark",
+        "external_id": "005",
+        "title": "NLP Engineer",
+        "company": "LinguaTech GmbH",
+        "description": "Fine-tune transformer models for multilingual NLP tasks using Python, PyTorch, and Hugging Face Transformers. Work with annotation pipelines and model evaluation. English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "NLP",
+          "Transformers"
+        ],
+        "url": "https://example.com/benchmark/005",
+        "posted_at": null,
+        "fingerprint": "ea23208258cffeb16acd78ad29261538cf058099a56c10a206c1f30d49183ea9"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Technically adjacent and attractive, but the current deterministic role aliases do not include NLP Engineer."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:006",
+        "provider": "benchmark",
+        "external_id": "006",
+        "title": "MLOps Engineer",
+        "company": "CloudModel Systems",
+        "description": "Operate model-serving infrastructure, CI/CD pipelines, containers, Kubernetes clusters, monitoring, and cloud deployments. Python and Docker are used heavily. English is required. On-site or hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Docker",
+          "Kubernetes",
+          "MLOps"
+        ],
+        "url": "https://example.com/benchmark/006",
+        "posted_at": null,
+        "fingerprint": "d70119ef91c5b21bc123db5d36498456174e8b11377bd3e22849e810915078ca"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Adjacent ML infrastructure role, but outside the configured target-role aliases."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:007",
+        "provider": "benchmark",
+        "external_id": "007",
+        "title": "Data Scientist",
+        "company": "InsightWorks GmbH",
+        "description": "Create statistical and machine-learning models with Python, pandas, and scikit-learn. Work with product teams on experimentation and forecasting. Fluent English is required. This is a fully remote role within Germany.",
+        "location": "Hamburg",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "Forecasting"
+        ],
+        "url": "https://example.com/benchmark/007",
+        "posted_at": null,
+        "fingerprint": "0065124d903ff4e40fb045ec82f03c97af00c0d0b72eca10406ef83e052459e0"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Relevant data-science job; remote work should allow the location override."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:008",
+        "provider": "benchmark",
+        "external_id": "008",
+        "title": "AI Software Engineer",
+        "company": "Cortex Labs GmbH",
+        "description": "Develop Python AI services, integrate machine-learning models into backend APIs, write tests, and deploy Dockerized services. PyTorch experience is beneficial. English is required. Hybrid role in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "AI",
+          "PyTorch",
+          "Docker",
+          "APIs"
+        ],
+        "url": "https://example.com/benchmark/008",
+        "posted_at": null,
+        "fingerprint": "e15c9eda6cf22fda8577642e1051da0e83cbd6f448e6b02e393ba63fa2ddbf66"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong engineering-oriented AI match; AI Engineer alias should make the role compatible."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:009",
+        "provider": "benchmark",
+        "external_id": "009",
+        "title": "Research Engineer – Machine Learning",
+        "company": "DeepCompute Research",
+        "description": "Prototype machine-learning methods in Python and PyTorch, design experiments, analyze results, and turn research code into reusable software. Scientific-computing experience is valued. English is required. Berlin hybrid role.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Research",
+          "Machine Learning"
+        ],
+        "url": "https://example.com/benchmark/009",
+        "posted_at": null,
+        "fingerprint": "7e8a6547ffdca908b2b850144d66be60b49fefc180139b2a5759c72590b12f00"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Good research/ML fit; the title contains the tokens needed for ML Engineer role matching."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:010",
+        "provider": "benchmark",
+        "external_id": "010",
+        "title": "Junior Backend Engineer",
+        "company": "StackRiver GmbH",
+        "description": "Build Python and FastAPI backend services, write tests, work with Docker, and maintain REST APIs. English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "FastAPI",
+          "Docker",
+          "Backend"
+        ],
+        "url": "https://example.com/benchmark/010",
+        "posted_at": null,
+        "fingerprint": "cae65cdd74746e202dabda4b201495505d8ad59bad17bdd40469f4a83b2f3882"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Strong software overlap but not one of the configured ML/data target roles."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:011",
+        "provider": "benchmark",
+        "external_id": "011",
+        "title": "Data Analyst",
+        "company": "MetricWorks GmbH",
+        "description": "Prepare dashboards, analyze business KPIs, clean datasets with Python and SQL, and communicate findings to stakeholders. English is required. Hybrid position in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "Analytics",
+          "Dashboards"
+        ],
+        "url": "https://example.com/benchmark/011",
+        "posted_at": null,
+        "fingerprint": "bae3b3ee0c39c95ea19b1e8cd0b37f73672cb83c5aa3cec76d11e59cc11e8910"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Adjacent data role but intentionally outside the configured Data Scientist aliases."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:012",
+        "provider": "benchmark",
+        "external_id": "012",
+        "title": "Senior Machine Learning Engineer",
+        "company": "ScaleAI Systems",
+        "description": "Lead machine-learning projects using Python and PyTorch, mentor engineers, own model architecture decisions, and guide production deployments. Fluent English is required. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Machine Learning"
+        ],
+        "url": "https://example.com/benchmark/012",
+        "posted_at": null,
+        "fingerprint": "553ca09c218352ad7214b4cd544e4f8a335a4bc81148028df5d53a373933f0d8"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "notes": "Technically relevant but explicitly senior and outside the preferred seniority range."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:013",
+        "provider": "benchmark",
+        "external_id": "013",
+        "title": "Staff Machine Learning Engineer",
+        "company": "Foundry Intelligence",
+        "description": "Define ML platform architecture, mentor multiple teams, lead technical strategy, and build Python model-serving systems. English is required. Hybrid role in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Machine Learning",
+          "Architecture"
+        ],
+        "url": "https://example.com/benchmark/013",
+        "posted_at": null,
+        "fingerprint": "1de2c8088e7da28bed07b9f2c03a53dc9480965679a9d8fb9b0500e55e1bc609"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "seniority_mismatch",
+        "excluded_keyword_present"
+      ],
+      "notes": "Explicit staff role; should fail seniority and excluded-keyword checks."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:014",
+        "provider": "benchmark",
+        "external_id": "014",
+        "title": "Principal Data Scientist",
+        "company": "Optima Analytics",
+        "description": "Set data-science strategy, lead cross-functional modelling initiatives, mentor senior scientists, and advise executives. Python expertise and fluent English are required. Berlin hybrid role.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Data Science",
+          "Leadership"
+        ],
+        "url": "https://example.com/benchmark/014",
+        "posted_at": null,
+        "fingerprint": "eb91b57c7ecde231c3f508de3b0511620aab75a35a69202c84136e46f85f5878"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "seniority_mismatch",
+        "excluded_keyword_present"
+      ],
+      "notes": "Principal-level role should be rejected by seniority and excluded-keyword rules."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:015",
+        "provider": "benchmark",
+        "external_id": "015",
+        "title": "Machine Learning Engineer",
+        "company": "DeutschAI GmbH",
+        "description": "Develop Python and PyTorch machine-learning services for German enterprise customers. German B2 is mandatory. English is used internally. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Machine Learning"
+        ],
+        "url": "https://example.com/benchmark/015",
+        "posted_at": null,
+        "fingerprint": "f9c5127fb30741cad69efecff4fc069b03209f847e778ab0bc8bc116b55a670c"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "notes": "Strong technical fit but the explicit German B2 requirement exceeds the benchmark profile's A2 level."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:016",
+        "provider": "benchmark",
+        "external_id": "016",
+        "title": "Junior Machine Learning Engineer",
+        "company": "Alpine Robotics GmbH",
+        "description": "Develop Python computer-vision and machine-learning models for robotic systems. PyTorch experience is preferred. English is required. The position is on-site in Zurich.",
+        "location": "Zurich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Computer Vision",
+          "Machine Learning"
+        ],
+        "url": "https://example.com/benchmark/016",
+        "posted_at": null,
+        "fingerprint": "862e37734d5859223f948905f31038a2cb32a7554be700867426436973338748"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "notes": "Technically strong but outside the preferred Berlin/Munich locations and not remote."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:017",
+        "provider": "benchmark",
+        "external_id": "017",
+        "title": "Machine Learning Intern",
+        "company": "VisionSpark Labs",
+        "description": "Support experiments with Python and PyTorch, prepare datasets, and evaluate computer-vision models. English is required. On-site internship in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "internship"
+        ],
+        "raw_employment_types": [
+          "Internship"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Machine Learning"
+        ],
+        "url": "https://example.com/benchmark/017",
+        "posted_at": null,
+        "fingerprint": "b59d87bd0a41e131e60937b2322f498e36d97184946c087872e59e7a09b7635c"
+      },
+      "expected_accept": false,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [
+        "role_mismatch",
+        "employment_type_mismatch",
+        "seniority_mismatch"
+      ],
+      "notes": "Relevant domain but intentionally conflicts with full-time and junior/entry-level preferences; title also falls outside current role aliases."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:018",
+        "provider": "benchmark",
+        "external_id": "018",
+        "title": "Frontend Engineer",
+        "company": "PixelCraft GmbH",
+        "description": "Build React and TypeScript interfaces, maintain a component library, improve browser performance, and collaborate with product designers. English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "React",
+          "TypeScript",
+          "Frontend"
+        ],
+        "url": "https://example.com/benchmark/018",
+        "posted_at": null,
+        "fingerprint": "57c7090e9a969099e53928a286aa82a7b5e93867a59488d72bcc206eebfd0a2e"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Clearly unrelated engineering role."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:019",
+        "provider": "benchmark",
+        "external_id": "019",
+        "title": "Sales Development Representative",
+        "company": "GrowthPilot GmbH",
+        "description": "Prospect new B2B customers, qualify inbound leads, maintain CRM records, and support outbound campaigns. Fluent English is required. On-site position in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Sales",
+          "CRM",
+          "Business Development"
+        ],
+        "url": "https://example.com/benchmark/019",
+        "posted_at": null,
+        "fingerprint": "ea51d0e9cff0c34711ad9e23e82213a919ca0b2b6e7e43fce5b46b25792295e4"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Clearly unrelated non-technical role."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:020",
+        "provider": "benchmark",
+        "external_id": "020",
+        "title": "Java Backend Engineer",
+        "company": "FinCore Systems",
+        "description": "Develop Java and Spring Boot services for financial applications, maintain relational databases, and operate backend services. English is required. On-site position in Frankfurt.",
+        "location": "Frankfurt",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Java",
+          "Spring Boot",
+          "Backend"
+        ],
+        "url": "https://example.com/benchmark/020",
+        "posted_at": null,
+        "fingerprint": "40dce3d29e6dc84781c2be52dd1f8aeef34a961392911ecd261eb545cd85f98c"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "role_mismatch",
+        "location_mismatch"
+      ],
+      "notes": "Unrelated stack and outside the preferred locations."
+    }
+  ]
+}
