@@ -132,17 +132,21 @@ def create_job_searchable_text(job: JobPosting) -> str:
 
 
 def contains_normalized_phrase(text: str, phrase: str) -> bool:
-    """Match a normalized phrase or all of its tokens."""
+    """Match phrases using complete normalized tokens."""
     normalized_text = normalize_for_matching(text)
     normalized_phrase = normalize_for_matching(phrase)
-    if not normalized_phrase:
+
+    if not normalized_text or not normalized_phrase:
         return False
 
-    if normalized_phrase in normalized_text:
-        return True
+    text_tokens = normalized_text.split()
+    phrase_tokens = normalized_phrase.split()
 
-    tokens = normalized_phrase.split()
-    return bool(tokens) and all(token in normalized_text for token in tokens)
+    if not phrase_tokens:
+        return False
+
+    text_token_set = set(text_tokens)
+    return all(token in text_token_set for token in phrase_tokens)
 
 
 def role_terms(role: str) -> set[str]:
@@ -214,30 +218,35 @@ def detect_language_level(text: str) -> str | None:
 
 
 def detect_language_requirements(job: JobPosting) -> list[DetectedLanguageRequirement]:
-    """Extract explicit language requirements from job text."""
-    requirements: list[DetectedLanguageRequirement] = []
-    seen_languages: set[str] = set()
-    lines = [line.strip() for line in create_job_searchable_text(job).splitlines() if line.strip()]
-    for line in lines:
-        normalized_line = normalize_for_matching(line)
-        has_requirement_marker = any(normalize_for_matching(marker) in normalized_line for marker in LANGUAGE_REQUIREMENT_MARKERS)
-        for language, aliases in LANGUAGE_ALIASES.items():
-            has_language = any(normalize_for_matching(alias) in normalized_line for alias in aliases)
-            if not has_language:
+    """Detect explicit language requirements from a job posting."""
+    searchable_text = create_job_searchable_text(job)
+    detected_requirements: list[DetectedLanguageRequirement] = []
+    detected_languages: set[str] = set()
+    for line in searchable_text.splitlines():
+        cleaned_line = line.strip()
+
+        if not cleaned_line:
+            continue
+
+        normalized_line = normalize_for_matching(cleaned_line)
+
+        for (language, aliases) in LANGUAGE_ALIASES.items():
+            if language in detected_languages:
                 continue
 
-            minimum_level = detect_language_level(line)
+            language_is_present = any(contains_normalized_phrase(cleaned_line, alias) for alias in aliases)
+            if not language_is_present:
+                continue
+
+            has_requirement_marker = any(contains_normalized_phrase(normalized_line, marker) for marker in LANGUAGE_REQUIREMENT_MARKERS)
+            minimum_level = detect_language_level(cleaned_line)
             if (not has_requirement_marker and minimum_level is None):
                 continue
 
-            if language in seen_languages:
-                continue
+            detected_requirements.append(DetectedLanguageRequirement(language=language, minimum_level=minimum_level, evidence=cleaned_line[:500]))
+            detected_languages.add(language)
 
-            seen_languages.add(language)
-            requirements.append(
-                DetectedLanguageRequirement(language=language, minimum_level=minimum_level, evidence=line[:500]))
-
-    return requirements
+    return detected_requirements
 
 
 def normalize_language_name(value: str) -> str:
