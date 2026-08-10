@@ -49,7 +49,7 @@ class SentenceTransformerEmbeddingProvider:
         with self._model_lock:
             if self._model is None:
                 self._model = SentenceTransformer(self.model_name, device=self.device, trust_remote_code=False)
-                self.dimension = (self._model.get_sentence_embedding_dimension())
+                self.dimension = (self._model.get_embedding_dimension())
 
         return self._model
 
