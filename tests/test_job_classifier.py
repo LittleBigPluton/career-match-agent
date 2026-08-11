@@ -11,7 +11,8 @@ from career_match_agent.services.job_classifier import (
     detect_matching_roles,
     detect_seniority,
     detect_work_modes,
-    language_level_satisfies
+    language_level_satisfies,
+    contains_normalized_phrase
 )
 from career_match_agent.services.job_normalizer import create_job_fingerprint
 
@@ -78,3 +79,25 @@ def test_build_candidate_language_map() -> None:
 def test_language_level_comparison() -> None:
     assert language_level_satisfies("C1", "B2")
     assert not language_level_satisfies("A2", "B2")
+
+def test_ml_engineer_does_not_match_mlops_engineer() -> None:
+    assert not contains_normalized_phrase("MLOps Engineer", "ML Engineer")
+
+def test_german_does_not_match_germany() -> None:
+    assert not contains_normalized_phrase("This is a remote role within Germany.", "German")
+
+def test_role_phrase_matches_with_intermediate_title_word() -> None:
+    assert contains_normalized_phrase("Machine Learning Platform Engineer", "Machine Learning Engineer")
+
+def test_germany_does_not_create_german_requirement() -> None:
+    job = make_job(title="Data Scientist",description=("Create statistical models with Python. Fluent English is required. This is a fully remote role within Germany."))
+    requirements = detect_language_requirements(job)
+    assert len(requirements) == 1
+    assert requirements[0].language == "English"
+    assert requirements[0].minimum_level == "C1"
+
+def test_explicit_german_requirement_is_detected() -> None:
+    job = make_job(title="Machine Learning Engineer", description=("German B2 is required. English is used internally."))
+    requirements = detect_language_requirements(job)
+    requirements_by_language = {requirement.language: requirement for requirement in requirements}
+    assert (requirements_by_language["German"].minimum_level == "B2")
