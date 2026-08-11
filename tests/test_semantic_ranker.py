@@ -9,14 +9,18 @@ from career_match_agent.models.candidate import (
 )
 from career_match_agent.models.job import JobPosting
 from career_match_agent.models.matching import JobFilterDecision
-from career_match_agent.models.ranking import HybridRankingRequest
+from career_match_agent.models.ranking import (
+    HybridRankingRequest,
+    HybridRankingConfiguration
+)
 from career_match_agent.services.job_normalizer import (
     create_job_fingerprint,
     normalize_for_matching
 )
 from career_match_agent.services.semantic_ranker import (
     HybridJobRankingService,
-    calculate_available_weighted_score
+    calculate_available_weighted_score,
+    build_job_chunks
 )
 
 class FakeEmbeddingProvider:
@@ -122,3 +126,17 @@ def test_weighted_score_does_not_exceed_one_hundred() -> None:
     assert score <= 100.0
     assert sum(weights.values()) == pytest.approx(1.0, abs=0.001)
     assert sum(contributions.values()) == pytest.approx(score, abs=0.01)
+
+def test_job_description_chunks_do_not_repeat_header() -> None:
+    job = make_job(external_id="semantic-test", title="Machine Learning Engineer", description=("Support customer workshops and prepare solution demonstrations."),
+                    tags=["Python", "PyTorch", "Machine Learning"])
+    configuration = (HybridRankingConfiguration())
+    chunks = build_job_chunks(job, configuration=configuration)
+    header_chunks = [chunk for chunk in chunks if chunk.kind == "job_header"]
+    description_chunks = [chunk for chunk in chunks if chunk.kind == "job_description"]
+    assert len(header_chunks) == 1
+    assert description_chunks
+
+    for chunk in description_chunks:
+        assert ("Job title:" not in chunk.text)
+        assert ("Tags:" not in chunk.text)
