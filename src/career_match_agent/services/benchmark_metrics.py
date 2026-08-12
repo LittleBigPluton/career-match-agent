@@ -61,7 +61,7 @@ def calculate_reason_code_metrics(*, expected: dict[str, set[str]], decisions: l
 
 def discounted_cumulative_gain(relevance_grades: list[int]) -> float:
     """Calculate DCG using graded relevance."""
-    return sum(((2**relevance_grade - 1) / math.log2(rank + 2)) for rank, relevance_grade in enumerate(relevance_grades))
+    return sum((2.0**relevance_grade - 1.0) / math.log2(rank + 2) for rank, relevance_grade in enumerate(relevance_grades))
 
 
 def calculate_ndcg(*, ranked_grades: list[int], all_grades: list[int], k: int) -> float:
