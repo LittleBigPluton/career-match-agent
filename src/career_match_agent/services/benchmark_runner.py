@@ -1,10 +1,11 @@
 from time import perf_counter
 
 from career_match_agent.models.benchmark import (
+    BenchmarkLatency,
     EvaluationBenchmarkMetrics,
     JobMatchingBenchmarkDataset,
     JobMatchingBenchmarkResult,
-    BenchmarkLatency
+    RankingJobDiagnostic,
 )
 from career_match_agent.models.evaluation import (
     JobEvaluationConfiguration,
@@ -28,7 +29,10 @@ from career_match_agent.services.job_evaluator import (
 )
 from career_match_agent.services.job_filter import filter_jobs_for_candidate
 from career_match_agent.services.semantic_ranker import HybridJobRankingService
-from career_match_agent.models.ranking import HybridRankingWeights
+from career_match_agent.models.ranking import (
+    HybridRankingWeights,
+    SemanticMatchEvidence
+)
 
 class JobMatchingBenchmarkRunner:
     """Evaluate filtering, ranking and grounded reports."""
@@ -51,14 +55,25 @@ class JobMatchingBenchmarkRunner:
         expected_reasons = {benchmark_case.job.source_id: {reason.value for reason in benchmark_case.expected_rejection_reasons} for benchmark_case in dataset.jobs}
         reason_metrics = (calculate_reason_code_metrics(expected=expected_reasons, decisions=all_decisions))
         rank_start = perf_counter()
-        ranking_service = (HybridJobRankingService(self.embedding_provider))
-        ranking_response = (await ranking_service.rank(HybridRankingRequest(profile=dataset.profile, preferences=(dataset.preferences), accepted_jobs=(filtering_response.accepted_jobs),
-                                                                            evidence_signals=(dataset.evidence_signals), configuration=(ranking_configuration))))
+        ranking_service = HybridJobRankingService(self.embedding_provider)
+        ranking_response = await ranking_service.rank(HybridRankingRequest(profile=dataset.profile, preferences=dataset.preferences, accepted_jobs=filtering_response.accepted_jobs,
+                                                                           evidence_signals=dataset.evidence_signals, configuration=ranking_configuration))
 
         ranking_ms = (perf_counter() - rank_start) * 1000
-        ranked_source_ids = [ranked_job.decision.job.source_id for ranked_job in ranking_response.ranked_jobs]
         relevance_by_source_id = {benchmark_case.job.source_id: benchmark_case.relevance_grade for benchmark_case in dataset.jobs}
-        ranking_metrics = (calculate_ranking_metrics(ranked_source_ids=(ranked_source_ids), relevance_by_source_id=(relevance_by_source_id)))
+        ranking_diagnostics = [RankingJobDiagnostic(source_id=(ranked_job.decision.job.source_id),
+                                                    expected_relevance_grade=(relevance_by_source_id[ranked_job.decision.job.source_id]),
+                                                    rank=ranked_job.rank,
+                                                    hybrid_score=ranked_job.hybrid_score,
+                                                    semantic_score=(ranked_job.score_breakdown.semantic_score),
+                                                    skill_overlap_score=(ranked_job.score_breakdown.skill_overlap_score),
+                                                    required_keyword_score=(ranked_job.score_breakdown.required_keyword_score),
+                                                    role_alignment_score=(ranked_job.score_breakdown.role_alignment_score),
+                                                    warning_quality_score=(ranked_job.score_breakdown.warning_quality_score),
+                                                    semantic_matches=(ranked_job.semantic_matches)) for ranked_job in ranking_response.ranked_jobs]
+
+        ranked_source_ids = [ranked_job.decision.job.source_id for ranked_job in ranking_response.ranked_jobs]
+        ranking_metrics = calculate_ranking_metrics(ranked_source_ids=ranked_source_ids, relevance_by_source_id=(relevance_by_source_id))
         evaluation_metrics = None
         evaluation_ms: float | None = None
 
@@ -96,7 +111,8 @@ class JobMatchingBenchmarkRunner:
                                                                    evaluation_ms=(round(evaluation_ms, 2) if evaluation_ms is not None else None),
                                                                    total_ms=round(total_ms, 2)),
                                           ranked_source_ids=(ranked_source_ids),
-                                          ranking_configuration=(ranking_configuration))
+                                          ranking_configuration=(ranking_configuration),
+                                          ranking_diagnostics=(ranking_diagnostics))
 
 def create_ranking_ablation_configurations(
 ) -> dict[str, HybridRankingConfiguration]:

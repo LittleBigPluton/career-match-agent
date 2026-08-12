@@ -12,7 +12,10 @@ from career_match_agent.models.candidate import (
 from career_match_agent.models.hiring_agent import CandidateEvidenceSignal
 from career_match_agent.models.job import JobPosting
 from career_match_agent.models.matching import JobFilterReasonCode
-from career_match_agent.models.ranking import HybridRankingConfiguration
+from career_match_agent.models.ranking import (
+    HybridRankingConfiguration,
+    SemanticMatchEvidence
+)
 
 
 class BenchmarkModel(BaseModel):
@@ -95,6 +98,19 @@ class BenchmarkLatency(BenchmarkModel):
     evaluation_ms: float | None = Field(default=None, ge=0)
     total_ms: float = Field(ge=0)
 
+class RankingJobDiagnostic(BenchmarkModel):
+    """Per-job diagnostic values for ranking analysis."""
+    source_id: str
+    expected_relevance_grade: int = Field(ge=0, le=3)
+    rank: int = Field(ge=1)
+    hybrid_score: float = Field(ge=0, le=100)
+    semantic_score: float = Field(ge=0, le=100)
+    skill_overlap_score: float | None = Field(default=None, ge=0, le=100)
+    required_keyword_score: float | None = Field(default=None, ge=0, le=100)
+    role_alignment_score: float | None = Field(default=None, ge=0, le=100)
+    warning_quality_score: float = Field(ge=0, le=100)
+    semantic_matches: list[SemanticMatchEvidence]
+
 class JobMatchingBenchmarkResult(BenchmarkModel):
     """Complete result from one benchmark configuration."""
     dataset_name: str
@@ -107,3 +123,4 @@ class JobMatchingBenchmarkResult(BenchmarkModel):
     latency: BenchmarkLatency
     ranked_source_ids: list[str]
     ranking_configuration: HybridRankingConfiguration
+    ranking_diagnostics: list[RankingJobDiagnostic]
