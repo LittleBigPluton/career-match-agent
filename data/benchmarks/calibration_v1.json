@@ -872,6 +872,331 @@
         "location_mismatch"
       ],
       "notes": "Unrelated stack and outside the preferred locations."
+    },
+    {
+  "job": {
+    "source_id": "benchmark:021",
+    "provider": "benchmark",
+    "external_id": "021",
+    "title": "Machine Learning Engineer",
+    "company": "InferenceWorks GmbH",
+    "description": "Build low-latency inference endpoints for predictive components. Package research artifacts into versioned services, validate behavior on offline datasets, monitor drift, and automate reproducible releases. Python is used for service and experimentation code. Fluent English is required. Hybrid role in Berlin.",
+    "location": "Berlin",
+    "remote": false,
+    "visa_sponsorship": null,
+    "employment_types": [
+      "full_time"
+    ],
+    "raw_employment_types": [
+      "Full Time"
+    ],
+    "tags": [
+      "Python",
+      "Inference",
+      "Model Serving",
+      "Experimentation"
+    ],
+    "url": "https://example.com/benchmark/021",
+    "posted_at": null,
+    "fingerprint": "e2865151b298c8769d7551ca612b9726c95970491d3435e84eeea0048318ef02"
+    },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Hard semantic match: production inference and reproducible model-serving responsibilities align with ML engineering despite limited exact stack overlap."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:022",
+        "provider": "benchmark",
+        "external_id": "022",
+        "title": "Data Scientist",
+        "company": "Numeriq Labs",
+        "description": "Estimate customer propensity and demand using statistical inference, controlled experiments, feature design, forecasting, and baseline comparison. Quantify uncertainty and communicate conclusions from numerical datasets. Python and NumPy are used for analysis. Fluent English is required. Hybrid role in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "NumPy",
+          "Forecasting",
+          "Experimentation"
+        ],
+        "url": "https://example.com/benchmark/022",
+        "posted_at": null,
+        "fingerprint": "a2b510628afebbd412c847899035a4d6d738175c3e2d4b3c421d3ef2decf82cf"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Hard semantic match: statistical modelling and experimentation should align with the candidate even without repeated machine-learning keywords."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:023",
+        "provider": "benchmark",
+        "external_id": "023",
+        "title": "AI Engineer",
+        "company": "ModelBridge GmbH",
+        "description": "Design evidence-backed assistants over internal knowledge sources. Retrieve relevant context, orchestrate multi-step reasoning, expose capabilities through typed HTTP services, and evaluate unsupported claims. Python is the primary implementation language. Fluent English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Retrieval",
+          "LLM Evaluation",
+          "APIs"
+        ],
+        "url": "https://example.com/benchmark/023",
+        "posted_at": null,
+        "fingerprint": "ad0329a89cb68ae41cfcf2dff643afa745acebfcce0cc4e5049f4e0d934a1231"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Hard semantic match: strongly related to the agentic RAG/API project while deliberately avoiding exact framework names such as LangGraph or FastAPI."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:024",
+        "provider": "benchmark",
+        "external_id": "024",
+        "title": "Machine Learning Engineer",
+        "company": "VectorOps GmbH",
+        "description": "Develop surrogate predictors for expensive numerical simulations, construct training datasets from computational experiments, assess generalization and uncertainty, and optimize CPU and GPU numerical workflows. Python is required. Fluent English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Numerical Computing",
+          "Simulation",
+          "GPU"
+        ],
+        "url": "https://example.com/benchmark/024",
+        "posted_at": null,
+        "fingerprint": "28a514262575ba213ecf8b8d351ae126fb6f38778c8bf60469b129a7b052d0bb"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Hard semantic match: connects scientific-computing background with ML model development using different vocabulary from the CV."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:025",
+        "provider": "benchmark",
+        "external_id": "025",
+        "title": "Data Scientist",
+        "company": "SignalCraft GmbH",
+        "description": "Analyze sensor telemetry from industrial assets, estimate failure risk, identify anomalous operating regimes, design time-aware validation, and communicate maintenance thresholds to engineering teams. Python is required. Fluent English is required. Hybrid role in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Sensor Data",
+          "Anomaly Detection",
+          "Forecasting"
+        ],
+        "url": "https://example.com/benchmark/025",
+        "posted_at": null,
+        "fingerprint": "3996bb8d6dbcad673c7431e9319a31b558caa659f386992b0cff2d0a5b5cb916"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Hard semantic match: mirrors predictive-maintenance experience without naming XGBoost, scikit-learn, or predictive maintenance directly."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:026",
+        "provider": "benchmark",
+        "external_id": "026",
+        "title": "Machine Learning Engineer",
+        "company": "InsightPilot GmbH",
+        "description": "Support customer workshops, AI solution demonstrations, proposal preparation, proof-of-concept presentations, and comparisons of third-party machine-learning platforms. Build short Python and PyTorch demos for prospective customers and document product capabilities. Fluent English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Machine Learning",
+          "AI",
+          "Demos"
+        ],
+        "url": "https://example.com/benchmark/026",
+        "posted_at": null,
+        "fingerprint": "4aa27843644cf7f5fab238450a69ae98384b1249cae75fd3a2cbbd58b373e145"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Deceptive lexical case: many matching ML keywords, but the core responsibilities are customer demonstrations and solution support rather than model engineering."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:027",
+        "provider": "benchmark",
+        "external_id": "027",
+        "title": "Data Scientist",
+        "company": "BoardMetrics GmbH",
+        "description": "Maintain recurring KPI dashboards, prepare monthly management reports, refresh Tableau workbooks, extract data with SQL, and answer ad-hoc reporting requests. Python and scikit-learn are available for occasional analyses, but the primary deliverables are dashboards and recurring reports. Fluent English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "Data Science",
+          "SQL",
+          "Dashboards"
+        ],
+        "url": "https://example.com/benchmark/027",
+        "posted_at": null,
+        "fingerprint": "6b01ded49eab04559dda310088296ee74f06aaec04f086b6d1935314c999883e"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Deceptive lexical case: target title and matching tools, but responsibilities are predominantly BI/reporting rather than modelling."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:028",
+        "provider": "benchmark",
+        "external_id": "028",
+        "title": "AI Engineer",
+        "company": "VendorAI Solutions",
+        "description": "Configure third-party generative-AI SaaS products, maintain prompt templates, manage vendor API integrations, and automate business workflows. Integrate hosted LLM endpoints into Python and FastAPI services and maintain configuration for retrieval-augmented generation features. Fluent English is required. Hybrid role in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "FastAPI",
+          "LLM",
+          "RAG",
+          "AI"
+        ],
+        "url": "https://example.com/benchmark/028",
+        "posted_at": null,
+        "fingerprint": "1ff2f8120f83a6fdf0d3d6c9ef82132422d2889408f440bb3fa6623643423e48"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Deceptive lexical case: overlaps heavily with the portfolio vocabulary but focuses on configuring vendor products rather than substantive ML engineering."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:029",
+        "provider": "benchmark",
+        "external_id": "029",
+        "title": "Machine Learning Engineer",
+        "company": "PromptStack GmbH",
+        "description": "Own annotation queues, maintain label taxonomies, review data-quality reports, coordinate external annotation vendors, and prepare labelled datasets for modelling teams. Run PyTorch and transformer scripts for spot checks and dataset diagnostics. Fluent English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "PyTorch",
+          "Transformers",
+          "Annotation",
+          "Machine Learning",
+          "Data Quality"
+        ],
+        "url": "https://example.com/benchmark/029",
+        "posted_at": null,
+        "fingerprint": "e20012c4ee737d2b4c995b8edc3b4d5c948ab4927819a72020c6dc3107b0c8be"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Deceptive semantic case: resembles the candidate's NER/annotation experience, but the job is primarily data operations rather than ML model development."
+    },
+    {
+      "job": {
+        "source_id": "benchmark:030",
+        "provider": "benchmark",
+        "external_id": "030",
+        "title": "Data Scientist",
+        "company": "GrowthSignals GmbH",
+        "description": "Analyze marketing campaigns, maintain CRM customer segments, prepare attribution dashboards, summarize A/B tests, and support growth reporting. The team uses Python and frequently discusses machine learning and AI when presenting campaign insights to stakeholders. Fluent English is required. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "Full Time"
+        ],
+        "tags": [
+          "Python",
+          "Machine Learning",
+          "AI",
+          "A/B Testing",
+          "Analytics"
+        ],
+        "url": "https://example.com/benchmark/030",
+        "posted_at": null,
+        "fingerprint": "9fc251122530f8d7b3239f767104a3cb225d745d5dd8183d9e8ffda57794b08d"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Deceptive lexical case: ML/AI terminology is present, but the day-to-day work is mainly marketing analytics and reporting."
     }
   ]
 }
