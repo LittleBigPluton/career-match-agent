@@ -30,16 +30,13 @@ def create_request_payload() -> dict[str, object]:
     title = "Machine Learning Engineer"
     company = "Example AI GmbH"
     location = "Berlin"
-
-    job = JobPosting(source_id="mock:1", provider="mock", external_id="1", title=title, company=company,
-                     description=("Develop Python and PyTorch machine-learning models and inference APIs."),
-                     location=location, remote=False, employment_types=[EmploymentType.FULL_TIME],
-                     tags=["Python", "PyTorch"], url="https://example.com/jobs/1",
+    job = JobPosting(source_id="mock:1", provider="mock", external_id="1", title=title, company=company, description=("Develop Python and PyTorch machine-learning models and inference APIs."),
+                     location=location, remote=False, employment_types=[EmploymentType.FULL_TIME], tags=["Python", "PyTorch"], url="https://example.com/jobs/1",
                      fingerprint=create_job_fingerprint(title=title, company=company, location=location))
 
-    decision = JobFilterDecision(job=job,accepted=True,matched_roles=["Machine Learning Engineer"],matched_required_keywords=["Python"],)
-    request = HybridRankingRequest(profile=CandidateProfile(skills=["Python", "PyTorch"]),
-                                   preferences=JobPreferences(roles=["Machine Learning Engineer"], required_keywords=["Python"]), accepted_jobs=[decision])
+    decision = JobFilterDecision(job=job, accepted=True, matched_roles=["Machine Learning Engineer"], matched_required_keywords=["Python"])
+    request = HybridRankingRequest(profile=CandidateProfile(professional_summary=("Machine-learning engineer with experience developing and evaluating machine-learning models and inference APIs."),
+                                  skills=["Python", "PyTorch"]), preferences=JobPreferences(roles=["Machine Learning Engineer"], required_keywords=["Python"]), accepted_jobs=[decision])
 
     return request.model_dump(mode="json")
 
