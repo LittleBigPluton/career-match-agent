@@ -102,14 +102,14 @@ def add_candidate_profile_evidence(items: list[GroundingEvidenceItem], *, profil
 
         heading = " — ".join(value for value in [experience.job_title,experience.organization] if value)
         technologies = (", ".join(experience.technologies) if experience.technologies else "Not specified")
-        add_evidence_item(items, evidence_id=(f"candidate: \n experience:{experience_index}"), scope=EvidenceScope.CANDIDATE, label="Candidate experience",
+        add_evidence_item(items, evidence_id=(f"candidate:experience:{experience_index}"), scope=EvidenceScope.CANDIDATE, label="Candidate experience",
             text=(f"{heading or 'Experience entry'}. Technologies: {technologies}."))
 
         for highlight_index, highlight in enumerate(experience.highlights):
             if len(items) >= maximum_items:
                 return
 
-            add_evidence_item(items,evidence_id=(f"candidate: \n experience: {experience_index}:\n highlight:{highlight_index}"),
+            add_evidence_item(items,evidence_id=(f"candidate:experience:{experience_index}:highlight:{highlight_index}"),
                               scope=EvidenceScope.CANDIDATE,label="Experience achievement",text=highlight)
 
     for project_index, project in enumerate(profile.projects):
@@ -130,7 +130,7 @@ def add_candidate_profile_evidence(items: list[GroundingEvidenceItem], *, profil
             if len(items) >= maximum_items:
                 return
 
-            add_evidence_item(items,evidence_id=(f"candidate:project:{project_index}:\n highlight:{highlight_index}"),
+            add_evidence_item(items,evidence_id=(f"candidate:project:{project_index}:highlight:{highlight_index}"),
                               scope=EvidenceScope.CANDIDATE, label="Project achievement", text=highlight,)
 
     for education_index, education in enumerate(profile.education):

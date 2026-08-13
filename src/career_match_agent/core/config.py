@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     embedding_batch_size: int = Field(default=16, ge=1, le=128)
 
     job_evaluation_model: str = "gemma3:4b"
-    job_evaluation_timeout_seconds: float = Field(default=300.0, gt=0)
+    job_evaluation_timeout_seconds: float = Field(default=900.0, gt=0)
     maximum_evaluation_jobs: int = Field(default=5, ge=1, le=20)
 
     search_planner_model: str = "gemma3:4b"
