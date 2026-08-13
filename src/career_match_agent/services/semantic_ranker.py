@@ -103,8 +103,6 @@ def build_candidate_chunks(*, profile: CandidateProfile, preferences: JobPrefere
     if profile.professional_summary:
         profile_overview_parts.append(f"Professional summary: {profile.professional_summary}")
 
-    if profile.skills:
-        profile_overview_parts.append("Technical skills: "+ ", ".join(profile.skills))
 
     if profile_overview_parts:
         append_semantic_section(chunks, identifier="profile-overview", kind="profile_overview", text="\n".join(profile_overview_parts),
@@ -113,8 +111,6 @@ def build_candidate_chunks(*, profile: CandidateProfile, preferences: JobPrefere
 
     for index, experience in enumerate(profile.experience):
         experience_parts = ["Experience",f"Title: {experience.job_title or 'Unknown'}", ("Organization: "f"{experience.organization or 'Unknown'}")]
-        if experience.technologies:
-            experience_parts.append("Technologies: "+ ", ".join(experience.technologies))
 
         if experience.highlights:
             experience_parts.append("Highlights: "+ " ".join(experience.highlights))
@@ -126,9 +122,6 @@ def build_candidate_chunks(*, profile: CandidateProfile, preferences: JobPrefere
         if project.summary:
             project_parts.append(f"Summary: {project.summary}")
 
-        if project.technologies:
-            project_parts.append("Technologies: "+ ", ".join(project.technologies))
-
         if project.highlights:
             project_parts.append("Highlights: "+ " ".join(project.highlights))
 
@@ -137,10 +130,13 @@ def build_candidate_chunks(*, profile: CandidateProfile, preferences: JobPrefere
                                 maximum_chunks=(configuration.maximum_candidate_chunks))
 
     for index, education in enumerate(profile.education):
-        education_text = " ".join(value for value in [education.degree, education.field_of_study, education.institution]if value)
-        append_semantic_section(chunks, identifier=f"education-{index}", kind="education", text=f"Education: {education_text}",
-                                weight=0.5, maximum_characters=(configuration.chunk_max_characters),
-                                maximum_chunks=(configuration.maximum_candidate_chunks))
+        education_parts = [" ".join(value for value in [education.degree, education.field_of_study, education.institution] if value)]
+
+        if education.details:
+            education_parts.append("Details: " + " ".join(education.details))
+        education_text = "\n".join(education_parts)
+        append_semantic_section(chunks, identifier=f"education-{index}", kind="education", text=f"Education: {education_text}", weight=0.5,
+                                maximum_characters=(configuration.chunk_max_characters), maximum_chunks=(configuration.maximum_candidate_chunks))
 
     relevant_polarities = {EvidencePolarity.POSITIVE, EvidencePolarity.NEUTRAL}
     relevant_signals = [signal for signal in evidence_signals if signal.polarity in relevant_polarities]
@@ -157,16 +153,23 @@ def build_job_chunks(job: JobPosting,*,configuration: HybridRankingConfiguration
                                             "Employment type: "f"{employment_text or 'Unknown'}",f"Tags: {', '.join(job.tags)}"]))
 
     chunks = [SemanticTextChunk(identifier=f"{job.source_id}:header", kind="job_header",text=header)]
-    header_prefix = header[:300]
-    available_description_characters = max(300,(configuration.chunk_max_characters - len(header_prefix) - 2))
-    description_parts = split_text_into_chunks(job.description,maximum_characters=(available_description_characters))
+    description_parts = split_text_into_chunks(job.description,maximum_characters=(configuration.chunk_max_characters))
     for index, description_part in enumerate(description_parts):
         if len(chunks) >= configuration.maximum_job_chunks:
             break
 
-        chunks.append(SemanticTextChunk(identifier=(f"{job.source_id}:description:{index}"), kind="job_description",text=(f"{header_prefix}\n{description_part}")))
+        chunks.append(SemanticTextChunk(identifier=(f"{job.source_id}:description:{index}"), kind="job_description", text=description_part))
 
     return chunks
+
+
+def average_top_similarities(similarities: list[float], *, evidence_count: int,) -> float:
+    """Average the strongest semantic similarities."""
+    if not similarities or evidence_count <= 0:
+        return 0.0
+
+    strongest = sorted( similarities, reverse=True)[:evidence_count]
+    return sum(strongest) / len(strongest)
 
 
 def normalize_vector(vector: list[float]) -> list[float]:
@@ -195,23 +198,30 @@ def excerpt(text: str, *, maximum_characters: int = 240) -> str:
 
     return cleaned_text[: maximum_characters - 1].rstrip() + "…"
 
-def calculate_semantic_match(*, candidate_chunks: list[SemanticTextChunk], candidate_embeddings: list[list[float]], job_chunks: list[SemanticTextChunk],
+def calculate_semantic_match( *, candidate_chunks: list[SemanticTextChunk], candidate_embeddings: list[list[float]], job_chunks: list[SemanticTextChunk],
                              job_embeddings: list[list[float]], evidence_count: int) -> tuple[float, list[SemanticMatchEvidence]]:
-    """Calculate weighted candidate-to-job similarity."""
+    """Calculate strongest candidate-to-job similarity."""
     if len(candidate_chunks) != len(candidate_embeddings):
         raise InvalidEmbeddingResponseError("Candidate embedding count is inconsistent.")
 
     if len(job_chunks) != len(job_embeddings):
         raise InvalidEmbeddingResponseError("Job embedding count is inconsistent.")
 
-    weighted_similarity = 0.0
-    total_weight = 0.0
+    description_embeddings = [(job_chunk, job_vector) for job_chunk, job_vector in zip(job_chunks, job_embeddings, strict=True) if job_chunk.kind == "job_description"]
+    if not description_embeddings:
+        return 0.0, []
+
+    best_similarities: list[float] = []
     match_evidence: list[SemanticMatchEvidence] = []
     for candidate_chunk, candidate_vector in zip(candidate_chunks, candidate_embeddings, strict=True):
+        if candidate_chunk.kind == "target_roles":
+            continue
+
         best_similarity = -1.0
         best_job_chunk: SemanticTextChunk | None = None
-        for job_chunk, job_vector in zip(job_chunks, job_embeddings, strict=True):
+        for (job_chunk, job_vector) in description_embeddings:
             similarity = cosine_similarity(candidate_vector, job_vector)
+
             if similarity > best_similarity:
                 best_similarity = similarity
                 best_job_chunk = job_chunk
@@ -219,15 +229,13 @@ def calculate_semantic_match(*, candidate_chunks: list[SemanticTextChunk], candi
         if best_job_chunk is None:
             continue
 
-        weighted_similarity += (best_similarity * candidate_chunk.weight)
-        total_weight += candidate_chunk.weight
-        match_evidence.append(SemanticMatchEvidence(candidate_chunk_kind=(candidate_chunk.kind),
-                                                    candidate_excerpt=excerpt(candidate_chunk.text),
-                                                    job_excerpt=excerpt(best_job_chunk.text),
-                                                    similarity=round(best_similarity, 4)))
-    semantic_similarity = (weighted_similarity / total_weight if total_weight else 0.0)
+        best_similarities.append(best_similarity)
+        match_evidence.append(SemanticMatchEvidence(candidate_chunk_kind=(candidate_chunk.kind), candidate_excerpt=excerpt(candidate_chunk.text),
+                                                    job_excerpt=excerpt(best_job_chunk.text), similarity=round(best_similarity, 4)))
+
+    semantic_similarity = (average_top_similarities(best_similarities, evidence_count=evidence_count))
     sorted_evidence = sorted(match_evidence, key=lambda item: item.similarity, reverse=True)
-    return (semantic_similarity, sorted_evidence[:evidence_count],)
+    return (semantic_similarity, sorted_evidence[:evidence_count])
 
 def detect_matching_skills(profile: CandidateProfile, job: JobPosting) -> list[str]:
     """Return candidate skills found in the job posting."""
