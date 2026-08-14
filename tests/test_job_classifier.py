@@ -14,6 +14,7 @@ from career_match_agent.services.job_classifier import (
     language_level_satisfies,
     contains_normalized_phrase
 )
+from career_match_agent.services.job_filter import location_matches
 from career_match_agent.services.job_normalizer import create_job_fingerprint
 
 
@@ -101,3 +102,28 @@ def test_explicit_german_requirement_is_detected() -> None:
     requirements = detect_language_requirements(job)
     requirements_by_language = {requirement.language: requirement for requirement in requirements}
     assert (requirements_by_language["German"].minimum_level == "B2")
+
+def test_language_levels_are_scoped_to_each_language() -> None:
+    job = make_job(title="Finance Engineer", description=("Fluent in English and conversational in German."))
+    requirements = detect_language_requirements(job)
+    by_language = {requirement.language: requirement for requirement in requirements}
+    assert by_language["English"].minimum_level == "C1"
+    assert by_language["German"].minimum_level is None
+
+def test_native_and_fluent_languages_are_not_merged() -> None:
+    job = make_job(title="Support Engineer", description=("You are native in German and fluent in English."))
+    requirements = detect_language_requirements(job)
+    by_language = {requirement.language: requirement for requirement in requirements}
+    assert by_language["German"].minimum_level == "native"
+    assert by_language["English"].minimum_level == "C1"
+
+def test_native_and_fluent_languages_are_not_merged() -> None:
+    job = make_job(title="Support Engineer", description=("You are native in German and fluent in English."))
+    requirements = detect_language_requirements(job)
+    by_language = {requirement.language: requirement for requirement in requirements}
+    assert by_language["German"].minimum_level == "native"
+    assert by_language["English"].minimum_level == "C1"
+
+def test_munich_matches_muenchen_metro_location() -> None:
+    job = make_job(title="Machine Learning Engineer", location="Garching bei München, Bayern", description="Build ML systems.")
+    assert location_matches(job, ["Munich"])

@@ -23,11 +23,24 @@ from career_match_agent.services.job_classifier import (
     detect_work_modes,
     language_level_satisfies
 )
+from career_match_agent.services.job_normalizer import normalize_for_matching
 
+LOCATION_ALIASES: dict[str, set[str]] = { "munich": {"munich", "munchen", "muenchen"}, "berlin": {"berlin"}, "stuttgart": {"stuttgart"}}
 
 def create_reason(code: JobFilterReasonCode, message: str, evidence: list[str] | None = None) -> JobFilterReason:
     """Create a filter reason with optional evidence."""
     return JobFilterReason(code=code, message=message, evidence=evidence or [])
+
+
+def location_terms(location: str) -> set[str]:
+    """Return normalized aliases for a requested location."""
+    normalized_location = normalize_for_matching(location)
+    for canonical, aliases in LOCATION_ALIASES.items():
+        normalized_aliases = {normalize_for_matching(alias) for alias in aliases}
+        if (normalized_location == normalize_for_matching(canonical) or normalized_location in normalized_aliases):
+            return normalized_aliases
+
+    return {normalized_location}
 
 
 def location_matches(job: JobPosting, preferred_locations: list[str]) -> bool:
@@ -38,12 +51,24 @@ def location_matches(job: JobPosting, preferred_locations: list[str]) -> bool:
     if not job.location:
         return False
 
-    return any(contains_normalized_phrase(job.location, preferred_location) for preferred_location in preferred_locations)
+    normalized_job_location = normalize_for_matching(job.location)
+    for preferred_location in preferred_locations:
+        aliases = location_terms(preferred_location)
+        if any(alias in normalized_job_location for alias in aliases):
+            return True
+
+    return False
 
 
 def detect_keyword_matches(job: JobPosting, keywords: list[str]) -> list[str]:
     """Return keywords found in the job posting."""
     searchable_text = create_job_searchable_text(job)
+    return [keyword for keyword in keywords if contains_normalized_phrase(searchable_text, keyword)]
+
+
+def detect_title_keyword_matches(job: JobPosting, keywords: list[str]) -> list[str]:
+    """Match role-level exclusions against title and tags."""
+    searchable_text = " ".join([job.title, " ".join(job.tags)])
     return [keyword for keyword in keywords if contains_normalized_phrase(searchable_text, keyword)]
 
 
@@ -61,7 +86,7 @@ def evaluate_job(job: JobPosting, *, profile_languages: dict[str, str | None], p
     detected_work_modes = detect_work_modes(job)
     language_requirements = detect_language_requirements(job)
     matched_required_keywords = detect_keyword_matches(job, preferences.required_keywords)
-    matched_excluded_keywords = detect_keyword_matches(job, preferences.excluded_keywords)
+    matched_excluded_keywords = detect_title_keyword_matches(job, preferences.excluded_keywords)
 
     # Role compatibility
     if (preferences.roles and not matched_roles and policy.reject_role_mismatch):
