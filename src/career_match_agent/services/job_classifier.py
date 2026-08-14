@@ -11,14 +11,31 @@ from career_match_agent.models.matching import DetectedLanguageRequirement
 from career_match_agent.services.job_normalizer import normalize_for_matching
 
 
-ROLE_ALIASES: dict[str, set[str]] = {
-    "machine learning engineer": {"machine learning engineer","ml engineer","ai engineer","artificial intelligence engineer","machine learning developer"},
-    "data scientist": {"data scientist","applied data scientist","analytics scientist"},
-    "machine learning scientist": {"machine learning scientist","ml scientist","applied scientist","applied machine learning scientist"},
-    "applied ml scientist": {"applied ml scientist","applied machine learning scientist","machine learning scientist","applied scientist"},
-    "data analyst": {"data analyst","business data analyst","analytics analyst"},
-    "software engineer": {"software engineer","software developer","backend engineer","backend developer"}
-}
+ROLE_ALIASES: dict[str, set[str]] = {"machine learning engineer": {"machine learning engineer",
+                                                                    "ml engineer",
+                                                                    "ai engineer",
+                                                                    "artificial intelligence engineer",
+                                                                    "machine learning developer",
+                                                                    "applied ai engineer",
+                                                                    "generative ai engineer",
+                                                                    "genai engineer",
+                                                                    "llm engineer"},
+
+                                     "data scientist": {"data scientist",
+                                                        "applied data scientist",
+                                                        "analytics scientist"},
+
+                                     "machine learning scientist": {"machine learning scientist",
+                                                                    "ml scientist",
+                                                                    "applied scientist",
+                                                                    "applied machine learning scientist",
+                                                                    "applied ml scientist"},
+
+                                     "applied ml scientist": {"applied ml scientist",
+                                                              "applied machine learning scientist",
+                                                              "machine learning scientist",
+                                                              "ml scientist",
+                                                              "applied scientist"}}
 
 
 SENIORITY_PATTERNS: list[tuple[SeniorityLevel, tuple[str, ...]]] = [(SeniorityLevel.SENIOR,(r"\bsenior\b",
@@ -100,6 +117,8 @@ LANGUAGE_REQUIREMENT_MARKERS = ("required",
                                 "muttersprache")
 
 
+ALTERNATIVE_LANGUAGE_MARKERS = ("such as", "one of", "either", "for example", "e.g.")
+
 LEVEL_PATTERNS: list[tuple[str, str]] = [(r"\bC2\b", "C2"),
                                          (r"\bC1\b", "C1"),
                                          (r"\bB2\b", "B2"),
@@ -150,14 +169,15 @@ def contains_normalized_phrase(text: str, phrase: str) -> bool:
 
 
 def role_terms(role: str) -> set[str]:
-    """Return deterministic aliases for a requested role."""
+    """Return all deterministic aliases for a role family."""
     normalized_role = normalize_for_matching(role)
-    aliases = ROLE_ALIASES.get(normalized_role)
-    if aliases is None:
-        return {role}
+    for canonical_role, aliases in ROLE_ALIASES.items():
+        normalized_canonical = normalize_for_matching(canonical_role)
+        normalized_aliases = {normalize_for_matching(alias) for alias in aliases}
+        if (normalized_role == normalized_canonical or normalized_role in normalized_aliases):
+            return {canonical_role, *aliases, role}
 
-    return set(aliases) | {role}
-
+    return {role}
 
 def detect_matching_roles(job: JobPosting, preferred_roles: list[str]) -> list[str]:
     """Return preferred roles compatible with the job title."""
@@ -216,6 +236,26 @@ def detect_language_level(text: str) -> str | None:
 
     return max(detected_levels, key=lambda item: item[0])[1]
 
+def detect_language_level_for_language(line: str, language_aliases: tuple[str, ...]) -> str | None:
+    """Detect a proficiency level associated with one specific language."""
+    for alias in language_aliases:
+        escaped_alias = re.escape(alias)
+        cefr_patterns = [rf"\b{escaped_alias}\b[^.;,]{{0,20}}\b(A1|A2|B1|B2|C1|C2)\b", rf"\b(A1|A2|B1|B2|C1|C2)\b[^.;,]{{0,20}}\b{escaped_alias}\b"]
+        for pattern in cefr_patterns:
+            match = re.search(pattern, line, flags=re.IGNORECASE)
+            if match:
+                return match.group(1).upper()
+
+        qualitative_patterns: list[tuple[str, str | None]] = [(rf"\bnative(?:\s+speaker)?(?:\s+in)?\s+" rf"\b{escaped_alias}\b", "native",),
+                                                              (rf"\bfluent(?:\s+in)?\s+" rf"\b{escaped_alias}\b", "C1",),
+                                                              (rf"\bbusiness[- ]fluent(?:\s+in)?\s+" rf"\b{escaped_alias}\b", "C1",),
+                                                              (rf"\bconversational(?:\s+in)?\s+" rf"\b{escaped_alias}\b", None)]
+
+        for pattern, level in qualitative_patterns:
+            if re.search(pattern, line, flags=re.IGNORECASE):
+                return level
+
+    return None
 
 def detect_language_requirements(job: JobPosting) -> list[DetectedLanguageRequirement]:
     """Detect explicit language requirements from a job posting."""
@@ -224,11 +264,13 @@ def detect_language_requirements(job: JobPosting) -> list[DetectedLanguageRequir
     detected_languages: set[str] = set()
     for line in searchable_text.splitlines():
         cleaned_line = line.strip()
-
         if not cleaned_line:
             continue
 
         normalized_line = normalize_for_matching(cleaned_line)
+        contains_alternative_marker = any(normalize_for_matching(marker) in normalized_line for marker in ALTERNATIVE_LANGUAGE_MARKERS)
+        if contains_alternative_marker:
+            continue
 
         for (language, aliases) in LANGUAGE_ALIASES.items():
             if language in detected_languages:
@@ -239,7 +281,7 @@ def detect_language_requirements(job: JobPosting) -> list[DetectedLanguageRequir
                 continue
 
             has_requirement_marker = any(contains_normalized_phrase(normalized_line, marker) for marker in LANGUAGE_REQUIREMENT_MARKERS)
-            minimum_level = detect_language_level(cleaned_line)
+            minimum_level = (detect_language_level_for_language(line, aliases))
             if (not has_requirement_marker and minimum_level is None):
                 continue
 

@@ -1,4 +1,5 @@
 from datetime import datetime
+from enum import StrEnum
 
 from pydantic import (
     BaseModel,
@@ -34,6 +35,10 @@ class JobModel(BaseModel):
     """Base configuration for job-related models."""
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
+class JobSearchMatchScope(StrEnum):
+    BROAD = "broad"
+    TITLE_AND_TAGS = "title_and_tags"
+
 class JobPosting(JobModel):
     """Provider-independent representation of a job posting."""
     source_id: str = Field(min_length=1)
@@ -57,6 +62,7 @@ class JobPosting(JobModel):
     def clean_lists(cls, values: list[str]) -> list[str]:
         return clean_string_list(values)
 
+
 class JobSearchQuery(JobModel):
     """Provider-independent job search request."""
     keywords: list[str] = Field(min_length=1)
@@ -66,6 +72,7 @@ class JobSearchQuery(JobModel):
     employment_types: list[EmploymentType] = Field(default_factory=list)
     maximum_results: int = Field(default=20, ge=1, le=100)
     max_pages: int = Field(default=1, ge=1, le=5)
+    match_scope: JobSearchMatchScope = (JobSearchMatchScope.BROAD)
 
     @field_validator("keywords")
     @classmethod

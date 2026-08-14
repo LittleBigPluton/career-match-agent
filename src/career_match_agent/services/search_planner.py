@@ -11,7 +11,10 @@ from career_match_agent.models.candidate import (
     JobPreferences,
     WorkMode
 )
-from career_match_agent.models.job import JobSearchQuery
+from career_match_agent.models.job import (
+    JobSearchQuery,
+    JobSearchMatchScope
+)
 from career_match_agent.models.matching import JobFilterPolicy
 
 
@@ -38,6 +41,10 @@ SEARCH_PLANNER_SYSTEM_PROMPT = """
                                   8. Use more pages on later attempts when appropriate.
                                   9. Do not invent candidate qualifications.
                                   10. Return only JSON matching the supplied schema.
+                                  11. Do not invent job titles based on frameworks, libraries, products or tools in the candidate's skills.
+                                  12. Do not generate titles such as "LangGraph Engineer", "PyTorch Engineer" or "FastAPI Engineer" unless
+                                  that role was explicitly requested by the user.
+                                  13. Broaden only to established professional role families.
                                """.strip()
 
 
@@ -132,7 +139,7 @@ def build_job_search_query(*, plan: AgentSearchPlan, preferences: JobPreferences
         search_locations = []
 
     return JobSearchQuery(keywords=plan.keywords, locations=search_locations, remote_only=remote_only, visa_sponsorship=visa_sponsorship,
-                          employment_types=preferences.employment_types, maximum_results=plan.maximum_results, max_pages=plan.max_pages)
+                          employment_types=preferences.employment_types, maximum_results=plan.maximum_results, max_pages=plan.max_pages, match_scope=JobSearchMatchScope.TITLE_AND_TAGS)
 
 
 class OllamaSearchPlanner:

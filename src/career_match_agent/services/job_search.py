@@ -2,7 +2,8 @@ from career_match_agent.models.job import (
     JobPosting,
     JobSearchQuery,
     JobSearchResponse,
-    JobSearchStatistics
+    JobSearchStatistics,
+    JobSearchMatchScope
 )
 from career_match_agent.providers.base import JobProvider
 from career_match_agent.services.job_normalizer import (
@@ -26,10 +27,14 @@ def phrase_matches_text(phrase: str, text: str) -> bool:
     return bool(phrase_tokens) and all(token in normalized_text for token in phrase_tokens)
 
 
-def job_matches_keywords(job: JobPosting, keywords: list[str]) -> bool:
-    """Return whether a job matches at least one keyword."""
-    searchable_text = " ".join([job.title, job.company, job.location or "", " ".join(job.tags), job.description])
-    return any(phrase_matches_text(keyword, searchable_text) for keyword in keywords)
+def job_matches_keywords(job: JobPosting, query: JobSearchQuery) -> bool:
+    """Return whether a job matches at least one search term."""
+    if (query.match_scope == JobSearchMatchScope.TITLE_AND_TAGS):
+        searchable_text = " ".join([job.title, " ".join(job.tags)])
+    else:
+        searchable_text = " ".join([job.title, job.company, job.location or "", " ".join(job.tags), job.description])
+
+    return any(phrase_matches_text(keyword, searchable_text) for keyword in query.keywords)
 
 def job_matches_locations(job: JobPosting, locations: list[str]) -> bool:
     """Return whether a job matches a requested location."""
@@ -43,7 +48,7 @@ def job_matches_locations(job: JobPosting, locations: list[str]) -> bool:
 
 def job_matches_query(job: JobPosting, query: JobSearchQuery) -> bool:
     """Apply provider-independent local filters."""
-    if not job_matches_keywords(job, query.keywords):
+    if not job_matches_keywords(job, query):
         return False
 
     if not job_matches_locations(job, query.locations):
