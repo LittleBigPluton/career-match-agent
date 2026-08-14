@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="CAREER_MATCH_", extra="ignore")
     ollama_base_url: str = "http://127.0.0.1:11434"
     ollama_model: str = "gemma3:4b"
-    ollama_timeout_seconds: float = Field(default=300.0, gt=0)
+    ollama_timeout_seconds: float = Field(default=1200.0, gt=0)
     max_cv_text_characters: int = Field(default=30_000, ge=1)
     max_hiring_agent_report_bytes: int = Field(default=1_048_576, ge=1024)
 
@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     embedding_batch_size: int = Field(default=16, ge=1, le=128)
 
     job_evaluation_model: str = "gemma3:4b"
-    job_evaluation_timeout_seconds: float = Field(default=900.0, gt=0)
+    job_evaluation_timeout_seconds: float = Field(default=1200.0, gt=0)
     maximum_evaluation_jobs: int = Field(default=5, ge=1, le=20)
 
     search_planner_model: str = "gemma3:4b"
