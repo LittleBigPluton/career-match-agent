@@ -191,10 +191,9 @@ def detect_matching_roles(job: JobPosting, preferred_roles: list[str]) -> list[s
 
 
 def detect_seniority(job: JobPosting) -> SeniorityLevel | None:
-    """Detect explicit seniority from title and description."""
-    searchable_text = " ".join([job.title, job.description[:2000]])
+    title = job.title
     for seniority, patterns in SENIORITY_PATTERNS:
-        if text_matches_any_pattern(searchable_text, patterns):
+        if text_matches_any_pattern(title, patterns):
             return seniority
 
     return None
