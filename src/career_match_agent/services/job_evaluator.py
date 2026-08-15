@@ -19,14 +19,15 @@ from career_match_agent.models.evaluation import (
     JobEvaluationResponse,
     JobEvaluationStatistics,
     JobReportGrounding,
-    JobSuitabilityReportDraft
+    JobSuitabilityReportDraft,
+    GroundedFinding
 )
 from career_match_agent.models.hiring_agent import CandidateEvidenceSignal
 from career_match_agent.models.ranking import RankedJob
 from career_match_agent.services.semantic_ranker import split_text_into_chunks
 
 
-JOB_REPORT_PROMPT_VERSION = "job-suitability-report-v1"
+JOB_REPORT_PROMPT_VERSION = "job-suitability-report-v2"
 
 
 JOB_REPORT_SYSTEM_PROMPT = """
@@ -47,6 +48,46 @@ Rules:
 10. Do not create a numerical match score.
 11. Preserve the supplied job source ID exactly.
 12. Return only JSON matching the supplied schema.
+13. Do not infer personal weaknesses, behavioral tendencies, dependencies or limitations that are not explicitly supported by the supplied evidence.
+14. Experience with a technique does not imply over-reliance on that technique.
+15. Using frameworks, libraries, APIs, or existing software does not imply dependence on existing codebases.
+16. Risks must arise from a concrete mismatch between an explicit job requirement and supplied candidate evidence.
+17. When evidence only establishes uncertainty or absence of information, describe it as "not evidenced in the supplied materials", not as an established deficiency.
+18. Candidate expertise in a technology must never be interpreted as over-reliance, inflexibility, dependence, or limited adaptability unless
+the supplied evidence explicitly establishes that limitation.
+19. A strength, gap, or risk that compares the candidate to the job must be supported by evidence from both the candidate and the job,
+either directly or through a supplied comparison evidence item.
+
+Evidence citation rules:
+
+1. Every evidence_id must be copied EXACTLY from an evidence_id provided in the evidence bundle.
+2. Never construct, infer, abbreviate, rename, or modify an evidence_id.
+3. A warning code or evidence label is NOT automatically an evidence_id.
+4. If no supplied evidence_id supports a statement, omit the statement.
+5. Before returning the JSON, verify that every evidence_id appears verbatim in the supplied evidence bundle.
+6. Deterministic warnings with codes beginning with "unknown_" represent missing or ambiguous job metadata.
+7. Do not interpret these warnings as candidate weaknesses, gaps, or risks. They may be mentioned only as uncertainty affecting confidence.
+8. When several evidence items are available, cite the evidence that most directly supports the statement. Do not cite company-background evidence
+for role-requirement claims when explicit requirement evidence is available.
+
+Finding-level grounding rules:
+
+1. Every strength represents an alignment between the candidate and the job.
+   Therefore every strength MUST cite:
+   - at least one candidate evidence_id AND at least one job evidence_id,
+   OR
+   - at least one supplied alignment comparison evidence_id such as
+     comparison:semantic:*, comparison:matched_roles,
+     comparison:matched_skills, or comparison:required_keywords.
+2. Candidate evidence alone is NEVER sufficient for a strength. Example INVALID strength evidence_ids: ["candidate:skills"] ["candidate:project:0"]
+3. Job evidence alone is NEVER sufficient for a strength. Example INVALID strength evidence_ids: ["job:description:7"]
+4. Example VALID strength evidence_ids: ["candidate:skills", "job:description:7"]
+5. Example VALID strength using supplied comparison evidence: ["comparison:semantic:1"]
+6. Do not report a candidate capability as a strength merely because the candidate possesses it. It is a strength only when supplied evidence establishes
+relevance to this specific job.
+7. Every gap must compare a stated job requirement with supplied candidate evidence. Do not use unknown_* metadata warnings as gaps.
+8. Every risk must describe a concrete candidate-job mismatch. Candidate evidence alone cannot establish a risk.
+9. Before returning JSON, inspect EACH individual strength, gap, and risk and remove any finding that does not satisfy these rules.
 """.strip()
 
 
@@ -64,11 +105,14 @@ class JobEvaluationGroundingError(JobEvaluationResponseError):
 
 class JobReportGenerator(Protocol):
     """Interface implemented by job report generators."""
+
     provider_name: str
     model_name: str
     prompt_version: str
-    async def generate(self, *, source_id: str, evidence_items: list[GroundingEvidenceItem]) -> JobSuitabilityReportDraft:
-        """Generate a structured suitability report."""
+
+    async def generate(self, *, source_id: str, evidence_items: list[GroundingEvidenceItem], previous_report: JobSuitabilityReportDraft | None = None,
+                       validation_feedback: str | None = None) -> JobSuitabilityReportDraft:
+        """Generate or repair a structured suitability report."""
 
 
 def add_evidence_item(items: list[GroundingEvidenceItem], *, evidence_id: str, scope: EvidenceScope, label: str, text: str) -> None:
@@ -186,19 +230,19 @@ def add_comparison_evidence(items: list[GroundingEvidenceItem], *, ranked_job: R
         add_evidence_item(items, evidence_id="comparison:matched_skills", scope=EvidenceScope.COMPARISON,
                           label="Candidate skills found in job", text=", ".join(breakdown.matched_skills))
 
-    if breakdown.missing_skills:
-        add_evidence_item(items, evidence_id="comparison:unmentioned_candidate_skills", scope=EvidenceScope.COMPARISON,
-                          label="Candidate skills not mentioned by job", text=", ".join(breakdown.missing_skills))
-
     if decision.matched_required_keywords:
         add_evidence_item(items, evidence_id="comparison:required_keywords", scope=EvidenceScope.COMPARISON,
                           label="Matched required keywords", text=", ".join(decision.matched_required_keywords))
 
+    seen_warning_ids: set[str] = set()
     for index, warning in enumerate(decision.warnings):
         warning_evidence = (" ".join(warning.evidence) if warning.evidence else warning.message)
-        add_evidence_item(items, evidence_id=f"comparison:warning:{index}", scope=EvidenceScope.COMPARISON, label=warning.code.value,
-                          text=(f"{warning.message} "
-                                f"Evidence: {warning_evidence}"))
+        evidence_id = (f"comparison:{warning.code.value}")
+        if evidence_id in seen_warning_ids:
+            evidence_id = (f"comparison:{warning.code.value}:{index}")
+
+        seen_warning_ids.add(evidence_id)
+        add_evidence_item(items, evidence_id=evidence_id, scope=EvidenceScope.COMPARISON, label=warning.code.value, text=(f"{warning.message} Evidence: {warning_evidence}"))
 
     for index, semantic_match in enumerate(ranked_job.semantic_matches):
         add_evidence_item(items, evidence_id=(f"comparison:semantic:{index}"), scope=EvidenceScope.COMPARISON, label="Semantic relationship",
@@ -219,12 +263,54 @@ def build_job_evidence_bundle(*, profile: CandidateProfile, preferences: JobPref
     return evidence_items
 
 
-def build_job_report_prompt(*, source_id: str, evidence_items: list[GroundingEvidenceItem], schema: dict[str, Any]) -> str:
+def build_job_report_prompt(*, source_id: str, evidence_items: list[GroundingEvidenceItem], schema: dict[str, Any], previous_report: JobSuitabilityReportDraft | None = None,
+                            validation_feedback: str | None = None) -> str:
     """Build a structured evidence-grounded prompt."""
     evidence_payload = [evidence_item.model_dump(mode="json") for evidence_item in evidence_items]
-    return f""" Generate a suitability report for job source ID: {source_id}
-                The output must follow this JSON schema: <JSON_SCHEMA> {json.dumps(schema, ensure_ascii=False, indent=2)} </JSON_SCHEMA>
-                Use only the following evidence bundle: <EVIDENCE_BUNDLE> {json.dumps(evidence_payload, ensure_ascii=False, indent=2)} </EVIDENCE_BUNDLE>""".strip()
+    repair_section = ""
+    if previous_report is not None and validation_feedback is not None:
+        repair_section = f"""
+                             <REPAIR_TASK>
+                             The previous report failed deterministic grounding validation.
+
+                             Validation feedback:
+                             {validation_feedback}
+
+                             Previous strengths:
+                             {json.dumps([{"title": strength.title, "evidence_ids": strength.evidence_ids} for strength in previous_report.strengths], ensure_ascii=False)}
+
+                             Repair the report.
+
+                             Important:
+                             - Keep the source_id unchanged.
+                             - Use only evidence IDs supplied in the evidence bundle.
+                             - Do not merely add arbitrary evidence IDs to make validation pass.
+                             - Every cited evidence ID must genuinely support the finding.
+                             - Every strength must compare candidate evidence with job evidence,
+                             or use a supplied alignment comparison such as comparison:semantic:*,
+                             comparison:matched_roles, comparison:matched_skills, or
+                             comparison:required_keywords.
+                             - Remove a strength, gap, or risk if it cannot be sufficiently grounded.
+                             - Candidate-only evidence is not sufficient for a strength.
+                             - Job-only evidence is not sufficient for a strength.
+                             </REPAIR_TASK>
+                        """
+
+    return f"""
+                Generate a suitability report for job source ID: {source_id}
+
+                The output must follow this JSON schema:
+                <JSON_SCHEMA>
+                {json.dumps(schema, ensure_ascii=False, indent=2)}
+                </JSON_SCHEMA>
+
+                {repair_section}
+
+                Use only the following evidence bundle:
+                <EVIDENCE_BUNDLE>
+                {json.dumps(evidence_payload, ensure_ascii=False, indent=2)}
+                </EVIDENCE_BUNDLE>
+            """.strip()
 
 
 def parse_job_report_response(response_content: str) -> JobSuitabilityReportDraft:
@@ -233,7 +319,10 @@ def parse_job_report_response(response_content: str) -> JobSuitabilityReportDraf
         return JobSuitabilityReportDraft.model_validate_json(response_content)
 
     except ValidationError as error:
-        raise JobEvaluationResponseError("The model returned an invalid job suitability report.") from error
+        details = "; ".join((f"{'.'.join(str(part) for part in issue['loc'])}: {issue['msg']}")
+            for issue in error.errors(include_url=False, include_input=False))
+
+        raise JobEvaluationResponseError(f"The model returned an invalid job suitability report. Validation errors: {details}") from error
 
 
 def collect_report_evidence_ids(report: JobSuitabilityReportDraft) -> list[str]:
@@ -254,30 +343,103 @@ def collect_report_evidence_ids(report: JobSuitabilityReportDraft) -> list[str]:
     return unique_ids
 
 
-def validate_report_grounding(*,report: JobSuitabilityReportDraft,expected_source_id: str,evidence_items: list[GroundingEvidenceItem]
-                               )-> tuple[list[GroundingEvidenceItem],JobReportGrounding]:
-    """Verify job identity and every cited evidence reference."""
+def validate_report_grounding(*, report: JobSuitabilityReportDraft, expected_source_id: str, evidence_items: list[GroundingEvidenceItem]
+                              ) -> tuple[JobSuitabilityReportDraft, list[GroundingEvidenceItem], JobReportGrounding]:
+    """Validate citations and remove insufficiently grounded findings."""
     if report.source_id != expected_source_id:
         raise JobEvaluationGroundingError("The model returned a report for a different job.")
 
     evidence_by_id = {evidence_item.evidence_id: evidence_item for evidence_item in evidence_items}
-    cited_ids = collect_report_evidence_ids(report)
-    unknown_ids = [evidence_id for evidence_id in cited_ids if evidence_id not in evidence_by_id]
+    # Validate all model-generated citation IDs before using them.
+    original_cited_ids = collect_report_evidence_ids(report)
+    unknown_ids = [evidence_id for evidence_id in original_cited_ids if evidence_id not in evidence_by_id]
+
     if unknown_ids:
         raise JobEvaluationGroundingError("The model cited unknown evidence IDs: " + ", ".join(unknown_ids))
 
+    # A strength is a candidate-job alignment claim, so it needs
+    # evidence from both sides.
+    valid_strengths = [strength for strength in report.strengths if finding_has_required_scopes(finding=strength, evidence_by_id=evidence_by_id,
+                       require_candidate=True, require_job_context=True)]
+
+    # A gap is also a candidate-job comparison.
+    valid_gaps = [gap for gap in report.gaps if finding_has_required_scopes(finding=gap, evidence_by_id=evidence_by_id, require_candidate=True, require_job_context=True)]
+
+    # Risks should represent a concrete candidate-job mismatch,
+    # not speculation based only on candidate evidence.
+    valid_risks = [
+        risk
+        for risk in report.risks
+        if finding_has_required_scopes(finding=risk, evidence_by_id=evidence_by_id, require_candidate=True, require_job_context=True)]
+
+    # JobSuitabilityReportDraft requires at least one useful strength.
+    if not valid_strengths:
+        valid_strengths = build_fallback_strengths(evidence_items)
+
+    if not valid_strengths:
+        raise JobEvaluationGroundingError("No sufficiently grounded strengths were generated and no trusted comparison evidence was available for a fallback strength.")
+    cleaned_report = report.model_copy(update={"strengths": valid_strengths, "gaps": valid_gaps, "risks": valid_risks,})
+
+    # Recalculate citations after removing invalid findings.
+    cited_ids = collect_report_evidence_ids(cleaned_report)
     cited_items = [evidence_by_id[evidence_id] for evidence_id in cited_ids]
     cited_scopes = {evidence_item.scope for evidence_item in cited_items}
+
     if EvidenceScope.CANDIDATE not in cited_scopes:
         raise JobEvaluationGroundingError("The report does not cite candidate evidence.")
 
     if EvidenceScope.JOB not in cited_scopes:
         raise JobEvaluationGroundingError("The report does not cite job evidence.")
 
-    return (cited_items,JobReportGrounding(available_evidence_count=len(evidence_items), cited_evidence_count=len(cited_items),
-                                           candidate_citation_count=sum(evidence_item.scope == EvidenceScope.CANDIDATE for evidence_item in cited_items),
-                                                 job_citation_count=sum(evidence_item.scope == EvidenceScope.JOB for evidence_item in cited_items),
-                                          comparison_citation_count=sum(evidence_item.scope == EvidenceScope.COMPARISON for evidence_item in cited_items)))
+    grounding = JobReportGrounding(available_evidence_count=len(evidence_items), cited_evidence_count=len(cited_items),
+                                   candidate_citation_count=sum(evidence_item.scope == EvidenceScope.CANDIDATE for evidence_item in cited_items),
+                                   job_citation_count=sum(evidence_item.scope == EvidenceScope.JOB for evidence_item in cited_items),
+                                   comparison_citation_count=sum(evidence_item.scope == EvidenceScope.COMPARISON for evidence_item in cited_items))
+
+    return (cleaned_report, cited_items, grounding)
+
+def finding_has_required_scopes(*, finding: GroundedFinding, evidence_by_id: dict[str, GroundingEvidenceItem], require_candidate: bool, require_job_context: bool) -> bool:
+    """Return whether a finding cites sufficient comparison evidence."""
+    cited_items = [evidence_by_id[evidence_id] for evidence_id in finding.evidence_ids]
+    scopes = {evidence_item.scope for evidence_item in cited_items}
+    has_alignment_comparison = any(evidence_id.startswith(("comparison:semantic:", "comparison:matched_roles", "comparison:matched_skills", "comparison:required_keywords"))
+                                   for evidence_id in finding.evidence_ids)
+
+    has_candidate_context = (EvidenceScope.CANDIDATE in scopes or has_alignment_comparison)
+    has_job_context = (EvidenceScope.JOB in scopes or has_alignment_comparison)
+
+    if (require_candidate and not has_candidate_context):
+        return False
+
+    if (require_job_context and not has_job_context):
+        return False
+
+    return True
+
+def build_fallback_strengths(evidence_items: list[GroundingEvidenceItem]) -> list[GroundedFinding]:
+    """Build conservative strengths from trusted comparison evidence."""
+    strengths: list[GroundedFinding] = []
+    semantic_strength_added = False
+
+    for evidence_item in evidence_items:
+        if evidence_item.evidence_id == "comparison:matched_skills":
+            strengths.append(GroundedFinding(title="Matched Technical Skills", explanation=("The deterministic comparison found candidate skills that are also relevant to the job."),
+                                             evidence_ids=[evidence_item.evidence_id]))
+
+        elif evidence_item.evidence_id == "comparison:matched_roles":
+            strengths.append(GroundedFinding(title="Role Alignment", explanation=("The deterministic comparison found alignment between the candidate's target roles and this job."),
+                                             evidence_ids=[evidence_item.evidence_id]))
+
+        elif (evidence_item.evidence_id.startswith("comparison:semantic:") and not semantic_strength_added):
+            strengths.append(GroundedFinding(title="Relevant Experience Alignment", explanation=("Candidate evidence shows semantic alignment with experience or requirements from this job."),
+                                             evidence_ids=[evidence_item.evidence_id]))
+
+            semantic_strength_added = True
+
+        if len(strengths) >= 3:
+            break
+
+    return strengths
 
 
 class OllamaJobReportGenerator:
@@ -288,13 +450,16 @@ class OllamaJobReportGenerator:
         self.model_name = model_name
         self._client = AsyncClient(host=base_url, timeout=timeout_seconds)
 
-    async def generate(self, *, source_id: str, evidence_items: list[GroundingEvidenceItem]) -> JobSuitabilityReportDraft:
+    async def generate(self, *, source_id: str, evidence_items: list[GroundingEvidenceItem], previous_report: JobSuitabilityReportDraft | None = None,
+                           validation_feedback: str | None = None) -> JobSuitabilityReportDraft:
         """Generate and validate one structured report."""
-        report_schema = (JobSuitabilityReportDraft.model_json_schema())
-        prompt = build_job_report_prompt(source_id=source_id, evidence_items=evidence_items, schema=report_schema)
+        report_schema = JobSuitabilityReportDraft.model_json_schema()
+
+        prompt = build_job_report_prompt(source_id=source_id, evidence_items=evidence_items, schema=report_schema, previous_report=previous_report,
+                                         validation_feedback=validation_feedback)
         try:
             response = await self._client.chat(model=self.model_name, messages=[{"role": "system","content": JOB_REPORT_SYSTEM_PROMPT}, {"role": "user", "content": prompt}],
-                                               format=report_schema, options={"temperature": 0, "seed": 42})
+                                                   format=report_schema, options={"temperature": 0, "seed": 42, "num_predict": 2048})
 
         except (ResponseError, httpx.HTTPError, OSError) as error:
             raise JobEvaluationModelUnavailableError("The configured job evaluation model could not be reached.") from error
@@ -329,7 +494,13 @@ class JobEvaluationService:
 
             try:
                 report = await self.generator.generate(source_id=job.source_id, evidence_items=evidence_items)
-                cited_evidence,grounding = validate_report_grounding(report=report, expected_source_id=job.source_id, evidence_items=evidence_items)
+                try:
+                    report, cited_evidence, grounding = (validate_report_grounding(report=report, expected_source_id=job.source_id, evidence_items=evidence_items))
+
+                except JobEvaluationGroundingError as grounding_error:
+                    repaired_report = await self.generator.generate(source_id=job.source_id, evidence_items=evidence_items, previous_report=report,
+                                                                    validation_feedback=str(grounding_error))
+                    report, cited_evidence, grounding = (validate_report_grounding(report=repaired_report, expected_source_id=job.source_id, evidence_items=evidence_items))
 
             except JobEvaluationModelUnavailableError:
                 raise

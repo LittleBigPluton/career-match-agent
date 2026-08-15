@@ -49,7 +49,14 @@ class FakeJobReportGenerator:
 
 
 class InvalidCitationGenerator(FakeJobReportGenerator):
-    async def generate(self,*,source_id: str,evidence_items: list[GroundingEvidenceItem]) -> JobSuitabilityReportDraft:
+    async def generate(
+    self,
+    *,
+    source_id: str,
+    evidence_items: list[GroundingEvidenceItem],
+    previous_report: JobSuitabilityReportDraft | None = None,
+    validation_feedback: str | None = None,
+) -> JobSuitabilityReportDraft:
         del evidence_items
 
         return JobSuitabilityReportDraft(source_id=source_id, recommendation=JobRecommendation.MATCH, confidence=EvaluationConfidence.MEDIUM,
