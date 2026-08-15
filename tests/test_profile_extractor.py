@@ -8,9 +8,10 @@ from career_match_agent.services.profile_extractor import (
     ProfileResponseValidationError,
     build_candidate_profile_prompt,
     parse_candidate_profile_response,
-    prepare_cv_text,
+    prepare_cv_text
 )
 
+from career_match_agent.models.candidate import CandidateProfile
 
 def test_prepare_cv_text_removes_null_characters() -> None:
     prepared_text = prepare_cv_text("Machine\x00 Learning Engineer", maximum_characters=100)
@@ -53,3 +54,9 @@ def test_profile_prompt_contains_schema_and_cv_text() -> None:
     assert "<JSON_SCHEMA>" in prompt
     assert "<CV_TEXT_JSON_STRING>" in prompt
     assert "Python and PyTorch experience" in prompt
+
+def test_candidate_profile_skills_are_atomic() -> None:
+    profile = CandidateProfile(skills=["Python", "PyTorch", "FastAPI", "SQL", "AWS EC2"])
+    assert "Python" in profile.skills
+    assert "PyTorch" in profile.skills
+    assert not any(":" in skill for skill in profile.skills)
