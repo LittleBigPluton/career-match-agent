@@ -475,3 +475,13 @@ External job listings may change or become unavailable, and LLM-generated explan
 ---
 
 ## License
+
+CareerMatch Agent is licensed under the **GNU Affero General Public License v3.0 only (`AGPL-3.0-only`)**.
+
+You may use, study, modify, redistribute, and use the software commercially, subject to the terms of the AGPLv3.
+
+The AGPL includes copyleft requirements for modified versions of the software, including when a modified version is made available for users to interact with over a network.
+
+See the [LICENSE](LICENSE) file for the complete license terms.
+
+Copyright © 2026 A. Umut Gökdemir.
