@@ -8,7 +8,8 @@ version = "0.1.0"
 description = "Explainable AI agent for CV-based job search and recommendation"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
-license = { text = "MIT" }
+license = "AGPL-3.0-only"
+license-files = ["LICENSE", "COPYRIGHT"]
 authors = [
     { name = "A. Umut Gokdemir" }
 ]
