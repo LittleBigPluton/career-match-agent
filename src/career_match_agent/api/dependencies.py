@@ -1,37 +1,36 @@
 from career_match_agent.core.config import get_settings
 from career_match_agent.services.profile_extractor import (
     CandidateProfileExtractor,
-    OllamaCandidateProfileExtractor
+    StructuredCandidateProfileExtractor
 )
-
 from career_match_agent.providers.arbeitnow import ArbeitnowJobProvider
 from career_match_agent.providers.base import JobProvider
 from functools import lru_cache
-
 from career_match_agent.services.embedding import (
     EmbeddingProvider,
     SentenceTransformerEmbeddingProvider
 )
-
 from career_match_agent.services.job_evaluator import (
     JobReportGenerator,
-    OllamaJobReportGenerator
+    StructuredJobReportGenerator
 )
-
 from career_match_agent.services.search_planner import (
-    OllamaSearchPlanner,
-    SearchPlanner
+    SearchPlanner,
+    StructuredSearchPlanner
 )
+from career_match_agent.providers.llm.base import StructuredLLMProvider
+from career_match_agent.providers.llm.factory import create_llm_provider
 
+
+@lru_cache(maxsize=1)
+def get_llm_provider() -> StructuredLLMProvider:
+    settings = get_settings()
+    return create_llm_provider(settings)
 
 def get_profile_extractor() -> CandidateProfileExtractor:
     """Create the configured candidate-profile extractor."""
     settings = get_settings()
-    return OllamaCandidateProfileExtractor(
-        base_url=settings.ollama_base_url,
-        model_name=settings.ollama_model,
-        timeout_seconds=settings.ollama_timeout_seconds,
-        maximum_cv_characters=settings.max_cv_text_characters)
+    return StructuredCandidateProfileExtractor(llm_provider=get_llm_provider(), maximum_cv_characters=(settings.max_cv_text_characters))
 
 def get_job_provider() -> JobProvider:
     """Create the configured job provider."""
@@ -54,10 +53,8 @@ def get_embedding_provider() -> EmbeddingProvider:
 
 def get_job_report_generator() -> JobReportGenerator:
     """Create the configured job report generator."""
-    settings = get_settings()
-    return OllamaJobReportGenerator(base_url=settings.ollama_base_url, model_name=settings.job_evaluation_model, timeout_seconds=(settings.job_evaluation_timeout_seconds))
+    return StructuredJobReportGenerator(llm_provider=get_llm_provider())
 
 def get_search_planner() -> SearchPlanner:
     """Create the configured agentic search planner."""
-    settings = get_settings()
-    return OllamaSearchPlanner(base_url=settings.ollama_base_url, model_name=settings.search_planner_model, timeout_seconds=(settings.search_planner_timeout_seconds))
+    return StructuredSearchPlanner(llm_provider=get_llm_provider())
