@@ -1,10 +1,8 @@
 import json
 from typing import Any, Protocol
-
-import httpx
-from ollama import AsyncClient, ResponseError
 from pydantic import ValidationError
 
+from career_match_agent.providers.llm.base import StructuredLLMProvider
 from career_match_agent.models.candidate import CandidateProfile
 
 
@@ -86,11 +84,25 @@ class ProfileResponseValidationError(ProfileExtractionError):
 
 class CandidateProfileExtractor(Protocol):
     """Interface implemented by candidate-profile extraction services."""
-    provider_name: str
-    model_name: str
-    prompt_version: str
+
+    @property
+    def provider_name(self) -> str:
+        """Return the underlying LLM provider name."""
+        ...
+
+    @property
+    def model_name(self) -> str:
+        """Return the configured model name."""
+        ...
+
+    @property
+    def prompt_version(self) -> str:
+        """Return the profile extraction prompt version."""
+        ...
+
     async def extract(self, cv_text: str) -> CandidateProfile:
         """Extract a candidate profile from CV text."""
+        ...
 
 
 def prepare_cv_text(cv_text: str, *, maximum_characters: int) -> str:
@@ -135,34 +147,27 @@ def parse_candidate_profile_response(response_content: str) -> CandidateProfile:
     except ValidationError as error:
         raise ProfileResponseValidationError("The model returned an invalid candidate-profile response.") from error
 
-class OllamaCandidateProfileExtractor:
-    """Extract candidate profiles using a local Ollama model."""
-    provider_name = "ollama"
-    prompt_version = PROFILE_PROMPT_VERSION
+class StructuredCandidateProfileExtractor:
+    """Extract profiles using any structured LLM provider."""
 
-    def __init__(self, *, base_url: str, model_name: str, timeout_seconds: float, maximum_cv_characters: int) -> None:
-        self.model_name = model_name
+    def __init__(self, *, llm_provider: StructuredLLMProvider, maximum_cv_characters: int) -> None:
+        self.llm_provider = llm_provider
         self.maximum_cv_characters = maximum_cv_characters
-        self._client = AsyncClient(host=base_url, timeout=timeout_seconds)
+
+    @property
+    def provider_name(self) -> str:
+        return self.llm_provider.provider_name
+
+    @property
+    def model_name(self) -> str:
+        return self.llm_provider.model_name
+
+    @property
+    def prompt_version(self) -> str:
+        return PROFILE_PROMPT_VERSION
 
     async def extract(self, cv_text: str) -> CandidateProfile:
-        """Extract and validate a candidate profile."""
         prepared_text = prepare_cv_text(cv_text, maximum_characters=self.maximum_cv_characters)
-        profile_schema = CandidateProfile.model_json_schema()
-        prompt = build_candidate_profile_prompt(cv_text=prepared_text, schema=profile_schema)
-        try:
-            response = await self._client.chat(
-                model=self.model_name,
-                messages=[{"role": "system", "content": SYSTEM_PROMPT},{"role": "user", "content": prompt}],
-                format=profile_schema,
-                options={"temperature": 0, "seed": 42})
-
-        except (ResponseError, httpx.HTTPError, OSError) as error:
-            raise ProfileModelUnavailableError("The configured Ollama model could not be reached.") from error
-
-        response_content = response.message.content
-
-        if not response_content:
-            raise ProfileResponseValidationError("The model returned an empty response.")
-
-        return parse_candidate_profile_response(response_content)
+        prompt = build_candidate_profile_prompt(cv_text=prepared_text, schema=CandidateProfile.model_json_schema())
+        result = await self.llm_provider.generate_structured(system_prompt=SYSTEM_PROMPT, user_prompt=prompt, response_model=CandidateProfile)
+        return result

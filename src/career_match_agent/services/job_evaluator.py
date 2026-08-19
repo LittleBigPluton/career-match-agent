@@ -25,7 +25,7 @@ from career_match_agent.models.evaluation import (
 from career_match_agent.models.hiring_agent import CandidateEvidenceSignal
 from career_match_agent.models.ranking import RankedJob
 from career_match_agent.services.semantic_ranker import split_text_into_chunks
-
+from career_match_agent.providers.llm.base import StructuredLLMProvider
 
 JOB_REPORT_PROMPT_VERSION = "job-suitability-report-v2"
 
@@ -442,33 +442,32 @@ def build_fallback_strengths(evidence_items: list[GroundingEvidenceItem]) -> lis
     return strengths
 
 
-class OllamaJobReportGenerator:
-    """Generate structured reports with a local Ollama model."""
-    provider_name = "ollama"
+class StructuredJobReportGenerator:
+    """Generate grounded reports using any LLM provider."""
     prompt_version = JOB_REPORT_PROMPT_VERSION
-    def __init__(self, *, base_url: str, model_name: str, timeout_seconds: float) -> None:
-        self.model_name = model_name
-        self._client = AsyncClient(host=base_url, timeout=timeout_seconds)
+    def __init__(self, llm_provider: StructuredLLMProvider) -> None:
+        self.llm_provider = llm_provider
+        self.provider_name = (llm_provider.provider_name)
+        self.model_name = (llm_provider.model_name)
 
-    async def generate(self, *, source_id: str, evidence_items: list[GroundingEvidenceItem], previous_report: JobSuitabilityReportDraft | None = None,
-                           validation_feedback: str | None = None) -> JobSuitabilityReportDraft:
-        """Generate and validate one structured report."""
-        report_schema = JobSuitabilityReportDraft.model_json_schema()
+    async def generate(self, *, source_id: str, evidence_items: list[GroundingEvidenceItem],
+                       previous_report: JobSuitabilityReportDraft | None = None, validation_feedback: str | None = None) -> JobSuitabilityReportDraft:
+        prompt = build_job_report_prompt(source_id=source_id, evidence_items=evidence_items, schema=JobSuitabilityReportDraft.model_json_schema())
+        if previous_report is not None:
+            prompt += ("\n\n"
+                        "<PREVIOUS_REPORT>\n"
+                        f"{previous_report.model_dump_json(indent=2)}\n"
+                        "</PREVIOUS_REPORT>")
 
-        prompt = build_job_report_prompt(source_id=source_id, evidence_items=evidence_items, schema=report_schema, previous_report=previous_report,
-                                         validation_feedback=validation_feedback)
-        try:
-            response = await self._client.chat(model=self.model_name, messages=[{"role": "system","content": JOB_REPORT_SYSTEM_PROMPT}, {"role": "user", "content": prompt}],
-                                                   format=report_schema, options={"temperature": 0, "seed": 42, "num_predict": 2048})
+        if validation_feedback:
+            prompt += ("\n\n"
+                       "<VALIDATION_FEEDBACK>\n"
+                       f"{validation_feedback}\n"
+                       "</VALIDATION_FEEDBACK>\n\n"
+                       "Correct the previous report according to the validation "
+                       "feedback while using only the supplied evidence.")
 
-        except (ResponseError, httpx.HTTPError, OSError) as error:
-            raise JobEvaluationModelUnavailableError("The configured job evaluation model could not be reached.") from error
-
-        response_content = response.message.content
-        if not response_content:
-            raise JobEvaluationResponseError("The job evaluation model returned an empty response.")
-
-        return parse_job_report_response(response_content)
+        return await self.llm_provider.generate_structured(system_prompt=JOB_REPORT_SYSTEM_PROMPT, user_prompt=prompt, response_model=JobSuitabilityReportDraft)
 
 
 class JobEvaluationService:

@@ -16,6 +16,7 @@ from career_match_agent.models.job import (
     JobSearchMatchScope
 )
 from career_match_agent.models.matching import JobFilterPolicy
+from career_match_agent.providers.llm.base import StructuredLLMProvider
 
 
 SEARCH_PLANNER_PROMPT_VERSION = "job-search-planner-v1"
@@ -142,33 +143,18 @@ def build_job_search_query(*, plan: AgentSearchPlan, preferences: JobPreferences
                           employment_types=preferences.employment_types, maximum_results=plan.maximum_results, max_pages=plan.max_pages, match_scope=JobSearchMatchScope.TITLE_AND_TAGS)
 
 
-class OllamaSearchPlanner:
-    """Generate retrieval plans using a local Ollama model."""
-    provider_name = "ollama"
+class StructuredSearchPlanner:
+    provider_name: str
     prompt_version = SEARCH_PLANNER_PROMPT_VERSION
+    def __init__(self, llm_provider: StructuredLLMProvider) -> None:
+        self.llm_provider = llm_provider
+        self.provider_name = (llm_provider.provider_name)
+        self.model_name = (llm_provider.model_name)
 
-    def __init__(self, *, base_url: str, model_name: str, timeout_seconds: float) -> None:
-        self.model_name = model_name
-        self._client = AsyncClient(host=base_url, timeout=timeout_seconds)
-
-    async def plan(self, *, profile: CandidateProfile, preferences: JobPreferences, attempt: int, maximum_attempts: int, previous_plan: AgentSearchPlan | None, accepted_count: int | None) -> AgentSearchPlan:
-        """Generate one structured retrieval plan."""
-        plan_schema = AgentSearchPlan.model_json_schema()
+    async def plan(self, *, profile: CandidateProfile, preferences: JobPreferences, attempt: int, maximum_attempts: int,
+                   previous_plan: AgentSearchPlan | None, accepted_count: int | None) -> AgentSearchPlan:
         prompt = build_search_planner_prompt(profile=profile, preferences=preferences, attempt=attempt, maximum_attempts=maximum_attempts,
-                                             previous_plan=previous_plan, accepted_count=accepted_count, schema=plan_schema)
+                                             previous_plan=previous_plan, accepted_count=accepted_count, schema=(AgentSearchPlan.model_json_schema()))
 
-        try:
-            response = await self._client.chat(
-                model=self.model_name,
-                messages=[{"role": "system", "content": SEARCH_PLANNER_SYSTEM_PROMPT}, {"role": "user", "content": prompt}],
-                format=plan_schema,
-                options={"temperature": 0, "seed": 42})
-
-        except (ResponseError, httpx.HTTPError, OSError) as error:
-            raise SearchPlannerUnavailableError("The configured search planner could not be reached.") from error
-
-        response_content = response.message.content
-        if not response_content:
-            raise SearchPlannerResponseError("The search planner returned an empty response.")
-
-        return parse_search_plan_response(response_content)
+        return await self.llm_provider.generate_structured(
+            system_prompt=(SEARCH_PLANNER_SYSTEM_PROMPT), user_prompt=prompt, response_model=AgentSearchPlan)
