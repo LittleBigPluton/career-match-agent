@@ -5,8 +5,10 @@ import httpx
 
 from career_match_agent.models.candidate import EmploymentType
 from career_match_agent.models.job import JobSearchQuery
-from career_match_agent.providers.arbeitnow import ArbeitnowJobProvider
-
+from career_match_agent.providers.arbeitnow import (
+    ArbeitnowJobProvider,
+    ArbeitnowRawJob
+)
 
 def build_response_payload() -> dict[str, Any]:
     return {"data": [{"slug": "machine-learning-engineer-123",
@@ -66,3 +68,16 @@ def test_arbeitnow_provider_sends_visa_filter() -> None:
         assert result.jobs[0].visa_sponsorship is True
 
     asyncio.run(run_test())
+
+def test_arbeitnow_accepts_mapping_job_types() -> None:
+    raw_job = ArbeitnowRawJob.model_validate({"slug": "example-job",
+                                              "company_name": "Example GmbH",
+                                              "title": "Software Engineer",
+                                              "description": "<p>Build software.</p>",
+                                              "remote": False,
+                                              "url": "https://example.com/job",
+                                              "tags": ["Engineering"],
+                                              "job_types": {"1": "professional / experienced"},
+                                              "location": "Berlin", "created_at": 1787216434})
+
+    assert raw_job.job_types == ["professional / experienced"]

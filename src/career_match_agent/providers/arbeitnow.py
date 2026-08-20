@@ -7,7 +7,8 @@ from pydantic import (
     Field,
     HttpUrl,
     TypeAdapter,
-    ValidationError
+    ValidationError,
+    field_validator
 )
 
 from career_match_agent.models.job import (
@@ -43,6 +44,18 @@ class ArbeitnowRawJob(ArbeitnowResponseModel):
     job_types: list[str] = Field(default_factory=list)
     location: str | None = None
     created_at: int | float | None = None
+
+    @field_validator("job_types", mode="before")
+    @classmethod
+    def normalize_job_types_shape(cls, value: object) -> object:
+        """Normalize inconsistent Arbeitnow job_types payloads."""
+        if value is None:
+            return []
+
+        if isinstance(value, dict):
+            return [str(job_type) for job_type in value.values()]
+
+        return value
 
 class ArbeitnowLinks(ArbeitnowResponseModel):
     """Pagination links returned by Arbeitnow."""
