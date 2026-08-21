@@ -18,7 +18,7 @@ class Settings(BaseSettings):
 
     llm_provider: Literal["ollama", "openai", "gemini"] = "ollama"
     llm_model: str = "gemma3:4b"
-    llm_timeout_seconds: float = Field(default=1200.0, gt=0,)
+    llm_timeout_seconds: float = Field(default=1200.0, gt=0)
 
     openai_api_key: SecretStr | None = None
     gemini_api_key: SecretStr | None = None
@@ -29,18 +29,39 @@ class Settings(BaseSettings):
     # Candidate / assessment limits
     # ------------------------------------------------------------------
 
-    max_cv_text_characters: int = Field(default=30_000, ge=1,)
+    max_cv_text_characters: int = Field(default=30_000, ge=1)
     max_hiring_agent_report_bytes: int = Field(default=1_048_576, ge=1024)
 
     # ------------------------------------------------------------------
     # Job provider
     # ------------------------------------------------------------------
 
-    job_provider: str = "arbeitnow"
+    job_providers: list[str] = Field(default_factory=lambda: ["arbeitnow"])
+
+    # Arbeitnow
     arbeitnow_base_url: str = ("https://www.arbeitnow.com")
     arbeitnow_timeout_seconds: float = Field(default=1200.0, gt=0)
     arbeitnow_max_pages: int = Field(default=3, ge=1, le=10)
     http_user_agent: str = ("career-match-agent/0.1.0")
+
+    # Adzuna
+
+    adzuna_base_url: str = "https://api.adzuna.com"
+    adzuna_country: str = "de"
+    adzuna_app_id: str | None = None
+    adzuna_app_key: str | None = None
+    adzuna_timeout_seconds: float = Field(default=20.0, gt=0)
+    adzuna_results_per_page: int = Field(default=20, ge=1, le=50)
+    adzuna_max_requests_per_search: int = Field(default=6, ge=1, le=20)
+
+    # Jooble
+
+    jooble_base_url: str = "https://de.jooble.org"
+    jooble_api_key: str | None = None
+    jooble_default_location: str = "Germany"
+    jooble_timeout_seconds: float = Field(default=20.0, gt=0)
+    jooble_results_per_page: int = Field(default=20, ge=1, le=50)
+    jooble_max_requests_per_search: int = Field(default=4, ge=1, le=10)
 
     # ------------------------------------------------------------------
     # Embeddings
