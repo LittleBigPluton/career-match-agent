@@ -1,8 +1,6 @@
 import json
 from typing import Any, Protocol
 
-import httpx
-from ollama import AsyncClient, ResponseError
 from pydantic import ValidationError
 
 from career_match_agent.models.agent import AgentSearchPlan

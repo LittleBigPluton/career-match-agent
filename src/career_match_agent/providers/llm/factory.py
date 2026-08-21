@@ -1,7 +1,6 @@
 from career_match_agent.core.config import Settings
 from career_match_agent.providers.llm.base import (
     LLMProviderConfigurationError,
-    LLMProviderName,
     StructuredLLMProvider
 )
 from career_match_agent.providers.llm.gemini import GeminiStructuredLLMProvider

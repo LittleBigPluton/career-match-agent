@@ -24,7 +24,6 @@ from career_match_agent.models.ranking import (
 )
 from career_match_agent.services.job_evaluator import (
     JobEvaluationService,
-    JobReportGenerator,
     build_job_evidence_bundle
 )
 from career_match_agent.services.job_normalizer import create_job_fingerprint

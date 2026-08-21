@@ -117,13 +117,6 @@ def test_native_and_fluent_languages_are_not_merged() -> None:
     assert by_language["German"].minimum_level == "native"
     assert by_language["English"].minimum_level == "C1"
 
-def test_native_and_fluent_languages_are_not_merged() -> None:
-    job = make_job(title="Support Engineer", description=("You are native in German and fluent in English."))
-    requirements = detect_language_requirements(job)
-    by_language = {requirement.language: requirement for requirement in requirements}
-    assert by_language["German"].minimum_level == "native"
-    assert by_language["English"].minimum_level == "C1"
-
 def test_munich_matches_muenchen_metro_location() -> None:
     job = make_job(title="Machine Learning Engineer", location="Garching bei München, Bayern", description="Build ML systems.")
     assert location_matches(job, ["Munich"])
