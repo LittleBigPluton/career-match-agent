@@ -4,23 +4,23 @@ CareerMatch Agent is an explainable AI-assisted job search and recommendation sy
 
 The system takes a candidate profile derived from a CV, combines it with job preferences, searches available jobs, filters unsuitable roles, ranks relevant opportunities, and produces grounded suitability reports.
 
-> Current release: `v0.1.0-alpha`
+> Current release: `v0.2.0-alpha`
 
 ---
 
 ## Overview
 
-Typical job-search assistants rely heavily on LLM judgment.
+Typical job-search assistants rely heavily on unconstrained LLM judgment.
 
 CareerMatch Agent uses a hybrid architecture instead:
 
 - deterministic rules enforce hard constraints,
 - embeddings rank jobs semantically,
 - structured scoring combines several matching signals,
-- LLMs generate explanations,
-- deterministic grounding validation checks LLM claims.
+- LLMs generate structured candidate profiles, search plans, and grounded explanations,
+- deterministic grounding validation checks LLM-generated evaluation claims.
 
-The LLM is therefore used as an evaluator and explanation layer rather than as the final authority for every decision.
+LLMs assist with interpretation, planning, and explanation, while explicit user constraints and core matching rules remain deterministic.
 
 ---
 
@@ -50,9 +50,44 @@ Ranked Job Recommendations
 
 The workflow is orchestrated through a bounded LangGraph agent.
 
+A single configured LLM provider/model is used consistently across LLM-dependent stages of the workflow.
+
 ---
 
 ## Features
+
+### Multi-LLM Provider Support
+
+`v0.2.0-alpha` introduces a common structured LLM provider layer.
+
+Supported providers:
+
+- Ollama
+- Google Gemini
+- OpenAI
+
+The active provider and model are selected globally through environment configuration.
+
+The selected provider is used for LLM-dependent stages including:
+
+- candidate profile extraction,
+- search planning,
+- bounded search replanning,
+- evidence-grounded job suitability evaluation.
+
+Non-LLM stages remain provider-independent:
+
+- PDF extraction,
+- job-provider retrieval,
+- deterministic filtering,
+- SentenceTransformer embeddings,
+- hybrid ranking,
+- LangGraph orchestration,
+- grounding validation.
+
+This keeps business logic independent from a specific LLM vendor and allows the complete workflow to switch providers without changing service code.
+
+---
 
 ### CV Processing
 
@@ -156,7 +191,7 @@ Example:
 
 ### Evidence-Grounded Evaluation
 
-Top-ranked jobs can be evaluated by an LLM using an explicit evidence bundle.
+Top-ranked jobs can be evaluated by the configured LLM using an explicit evidence bundle.
 
 Evidence can include:
 
@@ -236,10 +271,13 @@ Search attempts are bounded to prevent uncontrolled agent loops.
 * FastAPI
 * Pydantic
 
-### Agentic AI
+### Agentic AI / LLM
 
 * LangGraph
+* common structured LLM provider interface
 * Ollama
+* Google Gemini API
+* OpenAI API
 
 ### Machine Learning / Ranking
 
@@ -256,9 +294,9 @@ Search attempts are bounded to prevent uncontrolled agent loops.
 
 ### Infrastructure / Development
 
-* Ollama
 * Git
 * Linux
+* local or hosted LLM backends
 
 ---
 
@@ -284,13 +322,58 @@ Install the project:
 pip install -e ".[dev]"
 ```
 
+Create a local environment file:
+
+```bash
+cp .env.example .env
+```
+
+Do not commit `.env`.
+
 ---
 
-## Ollama Setup
+## LLM Provider Setup
+
+CareerMatch Agent `v0.2.0-alpha` supports one globally selected LLM provider/model per application configuration.
+
+Core settings:
+
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=ollama
+CAREER_MATCH_LLM_MODEL=gemma3:4b
+CAREER_MATCH_LLM_TIMEOUT_SECONDS=1200
+
+CAREER_MATCH_OLLAMA_BASE_URL=http://127.0.0.1:11434
+
+CAREER_MATCH_OPENAI_API_KEY=
+CAREER_MATCH_GEMINI_API_KEY=
+```
+
+Supported provider values:
+
+```text
+ollama
+gemini
+openai
+```
+
+Only credentials for the selected hosted provider are required.
+
+The active provider is shared across candidate profile extraction, agent search planning/replanning, and grounded job evaluation.
+
+### Ollama
+
+For local inference:
+
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=ollama
+CAREER_MATCH_LLM_MODEL=gemma3:4b
+CAREER_MATCH_OLLAMA_BASE_URL=http://127.0.0.1:11434
+```
 
 Install and start Ollama separately.
 
-Pull a supported model, for example:
+Pull the configured model:
 
 ```bash
 ollama pull gemma3:4b
@@ -302,7 +385,33 @@ Start Ollama if it is not already running:
 ollama serve
 ```
 
-Configure the model through your environment settings.
+### Gemini
+
+For Gemini API usage:
+
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=gemini
+CAREER_MATCH_LLM_MODEL=<supported-gemini-model>
+CAREER_MATCH_GEMINI_API_KEY=<your-api-key>
+```
+
+The model runs remotely through the Gemini API.
+
+Never commit API keys to version control.
+
+### OpenAI
+
+For OpenAI API usage:
+
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=openai
+CAREER_MATCH_LLM_MODEL=<supported-openai-model>
+CAREER_MATCH_OPENAI_API_KEY=<your-api-key>
+```
+
+The model runs remotely through the OpenAI API.
+
+Never commit API keys to version control.
 
 ---
 
@@ -327,6 +436,7 @@ http://127.0.0.1:8000/docs
 ```
 
 ---
+
 ## Main API Capabilities
 
 The project currently exposes API routes for:
@@ -349,6 +459,7 @@ The exact request schemas are available through the FastAPI OpenAPI documentatio
 
 For a complete end-to-end example including:
 
+- LLM provider selection
 - CV extraction
 - job preferences
 - optional HackerRank Hiring Agent integration
@@ -379,12 +490,14 @@ The benchmark is intended to make changes to the matching pipeline measurable ra
 
 ## Current Status
 
-`v0.1.0-alpha`
+`v0.2.0-alpha`
 
-The core pipeline is working end-to-end:
+The core pipeline is working end-to-end with configurable LLM backends:
 
 * CV extraction
 * structured profile generation
+* global Ollama / Gemini / OpenAI provider selection
+* structured LLM output validation
 * job retrieval
 * deterministic filtering
 * semantic ranking
@@ -395,27 +508,34 @@ The core pipeline is working end-to-end:
 The current release should be considered a technical alpha rather than a production-ready application.
 
 ---
+
 ## Privacy
 
 CareerMatch Agent processes CV-derived information that may contain personal or sensitive data.
 
-When using the default local Ollama configuration, LLM inference can remain on the user's machine. Optional external providers or tools may process data differently, and users should review their respective privacy policies before sending CV-derived information to them.
+With a local Ollama configuration, LLM inference can remain on the user's machine.
+
+When Gemini or OpenAI is selected, LLM-dependent workflow inputs are sent to the configured external API. Users should review the selected provider's privacy, retention, and data-processing terms before submitting CV-derived information.
 
 Generated files such as candidate profiles, agent requests, assessment reports, and job-evaluation outputs may contain personal information and should normally remain outside public version control.
+
+API keys must be stored in local environment configuration and must not be committed to the repository.
 
 ---
 
 ## Roadmap
 
-### v0.2 — Multi-LLM Support
+### v0.2.0-alpha — Multi-LLM Support
 
-Planned:
+Implemented:
 
-* common LLM provider interface
+* common structured LLM provider interface
 * Ollama provider
 * Gemini provider
 * OpenAI provider
-* configurable model selection
+* global provider/model configuration
+* shared provider injection across LLM-dependent services
+* provider-independent profile extraction, search planning, and evaluation services
 
 ### v0.3 — Automated User Workflow
 
@@ -440,6 +560,7 @@ The goal is to remove the need to manually call multiple internal API endpoints.
 ### Later
 
 * additional job providers
+* stronger provider-data normalization
 * persistence
 * better benchmarking and calibration
 * user interface
@@ -456,11 +577,13 @@ CareerMatch Agent follows several principles:
 
 1. Hard user constraints should be deterministic.
 2. LLM output should be structured.
-3. LLM claims should be evidence-grounded.
-4. Unknown or unsupported information should not be invented.
-5. Semantic ranking and deterministic matching should complement each other.
-6. Agent workflows should be bounded and observable.
-7. Evaluation should be measurable through benchmarks.
+3. LLM-dependent services should not be coupled to a specific vendor.
+4. One configured provider/model should be used consistently across the workflow.
+5. LLM claims should be evidence-grounded.
+6. Unknown or unsupported information should not be invented.
+7. Semantic ranking and deterministic matching should complement each other.
+8. Agent workflows should be bounded and observable.
+9. Evaluation should be measurable through benchmarks.
 
 ---
 
@@ -471,6 +594,8 @@ CareerMatch Agent is an experimental project.
 Generated recommendations should not be treated as definitive hiring or career decisions.
 
 External job listings may change or become unavailable, and LLM-generated explanations may still contain errors despite grounding and validation mechanisms.
+
+Hosted LLM providers are external services and may have their own availability, pricing, rate limits, privacy terms, and model lifecycle policies.
 
 ---
 
