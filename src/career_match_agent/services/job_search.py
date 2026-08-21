@@ -11,6 +11,8 @@ from career_match_agent.services.job_normalizer import (
     normalize_for_matching
 )
 
+from career_match_agent.models.candidate import WorkMode
+from career_match_agent.services.job_classifier import detect_work_modes
 
 def phrase_matches_text(phrase: str, text: str) -> bool:
     """Match a phrase directly or by all normalized tokens."""
@@ -54,8 +56,10 @@ def job_matches_query(job: JobPosting, query: JobSearchQuery) -> bool:
     if not job_matches_locations(job, query.locations):
         return False
 
-    if query.remote_only and job.remote is not True:
-        return False
+    if query.remote_only:
+        detected_work_modes = (detect_work_modes(job))
+        if WorkMode.REMOTE not in detected_work_modes:
+            return False
 
     if (query.visa_sponsorship is not None and job.visa_sponsorship is not query.visa_sponsorship):
         return False
