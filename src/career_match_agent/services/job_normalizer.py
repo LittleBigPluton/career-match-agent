@@ -4,6 +4,7 @@ import unicodedata
 from dataclasses import dataclass
 from html import unescape
 from html.parser import HTMLParser
+from datetime import UTC, datetime
 
 from career_match_agent.models.candidate import EmploymentType
 from career_match_agent.models.job import JobPosting
@@ -103,7 +104,6 @@ def deduplicate_jobs(jobs: list[JobPosting]) -> DeduplicationResult:
     seen_source_ids: set[str] = set()
     seen_fingerprints: set[str] = set()
     duplicate_count = 0
-
     for job in jobs:
         is_duplicate = (job.source_id in seen_source_ids or job.fingerprint in seen_fingerprints)
         if is_duplicate:
@@ -115,3 +115,22 @@ def deduplicate_jobs(jobs: list[JobPosting]) -> DeduplicationResult:
         unique_jobs.append(job)
 
     return DeduplicationResult(jobs=unique_jobs, duplicate_count=duplicate_count)
+
+def parse_iso_datetime(value: str | None) -> datetime | None:
+    """Parse an ISO timestamp and normalize naive values to UTC."""
+    if not value:
+        return None
+
+    normalized_value = value.strip()
+    if normalized_value.endswith("Z"):
+        normalized_value = (normalized_value[:-1] + "+00:00")
+
+    try:
+        parsed_datetime = datetime.fromisoformat(normalized_value)
+    except ValueError:
+        return None
+
+    if parsed_datetime.tzinfo is None:
+        parsed_datetime = parsed_datetime.replace(tzinfo=UTC)
+
+    return parsed_datetime
