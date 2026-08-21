@@ -1,16 +1,18 @@
 # Example Usage
 
-This guide demonstrates the current manual end-to-end workflow for **CareerMatch Agent `v0.1.0-alpha`**.
+This guide demonstrates the current manual end-to-end workflow for **CareerMatch Agent `v0.2.0-alpha`**.
 
-The goal is to start with a CV PDF and finish with a JSON file containing ranked job opportunities.
+The goal is to start with a CV PDF and finish with a JSON file containing ranked job opportunities and grounded suitability reports.
 
-The current alpha exposes the individual stages through FastAPI. A future release is planned to automate these steps behind a single user-facing workflow.
+`v0.2.0-alpha` supports a globally selected LLM provider. The same configured provider/model is used across LLM-dependent stages of the workflow.
 
 ---
 
 ## Workflow
 
 ```text
+Choose LLM Provider / Model
+   ↓
 CV PDF
    ↓
 Candidate Profile Extraction
@@ -20,6 +22,8 @@ Job Preferences
 Optional HackerRank Hiring Agent Assessment
    ↓
 CareerMatch Agent
+   ↓
+Job Search Planning
    ↓
 Job Search
    ↓
@@ -42,7 +46,12 @@ Before starting, make sure the following are installed:
 - Git
 - `curl`
 - `jq`
-- Ollama
+
+You also need one supported LLM backend:
+
+- Ollama for local inference, or
+- a Gemini API key, or
+- an OpenAI API key.
 
 Clone CareerMatch Agent:
 
@@ -64,34 +73,62 @@ Install the project:
 pip install -e ".[dev]"
 ```
 
-If the repository contains an environment template, create your local configuration:
+Create your local environment configuration:
 
 ```bash
 cp .env.example .env
 ```
 
-Review `.env.example` and configure the local settings required by your installation.
-
 Do not commit the resulting `.env` file.
 
 ---
 
-# 1. Ollama Setup
+# 1. Configure the LLM Provider
 
-CareerMatch Agent `v0.1.0-alpha` uses Ollama as its local LLM backend.
+CareerMatch Agent `v0.2.0-alpha` uses one globally selected LLM provider/model for all LLM-dependent stages.
 
-The project can be used with either:
+Core environment variables:
 
-- a standard system-wide Ollama installation, or
-- an isolated project-local Ollama runtime.
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=ollama
+CAREER_MATCH_LLM_MODEL=gemma3:4b
+CAREER_MATCH_LLM_TIMEOUT_SECONDS=1200
 
-The project-local setup is the configuration used during development and testing of this release.
+CAREER_MATCH_OLLAMA_BASE_URL=http://127.0.0.1:11434
 
----
+CAREER_MATCH_OPENAI_API_KEY=
+CAREER_MATCH_GEMINI_API_KEY=
+```
 
-### Standard Ollama Installation
+Supported provider values:
 
-If Ollama is installed system-wide, pull the configured model:
+```text
+ollama
+gemini
+openai
+```
+
+The selected provider is used for:
+
+- structured candidate profile extraction,
+- initial search planning,
+- bounded search replanning,
+- evidence-grounded job suitability evaluation.
+
+PDF parsing, Arbeitnow retrieval, deterministic filtering, embeddings, ranking, LangGraph orchestration, and grounding validation remain non-LLM stages.
+
+## 1.1 Ollama
+
+For local inference:
+
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=ollama
+CAREER_MATCH_LLM_MODEL=gemma3:4b
+CAREER_MATCH_LLM_TIMEOUT_SECONDS=1200
+CAREER_MATCH_OLLAMA_BASE_URL=http://127.0.0.1:11434
+```
+
+Pull the configured model:
 
 ```bash
 ollama pull gemma3:4b
@@ -103,23 +140,15 @@ Start Ollama:
 ollama serve
 ```
 
-If Ollama is already running as a background service, starting it again is not necessary.
-
-Verify the installed models with:
+Verify installed models:
 
 ```bash
 ollama list
 ```
 
-CareerMatch Agent expects the configured Ollama model and base URL to match the values in the local environment configuration.
+### Optional Project-Local Ollama Runtime
 
----
-
-### Project-Local Ollama Runtime
-
-For development, CareerMatch Agent was also tested with an isolated Ollama installation stored inside the project directory.
-
-This keeps the Ollama runtime, model files, temporary files, and local home directory separate from a system-wide Ollama installation.
+For development, CareerMatch Agent can also be used with an isolated Ollama installation stored inside the project directory.
 
 Start the local runtime with:
 
@@ -134,107 +163,70 @@ OLLAMA_NUM_PARALLEL=1 \
 "$PWD/.local-ollama/runtime/bin/ollama" serve
 ```
 
-This configuration:
-
-- stores Ollama-related files under `.local-ollama/`
-- keeps model files local to the project
-- keeps temporary files local to the project
-- disables Ollama cloud functionality
-- configures an 8192-token context window
-- limits Ollama to one loaded model at a time
-- limits inference to one parallel request
-
-This setup can be useful on machines with limited memory or when a reproducible project-local environment is preferred.
-
----
-
-### Pulling a Model with the Project-Local Runtime
-
-If the Ollama runtime is stored under `.local-ollama/runtime/`, use the same local environment variables when pulling models:
-
-```bash
-HOME="$PWD/.local-ollama/home" \
-OLLAMA_MODELS="$PWD/.local-ollama/models" \
-TMPDIR="$PWD/.local-ollama/tmp" \
-OLLAMA_NO_CLOUD=1 \
-"$PWD/.local-ollama/runtime/bin/ollama" pull gemma3:4b
-```
-
-Verify the locally installed models with:
-
-```bash
-HOME="$PWD/.local-ollama/home" \
-OLLAMA_MODELS="$PWD/.local-ollama/models" \
-"$PWD/.local-ollama/runtime/bin/ollama" list
-```
-
----
-
-### Ollama Runtime Configuration
-
-The development configuration uses:
-
-```text
-OLLAMA_NO_CLOUD=1
-OLLAMA_CONTEXT_LENGTH=8192
-OLLAMA_MAX_LOADED_MODELS=1
-OLLAMA_NUM_PARALLEL=1
-```
-
-These values are not mandatory for every machine.
-
-Users with more available CPU, RAM, or GPU resources may choose different values.
-
-The important requirement is that the selected model is available and that CareerMatch Agent can reach the local Ollama server.
-
----
-
-### Local Files and Version Control
-
-The project-local Ollama directory may contain:
-
-- Ollama runtime binaries
-- downloaded model files
-- temporary files
-- local Ollama state
-
-These files should not be committed to Git.
-
-Add the following to `.gitignore`:
+Keep `.local-ollama/` out of version control:
 
 ```gitignore
 .local-ollama/
 ```
 
----
+## 1.2 Gemini API
 
-### Verify Ollama Before Starting CareerMatch Agent
+For hosted Gemini inference:
 
-After Ollama starts successfully, verify that the configured model is available:
-
-```bash
-ollama list
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=gemini
+CAREER_MATCH_LLM_MODEL=<supported-gemini-model>
+CAREER_MATCH_LLM_TIMEOUT_SECONDS=300
+CAREER_MATCH_GEMINI_API_KEY=<your-api-key>
 ```
 
-or, when using the project-local runtime:
+No Gemini model weights are downloaded locally. The selected model is accessed through the Gemini API.
+
+Do not commit the API key.
+
+## 1.3 OpenAI API
+
+For hosted OpenAI inference:
+
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=openai
+CAREER_MATCH_LLM_MODEL=<supported-openai-model>
+CAREER_MATCH_LLM_TIMEOUT_SECONDS=300
+CAREER_MATCH_OPENAI_API_KEY=<your-api-key>
+```
+
+No OpenAI model weights are downloaded locally. The selected model is accessed through the OpenAI API.
+
+Do not commit the API key.
+
+## 1.4 Verify Active Configuration
+
+You can verify the selected provider/model without printing secrets:
 
 ```bash
-HOME="$PWD/.local-ollama/home" \
-OLLAMA_MODELS="$PWD/.local-ollama/models" \
-"$PWD/.local-ollama/runtime/bin/ollama" list
+python - <<'PY'
+from career_match_agent.core.config import get_settings
+
+settings = get_settings()
+
+print("Provider:", settings.llm_provider)
+print("Model:", settings.llm_model)
+print("Gemini key configured:", settings.gemini_api_key is not None)
+print("OpenAI key configured:", settings.openai_api_key is not None)
+PY
 ```
 
 ---
 
 # 2. Start CareerMatch Agent
 
-From the CareerMatch Agent project directory, activate the virtual environment:
+Activate the virtual environment:
 
 ```bash
 source venv/bin/activate
 ```
 
-Start the FastAPI server:
+Start FastAPI:
 
 ```bash
 uvicorn career_match_agent.api.main:app --reload
@@ -246,43 +238,29 @@ The default local API address is:
 http://127.0.0.1:8000
 ```
 
-Interactive API documentation is available at:
+Interactive API documentation:
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-You can verify that the API is running before continuing.
-
 ---
 
 # 3. Extract the Candidate Profile
 
-CareerMatch Agent first converts the CV into a structured `CandidateProfile`.
-
-Use an absolute path to the CV PDF:
+CareerMatch Agent converts the CV into a structured `CandidateProfile` using the configured LLM provider.
 
 ```bash
 curl -sS \
   -X POST \
   "http://127.0.0.1:8000/profiles/candidate/extract" \
   -H "accept: application/json" \
-  -F "file=@/absolute/path/to/cv.pdf;type=application/pdf" \
-  > profile_response.json
+  -F "file=@$HOME/Documents/my_cv.pdf;type=application/pdf" \
+  | tee profile_response.json \
+  | jq
 ```
 
-For example:
-
-```bash
-curl -sS \
-  -X POST \
-  "http://127.0.0.1:8000/profiles/candidate/extract" \
-  -H "accept: application/json" \
-  -F "file=@$HOME/Downloads/my_cv.pdf;type=application/pdf" \
-  > profile_response.json
-```
-
-Inspect the complete extraction response:
+Inspect the complete response:
 
 ```bash
 jq '.' profile_response.json
@@ -294,53 +272,13 @@ Inspect only the extracted profile:
 jq '.profile' profile_response.json
 ```
 
----
-
 ## Inspect Atomic Skills
-
-CareerMatch extracts technical skills as individual atomic values.
-
-Inspect them with:
 
 ```bash
 jq '.profile.skills' profile_response.json
 ```
 
-Example:
-
-```json
-[
-  "LangGraph",
-  "Ollama",
-  "PyTorch",
-  "Hugging Face Transformers",
-  "scikit-learn",
-  "Python",
-  "FastAPI",
-  "Pydantic",
-  "REST APIs",
-  "Docker",
-  "Pandas",
-  "NumPy",
-  "SQL",
-  "PostgreSQL",
-  "AWS EC2"
-]
-```
-
-Skills should not normally appear as combined category strings such as:
-
-```text
-Machine Learning & NLP: PyTorch, Hugging Face Transformers, scikit-learn
-```
-
-Instead, individual technologies and capabilities should appear as separate entries.
-
----
-
 ## Save the Candidate Profile
-
-Extract only the `CandidateProfile` object:
 
 ```bash
 jq '.profile' \
@@ -348,35 +286,17 @@ jq '.profile' \
   > candidate_profile.json
 ```
 
-Verify it:
+Verify:
 
 ```bash
 jq '.' candidate_profile.json
-```
-
-At this point:
-
-```text
-CV PDF
-   ↓
-profile_response.json
-   ↓
-candidate_profile.json
 ```
 
 ---
 
 # 4. Define Job Preferences
 
-CareerMatch Agent combines the candidate profile with structured job-search preferences.
-
-Create:
-
-```text
-preferences.json
-```
-
-For example:
+Create `preferences.json`, for example:
 
 ```json
 {
@@ -399,17 +319,13 @@ For example:
 }
 ```
 
-The exact `JobPreferences` schema may evolve between releases.
-
 For the authoritative schema of the version you are running, inspect:
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-or inspect an existing valid request.
-
-Verify your preferences file:
+Verify:
 
 ```bash
 jq '.' preferences.json
@@ -438,7 +354,6 @@ It is recommended to clone Hiring Agent outside the CareerMatch Agent repository
 For example:
 
 ```bash
-cd ~/Desktop
 git clone https://github.com/interviewstreet/hiring-agent
 cd hiring-agent
 ```
@@ -492,7 +407,7 @@ Hiring Agent and CareerMatch Agent have separate environments and configuration 
 Activate the Hiring Agent environment:
 
 ```bash
-cd ~/Desktop/hiring-agent
+cd ~/hiring-agent
 source .venv/bin/activate
 ```
 
@@ -512,7 +427,7 @@ python score.py /absolute/path/to/cv.pdf \
 Example:
 
 ```bash
-python score.py "$HOME/Downloads/my_cv.pdf" \
+python score.py "$HOME/Documents/my_cv.pdf" \
   | tee hiring_agent_report.txt
 ```
 
@@ -525,7 +440,7 @@ The upstream Hiring Agent may also create caches or CSV artifacts when its devel
 Return to CareerMatch Agent:
 
 ```bash
-cd ~/Desktop/career-match-agent
+cd ~/career-match-agent
 source venv/bin/activate
 ```
 
@@ -561,7 +476,7 @@ It does not have to be inferred from the CV.
 
 ---
 
-## HackerRank Integration in `v0.1.0-alpha`
+## HackerRank Integration in `v0.2.0-alpha`
 
 The Hiring Agent integration is currently an optional supporting-data workflow rather than a fully automated part of `/agent/search`.
 
@@ -577,25 +492,7 @@ and:
 Hiring Agent assessment evidence
 ```
 
-as separate concepts.
-
-This prevents an external assessment from silently overwriting CV-derived candidate facts.
-
-The planned automated workflow will eventually allow the user to provide:
-
-```text
-CV
-+
-preferences
-+
-optional Hiring Agent report
-+
-LLM selection
-```
-
-in one procedure.
-
-For the current alpha, `/agent/search` can also be used without Hiring Agent evidence by passing:
+as separate concepts. This prevents an external assessment from silently overwriting CV-derived candidate facts. For the current alpha, `/agent/search` can also be used without Hiring Agent evidence by passing:
 
 ```json
 "evidence_signals": []
@@ -603,19 +500,29 @@ For the current alpha, `/agent/search` can also be used without Hiring Agent evi
 
 ---
 
-# 6. Build the CareerMatch Agent Request
-
-The main agent expects:
+CareerMatch exposes:
 
 ```text
-CandidateProfile
-+
-JobPreferences
-+
-optional evidence signals
+POST /assessments/hiring-agent/parse
 ```
 
-For a CV-only run, create `agent_request.json` with `jq`:
+Example:
+
+```bash
+curl -sS \
+  -X POST \
+  "http://127.0.0.1:8000/assessments/hiring-agent/parse" \
+  -H "accept: application/json" \
+  -F "report=@/absolute/path/to/hiring_agent_report.txt;type=text/plain" \
+  -F "role_name=software_engineering_intern" \
+  > hiring_agent_assessment.json
+```
+
+---
+
+# 6. Build the CareerMatch Agent Request
+
+For a CV-only run:
 
 ```bash
 jq -n \
@@ -629,47 +536,36 @@ jq -n \
   > agent_request.json
 ```
 
-Inspect it:
+Inspect:
 
 ```bash
 jq '.' agent_request.json
 ```
 
-Verify that the new atomic skills are present:
-
+For a CV-only run with hiring agent assessment,
 ```bash
-jq '.profile.skills' agent_request.json
-```
-
----
-
-## Reusing an Existing Agent Request
-
-During development it can be useful to preserve an existing valid configuration while replacing only the candidate profile.
-
-For example:
-
-```bash
-jq \
+jq -n \
   --slurpfile profile candidate_profile.json \
-  '.profile = $profile[0]' \
-  existing_agent_request.json \
+  --slurpfile preferences preferences.json \
+  --slurpfile assessment hiring_agent_assessment.json \
+  '{
+    profile: $profile[0],
+    preferences: $preferences[0],
+    evidence_signals: $assessment[0].evidence_signals
+  }' \
   > agent_request.json
 ```
+Inspect:
 
-This preserves the preferences and configuration of the existing request while replacing the profile.
+```bash
+jq '.evidence_signals' agent_request.json
+jq '.' agent_request.json
+```
+
 
 ---
 
 # 7. Run the CareerMatch Agent
-
-Send the request to:
-
-```text
-POST /agent/search
-```
-
-Run:
 
 ```bash
 curl -sS \
@@ -681,13 +577,13 @@ curl -sS \
   --data @agent_request.json
 ```
 
-A successful HTTP request should print:
+A successful request should print:
 
 ```text
 HTTP 200
 ```
 
-Inspect the response:
+Inspect:
 
 ```bash
 jq '.' agent_response.json
@@ -696,10 +592,6 @@ jq '.' agent_response.json
 ---
 
 # 8. What the Agent Does
-
-The `/agent/search` endpoint runs the bounded LangGraph workflow.
-
-Approximately:
 
 ```text
 plan_search
@@ -723,64 +615,42 @@ rank_jobs
 evaluate_jobs
 ```
 
-The individual stages perform:
-
-### Search Planning
-
-Creates bounded role-oriented search queries from the candidate profile and preferences.
-
-### Job Retrieval
-
-Queries the configured job provider.
-
-`v0.1.0-alpha` currently uses Arbeitnow.
-
-### Deterministic Filtering
-
-Applies hard constraints such as:
-
-- role compatibility
-- seniority
-- location
-- language requirements
-- required keywords
-- excluded keywords
-
-### Hybrid Ranking
-
-Ranks accepted jobs using signals including:
-
-- semantic similarity
-- skill overlap
-- required keyword matches
-- role alignment
-- warning quality
-
-### Evidence-Grounded Evaluation
-
-Generates a suitability report for top-ranked jobs using candidate, job, deterministic, and semantic evidence.
-
-Unsupported LLM findings are filtered by deterministic grounding validation.
+- **Search planning:** configured LLM.
+- **Job retrieval:** configured job provider; `v0.2.0-alpha` currently uses Arbeitnow.
+- **Deterministic filtering:** hard constraints such as role, seniority, location, language, and keyword requirements.
+- **Hybrid ranking:** semantic similarity, skill overlap, role alignment, required-keyword matching, and warning quality.
+- **Grounded evaluation:** configured LLM plus deterministic evidence validation.
 
 ---
 
-# 9. Inspect Ranked Jobs
-
-Check how many jobs were ranked:
+# 9. Inspect Agent Execution
 
 ```bash
-jq '.ranking.ranked_jobs | length' \
-  agent_response.json
+jq '.trace' agent_response.json
+jq '.final_search_plan' agent_response.json
+jq '.search_statistics' agent_response.json
+jq '.filtering_statistics' agent_response.json
 ```
 
-Inspect the top-ranked job:
+These fields are especially useful when a search returns few or no accepted jobs.
+
+---
+
+# 10. Inspect Ranked Jobs
+
+Count ranked jobs:
 
 ```bash
-jq '.ranking.ranked_jobs[0]' \
-  agent_response.json
+jq '.ranking.ranked_jobs | length' agent_response.json
 ```
 
-Inspect a compact score breakdown:
+Top result:
+
+```bash
+jq '.ranking.ranked_jobs[0]' agent_response.json
+```
+
+Compact ranking view:
 
 ```bash
 jq '
@@ -798,70 +668,17 @@ jq '
 ' agent_response.json
 ```
 
-Example:
-
-```json
-{
-  "rank": 1,
-  "title": "Applied AI Engineer",
-  "company": "Example Company",
-  "location": "Germany",
-  "hybrid_score": 53.57,
-  "semantic_score": 61.25,
-  "skill_overlap_score": 9.8,
-  "matched_skills": [
-    "prompt engineering",
-    "model evaluation",
-    "Python",
-    "REST APIs",
-    "SQL"
-  ]
-}
-```
-
 ---
 
-# 10. Inspect Grounded Evaluation Results
-
-Check evaluation statistics:
+# 11. Inspect Grounded Evaluation Results
 
 ```bash
-jq '.evaluation.statistics' \
-  agent_response.json
+jq '.evaluation.statistics' agent_response.json
+jq '.evaluation.failures' agent_response.json
+jq '.evaluation.reports[0]' agent_response.json
 ```
 
-Example:
-
-```json
-{
-  "received_count": 4,
-  "attempted_count": 4,
-  "completed_count": 4,
-  "failed_count": 0
-}
-```
-
-Check any evaluation failures:
-
-```bash
-jq '.evaluation.failures' \
-  agent_response.json
-```
-
-A completely successful run should normally return:
-
-```json
-[]
-```
-
-Inspect the first suitability report:
-
-```bash
-jq '.evaluation.reports[0]' \
-  agent_response.json
-```
-
-Inspect only its recommendation and explanation sections:
+Compact report view:
 
 ```bash
 jq '
@@ -881,9 +698,7 @@ jq '
 
 ---
 
-# 11. Export Ranked Jobs to JSON
-
-To save the complete ranked-job objects:
+# 12. Export Ranked Jobs
 
 ```bash
 jq '.ranking.ranked_jobs' \
@@ -891,17 +706,7 @@ jq '.ranking.ranked_jobs' \
   > ranked_jobs.json
 ```
 
-Inspect:
-
-```bash
-jq '.' ranked_jobs.json
-```
-
----
-
-## Create a Smaller `jobs.json`
-
-For a simpler final output:
+Create a smaller final job list:
 
 ```bash
 jq '[
@@ -927,19 +732,9 @@ jq '[
   > jobs.json
 ```
 
-Inspect the final job list:
-
-```bash
-jq '.' jobs.json
-```
-
-This file can now be used as the final machine-readable result of the manual CareerMatch workflow.
-
 ---
 
-# 12. Export Suitability Reports
-
-Grounded evaluation reports can also be stored separately:
+# 13. Export Suitability Reports
 
 ```bash
 jq '.evaluation.reports' \
@@ -947,19 +742,15 @@ jq '.evaluation.reports' \
   > job_reports.json
 ```
 
-Inspect:
-
-```bash
-jq '.' job_reports.json
-```
-
 ---
 
 # Final File Flow
 
-A complete CV-only run produces approximately:
-
 ```text
+.env
+  ↓
+selected LLM provider/model
+  ↓
 my_cv.pdf
     ↓
 profile_response.json
@@ -976,35 +767,11 @@ agent_response.json
     └──→ job_reports.json
 ```
 
-With optional Hiring Agent assessment:
-
-```text
-my_cv.pdf
-    │
-    ├─────────────────────────────┐
-    ↓                             ↓
-CareerMatch profile         Hiring Agent
-extraction                       ↓
-    ↓                    hiring_agent_report.txt
-candidate_profile.json           ↓
-    │                    CareerMatch parser
-    │                             ↓
-    │                    hiring_agent_assessment.json
-    │
-    └──────────────┬──────────────┘
-                   ↓
-          CareerMatch workflow
-                   ↓
-          agent_response.json
-                   ↓
-               jobs.json
-```
-
 ---
 
 # Development and Debugging
 
-Run the full regression suite before testing major workflow changes:
+Run the full regression suite:
 
 ```bash
 ruff check .
@@ -1012,136 +779,102 @@ mypy
 pytest -v
 ```
 
-Run only profile extraction tests:
+Run LLM provider unit tests:
 
 ```bash
-pytest -v tests/test_profile_extractor.py
+pytest -v \
+  tests/test_llm_provider_factory.py \
+  tests/test_ollama_llm_provider.py \
+  tests/test_openai_llm_provider.py \
+  tests/test_gemini_llm_provider.py
 ```
 
-Run only evaluator tests:
-
-```bash
-pytest -v tests/test_job_evaluator.py
-```
+These provider tests use mocks and do not call real models or hosted APIs.
 
 ---
 
 # Troubleshooting
 
-## `curl: (26) Failed to open/read local data`
+## LLM provider configuration error
 
-This normally means the file path passed to `curl` does not exist.
-
-Check the file first:
+Verify the configured provider/model:
 
 ```bash
-ls -l /absolute/path/to/cv.pdf
+python - <<'PY'
+from career_match_agent.core.config import get_settings
+
+settings = get_settings()
+print(settings.llm_provider)
+print(settings.llm_model)
+PY
 ```
 
-A common mistake is using:
+For Gemini/OpenAI, verify the corresponding API key exists in `.env`.
 
-```text
-/../../Downloads/cv.pdf
-```
+For Ollama, verify the local service is running and the configured model is installed.
 
-The leading `/` makes the path absolute.
+## Hosted provider authentication or availability errors
 
-Instead use:
+- confirm the corresponding API key,
+- confirm the selected model is available to the account,
+- confirm internet connectivity,
+- inspect FastAPI logs for the provider-specific exception chain,
+- never print or commit API keys.
 
-```text
-../../Downloads/cv.pdf
-```
-
-or preferably:
-
-```text
-$HOME/Downloads/cv.pdf
-```
-
----
-
-## Profile response is empty or invalid
-
-Inspect the complete response:
-
-```bash
-jq '.' profile_response.json
-```
-
-Also inspect the FastAPI terminal and Ollama terminal for errors.
-
-Verify that Ollama is running:
+## Ollama connection errors
 
 ```bash
 ollama list
 ```
 
----
+Verify:
 
-## No jobs are ranked
+```dotenv
+CAREER_MATCH_LLM_PROVIDER=ollama
+CAREER_MATCH_OLLAMA_BASE_URL=http://127.0.0.1:11434
+```
 
-Inspect the agent response:
+and ensure `CAREER_MATCH_LLM_MODEL` matches an installed model.
+
+## `502 Bad Gateway` during job search
+
+Inspect:
 
 ```bash
 jq '.' agent_response.json
 ```
 
-Possible causes include:
+and FastAPI logs.
 
-- no current provider results matching the target roles,
-- deterministic constraints rejecting all retrieved jobs,
-- overly restrictive preferences,
-- language or location requirements,
-- job-provider availability.
+A `502` can originate from an external job-provider response or an LLM provider failure. For Arbeitnow-related failures, inspect the upstream payload/validation error before changing ranking or LLM configuration.
 
-Search broadening is bounded and will not continue indefinitely.
-
----
-
-## `skill_overlap_score` is zero
-
-First inspect the extracted skills:
-
-```bash
-jq '.profile.skills' profile_response.json
-```
-
-They should be atomic entries such as:
-
-```json
-[
-  "Python",
-  "SQL",
-  "FastAPI"
-]
-```
-
-rather than entire categorized skill lines.
-
-Then inspect:
-
-```bash
-jq '
-.ranking.ranked_jobs[]
-| {
-    title: .decision.job.title,
-    skill_overlap_score: .score_breakdown.skill_overlap_score,
-    matched_skills: .score_breakdown.matched_skills
-  }
-' agent_response.json
-```
-
-A zero score can still be legitimate when the job description contains no explicit overlap with the extracted skills.
-
----
-
-## Evaluation failures
+## No jobs are ranked
 
 Inspect:
 
 ```bash
-jq '.evaluation.failures' \
-  agent_response.json
+jq '.search_statistics' agent_response.json
+jq '.filtering_statistics' agent_response.json
+jq '.trace' agent_response.json
+```
+
+Possible causes include:
+
+- no current provider results matching target roles,
+- deterministic constraints rejecting all retrieved jobs,
+- overly restrictive preferences,
+- language, location, or seniority requirements,
+- external provider data quality,
+- limited provider coverage.
+
+Search broadening is bounded.
+
+A zero-result search is preferable to returning jobs that violate hard constraints.
+
+## Evaluation failures
+
+```bash
+jq '.evaluation.failures' agent_response.json
 ```
 
 CareerMatch deliberately rejects some malformed or insufficiently grounded LLM reports rather than silently accepting unsupported claims.
@@ -1150,27 +883,27 @@ CareerMatch deliberately rejects some malformed or insufficiently grounded LLM r
 
 # Current Alpha Limitations
 
-`v0.1.0-alpha` is a technical alpha.
+`v0.2.0-alpha` is a technical alpha.
 
-The current workflow still has several limitations:
+Current limitations include:
 
-- Ollama is the primary supported CareerMatch LLM backend.
-- Arbeitnow is the primary job provider.
-- The workflow is currently API-driven.
-- CV extraction and agent execution are separate manual steps.
-- HackerRank Hiring Agent integration is optional and not yet part of a single automated request.
-- There is no persistent database.
-- There is no user-facing web application.
-- Current job availability depends on external provider data.
-- Small local LLMs may still produce imperfect outputs despite structured generation and deterministic grounding validation.
-
-These limitations are expected to change in later releases.
+- one global LLM provider/model is selected per application configuration,
+- provider selection is configuration-driven rather than a user-facing runtime UI,
+- Arbeitnow is the primary job provider,
+- the workflow is API-driven,
+- CV extraction and agent execution are separate manual steps,
+- HackerRank Hiring Agent integration is optional and not yet part of a single automated request,
+- there is no persistent database,
+- there is no user-facing web application,
+- current job availability depends on external provider data,
+- external provider payloads may be incomplete or inconsistent,
+- hosted providers may introduce cost, rate limits, network dependency, and provider-specific privacy considerations.
 
 ---
 
 # Planned Workflow
 
-A future CareerMatch release is intended to reduce the manual process to something closer to:
+A future CareerMatch release is intended to reduce the manual process to:
 
 ```text
 Upload CV
@@ -1187,4 +920,4 @@ Receive current ranked jobs
 and grounded suitability reports
 ```
 
-Until then, this document provides a reproducible manual workflow for testing the complete `v0.1.0-alpha` pipeline.
+Until then, this document provides a reproducible manual workflow for testing the complete `v0.2.0-alpha` pipeline.
