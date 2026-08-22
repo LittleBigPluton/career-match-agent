@@ -27,9 +27,9 @@ OVERALL_PATTERN = re.compile(rf"OVERALL SCORE:\s*"
                              rf"(?P<score>{NUMBER_PATTERN})\s*/\s*"
                              rf"(?P<maximum>{NUMBER_PATTERN})", flags=re.IGNORECASE)
 
-CATEGORY_PATTERN = re.compile(rf"^(?P<label>.+?):\s*"
-                              rf"(?P<score>\d+(?:\.\d+)?)\s*/\s*"
-                              rf"(?P<maximum>\d+(?:\.\d+)?)$")
+CATEGORY_PATTERN = re.compile(r"^(?P<label>.+?):\s*"
+                              r"(?P<score>\d+(?:\.\d+)?)\s*/\s*"
+                              r"(?P<maximum>\d+(?:\.\d+)?)$")
 
 LIST_ITEM_PATTERN = re.compile(r"^(?:\d+\.\s*|[-•]\s*)")
 

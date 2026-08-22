@@ -6,7 +6,6 @@ from career_match_agent.models.job import (
 )
 from career_match_agent.providers.base import (
     JobProvider,
-    JobProviderError,
     JobProviderUnavailableError
 )
 

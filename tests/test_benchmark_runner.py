@@ -15,7 +15,6 @@ from career_match_agent.models.candidate import (
 from career_match_agent.models.job import JobPosting
 from career_match_agent.services.benchmark_runner import JobMatchingBenchmarkRunner
 from career_match_agent.services.job_normalizer import create_job_fingerprint
-from career_match_agent.models.ranking import HybridRankingConfiguration
 
 class FakeEmbeddingProvider:
     provider_name = "fake"

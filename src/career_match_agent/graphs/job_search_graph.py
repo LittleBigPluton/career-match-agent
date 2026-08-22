@@ -39,7 +39,6 @@ from career_match_agent.services.search_planner import (
     normalize_broadened_plan
 )
 from career_match_agent.services.semantic_ranker import HybridJobRankingService
-from langgraph.graph.state import CompiledStateGraph
 
 class CareerMatchGraphState(TypedDict, total=False):
     """Mutable state carried through the LangGraph workflow."""

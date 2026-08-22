@@ -30,8 +30,7 @@ from career_match_agent.services.job_evaluator import (
 from career_match_agent.services.job_filter import filter_jobs_for_candidate
 from career_match_agent.services.semantic_ranker import HybridJobRankingService
 from career_match_agent.models.ranking import (
-    HybridRankingWeights,
-    SemanticMatchEvidence
+    HybridRankingWeights
 )
 
 class JobMatchingBenchmarkRunner:
