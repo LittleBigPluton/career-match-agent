@@ -34,8 +34,14 @@ jobs:
       - name: Run mypy
         run: mypy
 
-      - name: Run tests
-        run: pytest -v
+      - name: Run tests with coverage
+        run: |
+          pytest \
+            --cov=career_match_agent \
+            --cov-report=term-missing \
+            --cov-report=xml \
+            --cov-fail-under=80 \
+            -v
 
       - name: Ruff lint
         run: ruff check .
