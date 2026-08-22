@@ -12,7 +12,9 @@ from career_match_agent.models.job import (
 )
 from career_match_agent.providers.base import JobProviderUnavailableError
 from career_match_agent.providers.mock import MockJobProvider
+from career_match_agent.providers.composite import CompositeJobProvider
 from career_match_agent.services.job_normalizer import create_job_fingerprint
+from test_job_search import StaticJobProvider
 
 
 client = TestClient(app)
@@ -22,21 +24,19 @@ def clear_dependency_overrides() -> Generator[None, None, None]:
     yield
     app.dependency_overrides.clear()
 
-def create_test_job() -> JobPosting:
-    title = "Machine Learning Engineer"
-    company = "Example AI GmbH"
-    location = "Berlin"
-    return JobPosting(source_id="mock:1",
-                      provider="mock",
-                      external_id="1",
+def create_test_job(*, provider: str = "mock", external_id: str = "1", title: str = "Machine Learning Engineer",
+                    company: str = "Example AI GmbH", location: str = "Berlin") -> JobPosting:
+    return JobPosting(source_id=f"{provider}:{external_id}",
+                      provider=provider,
+                      external_id=external_id,
                       title=title,
                       company=company,
-                      description=("Develop Python and PyTorch models."),
+                      description="Develop Python and PyTorch models.",
                       location=location,
                       remote=True,
                       employment_types=["full_time"],
                       tags=["Python", "Machine Learning"],
-                      url="https://example.com/jobs/1",
+                      url=f"https://example.com/jobs/{external_id}",
                       fingerprint=create_job_fingerprint(title=title, company=company, location=location))
 
 
@@ -70,3 +70,15 @@ def test_job_search_endpoint_returns_503() -> None:
 def test_job_search_endpoint_rejects_empty_keywords() -> None:
     response = client.post("/jobs/search", json={"keywords": ["", "   "]})
     assert response.status_code == 422
+
+def test_job_search_endpoint_supports_multiple_providers() -> None:
+    arbeitnow_job = create_test_job(provider="arbeitnow", external_id="1")
+    adzuna_job = create_test_job(provider="adzuna", external_id="2")
+    composite = CompositeJobProvider(providers=[StaticJobProvider(provider_name="arbeitnow", jobs=[arbeitnow_job]),
+                                                StaticJobProvider(provider_name="adzuna", jobs=[adzuna_job])])
+    app.dependency_overrides[get_job_provider] = lambda: composite
+    response = client.post("/jobs/search", json={"keywords": ["Machine Learning Engineer"]})
+    assert response.status_code == 200
+
+    payload = response.json()
+    assert payload["provider"] == "multi"
