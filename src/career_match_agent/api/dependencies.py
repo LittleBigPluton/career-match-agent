@@ -3,11 +3,7 @@ from career_match_agent.services.profile_extractor import (
     CandidateProfileExtractor,
     StructuredCandidateProfileExtractor
 )
-from career_match_agent.providers.arbeitnow import ArbeitnowJobProvider
-from career_match_agent.providers.adzuna import AdzunaJobProvider
-from career_match_agent.providers.jooble import JoobleJobProvider
 from career_match_agent.providers.base import JobProvider
-from career_match_agent.providers.composite import CompositeJobProvider
 from functools import lru_cache
 from career_match_agent.services.embedding import (
     EmbeddingProvider,
