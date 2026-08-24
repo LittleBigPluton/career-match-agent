@@ -31,6 +31,7 @@ class Settings(BaseSettings):
 
     max_cv_text_characters: int = Field(default=30_000, ge=1)
     max_hiring_agent_report_bytes: int = Field(default=1_048_576, ge=1024)
+    max_preferences_text_characters: int = Field(default=5_000, ge=1, le=20_000)
 
     # ------------------------------------------------------------------
     # Job provider
