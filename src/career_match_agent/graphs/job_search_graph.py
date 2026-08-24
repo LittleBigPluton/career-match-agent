@@ -40,6 +40,13 @@ from career_match_agent.services.search_planner import (
 )
 from career_match_agent.services.semantic_ranker import HybridJobRankingService
 
+#############
+### DEBUG ###
+#############
+
+from collections import Counter
+
+
 class CareerMatchGraphState(TypedDict, total=False):
     """Mutable state carried through the LangGraph workflow."""
     request: Required[AgentSearchRequest]
@@ -89,15 +96,34 @@ async def search_jobs_node(state: CareerMatchGraphState, *, dependencies: Career
     service = JobSearchService(dependencies.job_provider)
     result = await service.search(query)
     return {"job_search": result, "trace": [AgentTraceEntry(step="search_jobs", attempt=state["search_attempt"],
-            message=(f"Retrieved {result.statistics.received_count} provider jobs and retained {result.statistics.returned_count} after retrieval filtering."))]}
+            message=(f"Query keywords={query.keywords}; "
+                     f"locations={query.locations}; "
+                     f"employment_types="
+                     f"{[value.value for value in query.employment_types]}; "
+                     f"scope={query.match_scope.value}. "
+                     f"Retrieved {result.statistics.received_count} "
+                     f"provider jobs, matched "
+                     f"{result.statistics.matched_count}, and returned "
+                     f"{result.statistics.returned_count}."))]}
 
 async def filter_jobs_node(state: CareerMatchGraphState) -> CareerMatchGraphUpdate:
     """Apply deterministic hard suitability filters."""
     request = state["request"]
     search_response = state["job_search"]
     filtering_response = filter_jobs_for_candidate(JobFilteringRequest(profile=request.profile, preferences=request.preferences, jobs=search_response.jobs, policy=request.configuration.filter_policy))
+    rejection_counts = Counter(reason.code.value for decision in filtering_response.rejected_jobs for reason in decision.rejection_reasons)
+    rejection_summary = ", ".join(f"{reason}={count}" for reason, count in rejection_counts.most_common())
+
+    if not rejection_summary:
+        rejection_summary = "none"
+
     return {"filtering":filtering_response, "trace":[AgentTraceEntry(step="filter_jobs", attempt=state["search_attempt"],
-            message=(f"Accepted {filtering_response.statistics.accepted_count} jobs and rejected {filtering_response.statistics.rejected_count}."))]}
+            message=(f"Accepted "
+                     f"{filtering_response.statistics.accepted_count} "
+                     f"jobs and rejected "
+                     f"{filtering_response.statistics.rejected_count}. "
+                     f"Rejection reasons: {rejection_summary}."))]}
+
 
 def route_after_filtering(state: CareerMatchGraphState) -> Literal["broaden_search","rank_jobs"]:
     """Decide whether the agent should retry or continue."""

@@ -15,7 +15,7 @@ from career_match_agent.models.job import (
 )
 from career_match_agent.models.matching import JobFilterPolicy
 from career_match_agent.providers.llm.base import StructuredLLMProvider
-
+from career_match_agent.services.job_classifier import role_terms
 
 SEARCH_PLANNER_PROMPT_VERSION = "job-search-planner-v1"
 
@@ -132,14 +132,32 @@ def build_job_search_query(*, plan: AgentSearchPlan, preferences: JobPreferences
     preferred_work_modes = set(preferences.work_modes)
     remote_only = (preferred_work_modes == {WorkMode.REMOTE})
     search_locations = list(preferences.locations)
-    if WorkMode.REMOTE in preferred_work_modes and policy.remote_overrides_location:
-        # Retrieval may be broad so remote jobs outside preferred
-        # cities are not discarded before the hard filter.
+    search_keywords = expand_retrieval_keywords(plan_keywords=plan.keywords, preferred_roles=preferences.roles)
+    if (WorkMode.REMOTE in preferred_work_modes and policy.remote_overrides_location):
         search_locations = []
 
-    return JobSearchQuery(keywords=plan.keywords, locations=search_locations, remote_only=remote_only, visa_sponsorship=visa_sponsorship,
-                          employment_types=preferences.employment_types, maximum_results=plan.maximum_results, max_pages=plan.max_pages, match_scope=JobSearchMatchScope.TITLE_AND_TAGS)
+    return JobSearchQuery(keywords=search_keywords, locations=search_locations, remote_only=remote_only, visa_sponsorship=visa_sponsorship,
+                          employment_types=preferences.employment_types, maximum_results=plan.maximum_results, max_pages=plan.max_pages, match_scope=JobSearchMatchScope.BROAD)
 
+def expand_retrieval_keywords(*, plan_keywords: list[str], preferred_roles: list[str]) -> list[str]:
+    """Expand retrieval terms using known deterministic role aliases."""
+    expanded: list[str] = []
+    seen: set[str] = set()
+    for keyword in [*plan_keywords, *preferred_roles]:
+        terms = [keyword, *sorted(role_terms(keyword))]
+        for term in terms:
+            cleaned = term.strip()
+            if not cleaned:
+                continue
+
+            normalized = cleaned.casefold()
+            if normalized in seen:
+                continue
+
+            seen.add(normalized)
+            expanded.append(cleaned)
+
+    return expanded[:20]
 
 class StructuredSearchPlanner:
     provider_name: str
