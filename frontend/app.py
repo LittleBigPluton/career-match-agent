@@ -410,10 +410,10 @@ def render_ranked_jobs(
 
                 if confidence:
                     recommendation_parts.append(
-                        (
+                        
                             f"{str(confidence).title()} "
                             "confidence"
-                        )
+                        
                     )
 
                 if recommendation_parts:
