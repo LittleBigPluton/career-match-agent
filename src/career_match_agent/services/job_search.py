@@ -64,9 +64,10 @@ def job_matches_query(job: JobPosting, query: JobSearchQuery) -> bool:
     if (query.visa_sponsorship is not None and job.visa_sponsorship is not query.visa_sponsorship):
         return False
 
-    if query.employment_types:
+    if query.employment_types and job.employment_types:
         requested_types = set(query.employment_types)
         job_types = set(job.employment_types)
+
         if not requested_types.intersection(job_types):
             return False
 

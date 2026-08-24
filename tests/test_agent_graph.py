@@ -92,10 +92,13 @@ def create_ai_job() -> JobPosting:
 
 
 def create_agent_request() -> AgentSearchRequest:
-    return AgentSearchRequest(profile=CandidateProfile(professional_summary=("Machine-learning engineer with Python experience."), skills=["Python", "PyTorch",]),
-                              preferences=JobPreferences(roles=["Machine Learning Engineer"], locations=["Berlin"], work_modes=[WorkMode.ON_SITE],
-                                                         employment_types=[EmploymentType.FULL_TIME], seniority_levels=[SeniorityLevel.JUNIOR]),
-                              configuration=AgentWorkflowConfiguration(minimum_accepted_jobs=1, maximum_search_attempts=2))
+    return AgentSearchRequest(profile=CandidateProfile(professional_summary=("Machine-learning engineer with Python experience."), skills=["Python", "PyTorch"]),
+                                                       preferences=JobPreferences(roles=["Machine Learning Engineer"],
+                                                                                  locations=["Berlin"],
+                                                                                  work_modes=[WorkMode.ON_SITE],
+                                                                                  employment_types=[EmploymentType.FULL_TIME],
+                                                                                  seniority_levels=[SeniorityLevel.JUNIOR]),
+                                                       configuration=AgentWorkflowConfiguration(minimum_accepted_jobs=2, maximum_search_attempts=2))
 
 def test_agent_replans_when_initial_search_is_too_narrow() -> None:
     async def run_test() -> None:
