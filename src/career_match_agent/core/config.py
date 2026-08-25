@@ -79,6 +79,14 @@ class Settings(BaseSettings):
 
     maximum_evaluation_jobs: int = Field(default=5, ge=1, le=20,)
 
+    # ------------------------------------------------------------------
+    # Artifacts
+    # ------------------------------------------------------------------
+
+    workflow_artifacts_enabled: bool = False
+    workflow_artifacts_directory: str = ("data/workflow_artifacts")
+    maximum_prepared_workflow_bytes: int = Field(default=5 * 1024 * 1024, ge=1024)
+
 @lru_cache
 def get_settings() -> Settings:
     """Return cached application settings."""

@@ -45,3 +45,6 @@ reports/*
 # Logs
 *.log
 logs/
+
+# Local CareerMatch workflow artifacts
+data/workflow_artifacts/
