@@ -1,11 +1,16 @@
+from pathlib import Path
 from functools import lru_cache
 from typing import Literal
 from pydantic import (
     Field,
     SecretStr
 )
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import (
+    BaseSettings,
+    SettingsConfigDict
+)
 
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 class Settings(BaseSettings):
     """Runtime configuration loaded from environment variables."""
@@ -82,9 +87,8 @@ class Settings(BaseSettings):
     # ------------------------------------------------------------------
     # Artifacts
     # ------------------------------------------------------------------
-
+    workflow_artifacts_directory: Path = Field(default=(PROJECT_ROOT/"data"/"workflow_artifacts"))
     workflow_artifacts_enabled: bool = False
-    workflow_artifacts_directory: str = ("data/workflow_artifacts")
     maximum_prepared_workflow_bytes: int = Field(default=5 * 1024 * 1024, ge=1024)
 
 @lru_cache

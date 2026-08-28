@@ -1,4 +1,5 @@
 from typing import Annotated
+from dataclasses import dataclass
 
 from fastapi import (
     APIRouter,
@@ -24,6 +25,7 @@ from career_match_agent.models.workflow import (
     AutomatedWorkflowResponse,
     ProviderCapability,
     WorkflowCapabilities,
+    WorkflowLLMMetadata,
     WorkflowOptions
 )
 from career_match_agent.providers.base import (
@@ -62,6 +64,8 @@ from career_match_agent.services.preference_extractor import (
     PreferenceTextTooLongError,
     StructuredPreferenceExtractor
 )
+from career_match_agent.services.search_planner import SearchPlanner
+from career_match_agent.services.job_evaluator import JobReportGenerator
 from career_match_agent.services.profile_extractor import StructuredCandidateProfileExtractor
 from career_match_agent.services.search_planner import StructuredSearchPlanner
 from career_match_agent.services.workflow_factory import WorkflowRuntimeFactory
@@ -69,9 +73,24 @@ from career_match_agent.services.workflow_runner import (
     AutomatedCareerMatchWorkflow,
     AutomatedWorkflowDependencies
 )
-
+from career_match_agent.services.workflow_artifacts import (
+    InvalidPreparedWorkflowError,
+    WorkflowArtifactStore,
+    parse_prepared_workflow,
+    read_prepared_workflow_upload,
+    record_agent_response,
+    record_preprocessing_artifacts
+)
 
 router = APIRouter(prefix="/workflow", tags=["workflow"])
+
+@dataclass(frozen=True)
+class AgentExecutionDependencies:
+    search_planner: SearchPlanner
+    job_provider: JobProvider
+    embedding_provider: EmbeddingProvider
+    report_generator: JobReportGenerator
+    maximum_evaluation_jobs: int
 
 @router.post("/run", response_model=AutomatedWorkflowResponse)
 async def run_automated_workflow(cv: Annotated[UploadFile, File(description="Candidate CV in PDF format.")],
@@ -109,7 +128,38 @@ async def run_automated_workflow(cv: Annotated[UploadFile, File(description="Can
                                                                               report_generator=report_generator,
                                                                               maximum_evaluation_jobs=(settings.maximum_evaluation_jobs)))
 
-        return await workflow.run(cv_text=pdf_extraction.text, preference_text=preference_text, hiring_agent_assessment=(hiring_agent_assessment), configuration=options.agent)
+        request, prepared_state = (await workflow.prepare_request(cv_text=pdf_extraction.text, preference_text=preference_text,
+                                                                  hiring_agent_assessment=(hiring_agent_assessment), configuration=options.agent))
+
+        artifact_store = None
+        artifact_run = None
+        if options.record_artifacts:
+            artifact_store = (WorkflowArtifactStore(root_directory=(settings.workflow_artifacts_directory)))
+            artifact_run = (artifact_store.create_run())
+
+            record_preprocessing_artifacts(store=artifact_store,
+                                           run=artifact_run,
+                                           pdf_extraction=pdf_extraction,
+                                           profile=request.profile,
+                                           preferences=request.preferences,
+                                           hiring_agent_assessment=(hiring_agent_assessment),
+                                           prepared_state=prepared_state,
+                                           agent_request=request)
+
+        agent_response = (await workflow.execute_request(request=request))
+        if (artifact_store is not None and artifact_run is not None):
+            record_agent_response(store=artifact_store, run=artifact_run, response=agent_response)
+
+        return AutomatedWorkflowResponse(llm=WorkflowLLMMetadata(provider=(llm_provider.provider_name),
+                                                                 model=(llm_provider.model_name)),
+                                                                 profile=request.profile,
+                                                                 preferences=request.preferences,
+                                                                 hiring_agent_assessment=(hiring_agent_assessment),
+                                                                 evidence_signal_count=len(request.evidence_signals),
+                                                                 prepared_state=prepared_state,
+                                                                 agent_request=request,
+                                                                 agent=agent_response,
+                                                                 artifact_run_id=(artifact_run.run_id if artifact_run is not None else None))
 
     except (UnsupportedPdfTypeError, UnsupportedHiringAgentReportError) as error:
         raise HTTPException(status_code=(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE), detail=str(error)) from error
@@ -149,3 +199,61 @@ def get_workflow_capabilities(settings: Annotated[Settings, Depends(get_settings
                                 default_llm_provider=settings.llm_provider,
                                 default_llm_model=settings.llm_model,
                                 default_job_providers=settings.job_providers)
+
+@router.post("/run-prepared", response_model=AutomatedWorkflowResponse)
+async def run_prepared_workflow(prepared_workflow: Annotated[UploadFile, File(description=("Previously exported CareerMatch prepared workflow JSON."))],
+                                options_json: Annotated[str, Form(description=("Current workflow provider options."))],
+                                runtime_factory: Annotated[WorkflowRuntimeFactory, Depends(get_workflow_runtime_factory)],
+                                embedding_provider: Annotated[EmbeddingProvider, Depends(get_embedding_provider)],
+                                settings: Annotated[Settings, Depends(get_settings)]) -> AutomatedWorkflowResponse:
+    job_provider: JobProvider | None = None
+    try:
+        try:
+            options = (WorkflowOptions.model_validate_json(options_json))
+
+        except ValidationError as error:
+            raise HTTPException(status_code=(status.HTTP_422_UNPROCESSABLE_CONTENT), detail=("Invalid workflow options.")) from error
+
+        prepared_bytes = (await read_prepared_workflow_upload(prepared_workflow, maximum_size_bytes=(settings.maximum_prepared_workflow_bytes)))
+        prepared_state = (parse_prepared_workflow(prepared_bytes))
+        llm_provider = (runtime_factory.create_llm(options.llm))
+        job_provider = (runtime_factory.create_jobs(list(options.job_providers)))
+        profile_extractor = (StructuredCandidateProfileExtractor(llm_provider=llm_provider, maximum_cv_characters=(settings.max_cv_text_characters)))
+        preference_extractor = (StructuredPreferenceExtractor(llm_provider=llm_provider,maximum_characters=(settings.max_preferences_text_characters)))
+        workflow = AutomatedCareerMatchWorkflow(AutomatedWorkflowDependencies(profile_extractor=(profile_extractor),
+                                                                              preference_extractor=(preference_extractor),
+                                                                              search_planner=(StructuredSearchPlanner(llm_provider=(llm_provider))),
+                                                                              job_provider=job_provider,
+                                                                              embedding_provider=(embedding_provider),
+                                                                              report_generator=(StructuredJobReportGenerator(llm_provider=(llm_provider))),
+                                                                              maximum_evaluation_jobs=(settings.maximum_evaluation_jobs)))
+        cached_request = (prepared_state.agent_request)
+        request = cached_request.model_copy(update={"configuration": (options.agent)})
+        agent_response = (await workflow.execute_request(request=request))
+        current_prepared_state = (prepared_state.model_copy(update={"agent_request": request}))
+
+        return AutomatedWorkflowResponse(llm=WorkflowLLMMetadata(provider=(llm_provider.provider_name), model=(llm_provider.model_name)),
+                                         profile=request.profile,
+                                         preferences=(request.preferences),
+                                         hiring_agent_assessment=(prepared_state.hiring_agent_assessment),
+                                         evidence_signal_count=len(request.evidence_signals),
+                                         prepared_state=(current_prepared_state),
+                                         agent_request=request, agent=agent_response)
+
+    except InvalidPreparedWorkflowError as error:
+        raise HTTPException(status_code=(status.HTTP_422_UNPROCESSABLE_CONTENT), detail=str(error)) from error
+
+    except ( LLMProviderConfigurationError, LLMProviderUnavailableError, JobProviderUnavailableError, EmbeddingModelUnavailableError) as error:
+        raise HTTPException(status_code=(status.HTTP_503_SERVICE_UNAVAILABLE), detail=str(error)) from error
+
+    except (LLMProviderResponseError, JobProviderResponseError, InvalidEmbeddingResponseError) as error:
+        raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=str(error)) from error
+
+    except GraphRecursionError as error:
+        raise HTTPException(status_code=(status.HTTP_500_INTERNAL_SERVER_ERROR), detail=("The agent workflow exceeded its maximum execution depth.")) from error
+
+    finally:
+        await prepared_workflow.close()
+
+        if job_provider is not None:
+            await job_provider.aclose()

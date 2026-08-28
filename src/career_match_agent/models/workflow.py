@@ -1,3 +1,4 @@
+from datetime import UTC, datetime
 from typing import Literal
 
 from pydantic import (
@@ -8,6 +9,7 @@ from pydantic import (
 )
 
 from career_match_agent.models.agent import (
+    AgentSearchRequest,
     AgentSearchResponse,
     AgentWorkflowConfiguration
 )
@@ -37,6 +39,7 @@ class WorkflowOptions(WorkflowModel):
     job_providers: list[JobProviderValue] = Field(min_length=1)
     hiring_agent_role: str | None = None
     agent: AgentWorkflowConfiguration = Field(default_factory=AgentWorkflowConfiguration)
+    record_artifacts: bool = False
 
     @field_validator("job_providers")
     @classmethod
@@ -48,14 +51,31 @@ class WorkflowLLMMetadata(WorkflowModel):
     provider: str
     model: str
 
+class PreparedWorkflowState(WorkflowModel):
+    """
+    Reusable state produced after candidate preprocessing.
+
+    Uploading this file allows CareerMatch to skip CV/profile,
+    preference and HackerRank preprocessing.
+    """
+
+    schema_version: Literal["career-match-prepared-v1"] = "career-match-prepared-v1"
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    source_llm: WorkflowLLMMetadata
+    agent_request: AgentSearchRequest
+    hiring_agent_assessment: (HiringAgentAssessment | None) = None
+    
 class AutomatedWorkflowResponse(WorkflowModel):
     """Complete user-facing CareerMatch workflow response."""
     llm: WorkflowLLMMetadata
     profile: CandidateProfile
     preferences: JobPreferences
-    hiring_agent_assessment: HiringAgentAssessment | None = None
+    hiring_agent_assessment: (HiringAgentAssessment | None) = None
     evidence_signal_count: int = Field(ge=0)
+    prepared_state: PreparedWorkflowState
+    agent_request: AgentSearchRequest
     agent: AgentSearchResponse
+    artifact_run_id: str | None = None
 
 class ProviderCapability(WorkflowModel):
     """Whether one provider has enough local configuration to be selected."""
