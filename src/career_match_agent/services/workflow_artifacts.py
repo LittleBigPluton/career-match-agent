@@ -39,7 +39,7 @@ class WorkflowArtifactRun:
 class WorkflowArtifactStore:
     """Record local JSON artifacts for reproducibility and reuse."""
 
-    def __init__(self, *, root_directory: str) -> None:
+    def __init__(self, *, root_directory: str | Path) -> None:
         self.root_directory = Path(root_directory)
 
     def create_run(self) -> WorkflowArtifactRun:
