@@ -1,5 +1,4 @@
 from typing import Annotated
-from dataclasses import dataclass
 
 from fastapi import (
     APIRouter,
@@ -51,7 +50,6 @@ from career_match_agent.services.hiring_agent_parser import (
     read_hiring_agent_report_bytes,
     validate_hiring_agent_report_metadata
 )
-from career_match_agent.services.job_evaluator import StructuredJobReportGenerator
 from career_match_agent.services.pdf_extractor import (
     InvalidPdfError,
     NoExtractableTextError,
@@ -64,11 +62,6 @@ from career_match_agent.services.preference_extractor import (
     PreferenceTextTooLongError,
     StructuredPreferenceExtractor
 )
-from career_match_agent.services.search_planner import SearchPlanner
-from career_match_agent.services.job_evaluator import JobReportGenerator
-from career_match_agent.services.profile_extractor import StructuredCandidateProfileExtractor
-from career_match_agent.services.search_planner import StructuredSearchPlanner
-from career_match_agent.services.workflow_factory import WorkflowRuntimeFactory
 from career_match_agent.services.workflow_runner import (
     AutomatedCareerMatchWorkflow,
     AutomatedWorkflowDependencies
@@ -81,16 +74,12 @@ from career_match_agent.services.workflow_artifacts import (
     record_agent_response,
     record_preprocessing_artifacts
 )
+from career_match_agent.services.job_evaluator import StructuredJobReportGenerator
+from career_match_agent.services.search_planner import StructuredSearchPlanner
+from career_match_agent.services.profile_extractor import StructuredCandidateProfileExtractor
+from career_match_agent.services.workflow_factory import WorkflowRuntimeFactory
 
 router = APIRouter(prefix="/workflow", tags=["workflow"])
-
-@dataclass(frozen=True)
-class AgentExecutionDependencies:
-    search_planner: SearchPlanner
-    job_provider: JobProvider
-    embedding_provider: EmbeddingProvider
-    report_generator: JobReportGenerator
-    maximum_evaluation_jobs: int
 
 @router.post("/run", response_model=AutomatedWorkflowResponse)
 async def run_automated_workflow(cv: Annotated[UploadFile, File(description="Candidate CV in PDF format.")],
