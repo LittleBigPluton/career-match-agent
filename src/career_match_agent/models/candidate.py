@@ -6,7 +6,7 @@ from pydantic import (
     ConfigDict,
     Field,
     field_validator,
-    model_validator,
+    model_validator
 )
 
 
@@ -55,9 +55,9 @@ class JobPreferences(BaseModel):
     model_config = ConfigDict(extra="forbid")
     roles: list[str] = Field(min_length=1, description="Preferred job titles or role families.")
     locations: list[str] = Field(default_factory=list, description="Preferred cities, regions or countries.")
-    work_modes: list[WorkMode] = Field(default_factory=lambda: [WorkMode.HYBRID, WorkMode.ON_SITE])
-    employment_types: list[EmploymentType] = Field(default_factory=lambda: [EmploymentType.FULL_TIME])
-    seniority_levels: list[SeniorityLevel] = Field(default_factory=lambda: [SeniorityLevel.ENTRY_LEVEL, SeniorityLevel.JUNIOR])
+    work_modes: list[WorkMode] = Field(default_factory=list, description=("Explicitly requested work modes. An empty list means no work-mode restriction."))
+    employment_types: list[EmploymentType] = Field(default_factory=list, description=("Explicitly requested employment types. An empty list means no employment-type restriction."))
+    seniority_levels: list[SeniorityLevel] = Field(default_factory=list, description=("Explicitly requested seniority levels. An empty list means no seniority restriction."))
     required_keywords: list[str] = Field(default_factory=list)
     excluded_keywords: list[str] = Field(default_factory=list)
     preferred_languages: list[str] = Field(default_factory=list)

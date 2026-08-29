@@ -276,7 +276,7 @@ def render_ranked_jobs(result: dict[str, Any]) -> None:
                         st.markdown("**Strengths**")
                         for strength in strengths:
                             if isinstance(strength, dict):
-                                st.write(f"✓ "**{strength.get('title', '')}** — {strength.get('explanation', '')}")
+                                st.write(f"✓ **{strength.get('title', '')}** — {strength.get('explanation', '')}")
 
                             else:
                                 st.write(f"✓ {strength}")
@@ -286,7 +286,7 @@ def render_ranked_jobs(result: dict[str, Any]) -> None:
                         st.markdown("**Potential gaps**")
                         for gap in gaps:
                             if isinstance(gap, dict):
-                                st.write(f"• "**{gap.get('title', '')}** — {gap.get('explanation', '')}")
+                                st.write(f"• **{gap.get('title', '')}** — {gap.get('explanation', '')}")
 
                             else:
                                 st.write(f"• {gap}")
