@@ -1,11 +1,12 @@
 # CareerMatch Agent
 
-CareerMatch Agent is an explainable AI-assisted job search and recommendation system built with FastAPI, LangGraph, deterministic filtering, semantic ranking, and evidence-grounded LLM evaluation.
+CareerMatch Agent is an explainable AI-assisted job-search and recommendation system built with FastAPI, LangGraph, deterministic filtering, semantic ranking, evidence-grounded LLM evaluation and an automated Streamlit workflow.
 
-The system takes a candidate profile derived from a CV, combines it with job preferences, searches available jobs, filters unsuitable roles, ranks relevant opportunities, and produces grounded suitability reports.
+The system accepts a CV PDF and natural-language job preferences, builds a structured candidate profile, searches multiple job providers, filters unsuitable positions, ranks relevant opportunities and produces grounded suitability reports.
 
-> Current release: `v0.2.0-alpha`
+Users can select the LLM provider/model and job providers at runtime. Prepared workflow state can also be exported and reused to avoid repeating expensive CV and preference preprocessing.
 
+> Current release: `v0.3.0-alpha`
 ---
 
 ## Overview
@@ -17,25 +18,34 @@ CareerMatch Agent uses a hybrid architecture instead:
 - deterministic rules enforce hard constraints,
 - embeddings rank jobs semantically,
 - structured scoring combines several matching signals,
-- LLMs generate structured candidate profiles, search plans, and grounded explanations,
+- LLMs generate structured candidate profiles, search plans and grounded explanations,
 - deterministic grounding validation checks LLM-generated evaluation claims.
 
-LLMs assist with interpretation, planning, and explanation, while explicit user constraints and core matching rules remain deterministic.
+LLMs assist with interpretation, planning and explanation, while explicit user constraints and core matching rules remain deterministic.
 
 ---
 
 ## Current Workflow
 
+
 ```text
 CV PDF
+   +
+Natural-language preferences
+   +
+Optional HackerRank report
+   +
+LLM / job-provider selection
    ↓
 Candidate Profile Extraction
    ↓
-Job Preferences
+Preference Extraction + Validation
    ↓
 Search Planning
    ↓
-Job Provider
+Multi-Provider Job Retrieval
+   ↓
+Deduplication / Normalization
    ↓
 Deterministic Filtering
    ↓
@@ -58,7 +68,7 @@ A single configured LLM provider/model is used consistently across LLM-dependent
 
 ### Multi-LLM Provider Support
 
-`v0.2.0-alpha` introduces a common structured LLM provider layer.
+CareerMatch uses a common structured LLM provider interface.
 
 Supported providers:
 
@@ -66,14 +76,17 @@ Supported providers:
 - Google Gemini
 - OpenAI
 
-The active provider and model are selected globally through environment configuration.
+The LLM provider and model can be selected for each automated workflow request through the UI or API.
 
-The selected provider is used for LLM-dependent stages including:
+Environment configuration defines defaults and provider credentials, while runtime workflow options determine which configured provider/model is used for a particular search.
+
+The selected provider is reused across LLM-dependent stages including:
 
 - candidate profile extraction,
+- preference extraction,
 - search planning,
 - bounded search replanning,
-- evidence-grounded job suitability evaluation.
+- evidence-grounded job evaluation.
 
 Non-LLM stages remain provider-independent:
 
@@ -85,7 +98,7 @@ Non-LLM stages remain provider-independent:
 - LangGraph orchestration,
 - grounding validation.
 
-This keeps business logic independent from a specific LLM vendor and allows the complete workflow to switch providers without changing service code.
+This keeps workflow logic independent from a specific LLM vendor.
 
 ---
 
@@ -118,25 +131,44 @@ Example atomic skills:
 
 ### Job Preferences
 
-The system supports structured preferences such as:
+Natural-language preferences are converted into structured `JobPreferences`.
 
-* target roles
-* locations
-* remote / hybrid preferences
-* seniority
-* required keywords
-* excluded keywords
-* language requirements
+Supported preference dimensions include:
+
+- target roles
+- cities, regions, and countries
+- remote / hybrid / on-site work
+- employment type
+- seniority
+- required keywords
+- excluded keywords
+- preferred languages
+
+Explicit user constraints are treated as authoritative.
+
+CareerMatch combines structured LLM extraction with deterministic validation so that explicitly stated preferences are not silently replaced by defaults or unsupported LLM assumptions.
+
+For example, if no work mode is specified, the system treats work mode as unrestricted rather than assuming hybrid or on-site work.
 
 ---
 
-### Job Search
+### Multi-Provider Job Search
 
-The current release integrates the Arbeitnow public job provider.
+CareerMatch currently supports:
 
-Search planning can broaden the search when the first attempt returns too few suitable jobs.
+- Arbeitnow
+- Adzuna
+- Jooble
 
-Role search is intentionally constrained to relevant job-title and tag matches to reduce unrelated retrieval results.
+A composite provider layer allows multiple configured providers to participate in the same workflow.
+
+Users can select which available providers should be searched for each run.
+
+Provider responses are normalized into the shared CareerMatch job model before filtering and ranking.
+
+Search planning can broaden the search when an initial attempt returns too few suitable jobs.
+
+Provider-specific retrieval behavior is handled behind a common `JobProvider` interface so that downstream filtering, ranking, and evaluation remain provider-independent.
 
 ---
 
@@ -217,7 +249,7 @@ The evaluator validates:
 * job evidence usage
 * finding-level grounding
 
-Unsupported strengths, gaps, and risks are removed.
+Unsupported strengths, gaps and risks are removed.
 
 If a small local model fails to generate sufficiently grounded strengths, conservative fallback findings can be constructed from trusted deterministic or semantic comparison evidence.
 
@@ -233,6 +265,55 @@ This integration is optional.
 
 ---
 
+### Automated End-to-End Workflow
+
+`v0.3.0-alpha` introduces a complete user-facing workflow.
+
+Through the Streamlit interface, a user can:
+
+1. upload a CV PDF,
+2. describe desired jobs in natural language,
+3. optionally upload a HackerRank Hiring Agent report,
+4. select an LLM provider and model,
+5. select one or more configured job providers,
+6. configure bounded agent-search settings,
+7. run the complete CareerMatch pipeline,
+8. inspect the interpreted profile and preferences,
+9. review search and agent metrics,
+10. inspect ranked jobs and grounded reports.
+
+The frontend communicates with the FastAPI workflow API, so the underlying processing remains reusable outside the Streamlit interface.
+
+---
+
+### Reusable Workflow State and Artifacts
+
+CareerMatch can export intermediate workflow state as structured JSON.
+
+Available artifacts include:
+
+- PDF extraction result
+- candidate profile
+- job preferences
+- optional HackerRank assessment
+- prepared workflow state
+- agent search request
+- agent search response
+
+A prepared workflow can later be uploaded through the UI or API.
+
+This skips repeated:
+
+- CV text extraction,
+- candidate profile extraction,
+- preference extraction,
+- HackerRank preprocessing.
+
+The stored candidate state is reused while the selected LLM, job providers, agent configuration, and live job search can be changed.
+
+Local workflow artifacts are optional and should not normally be committed because they may contain CV-derived personal information.
+
+---
 ### Agentic Workflow
 
 The current LangGraph flow is approximately:
@@ -271,6 +352,11 @@ Search attempts are bounded to prevent uncontrolled agent loops.
 * FastAPI
 * Pydantic
 
+### Frontend
+
+* Streamlit
+* HTTPX
+
 ### Agentic AI / LLM
 
 * LangGraph
@@ -285,6 +371,13 @@ Search attempts are bounded to prevent uncontrolled agent loops.
 * semantic embeddings
 * hybrid ranking
 * deterministic matching
+
+### Job Retrieval
+
+* Arbeitnow
+* Adzuna
+* Jooble
+* composite multi-provider execution
 
 ### Quality
 
@@ -334,7 +427,9 @@ Do not commit `.env`.
 
 ## LLM Provider Setup
 
-CareerMatch Agent `v0.2.0-alpha` supports one globally selected LLM provider/model per application configuration.
+CareerMatch Agent `v0.3.0-alpha` supports Ollama, Gemini and OpenAI through a common structured LLM interface.
+
+Environment variables provide default provider/model configuration and credentials. The automated workflow can override the default provider/model for an individual request.
 
 Core settings:
 
@@ -359,7 +454,7 @@ openai
 
 Only credentials for the selected hosted provider are required.
 
-The active provider is shared across candidate profile extraction, agent search planning/replanning, and grounded job evaluation.
+The active provider is shared across candidate profile extraction, agent search planning/replanning and grounded job evaluation.
 
 ### Ollama
 
@@ -413,6 +508,18 @@ The model runs remotely through the OpenAI API.
 
 Never commit API keys to version control.
 
+## Job Provider Setup
+
+Arbeitnow can be used without API credentials.
+
+Optional hosted job providers require their respective credentials:
+
+```dotenv
+CAREER_MATCH_ADZUNA_APP_ID=
+CAREER_MATCH_ADZUNA_APP_KEY=
+
+CAREER_MATCH_JOOBLE_API_KEY=
+```
 ---
 
 ## Running the API
@@ -434,12 +541,37 @@ Interactive API documentation:
 ```text
 http://127.0.0.1:8000/docs
 ```
+---
+
+## Running the User Interface
+
+Start the FastAPI backend first:
+
+```bash
+uvicorn career_match_agent.api.main:app --reload
+```
+
+Then, from another terminal:
+
+```bash
+streamlit run frontend/app.py
+```
+
+By default, the frontend expects CareerMatch at:
+```bash
+http://127.0.0.1:8000
+```
+
+A different backend can be configured with:
+```bash
+CAREER_MATCH_API_URL=http://127.0.0.1:8000
+```
 
 ---
 
 ## Main API Capabilities
 
-The project currently exposes API routes for:
+The project exposes routes for:
 
 ```text
 /documents
@@ -449,6 +581,7 @@ The project currently exposes API routes for:
 /matching
 /ranking
 /agent
+/workflow
 ```
 
 The exact request schemas are available through the FastAPI OpenAPI documentation.
@@ -490,22 +623,28 @@ The benchmark is intended to make changes to the matching pipeline measurable ra
 
 ## Current Status
 
-`v0.2.0-alpha`
+`v0.3.0-alpha`
 
-The core pipeline is working end-to-end with configurable LLM backends:
+CareerMatch now provides a working automated end-to-end workflow including:
 
-* CV extraction
-* structured profile generation
-* global Ollama / Gemini / OpenAI provider selection
-* structured LLM output validation
-* job retrieval
+* CV PDF processing
+* structured candidate profile extraction
+* natural-language preference extraction
+* deterministic preference validation
+* runtime Ollama / Gemini / OpenAI selection
+* runtime job-provider selection
+* Arbeitnow, Adzuna, and Jooble integration
+* composite multi-provider search
+* bounded LangGraph search and replanning
 * deterministic filtering
-* semantic ranking
-* skill-overlap matching
-* grounded evaluation
-* LangGraph orchestration
+* semantic / hybrid ranking
+* evidence-grounded job evaluation
+* optional HackerRank Hiring Agent evidence
+* Streamlit user interface
+* reusable prepared workflow state
+* optional local workflow artifact recording
 
-The current release should be considered a technical alpha rather than a production-ready application.
+The release remains a technical alpha rather than a production-ready application.
 
 ---
 
@@ -515,9 +654,9 @@ CareerMatch Agent processes CV-derived information that may contain personal or 
 
 With a local Ollama configuration, LLM inference can remain on the user's machine.
 
-When Gemini or OpenAI is selected, LLM-dependent workflow inputs are sent to the configured external API. Users should review the selected provider's privacy, retention, and data-processing terms before submitting CV-derived information.
+When Gemini or OpenAI is selected, LLM-dependent workflow inputs are sent to the configured external API. Users should review the selected provider's privacy, retention and data-processing terms before submitting CV-derived information.
 
-Generated files such as candidate profiles, agent requests, assessment reports, and job-evaluation outputs may contain personal information and should normally remain outside public version control.
+Generated files such as candidate profiles, agent requests, assessment reports and job-evaluation outputs may contain personal information and should normally remain outside public version control.
 
 API keys must be stored in local environment configuration and must not be committed to the repository.
 
@@ -530,43 +669,38 @@ API keys must be stored in local environment configuration and must not be commi
 Implemented:
 
 * common structured LLM provider interface
-* Ollama provider
-* Gemini provider
-* OpenAI provider
-* global provider/model configuration
-* shared provider injection across LLM-dependent services
-* provider-independent profile extraction, search planning, and evaluation services
+* Ollama
+* Gemini
+* OpenAI
+* provider-independent LLM services
 
-### v0.3 — Automated User Workflow
+### v0.3.0-alpha — Automated User Workflow
 
-Target workflow:
+Implemented:
 
-```text
-Upload CV
-    +
-Choose LLM
-    +
-Set preferences
-    +
-Optional HackerRank report
-    ↓
-Run CareerMatch
-    ↓
-Receive ranked available jobs
-```
-
-The goal is to remove the need to manually call multiple internal API endpoints.
+* Streamlit end-to-end interface
+* CV upload workflow
+* natural-language preference input
+* runtime LLM provider/model selection
+* runtime job-provider selection
+* Arbeitnow, Adzuna, and Jooble providers
+* composite multi-provider retrieval
+* automated FastAPI workflow endpoint
+* reusable prepared workflow state
+* JSON workflow artifact export
+* optional local artifact recording
+* deterministic validation of explicit preferences
 
 ### Later
 
+* stronger provider-aware search planning
 * additional job providers
-* stronger provider-data normalization
-* persistence
-* better benchmarking and calibration
-* user interface
+* improved retrieval diversity
+* expanded benchmark and holdout datasets
+* persistence / database support
 * authentication
 * deployment
-* job monitoring
+* job monitoring and scheduled searches
 * application workflow support
 
 ---
@@ -593,9 +727,9 @@ CareerMatch Agent is an experimental project.
 
 Generated recommendations should not be treated as definitive hiring or career decisions.
 
-External job listings may change or become unavailable, and LLM-generated explanations may still contain errors despite grounding and validation mechanisms.
+External job listings may change or become unavailable and LLM-generated explanations may still contain errors despite grounding and validation mechanisms.
 
-Hosted LLM providers are external services and may have their own availability, pricing, rate limits, privacy terms, and model lifecycle policies.
+Hosted LLM providers are external services and may have their own availability, pricing, rate limits, privacy terms and model lifecycle policies.
 
 ---
 
@@ -603,7 +737,7 @@ Hosted LLM providers are external services and may have their own availability, 
 
 CareerMatch Agent is licensed under the **GNU Affero General Public License v3.0 only (`AGPL-3.0-only`)**.
 
-You may use, study, modify, redistribute, and use the software commercially, subject to the terms of the AGPLv3.
+You may use, study, modify, redistribute and use the software commercially, subject to the terms of the AGPLv3.
 
 The AGPL includes copyleft requirements for modified versions of the software, including when a modified version is made available for users to interact with over a network.
 
