@@ -1,10 +1,10 @@
+from functools import lru_cache
 from career_match_agent.core.config import get_settings
 from career_match_agent.services.profile_extractor import (
     CandidateProfileExtractor,
     StructuredCandidateProfileExtractor
 )
 from career_match_agent.providers.base import JobProvider
-from functools import lru_cache
 from career_match_agent.services.embedding import (
     EmbeddingProvider,
     SentenceTransformerEmbeddingProvider
@@ -16,6 +16,10 @@ from career_match_agent.services.job_evaluator import (
 from career_match_agent.services.search_planner import (
     SearchPlanner,
     StructuredSearchPlanner
+)
+from career_match_agent.providers.web.registry import (
+    WebJobParserRegistry,
+    create_default_web_job_parser_registry
 )
 from career_match_agent.providers.llm.base import StructuredLLMProvider
 from career_match_agent.providers.llm.factory import create_llm_provider
@@ -57,3 +61,8 @@ def get_search_planner() -> SearchPlanner:
 def get_workflow_runtime_factory() -> WorkflowRuntimeFactory:
     """Return the request-time provider factory."""
     return WorkflowRuntimeFactory(get_settings())
+
+@lru_cache(maxsize=1)
+def get_web_job_parser_registry() -> WebJobParserRegistry:
+    """Return the process-wide web parser registry."""
+    return create_default_web_job_parser_registry()
