@@ -8,6 +8,7 @@ from career_match_agent.api.routes.jobs import router as jobs_router
 from career_match_agent.api.routes.matching import router as matching_router
 from career_match_agent.api.routes.agent import router as agent_router
 from career_match_agent.api.routes.workflow import router as workflow_router
+from career_match_agent.api.routes.web_jobs import router as web_jobs_router
 
 app = FastAPI(title="CareerMatch Agent API", description="Explainable CV-based job search, ranking and recommendation API.",version="0.1.0")
 app.include_router(agent_router)
@@ -17,6 +18,7 @@ app.include_router(jobs_router)
 app.include_router(matching_router)
 app.include_router(profiles_router)
 app.include_router(workflow_router)
+app.include_router(web_jobs_router)
 
 @app.get("/health")
 def health_check() -> dict[str, str]:

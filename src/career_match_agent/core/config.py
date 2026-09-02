@@ -91,6 +91,11 @@ class Settings(BaseSettings):
     workflow_artifacts_enabled: bool = False
     maximum_prepared_workflow_bytes: int = Field(default=5 * 1024 * 1024, ge=1024)
 
+    # ------------------------------------------------------------------
+    # HTML job posts
+    # ------------------------------------------------------------------
+    max_web_job_html_bytes: int = Field(default=5 * 1024 * 1024, ge=1024)
+    
 @lru_cache
 def get_settings() -> Settings:
     """Return cached application settings."""
