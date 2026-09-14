@@ -53,7 +53,6 @@ Evidence-Grounded Evaluation
         ↓
 Ranked Jobs and Suitability Reports
 ```
----
 ### Manual API Workflow
 
 The same core pipeline can be exercised directly through the FastAPI endpoints:
