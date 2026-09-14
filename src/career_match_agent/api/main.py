@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from importlib.metadata import version as package_version
 
 from career_match_agent.api.routes.documents import router as documents_router
 from career_match_agent.api.routes.profiles import router as profiles_router
@@ -10,7 +11,8 @@ from career_match_agent.api.routes.agent import router as agent_router
 from career_match_agent.api.routes.workflow import router as workflow_router
 from career_match_agent.api.routes.web_jobs import router as web_jobs_router
 
-app = FastAPI(title="CareerMatch Agent API", description="Explainable CV-based job search, ranking and recommendation API.",version="0.1.0")
+APP_VERSION = package_version("career-match-agent")
+app = FastAPI(title="CareerMatch Agent API", description="Explainable CV-based job search, ranking and recommendation API.",version=APP_VERSION)
 app.include_router(agent_router)
 app.include_router(assessments_router)
 app.include_router(documents_router)
@@ -23,7 +25,7 @@ app.include_router(web_jobs_router)
 @app.get("/health")
 def health_check() -> dict[str, str]:
     """Return the current health status of the API."""
-    return {"status": "healthy", "service": "career-match-agent", "version": "0.1.0"}
+    return {"status": "healthy", "service": "career-match-agent", "version": APP_VERSION}
 
 @app.post("/preferences", response_model=JobPreferences)
 def validate_preferences(preferences: JobPreferences) -> JobPreferences:
