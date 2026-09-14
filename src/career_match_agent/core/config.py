@@ -9,8 +9,10 @@ from pydantic_settings import (
     BaseSettings,
     SettingsConfigDict
 )
+from importlib.metadata import version as package_version
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
+APP_VERSION = package_version("career-match-agent")
 
 class Settings(BaseSettings):
     """Runtime configuration loaded from environment variables."""
@@ -45,10 +47,10 @@ class Settings(BaseSettings):
     job_providers: list[str] = Field(default_factory=lambda: ["arbeitnow"])
 
     # Arbeitnow
-    arbeitnow_base_url: str = ("https://www.arbeitnow.com")
+    arbeitnow_base_url: str = "https://www.arbeitnow.com"
     arbeitnow_timeout_seconds: float = Field(default=1200.0, gt=0)
     arbeitnow_max_pages: int = Field(default=3, ge=1, le=10)
-    http_user_agent: str = ("career-match-agent/0.1.0")
+    http_user_agent: str = f"career-match-agent/{APP_VERSION}"
 
     # Adzuna
 
@@ -95,7 +97,7 @@ class Settings(BaseSettings):
     # HTML job posts
     # ------------------------------------------------------------------
     max_web_job_html_bytes: int = Field(default=5 * 1024 * 1024, ge=1024)
-    
+
 @lru_cache
 def get_settings() -> Settings:
     """Return cached application settings."""

@@ -1,13 +1,16 @@
 from fastapi.testclient import TestClient
+from importlib.metadata import version as package_version
 
 from career_match_agent.api.main import app
 
 client = TestClient(app)
 
+APP_VERSION = package_version("career-match-agent")
+
 def test_health_endpoint() -> None:
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"status": "healthy", "service": "career-match-agent", "version": "0.1.0"}
+    assert response.json() == {"status": "healthy", "service": "career-match-agent", "version": APP_VERSION}
 
 def test_preferences_endpoint_returns_normalised_input() -> None:
     request_payload = {"roles": [" Machine Learning Engineer ", "machine learning engineer", "Data Scientist"],
