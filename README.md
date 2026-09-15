@@ -171,6 +171,54 @@ Search planning can broaden the search when an initial attempt returns too few s
 Provider-specific retrieval behavior is handled behind a common `JobProvider` interface so that downstream filtering, ranking, and evaluation remain provider-independent.
 
 ---
+### Saved Web Job Ingestion
+
+In addition to API-based job retrieval, CareerMatch can parse job pages that a user has saved as HTML.
+
+Supported sources currently include:
+
+- LinkedIn
+- Indeed
+- StepStone
+- Glassdoor
+
+This workflow is intentionally separate from automated job retrieval. CareerMatch does not crawl these platforms or automate access to them. Instead, the user supplies an already-acquired HTML job page together with its original source URL.
+
+The parsing pipeline:
+
+1. validates the supplied source URL and uploaded document,
+2. selects the appropriate source-specific parser,
+3. attempts structured `JobPosting` JSON-LD extraction first,
+4. falls back to source-specific DOM selectors when necessary,
+5. normalizes the result into the shared CareerMatch `JobPosting` model,
+6. returns parsing provenance alongside the normalized job.
+
+Parsing provenance includes:
+
+- detected source,
+- original source URL,
+- extraction strategy,
+- parser version,
+- SHA-256 content hash,
+- parser warnings.
+
+The API endpoint is:
+
+```text
+POST /jobs/web/parse
+```
+
+Example:
+
+```bash
+curl -X POST "http://127.0.0.1:8000/jobs/web/parse" \
+  -F "file=@saved_job.html;type=text/html" \
+  -F "source_url=https://www.linkedin.com/jobs/view/example"
+```
+
+The parser registry keeps source-specific extraction logic separate from downstream filtering, ranking, and evaluation. Once parsed, a saved web job uses the same normalized job representation as jobs returned by the configured API providers.
+
+---
 
 ### Deterministic Filtering
 
@@ -625,7 +673,7 @@ The benchmark is intended to make changes to the matching pipeline measurable ra
 
 `v0.3.0-alpha`
 
-CareerMatch now provides a working automated end-to-end workflow including:
+The current `main` branch provides:
 
 * CV PDF processing
 * structured candidate profile extraction
