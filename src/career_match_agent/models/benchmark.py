@@ -4,6 +4,7 @@ from pydantic import (
     Field,
     model_validator
 )
+from typing import Literal
 
 from career_match_agent.models.candidate import (
     CandidateProfile,
@@ -17,6 +18,7 @@ from career_match_agent.models.ranking import (
     SemanticMatchEvidence
 )
 
+BenchmarkSplit = Literal["development", "holdout"]
 
 class BenchmarkModel(BaseModel):
     """Base configuration for benchmark models."""
@@ -45,6 +47,23 @@ class JobMatchingBenchmarkDataset(BenchmarkModel):
     preferences: JobPreferences
     evidence_signals: list[CandidateEvidenceSignal] = Field(default_factory=list)
     jobs: list[BenchmarkJobCase] = Field(min_length=1)
+
+
+class JobMatchingBenchmarkSuite(BenchmarkModel):
+    """Versioned collection of benchmark scenarios for one evaluation split."""
+    name: str = Field(min_length=1)
+    version: str = Field(min_length=1)
+    split: BenchmarkSplit
+    description: str | None = None
+    datasets: list[JobMatchingBenchmarkDataset] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def validate_unique_dataset_names(self) -> "JobMatchingBenchmarkSuite":
+        dataset_names = [dataset.name for dataset in self.datasets]
+
+        if len(dataset_names) != len(set(dataset_names)):
+            raise ValueError("Benchmark suite dataset names must be unique.")
+        return self
 
 class BinaryClassificationMetrics(BenchmarkModel):
     """Binary accept/reject filtering metrics."""
