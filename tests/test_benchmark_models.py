@@ -3,7 +3,8 @@ from pydantic import ValidationError
 
 from career_match_agent.models.benchmark import (
     JobMatchingBenchmarkDataset,
-    JobMatchingBenchmarkSuite)
+    JobMatchingBenchmarkSuite
+)
 
 
 def make_benchmark_dataset(name: str) -> JobMatchingBenchmarkDataset:
