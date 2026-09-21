@@ -1,11 +1,14 @@
 from time import perf_counter
+from typing import Protocol
 
 from career_match_agent.models.benchmark import (
     BenchmarkLatency,
     EvaluationBenchmarkMetrics,
     JobMatchingBenchmarkDataset,
     JobMatchingBenchmarkResult,
-    RankingJobDiagnostic,
+    JobMatchingBenchmarkSuite,
+    JobMatchingBenchmarkSuiteResult,
+    RankingJobDiagnostic
 )
 from career_match_agent.models.evaluation import (
     JobEvaluationConfiguration,
@@ -112,6 +115,30 @@ class JobMatchingBenchmarkRunner:
                                           ranked_source_ids=(ranked_source_ids),
                                           ranking_configuration=(ranking_configuration),
                                           ranking_diagnostics=(ranking_diagnostics))
+
+class BenchmarkRunnerProtocol(Protocol):
+    async def run(self, *, dataset: JobMatchingBenchmarkDataset, configuration_name: str,
+                  ranking_configuration: HybridRankingConfiguration) -> JobMatchingBenchmarkResult: ...
+
+class JobMatchingBenchmarkSuiteRunner:
+    """Execute benchmark scenarios across multiple ranking configurations."""
+    def __init__(self, benchmark_runner: BenchmarkRunnerProtocol) -> None:
+        self.benchmark_runner = benchmark_runner
+
+    async def run(self, *, suite: JobMatchingBenchmarkSuite,
+                  ranking_configurations: dict[str, HybridRankingConfiguration] | None = None) -> JobMatchingBenchmarkSuiteResult:
+        """Execute every dataset against every ranking configuration."""
+        configurations = (ranking_configurations if ranking_configurations is not None else create_ranking_ablation_configurations())
+        if not configurations:
+            raise ValueError("At least one ranking configuration is required.")
+
+        results: list[JobMatchingBenchmarkResult] = []
+        for dataset in suite.datasets:
+            for configuration_name, ranking_configuration in configurations.items():
+                result = await self.benchmark_runner.run(dataset=dataset, configuration_name=configuration_name, ranking_configuration=ranking_configuration)
+                results.append(result)
+
+        return JobMatchingBenchmarkSuiteResult(suite_name=suite.name, suite_version=suite.version, split=suite.split, results=results)
 
 def create_ranking_ablation_configurations(
 ) -> dict[str, HybridRankingConfiguration]:

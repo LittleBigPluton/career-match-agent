@@ -143,3 +143,10 @@ class JobMatchingBenchmarkResult(BenchmarkModel):
     ranked_source_ids: list[str]
     ranking_configuration: HybridRankingConfiguration
     ranking_diagnostics: list[RankingJobDiagnostic]
+
+class JobMatchingBenchmarkSuiteResult(BenchmarkModel):
+    """Results for all scenarios and ranking configurations in one suite."""
+    suite_name: str
+    suite_version: str
+    split: BenchmarkSplit
+    results: list[JobMatchingBenchmarkResult] = Field(min_length=1)
