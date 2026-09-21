@@ -3,8 +3,7 @@ from pydantic import ValidationError
 
 from career_match_agent.models.benchmark import (
     JobMatchingBenchmarkDataset,
-    JobMatchingBenchmarkSuite
-)
+    JobMatchingBenchmarkSuite)
 
 
 def make_benchmark_dataset(name: str) -> JobMatchingBenchmarkDataset:
@@ -29,6 +28,5 @@ def test_benchmark_suite_rejects_duplicate_dataset_names() -> None:
 
 def test_benchmark_suite_rejects_invalid_split() -> None:
     dataset = make_benchmark_dataset("ml-junior")
-
     with pytest.raises(ValidationError):
         JobMatchingBenchmarkSuite.model_validate({"name": "career-match", "version": "1.0.0", "split": "training", "datasets": [dataset]})
