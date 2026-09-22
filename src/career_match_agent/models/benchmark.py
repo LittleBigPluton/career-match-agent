@@ -150,3 +150,35 @@ class JobMatchingBenchmarkSuiteResult(BenchmarkModel):
     suite_version: str
     split: BenchmarkSplit
     results: list[JobMatchingBenchmarkResult] = Field(min_length=1)
+
+class AggregateMetricSummary(BenchmarkModel):
+    """Macro summary of one metric across benchmark scenarios."""
+    mean: float = Field(ge=0)
+    minimum: float = Field(ge=0)
+    maximum: float = Field(ge=0)
+
+
+class RankingAtKSummary(BenchmarkModel):
+    """Aggregated ranking metrics for one cutoff."""
+    k: int = Field(ge=1)
+    precision: AggregateMetricSummary
+    recall: AggregateMetricSummary
+    ndcg: AggregateMetricSummary
+
+
+class BenchmarkConfigurationSummary(BenchmarkModel):
+    """Cross-scenario summary for one ranking configuration."""
+    configuration_name: str = Field(min_length=1)
+    scenario_count: int = Field(ge=1)
+    filtering_f1: AggregateMetricSummary
+    reason_code_f1: AggregateMetricSummary
+    ranking_at_k: list[RankingAtKSummary] = Field(min_length=1)
+    mean_reciprocal_rank: AggregateMetricSummary
+
+
+class JobMatchingBenchmarkSuiteSummary(BenchmarkModel):
+    """Aggregated benchmark results across all scenarios."""
+    suite_name: str
+    suite_version: str
+    split: BenchmarkSplit
+    configurations: list[BenchmarkConfigurationSummary] = Field(min_length=1)
