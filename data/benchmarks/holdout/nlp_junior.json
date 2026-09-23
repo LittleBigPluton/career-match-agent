@@ -1,785 +1,787 @@
 {
   "name": "nlp_junior",
   "version": "1.0.0",
-  "split": "holdout",
-  "persona": {
-    "name": "Sophie Lang",
-    "headline": "Junior NLP Engineer",
-    "summary": "Early-career NLP engineer focused on transformer fine-tuning, text classification, and evaluation.",
-    "years_experience": 1.0,
-    "education": [
-      "MSc Artificial Intelligence"
-    ],
+  "profile": {
+    "full_name": "Selin Arslan",
+    "location": "Berlin, Germany",
+    "professional_summary": "Junior NLP engineer with applied experience fine-tuning multilingual text classifiers and evaluating named-entity recognition systems. Completed a research internship involving annotation quality and offline experimentation. Comfortable with Python, PyTorch, Hugging Face, spaCy and basic FastAPI deployment, but has no large-scale search infrastructure ownership or extensive production LLM operations experience.",
     "skills": [
       "Python",
       "PyTorch",
       "Hugging Face",
       "Transformers",
       "spaCy",
+      "scikit-learn",
       "pandas",
+      "NLP",
+      "named-entity recognition",
+      "text classification",
+      "model evaluation",
+      "annotation",
       "FastAPI",
+      "Docker",
       "Git"
     ],
-    "languages": {
-      "English": "C1",
-      "German": "B1"
-    },
-    "preferences": {
-      "target_roles": [
-        "NLP Engineer",
-        "Machine Learning Engineer",
-        "Applied AI Engineer"
-      ],
-      "locations": [
-        "Berlin",
-        "Munich",
-        "Remote Germany"
-      ],
-      "work_modes": [
-        "remote",
-        "hybrid"
-      ],
-      "employment_types": [
-        "full-time"
-      ],
-      "seniority": [
-        "junior",
-        "graduate",
-        "entry-level"
-      ],
-      "required_keywords": [
-        "Python"
-      ],
-      "excluded_keywords": [
-        "staff",
-        "principal",
-        "director"
-      ],
-      "minimum_languages": {
-        "English": "B2"
+    "skill_evidence": [],
+    "experience": [],
+    "projects": [
+      {
+        "name": "Multilingual Entity Extraction",
+        "summary": "Evaluated transformer-based NER for multilingual support tickets.",
+        "technologies": [
+          "Python",
+          "PyTorch",
+          "Hugging Face",
+          "NER",
+          "model evaluation"
+        ],
+        "highlights": [
+          "Compared transformer baselines and reviewed entity-level error categories.",
+          "Documented annotation disagreements and span-level metrics."
+        ],
+        "evidence": []
+      },
+      {
+        "name": "Text Classification Service",
+        "summary": "Built a containerized inference API for a fine-tuned text classifier.",
+        "technologies": [
+          "Python",
+          "Transformers",
+          "FastAPI",
+          "Docker"
+        ],
+        "highlights": [
+          "Built batch inference and latency measurements on a small public dataset.",
+          "Reported out-of-domain failures rather than claiming deployment at scale."
+        ],
+        "evidence": []
       }
-    }
+    ],
+    "education": [
+      {
+        "degree": "MSc",
+        "field_of_study": "Computational Linguistics",
+        "institution": "Fictional University",
+        "location": "Germany",
+        "start_date": "2023",
+        "end_date": "2026",
+        "details": [],
+        "evidence": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "C1"
+      },
+      {
+        "language": "German",
+        "proficiency": "B1"
+      }
+    ],
+    "certifications": [],
+    "years_of_experience": 1.0
   },
+  "preferences": {
+    "roles": [
+      "NLP Engineer",
+      "Machine Learning Engineer"
+    ],
+    "locations": [
+      "Berlin",
+      "Munich",
+      "Leipzig"
+    ],
+    "work_modes": [
+      "remote",
+      "hybrid"
+    ],
+    "employment_types": [
+      "full_time"
+    ],
+    "seniority_levels": [
+      "junior",
+      "entry_level"
+    ],
+    "required_keywords": [
+      "Python"
+    ],
+    "excluded_keywords": [
+      "SAP",
+      "commission-only"
+    ],
+    "preferred_languages": [
+      "English"
+    ],
+    "maximum_results": 20
+  },
+  "evidence_signals": [],
   "jobs": [
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-01",
-        "source": "synthetic",
-        "title": "Junior NLP Engineer",
-        "company": "Alpine Logic",
+        "source_id": "synthetic:nlp-junior-01",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-01",
+        "title": "Junior NLP Engineer - Multilingual NER",
+        "company": "Orbit Atelier",
+        "description": "Fine-tune and evaluate multilingual named-entity recognition in Python and PyTorch. Maintain Hugging Face training pipelines, conduct annotation error analysis and expose models through a small FastAPI service. Junior full-time hybrid role in Berlin.",
         "location": "Berlin",
-        "work_mode": "onsite",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
+          "NLP",
           "PyTorch",
           "Hugging Face",
-          "Transformers",
-          "spaCy",
+          "NER",
           "FastAPI"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve junior nlp engineer solutions using Python, PyTorch, Hugging Face, Transformers. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/01"
+        "url": "https://example.com/jobs/nlp-junior-01",
+        "posted_at": null,
+        "fingerprint": "e686233d9e7968ce3d20628ed326ae08959b9af23e27304828359fecf40b21f7"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 3,
-      "notes": "Strong fit: target role plus high overlap with core skills."
+      "expected_rejection_reasons": [],
+      "notes": "Direct overlap with multilingual NER, evaluation and Python deployment experience."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-02",
-        "source": "synthetic",
-        "title": "NLP Machine Learning Engineer",
-        "company": "NovaMesh",
+        "source_id": "synthetic:nlp-junior-02",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-02",
+        "title": "Graduate Machine Learning Engineer - Text Quality",
+        "company": "Birch Systems",
+        "description": "Build Python NLP classifiers and text-quality evaluation suites using Transformers, scikit-learn and pandas. Collaborate with annotators to track model failures. Graduate full-time position with hybrid work in Munich.",
         "location": "Munich",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Hugging Face",
           "Transformers",
-          "spaCy",
-          "FastAPI"
+          "scikit-learn",
+          "annotation",
+          "NLP"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve nlp machine learning engineer solutions using Python, PyTorch, Hugging Face, Transformers. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/02"
+        "url": "https://example.com/jobs/nlp-junior-02",
+        "posted_at": null,
+        "fingerprint": "95a1514ebdfab02d9440f07feb2cc53084021f1bc11c10f3a7867f981c0759b4"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 3,
-      "notes": "Strong fit: target role plus high overlap with core skills."
+      "expected_rejection_reasons": [],
+      "notes": "Direct fit for text classification and annotation-driven model evaluation."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-03",
-        "source": "synthetic",
-        "title": "Applied NLP Engineer",
-        "company": "DataHarbor",
-        "location": "Remote Germany",
-        "work_mode": "remote",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-03",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-03",
+        "title": "Junior NLP Engineer - Document Extraction",
+        "company": "Velvet Data",
+        "description": "Develop Python and spaCy document extraction components, experiment with PyTorch transformer tagging, and maintain offline evaluation datasets. Fully remote within Germany; junior full-time employment.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
+          "spaCy",
           "PyTorch",
-          "Hugging Face",
+          "NER",
+          "evaluation"
+        ],
+        "url": "https://example.com/jobs/nlp-junior-03",
+        "posted_at": null,
+        "fingerprint": "a0c6a9bd1c49480d6241f60c6e8ad9a10f8f63857721db40778e9601f6576df0"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "NER-specific engineering and offline experiment skills are strong matches."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:nlp-junior-04",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-04",
+        "title": "Junior Machine Learning Engineer - Search Relevance",
+        "company": "Harbor Labs",
+        "description": "Implement Python embedding experiments for search relevance and track ranking datasets. Experience with PyTorch is useful; ownership of distributed retrieval infrastructure is handled by another team. Hybrid full-time in Leipzig.",
+        "location": "Leipzig",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "embeddings",
+          "PyTorch",
+          "retrieval",
+          "ranking"
+        ],
+        "url": "https://example.com/jobs/nlp-junior-04",
+        "posted_at": null,
+        "fingerprint": "fd28f47032736b1515790c2d5a0cb5f1e71e81cc88e2019ce8f4e589259f90b9"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Relevant text embeddings and evaluation; large-scale retrieval is a gap."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:nlp-junior-05",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-05",
+        "title": "Junior NLP Engineer - Intent Routing",
+        "company": "Solstice Digital",
+        "description": "Maintain Python intent-classification pipelines using scikit-learn, pandas and rule-based text processing. Training happens weekly and deployment is managed centrally. Hybrid junior full-time role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "pandas",
+          "NLP",
+          "intent classification"
+        ],
+        "url": "https://example.com/jobs/nlp-junior-05",
+        "posted_at": null,
+        "fingerprint": "d000faf2a2566bfd95e5442895f269d6e080297f24ff3893c42c5c84ed555696"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Text classification overlap, but simpler methods and less model ownership."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:nlp-junior-06",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-06",
+        "title": "Graduate NLP Engineer - LLM Evaluation Tools",
+        "company": "Riverframe",
+        "description": "Implement Python evaluation harnesses for text-generation systems, curate prompts and analyze citation failures. Familiarity with Transformers is helpful; no requirement for running large-scale training. Remote from Germany, full-time.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
           "Transformers",
-          "spaCy",
-          "FastAPI"
+          "LLM evaluation",
+          "text generation",
+          "prompting"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve applied nlp engineer solutions using Python, PyTorch, Hugging Face, Transformers. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/03"
+        "url": "https://example.com/jobs/nlp-junior-06",
+        "posted_at": null,
+        "fingerprint": "6e4f14de2f21e8d3226e6a4e7635b1ef87669a2645cc20743b59ba45b1583c04"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
-      "relevance_grade": 3,
-      "notes": "Strong fit: target role plus high overlap with core skills."
-    },
-    {
-      "job": {
-        "source_id": "synthetic-nlp_junior-04",
-        "source": "synthetic",
-        "title": "Junior Language AI Engineer",
-        "company": "Kiteframe",
-        "location": "Berlin",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
-        ],
-        "required_skills": [
-          "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy",
-          "FastAPI"
-        ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve junior language ai engineer solutions using Python, PyTorch, Hugging Face, spaCy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/04"
-      },
-      "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 2,
-      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+      "expected_rejection_reasons": [],
+      "notes": "Good evaluation transfer, limited demonstrated generative model operations."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-05",
-        "source": "synthetic",
-        "title": "Transformer Engineer",
-        "company": "QuantaBridge",
+        "source_id": "synthetic:nlp-junior-07",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-07",
+        "title": "Junior Machine Learning Engineer - Language Inference",
+        "company": "Ironleaf",
+        "description": "Create Python model-serving endpoints for language applications and inspect production prediction errors. The team uses FastAPI, Docker and Hugging Face with mentorship on deployment. Hybrid junior full-time in Munich.",
         "location": "Munich",
-        "work_mode": "onsite",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy",
-          "FastAPI"
-        ],
-        "preferred_skills": [
-          "spaCy",
           "FastAPI",
-          "pandas"
+          "Docker",
+          "Hugging Face",
+          "model monitoring"
         ],
-        "description": "Build and improve transformer engineer solutions using Python, PyTorch, Hugging Face, spaCy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/05"
+        "url": "https://example.com/jobs/nlp-junior-07",
+        "posted_at": null,
+        "fingerprint": "bc3c4c96a87c90a02a8e09f78095e05c703856b5031acf1ff6b080c18f94acc2"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 2,
-      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+      "expected_rejection_reasons": [],
+      "notes": "Language inference and API projects transfer well, with operational growth needed."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-06",
-        "source": "synthetic",
-        "title": "NLP Developer",
-        "company": "LumenWorks",
-        "location": "Remote Germany",
-        "work_mode": "remote",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
-        ],
-        "required_skills": [
-          "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy",
-          "FastAPI"
-        ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve nlp developer solutions using Python, PyTorch, Hugging Face, spaCy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/06"
-      },
-      "expected_accept": true,
-      "expected_rejection_reasons": [],
-      "relevance_grade": 2,
-      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
-    },
-    {
-      "job": {
-        "source_id": "synthetic-nlp_junior-07",
-        "source": "synthetic",
-        "title": "AI Engineer - Language",
-        "company": "CloudBirch",
+        "source_id": "synthetic:nlp-junior-08",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-08",
+        "title": "Junior Machine Learning Engineer - Recommendation Features",
+        "company": "Caldera Works",
+        "description": "Develop Python feature pipelines and evaluate collaborative-filtering recommenders. NLP knowledge is optional and recommender-specific experience is beneficial. Full-time hybrid in Berlin.",
         "location": "Berlin",
-        "work_mode": "onsite",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy",
-          "FastAPI"
+          "recommender systems",
+          "feature engineering",
+          "scikit-learn"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve ai engineer - language solutions using Python, PyTorch, Hugging Face, spaCy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/07"
+        "url": "https://example.com/jobs/nlp-junior-08",
+        "posted_at": null,
+        "fingerprint": "6a844f334bc8b64af054fbfd226cc2c70281e7f1c2509d324fb8059ab811f7da"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
-      "relevance_grade": 2,
-      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
-    },
-    {
-      "job": {
-        "source_id": "synthetic-nlp_junior-08",
-        "source": "synthetic",
-        "title": "Junior ML Engineer - NLP",
-        "company": "PixelCurrent",
-        "location": "Munich",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
-        ],
-        "required_skills": [
-          "Python",
-          "PyTorch",
-          "Git"
-        ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve junior ml engineer - nlp solutions using Python, PyTorch, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/08"
-      },
-      "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 1,
-      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+      "expected_rejection_reasons": [],
+      "notes": "Valid ML role and skills but substantial domain specialization gap."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-09",
-        "source": "synthetic",
-        "title": "Conversational AI Engineer",
-        "company": "DeepRiver Tech",
-        "location": "Remote Germany",
-        "work_mode": "remote",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-09",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-09",
+        "title": "Junior NLP Engineer - Text Data Pipelines",
+        "company": "Limehouse Tech",
+        "description": "Prepare Python text ingestion and annotation exports; most work is data cleaning, schema validation and operations handoffs rather than training NLP models. Remote full-time within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Git"
+          "text pipelines",
+          "pandas",
+          "annotation",
+          "SQL"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve conversational ai engineer solutions using Python, PyTorch, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/09"
+        "url": "https://example.com/jobs/nlp-junior-09",
+        "posted_at": null,
+        "fingerprint": "bb035db2e00509b5f75cd1a8527f151144fff753742a7bc8f5d445c6382c4e4d"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 1,
-      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+      "expected_rejection_reasons": [],
+      "notes": "Suitable role but limited modeling responsibilities."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-10",
-        "source": "synthetic",
-        "title": "Text Mining Engineer",
-        "company": "MetricSpring",
-        "location": "Berlin",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-10",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-10",
+        "title": "Graduate NLP Engineer - Documentation Automation",
+        "company": "Northbridge Research",
+        "description": "Maintain Python templates and review AI-produced summaries; model experimentation is performed by a separate research group. Junior full-time hybrid in Leipzig.",
+        "location": "Leipzig",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Git"
+          "NLP",
+          "documentation",
+          "quality checks"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve text mining engineer solutions using Python, PyTorch, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/10"
+        "url": "https://example.com/jobs/nlp-junior-10",
+        "posted_at": null,
+        "fingerprint": "66851f12a234edb30978ba4d8791e8c6d4b7b60ebacb54b1a8667b324b4e74a2"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
-      "relevance_grade": 1,
-      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
-    },
-    {
-      "job": {
-        "source_id": "synthetic-nlp_junior-11",
-        "source": "synthetic",
-        "title": "Junior Applied AI Engineer",
-        "company": "IronLeaf Software",
-        "location": "Munich",
-        "work_mode": "onsite",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
-        ],
-        "required_skills": [
-          "Python",
-          "Domain-specific tooling",
-          "Stakeholder communication"
-        ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve junior applied ai engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/11"
-      },
-      "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 0,
-      "notes": "Admissible distractor: passes hard constraints but should rank low."
+      "expected_rejection_reasons": [],
+      "notes": "Nominal NLP title but mostly documentation and template maintenance."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-12",
-        "source": "synthetic",
-        "title": "NLP Research Engineer",
-        "company": "Mosaic Compute",
-        "location": "Remote Germany",
-        "work_mode": "remote",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-11",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-11",
+        "title": "Junior Machine Learning Engineer - Annotation QA",
+        "company": "Orbit Atelier",
+        "description": "Review Python annotation validation scripts and manually triage text-label quality issues. No model training or deployment ownership. Fully remote from Germany, full-time.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "Domain-specific tooling",
-          "Stakeholder communication"
+          "annotation",
+          "quality review",
+          "NLP"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build and improve nlp research engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
-        "url": "https://example.invalid/jobs/nlp_junior/12"
+        "url": "https://example.com/jobs/nlp-junior-11",
+        "posted_at": null,
+        "fingerprint": "c1cc6cce130eb5a563d6a3b97d1c8898abea9bebc3bd3c1d2ec92e9e0d4a4dc7"
       },
       "expected_accept": true,
-      "expected_rejection_reasons": [],
       "relevance_grade": 0,
-      "notes": "Admissible distractor: passes hard constraints but should rank low."
+      "expected_rejection_reasons": [],
+      "notes": "Meets hard constraints but low substantive engineering or modeling fit."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-13",
-        "source": "synthetic",
-        "title": "Frontend Engineer",
-        "company": "Northstar Labs",
+        "source_id": "synthetic:nlp-junior-12",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-12",
+        "title": "Junior Frontend QA Engineer - AI Text Interface",
+        "company": "Birch Systems",
+        "description": "Test a text-product frontend and write Python QA utilities for model-output displays. The position is frontend QA rather than NLP or machine learning engineering. Hybrid full-time in Berlin.",
         "location": "Berlin",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy"
+          "frontend testing",
+          "text products"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Build user-facing features with technologies outside the candidate's target role family.",
-        "url": "https://example.invalid/jobs/nlp_junior/13"
+        "url": "https://example.com/jobs/nlp-junior-12",
+        "posted_at": null,
+        "fingerprint": "7f357c14ba8a74cf4f37aa203ee963ba2b1ee0ba57316e9a4efe06b131f814ef"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "role_mismatch"
       ],
-      "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: role_mismatch."
+      "notes": "Unrelated professional role despite technical terminology."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-14",
-        "source": "synthetic",
-        "title": "NLP Machine Learning Engineer",
-        "company": "BluePeak Systems",
-        "location": "Barcelona",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-13",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-13",
+        "title": "Graduate NLP Engineer - Paris",
+        "company": "Velvet Data",
+        "description": "Build Python transformer-based entity extraction and language evaluation; hybrid full-time at the Paris office, with no Germany-based arrangement.",
+        "location": "Paris",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
           "PyTorch",
-          "Hugging Face",
-          "spaCy"
+          "NLP",
+          "entity extraction"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Role requiring Python, PyTorch, Hugging Face, spaCy with normal product engineering responsibilities. This role requires regular presence in the listed country.",
-        "url": "https://example.invalid/jobs/nlp_junior/14"
+        "url": "https://example.com/jobs/nlp-junior-13",
+        "posted_at": null,
+        "fingerprint": "54cf532ace7ddf809a29be12414ba70f84d71b57b47d1653ef3e68d720b006f4"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "location_mismatch"
       ],
-      "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: location_mismatch."
+      "notes": "Outside specified geographic preferences."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-15",
-        "source": "synthetic",
-        "title": "Staff NLP Engineer",
-        "company": "RheinCode",
-        "location": "Remote Germany",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "senior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
-        ],
-        "required_skills": [
-          "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy"
-        ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Role requiring Python, PyTorch, Hugging Face, spaCy with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
-        "url": "https://example.invalid/jobs/nlp_junior/15"
-      },
-      "expected_accept": false,
-      "expected_rejection_reasons": [
-        "seniority_mismatch"
-      ],
-      "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: seniority_mismatch."
-    },
-    {
-      "job": {
-        "source_id": "synthetic-nlp_junior-16",
-        "source": "synthetic",
-        "title": "Principal Applied Scientist",
-        "company": "VectorForge",
+        "source_id": "synthetic:nlp-junior-14",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-14",
+        "title": "Senior NLP Engineer - Applied Language",
+        "company": "Harbor Labs",
+        "description": "Own Python and Hugging Face language platforms and mentor multiple engineering teams. Senior full-time hybrid role in Berlin.",
         "location": "Berlin",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "senior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
+          "NLP",
           "Hugging Face",
-          "spaCy"
+          "leadership"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Role requiring Python, PyTorch, Hugging Face, spaCy with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
-        "url": "https://example.invalid/jobs/nlp_junior/16"
+        "url": "https://example.com/jobs/nlp-junior-14",
+        "posted_at": null,
+        "fingerprint": "f0c24bf09f2f6146254ffa4d2b3b18698410cf297f6af1e7069ace9e63678295"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "seniority_mismatch"
       ],
-      "relevance_grade": 1,
-      "notes": "Rejected by deterministic filter: seniority_mismatch."
+      "notes": "Explicit senior level outside candidate seniority range."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-17",
-        "source": "synthetic",
-        "title": "Transformer Engineer",
-        "company": "Cedar Analytics",
+        "source_id": "synthetic:nlp-junior-15",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-15",
+        "title": "Junior NLP Engineer - German Client Documents",
+        "company": "Solstice Digital",
+        "description": "Implement Python document extraction with spaCy for German clients. German C1 is mandatory for workshops and requirements review. Full-time hybrid in Munich.",
         "location": "Munich",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "German",
-            "level": "C2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Hugging Face",
-          "spaCy"
-        ],
-        "preferred_skills": [
           "spaCy",
-          "FastAPI",
-          "pandas"
+          "NLP",
+          "client workshops"
         ],
-        "description": "Role requiring Python, PyTorch, Hugging Face, spaCy with normal product engineering responsibilities. Professional German at C2 level is mandatory.",
-        "url": "https://example.invalid/jobs/nlp_junior/17"
+        "url": "https://example.com/jobs/nlp-junior-15",
+        "posted_at": null,
+        "fingerprint": "d8bf0960af0159e190370d4c086399730e380775f233829a40e7d18449977edc"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "language_level_mismatch"
       ],
-      "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: language_level_mismatch."
+      "notes": "German C1 exceeds the profile B1 level."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-18",
-        "source": "synthetic",
-        "title": "NLP Developer",
-        "company": "OrbitWorks",
-        "location": "Remote Germany",
-        "work_mode": "hybrid",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-16",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-16",
+        "title": "Junior NLP Engineer - JVM Text Stack",
+        "company": "Riverframe",
+        "description": "Implement JVM text indexing using Java, Scala and Lucene. Maintain a pure JVM application stack and support rule-based extraction. Remote full-time within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
-          "PyTorch",
-          "Hugging Face",
-          "spaCy"
+        "raw_employment_types": [
+          "full_time"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
+        "tags": [
+          "Java",
+          "Scala",
+          "Lucene",
+          "NLP"
         ],
-        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
-        "url": "https://example.invalid/jobs/nlp_junior/18"
+        "url": "https://example.com/jobs/nlp-junior-16",
+        "posted_at": null,
+        "fingerprint": "166fa01079f73c81df8c448d614f66bd3f9463510403a2322c44030ef4058034"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "required_keyword_missing"
       ],
-      "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: required_keyword_missing."
+      "notes": "Missing the mandatory Python keyword across the posting."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-19",
-        "source": "synthetic",
-        "title": "AI Engineer - Language",
-        "company": "SignalNest",
+        "source_id": "synthetic:nlp-junior-17",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-17",
+        "title": "Junior NLP Engineer - SAP Ticket Extraction",
+        "company": "Ironleaf",
+        "description": "Build Python pipelines to extract entities from SAP support tickets using Hugging Face and spaCy. Full-time hybrid role in Berlin.",
         "location": "Berlin",
-        "work_mode": "hybrid",
-        "employment_type": "contract",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
-          "PyTorch",
-          "Hugging Face",
+          "NLP",
+          "SAP",
           "spaCy"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Role requiring Python, PyTorch, Hugging Face, spaCy with normal product engineering responsibilities. This is a six-month freelance contract.",
-        "url": "https://example.invalid/jobs/nlp_junior/19"
+        "url": "https://example.com/jobs/nlp-junior-17",
+        "posted_at": null,
+        "fingerprint": "9633d2c0bb568b162f772c26abbdeae4aeed720c9a5590224dcaaa7d074229ed"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "excluded_keyword_present"
+      ],
+      "notes": "Contains excluded enterprise-platform keyword."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:nlp-junior-18",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-18",
+        "title": "Junior NLP Engineer - Contract Annotation Systems",
+        "company": "Caldera Works",
+        "description": "Develop Python annotation tooling and text-classification experiments. This position is a six-month independent contractor engagement, remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "contract"
+        ],
+        "raw_employment_types": [
+          "contract"
+        ],
+        "tags": [
+          "Python",
+          "NLP",
+          "annotation",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/nlp-junior-18",
+        "posted_at": null,
+        "fingerprint": "c6635c790346e42b501bf5a716e7073aa1182fd113836e5029325fc21ab6627d"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "employment_type_mismatch"
       ],
-      "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+      "notes": "Contract type differs from required full-time employment."
     },
     {
       "job": {
-        "source_id": "synthetic-nlp_junior-20",
-        "source": "synthetic",
-        "title": "Junior ML Engineer - NLP",
-        "company": "BrightStack",
-        "location": "Munich",
-        "work_mode": "onsite",
-        "employment_type": "full-time",
-        "seniority": "junior",
-        "language_requirements": [
-          {
-            "language": "English",
-            "level": "B2"
-          }
+        "source_id": "synthetic:nlp-junior-19",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-19",
+        "title": "Junior Machine Learning Engineer - Office Text Lab",
+        "company": "Limehouse Tech",
+        "description": "Build Python language classification tools on the office workstation. Five days per week onsite in Berlin with no remote or hybrid option; full-time.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
         ],
-        "required_skills": [
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
           "Python",
+          "NLP",
           "PyTorch",
-          "Hugging Face",
-          "spaCy"
+          "office lab"
         ],
-        "preferred_skills": [
-          "spaCy",
-          "FastAPI",
-          "pandas"
-        ],
-        "description": "Role requiring Python, PyTorch, Hugging Face, spaCy with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
-        "url": "https://example.invalid/jobs/nlp_junior/20"
+        "url": "https://example.com/jobs/nlp-junior-19",
+        "posted_at": null,
+        "fingerprint": "92a23c9eb6a5e06190f5ed668faa4b00f28a19c3c14fd03d3d1b998412faa1fb"
       },
       "expected_accept": false,
+      "relevance_grade": 0,
       "expected_rejection_reasons": [
         "work_mode_mismatch"
       ],
+      "notes": "Explicit onsite-only arrangement conflicts with remote/hybrid preference."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:nlp-junior-20",
+        "provider": "synthetic",
+        "external_id": "nlp-junior-20",
+        "title": "Junior AI Sales Specialist - Language Products",
+        "company": "Northbridge Research",
+        "description": "Present language tooling to customers and maintain Python demonstration notebooks. Primarily a sales role with commission-based targets; junior full-time hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "sales",
+          "customer demos",
+          "AI"
+        ],
+        "url": "https://example.com/jobs/nlp-junior-20",
+        "posted_at": null,
+        "fingerprint": "911c24d5453f25bffbdf68ed2986fce301d094cff6a1b729a207d5354fee2a4b"
+      },
+      "expected_accept": false,
       "relevance_grade": 0,
-      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Sales specialization lies outside preferred engineering roles; separate from the keyword exclusions."
     }
   ]
 }
