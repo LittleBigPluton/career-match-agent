@@ -62,7 +62,7 @@ def test_data_junior_benchmark_dataset_is_valid() -> None:
     dataset_path = Path("data/benchmarks/development/data_junior.json")
     dataset = JobMatchingBenchmarkDataset.model_validate_json(dataset_path.read_text(encoding="utf-8"))
     assert dataset.name == "data_junior"
-    assert dataset.version == "0.1.0"
+    assert dataset.version == "1.0.0"
     assert len(dataset.jobs) == 20
 
     accepted = [case for case in dataset.jobs if case.expected_accept]
@@ -79,7 +79,7 @@ def test_career_switcher_benchmark_dataset_is_valid() -> None:
     dataset_path = Path("data/benchmarks/development/career_switcher.json")
     dataset = JobMatchingBenchmarkDataset.model_validate_json(dataset_path.read_text(encoding="utf-8"))
     assert dataset.name == "career_switcher"
-    assert dataset.version == "0.1.0"
+    assert dataset.version == "1.0.0"
     assert len(dataset.jobs) == 20
 
     accepted = [case for case in dataset.jobs if case.expected_accept]
