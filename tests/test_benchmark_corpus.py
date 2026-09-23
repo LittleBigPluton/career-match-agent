@@ -74,3 +74,20 @@ def test_data_junior_benchmark_dataset_is_valid() -> None:
     assert len(source_ids) == len(set(source_ids))
     assert sum(case.relevance_grade >= 2 for case in accepted) == 8
     assert all(not case.expected_rejection_reasons for case in accepted)
+
+def test_career_switcher_benchmark_dataset_is_valid() -> None:
+    dataset_path = Path("data/benchmarks/development/career_switcher.json")
+    dataset = JobMatchingBenchmarkDataset.model_validate_json(dataset_path.read_text(encoding="utf-8"))
+    assert dataset.name == "career_switcher"
+    assert dataset.version == "0.1.0"
+    assert len(dataset.jobs) == 20
+
+    accepted = [case for case in dataset.jobs if case.expected_accept]
+    rejected = [case for case in dataset.jobs if not case.expected_accept]
+    assert len(accepted) == 12
+    assert len(rejected) == 8
+
+    source_ids = [case.job.source_id for case in dataset.jobs]
+    assert len(source_ids) == len(set(source_ids))
+    assert sum(case.relevance_grade >= 2 for case in accepted) == 8
+    assert all(not case.expected_rejection_reasons for case in accepted)
