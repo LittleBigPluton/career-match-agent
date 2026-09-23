@@ -1,0 +1,784 @@
+{
+  "name": "backend_mid",
+  "version": "1.0.0",
+  "split": "development",
+  "persona": {
+    "name": "Jonas Weber",
+    "headline": "Backend Python Engineer",
+    "summary": "Backend engineer with four years of experience building Python APIs and data services.",
+    "years_experience": 4.0,
+    "education": [
+      "BSc Computer Science"
+    ],
+    "skills": [
+      "Python",
+      "FastAPI",
+      "Django",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "pytest",
+      "Git"
+    ],
+    "languages": {
+      "English": "C1",
+      "German": "B2"
+    },
+    "preferences": {
+      "target_roles": [
+        "Backend Engineer",
+        "Python Engineer",
+        "Software Engineer"
+      ],
+      "locations": [
+        "Berlin",
+        "Cologne",
+        "Remote Germany"
+      ],
+      "work_modes": [
+        "remote",
+        "hybrid"
+      ],
+      "employment_types": [
+        "full-time"
+      ],
+      "seniority": [
+        "mid-level",
+        "intermediate"
+      ],
+      "required_keywords": [
+        "Python"
+      ],
+      "excluded_keywords": [
+        "PHP-only",
+        "Java-only"
+      ],
+      "minimum_languages": {
+        "English": "B2"
+      }
+    }
+  },
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-01",
+        "source": "synthetic",
+        "title": "Backend Python Engineer",
+        "company": "VectorForge",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "REST APIs",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve backend python engineer solutions using Python, FastAPI, PostgreSQL, REST APIs. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/01"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-02",
+        "source": "synthetic",
+        "title": "Python API Engineer",
+        "company": "Cedar Analytics",
+        "location": "Cologne",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "REST APIs",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve python api engineer solutions using Python, FastAPI, PostgreSQL, REST APIs. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/02"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-03",
+        "source": "synthetic",
+        "title": "Software Engineer - Backend",
+        "company": "OrbitWorks",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "REST APIs",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve software engineer - backend solutions using Python, FastAPI, PostgreSQL, REST APIs. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/03"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-04",
+        "source": "synthetic",
+        "title": "FastAPI Engineer",
+        "company": "SignalNest",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve fastapi engineer solutions using Python, FastAPI, PostgreSQL, Docker. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/04"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-05",
+        "source": "synthetic",
+        "title": "Backend Developer",
+        "company": "BrightStack",
+        "location": "Cologne",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve backend developer solutions using Python, FastAPI, PostgreSQL, Docker. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/05"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-06",
+        "source": "synthetic",
+        "title": "Platform Backend Engineer",
+        "company": "Alpine Logic",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve platform backend engineer solutions using Python, FastAPI, PostgreSQL, Docker. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/06"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-07",
+        "source": "synthetic",
+        "title": "Python Services Engineer",
+        "company": "NovaMesh",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker",
+          "Redis"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve python services engineer solutions using Python, FastAPI, PostgreSQL, Docker. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/07"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-08",
+        "source": "synthetic",
+        "title": "API Software Engineer",
+        "company": "DataHarbor",
+        "location": "Cologne",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "Django"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve api software engineer solutions using Python, FastAPI, Django. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/08"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-09",
+        "source": "synthetic",
+        "title": "Backend Product Engineer",
+        "company": "Kiteframe",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "Django"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve backend product engineer solutions using Python, FastAPI, Django. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/09"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-10",
+        "source": "synthetic",
+        "title": "Cloud Backend Engineer",
+        "company": "QuantaBridge",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "Django"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve cloud backend engineer solutions using Python, FastAPI, Django. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/10"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-11",
+        "source": "synthetic",
+        "title": "Python Microservices Engineer",
+        "company": "LumenWorks",
+        "location": "Cologne",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve python microservices engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/11"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-12",
+        "source": "synthetic",
+        "title": "Backend Systems Engineer",
+        "company": "CloudBirch",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build and improve backend systems engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/backend_mid/12"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-13",
+        "source": "synthetic",
+        "title": "Frontend React Engineer",
+        "company": "PixelCurrent",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Build user-facing features with technologies outside the candidate's target role family.",
+        "url": "https://example.invalid/jobs/backend_mid/13"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: role_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-14",
+        "source": "synthetic",
+        "title": "Python API Engineer",
+        "company": "DeepRiver Tech",
+        "location": "Vienna",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Role requiring Python, FastAPI, PostgreSQL, Docker with normal product engineering responsibilities. This role requires regular presence in the listed country.",
+        "url": "https://example.invalid/jobs/backend_mid/14"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: location_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-15",
+        "source": "synthetic",
+        "title": "Principal Backend Engineer",
+        "company": "MetricSpring",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Role requiring Python, FastAPI, PostgreSQL, Docker with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/backend_mid/15"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-16",
+        "source": "synthetic",
+        "title": "Engineering Manager",
+        "company": "IronLeaf Software",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Role requiring Python, FastAPI, PostgreSQL, Docker with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/backend_mid/16"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 1,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-17",
+        "source": "synthetic",
+        "title": "Backend Developer",
+        "company": "Mosaic Compute",
+        "location": "Cologne",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "German",
+            "level": "C2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Role requiring Python, FastAPI, PostgreSQL, Docker with normal product engineering responsibilities. Professional German at C2 level is mandatory.",
+        "url": "https://example.invalid/jobs/backend_mid/17"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: language_level_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-18",
+        "source": "synthetic",
+        "title": "Platform Backend Engineer",
+        "company": "Northstar Labs",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
+        "url": "https://example.invalid/jobs/backend_mid/18"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: required_keyword_missing."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-19",
+        "source": "synthetic",
+        "title": "Python Services Engineer",
+        "company": "BluePeak Systems",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "contract",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Role requiring Python, FastAPI, PostgreSQL, Docker with normal product engineering responsibilities. This is a six-month freelance contract.",
+        "url": "https://example.invalid/jobs/backend_mid/19"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-backend_mid-20",
+        "source": "synthetic",
+        "title": "API Software Engineer",
+        "company": "RheinCode",
+        "location": "Cologne",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Docker",
+          "Redis",
+          "AWS"
+        ],
+        "description": "Role requiring Python, FastAPI, PostgreSQL, Docker with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
+        "url": "https://example.invalid/jobs/backend_mid/20"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+    }
+  ]
+}

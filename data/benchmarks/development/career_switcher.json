@@ -1,0 +1,787 @@
+{
+  "name": "career_switcher",
+  "version": "1.0.0",
+  "split": "development",
+  "persona": {
+    "name": "Elena Rossi",
+    "headline": "Quantitative Graduate Transitioning to Data/ML",
+    "summary": "Physics graduate transitioning into applied data and machine learning with strong numerical computing experience.",
+    "years_experience": 0.3,
+    "education": [
+      "MSc Physics"
+    ],
+    "skills": [
+      "Python",
+      "NumPy",
+      "SciPy",
+      "pandas",
+      "matplotlib",
+      "statistics",
+      "Linux",
+      "Git"
+    ],
+    "languages": {
+      "English": "C1",
+      "German": "A2",
+      "Italian": "native"
+    },
+    "preferences": {
+      "target_roles": [
+        "Junior Data Scientist",
+        "Junior ML Engineer",
+        "Data Analyst"
+      ],
+      "locations": [
+        "Munich",
+        "Berlin",
+        "Remote Germany"
+      ],
+      "work_modes": [
+        "remote",
+        "hybrid",
+        "onsite"
+      ],
+      "employment_types": [
+        "full-time"
+      ],
+      "seniority": [
+        "junior",
+        "graduate",
+        "entry-level"
+      ],
+      "required_keywords": [
+        "Python"
+      ],
+      "excluded_keywords": [
+        "senior",
+        "lead",
+        "principal"
+      ],
+      "minimum_languages": {
+        "English": "B2"
+      }
+    }
+  },
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-01",
+        "source": "synthetic",
+        "title": "Junior Data Scientist",
+        "company": "DataHarbor",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "statistics",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve junior data scientist solutions using Python, NumPy, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/01"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-02",
+        "source": "synthetic",
+        "title": "Graduate Data Analyst",
+        "company": "Kiteframe",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "statistics",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve graduate data analyst solutions using Python, NumPy, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/02"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-03",
+        "source": "synthetic",
+        "title": "Junior ML Engineer",
+        "company": "QuantaBridge",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "statistics",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve junior ml engineer solutions using Python, NumPy, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/03"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-04",
+        "source": "synthetic",
+        "title": "Quantitative Data Analyst",
+        "company": "LumenWorks",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve quantitative data analyst solutions using Python, NumPy, pandas, SciPy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/04"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-05",
+        "source": "synthetic",
+        "title": "Scientific Software Analyst",
+        "company": "CloudBirch",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve scientific software analyst solutions using Python, NumPy, pandas, SciPy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/05"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-06",
+        "source": "synthetic",
+        "title": "Junior Research Data Scientist",
+        "company": "PixelCurrent",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve junior research data scientist solutions using Python, NumPy, pandas, SciPy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/06"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-07",
+        "source": "synthetic",
+        "title": "Data Science Trainee",
+        "company": "DeepRiver Tech",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve data science trainee solutions using Python, NumPy, pandas, SciPy. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/07"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-08",
+        "source": "synthetic",
+        "title": "Applied Analytics Graduate",
+        "company": "MetricSpring",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "Git"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve applied analytics graduate solutions using Python, NumPy, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/08"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-09",
+        "source": "synthetic",
+        "title": "Junior Python Data Engineer",
+        "company": "IronLeaf Software",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "Git"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve junior python data engineer solutions using Python, NumPy, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/09"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-10",
+        "source": "synthetic",
+        "title": "ML Graduate Engineer",
+        "company": "Mosaic Compute",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "Git"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve ml graduate engineer solutions using Python, NumPy, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/10"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-11",
+        "source": "synthetic",
+        "title": "Data Analyst",
+        "company": "Northstar Labs",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve data analyst solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/11"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-12",
+        "source": "synthetic",
+        "title": "Junior Modeling Engineer",
+        "company": "BluePeak Systems",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build and improve junior modeling engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/career_switcher/12"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-13",
+        "source": "synthetic",
+        "title": "Senior Backend Engineer",
+        "company": "RheinCode",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Build user-facing features with technologies outside the candidate's target role family.",
+        "url": "https://example.invalid/jobs/career_switcher/13"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: role_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-14",
+        "source": "synthetic",
+        "title": "Graduate Data Analyst",
+        "company": "VectorForge",
+        "location": "London",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Role requiring Python, NumPy, pandas, SciPy with normal product engineering responsibilities. This role requires regular presence in the listed country.",
+        "url": "https://example.invalid/jobs/career_switcher/14"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: location_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-15",
+        "source": "synthetic",
+        "title": "Senior Machine Learning Engineer",
+        "company": "Cedar Analytics",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Role requiring Python, NumPy, pandas, SciPy with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/career_switcher/15"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-16",
+        "source": "synthetic",
+        "title": "Lead Data Scientist",
+        "company": "OrbitWorks",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Role requiring Python, NumPy, pandas, SciPy with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/career_switcher/16"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 1,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-17",
+        "source": "synthetic",
+        "title": "Scientific Software Analyst",
+        "company": "SignalNest",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "German",
+            "level": "C1"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Role requiring Python, NumPy, pandas, SciPy with normal product engineering responsibilities. Professional German at C1 level is mandatory.",
+        "url": "https://example.invalid/jobs/career_switcher/17"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: language_level_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-18",
+        "source": "synthetic",
+        "title": "Junior Research Data Scientist",
+        "company": "BrightStack",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
+        "url": "https://example.invalid/jobs/career_switcher/18"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: required_keyword_missing."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-19",
+        "source": "synthetic",
+        "title": "Data Science Trainee",
+        "company": "Alpine Logic",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "contract",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Role requiring Python, NumPy, pandas, SciPy with normal product engineering responsibilities. This is a six-month freelance contract.",
+        "url": "https://example.invalid/jobs/career_switcher/19"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-career_switcher-20",
+        "source": "synthetic",
+        "title": "Applied Analytics Graduate",
+        "company": "NovaMesh",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "SciPy"
+        ],
+        "preferred_skills": [
+          "SciPy",
+          "matplotlib",
+          "scikit-learn"
+        ],
+        "description": "Role requiring Python, NumPy, pandas, SciPy with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
+        "url": "https://example.invalid/jobs/career_switcher/20"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+    }
+  ]
+}

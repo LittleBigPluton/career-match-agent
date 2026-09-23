@@ -8,7 +8,8 @@ from career_match_agent.models.benchmark import (
     JobMatchingBenchmarkResult,
     JobMatchingBenchmarkSuite,
     JobMatchingBenchmarkSuiteResult,
-    RankingJobDiagnostic
+    RankingJobDiagnostic,
+    FilteringJobDiagnostic
 )
 from career_match_agent.models.evaluation import (
     JobEvaluationConfiguration,
@@ -56,6 +57,23 @@ class JobMatchingBenchmarkRunner:
         filtering_metrics = (calculate_binary_metrics(expected=expected_accept, predicted=predicted_accept))
         expected_reasons = {benchmark_case.job.source_id: {reason.value for reason in benchmark_case.expected_rejection_reasons} for benchmark_case in dataset.jobs}
         reason_metrics = (calculate_reason_code_metrics(expected=expected_reasons, decisions=all_decisions))
+        # Preserve the actual filtering decision for every job.
+        decision_by_id = {decision.job.source_id: decision for decision in all_decisions}
+        if len(decision_by_id) != len(all_decisions):
+            raise ValueError("Filtering produced duplicate job decisions.")
+
+        if set(decision_by_id) != set(expected_accept):
+            raise ValueError("Filtering decisions do not match the benchmark job IDs.")
+
+        # Compare the expected labels against actual filtering decisions.
+        filtering_diagnostics: list[FilteringJobDiagnostic] = []
+        for case in dataset.jobs:
+            decision = decision_by_id[case.job.source_id]
+            filtering_diagnostics.append(FilteringJobDiagnostic(source_id=case.job.source_id,
+                                                                expected_accept=case.expected_accept,
+                                                                actual_accept=decision.accepted,
+                                                                expected_rejection_reasons=[reason.value for reason in case.expected_rejection_reasons],
+                                                                actual_rejection_reasons=[reason.code.value for reason in decision.rejection_reasons]))
         rank_start = perf_counter()
         ranking_service = HybridJobRankingService(self.embedding_provider)
         ranking_response = await ranking_service.rank(HybridRankingRequest(profile=dataset.profile, preferences=dataset.preferences, accepted_jobs=filtering_response.accepted_jobs,
@@ -106,6 +124,7 @@ class JobMatchingBenchmarkRunner:
                                           configuration_name=(configuration_name),
                                           filtering=filtering_metrics,
                                           reason_codes=reason_metrics,
+                                          filtering_diagnostics=filtering_diagnostics,
                                           ranking=ranking_metrics,
                                           evaluation=evaluation_metrics,
                                           latency=BenchmarkLatency(filtering_ms=round(filtering_ms, 2),

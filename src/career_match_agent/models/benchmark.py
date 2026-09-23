@@ -130,6 +130,14 @@ class RankingJobDiagnostic(BenchmarkModel):
     warning_quality_score: float = Field(ge=0, le=100)
     semantic_matches: list[SemanticMatchEvidence]
 
+class FilteringJobDiagnostic(BenchmarkModel):
+    """Expected and observed filtering behaviour for one benchmark job."""
+    source_id: str
+    expected_accept: bool
+    actual_accept: bool
+    expected_rejection_reasons: list[str] = Field(default_factory=list)
+    actual_rejection_reasons: list[str] = Field(default_factory=list)
+    
 class JobMatchingBenchmarkResult(BenchmarkModel):
     """Complete result from one benchmark configuration."""
     dataset_name: str
@@ -143,6 +151,7 @@ class JobMatchingBenchmarkResult(BenchmarkModel):
     ranked_source_ids: list[str]
     ranking_configuration: HybridRankingConfiguration
     ranking_diagnostics: list[RankingJobDiagnostic]
+    filtering_diagnostics: list[FilteringJobDiagnostic] = Field(default_factory=list)
 
 class JobMatchingBenchmarkSuiteResult(BenchmarkModel):
     """Results for all scenarios and ranking configurations in one suite."""

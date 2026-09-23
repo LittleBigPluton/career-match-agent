@@ -1,0 +1,783 @@
+{
+  "name": "python_automation_mid",
+  "version": "1.0.0",
+  "split": "holdout",
+  "persona": {
+    "name": "David Schmitt",
+    "headline": "Python Automation Engineer",
+    "summary": "Automation engineer with four years of Python scripting, API integration, Linux, and CI experience.",
+    "years_experience": 4.3,
+    "education": [
+      "BEng Information Systems"
+    ],
+    "skills": [
+      "Python",
+      "REST APIs",
+      "Linux",
+      "Bash",
+      "pytest",
+      "GitLab CI",
+      "Docker",
+      "SQL"
+    ],
+    "languages": {
+      "English": "C1",
+      "German": "C1"
+    },
+    "preferences": {
+      "target_roles": [
+        "Python Automation Engineer",
+        "Automation Engineer",
+        "Backend Engineer"
+      ],
+      "locations": [
+        "Stuttgart",
+        "Munich",
+        "Remote Germany"
+      ],
+      "work_modes": [
+        "remote",
+        "hybrid"
+      ],
+      "employment_types": [
+        "full-time"
+      ],
+      "seniority": [
+        "mid-level",
+        "intermediate"
+      ],
+      "required_keywords": [
+        "Python"
+      ],
+      "excluded_keywords": [
+        "PLC-only",
+        "principal"
+      ],
+      "minimum_languages": {
+        "English": "B2"
+      }
+    }
+  },
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-01",
+        "source": "synthetic",
+        "title": "Python Automation Engineer",
+        "company": "VectorForge",
+        "location": "Stuttgart",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "pytest",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve python automation engineer solutions using Python, REST APIs, Linux, pytest. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/01"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-02",
+        "source": "synthetic",
+        "title": "Automation Software Engineer",
+        "company": "Cedar Analytics",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "pytest",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve automation software engineer solutions using Python, REST APIs, Linux, pytest. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/02"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-03",
+        "source": "synthetic",
+        "title": "Python Integration Engineer",
+        "company": "OrbitWorks",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "pytest",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve python integration engineer solutions using Python, REST APIs, Linux, pytest. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/03"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-04",
+        "source": "synthetic",
+        "title": "Backend Automation Engineer",
+        "company": "SignalNest",
+        "location": "Stuttgart",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve backend automation engineer solutions using Python, REST APIs, Linux, Bash. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/04"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-05",
+        "source": "synthetic",
+        "title": "Test Automation Engineer - Python",
+        "company": "BrightStack",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve test automation engineer - python solutions using Python, REST APIs, Linux, Bash. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/05"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-06",
+        "source": "synthetic",
+        "title": "Systems Automation Engineer",
+        "company": "Alpine Logic",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve systems automation engineer solutions using Python, REST APIs, Linux, Bash. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/06"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-07",
+        "source": "synthetic",
+        "title": "Python Tools Engineer",
+        "company": "NovaMesh",
+        "location": "Stuttgart",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash",
+          "Docker"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve python tools engineer solutions using Python, REST APIs, Linux, Bash. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/07"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-08",
+        "source": "synthetic",
+        "title": "Workflow Automation Engineer",
+        "company": "DataHarbor",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "SQL"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve workflow automation engineer solutions using Python, REST APIs, SQL. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/08"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-09",
+        "source": "synthetic",
+        "title": "API Integration Engineer",
+        "company": "Kiteframe",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "SQL"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve api integration engineer solutions using Python, REST APIs, SQL. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/09"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-10",
+        "source": "synthetic",
+        "title": "Python Platform Engineer",
+        "company": "QuantaBridge",
+        "location": "Stuttgart",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "SQL"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve python platform engineer solutions using Python, REST APIs, SQL. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/10"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-11",
+        "source": "synthetic",
+        "title": "Dev Automation Engineer",
+        "company": "LumenWorks",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve dev automation engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/11"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-12",
+        "source": "synthetic",
+        "title": "Software Automation Engineer",
+        "company": "CloudBirch",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build and improve software automation engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/python_automation_mid/12"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-13",
+        "source": "synthetic",
+        "title": "Frontend React Engineer",
+        "company": "PixelCurrent",
+        "location": "Stuttgart",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Build user-facing features with technologies outside the candidate's target role family.",
+        "url": "https://example.invalid/jobs/python_automation_mid/13"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: role_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-14",
+        "source": "synthetic",
+        "title": "Automation Software Engineer",
+        "company": "DeepRiver Tech",
+        "location": "Warsaw",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Role requiring Python, REST APIs, Linux, Bash with normal product engineering responsibilities. This role requires regular presence in the listed country.",
+        "url": "https://example.invalid/jobs/python_automation_mid/14"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: location_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-15",
+        "source": "synthetic",
+        "title": "Principal Automation Architect",
+        "company": "MetricSpring",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Role requiring Python, REST APIs, Linux, Bash with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/python_automation_mid/15"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-16",
+        "source": "synthetic",
+        "title": "Director of Engineering",
+        "company": "IronLeaf Software",
+        "location": "Stuttgart",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Role requiring Python, REST APIs, Linux, Bash with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/python_automation_mid/16"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 1,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-17",
+        "source": "synthetic",
+        "title": "Test Automation Engineer - Python",
+        "company": "Mosaic Compute",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "C2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Role requiring Python, REST APIs, Linux, Bash with normal product engineering responsibilities. Professional English at C2 level is mandatory.",
+        "url": "https://example.invalid/jobs/python_automation_mid/17"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: language_level_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-18",
+        "source": "synthetic",
+        "title": "Systems Automation Engineer",
+        "company": "Northstar Labs",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
+        "url": "https://example.invalid/jobs/python_automation_mid/18"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: required_keyword_missing."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-19",
+        "source": "synthetic",
+        "title": "Python Tools Engineer",
+        "company": "BluePeak Systems",
+        "location": "Stuttgart",
+        "work_mode": "hybrid",
+        "employment_type": "contract",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Role requiring Python, REST APIs, Linux, Bash with normal product engineering responsibilities. This is a six-month freelance contract.",
+        "url": "https://example.invalid/jobs/python_automation_mid/19"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-python_automation_mid-20",
+        "source": "synthetic",
+        "title": "Workflow Automation Engineer",
+        "company": "RheinCode",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "REST APIs",
+          "Linux",
+          "Bash"
+        ],
+        "preferred_skills": [
+          "Bash",
+          "Docker",
+          "GitLab CI"
+        ],
+        "description": "Role requiring Python, REST APIs, Linux, Bash with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
+        "url": "https://example.invalid/jobs/python_automation_mid/20"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+    }
+  ]
+}

@@ -1,0 +1,757 @@
+{
+  "name": "ml_junior",
+  "version": "1.0.0",
+  "profile": {
+    "full_name": "Mira Keller",
+    "location": "Berlin, Germany",
+    "professional_summary": "Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Hugging Face",
+      "Transformers",
+      "scikit-learn",
+      "pandas",
+      "FastAPI",
+      "Docker",
+      "Git"
+    ],
+    "skill_evidence": [],
+    "experience": [],
+    "projects": [
+      {
+        "name": "Multilingual Text Classifier",
+        "summary": "Fine-tuned and evaluated transformer models for multilingual text classification.",
+        "technologies": [
+          "Python",
+          "PyTorch",
+          "Hugging Face",
+          "Transformers"
+        ],
+        "highlights": [
+          "Built reproducible training and evaluation workflows.",
+          "Compared transformer variants using held-out validation data."
+        ],
+        "evidence": []
+      },
+      {
+        "name": "ML Prediction API",
+        "summary": "Packaged a trained model behind a FastAPI inference endpoint.",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "Docker"
+        ],
+        "highlights": [
+          "Added API validation and containerized local deployment."
+        ],
+        "evidence": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc",
+        "field_of_study": "Computational Science",
+        "institution": "Synthetic University",
+        "location": "Germany",
+        "start_date": "2023",
+        "end_date": "2026",
+        "details": [],
+        "evidence": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "C1"
+      },
+      {
+        "language": "German",
+        "proficiency": "A2"
+      }
+    ],
+    "certifications": [],
+    "years_of_experience": 1.2
+  },
+  "preferences": {
+    "roles": [
+      "Machine Learning Engineer",
+      "AI Engineer",
+      "NLP Engineer"
+    ],
+    "locations": [
+      "Berlin",
+      "Munich",
+      "Hamburg"
+    ],
+    "work_modes": [
+      "remote",
+      "hybrid"
+    ],
+    "employment_types": [
+      "full_time"
+    ],
+    "seniority_levels": [
+      "entry_level",
+      "junior"
+    ],
+    "required_keywords": [
+      "Python"
+    ],
+    "excluded_keywords": [
+      "SAP",
+      "commission-only"
+    ],
+    "preferred_languages": [
+      "English"
+    ],
+    "maximum_results": 20
+  },
+  "evidence_signals": [],
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-01",
+        "provider": "synthetic",
+        "external_id": "ml-junior-01",
+        "title": "Junior Machine Learning Engineer",
+        "company": "Northstar Labs",
+        "description": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Hugging Face",
+          "FastAPI",
+          "Docker"
+        ],
+        "url": "https://example.com/jobs/ml-junior-01",
+        "posted_at": null,
+        "fingerprint": "54ac959e87b2dcdb0feb0870a033455a2b5b57a0ebcb9a82282a251cfb1e231a"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong target-role and skill match with junior seniority and valid location."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-02",
+        "provider": "synthetic",
+        "external_id": "ml-junior-02",
+        "title": "Graduate AI Engineer",
+        "company": "BluePeak Systems",
+        "description": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Transformers",
+          "REST APIs"
+        ],
+        "url": "https://example.com/jobs/ml-junior-02",
+        "posted_at": null,
+        "fingerprint": "53d41c2eec75fbf16dfd7c2969a0f881cf07ac662224dce5a391ef3f5c40c1a6"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong graduate-level AI fit with substantial overlap in model and API skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-03",
+        "provider": "synthetic",
+        "external_id": "ml-junior-03",
+        "title": "Junior NLP Engineer",
+        "company": "RheinCode",
+        "description": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "NLP",
+          "Hugging Face",
+          "PyTorch",
+          "FastAPI"
+        ],
+        "url": "https://example.com/jobs/ml-junior-03",
+        "posted_at": null,
+        "fingerprint": "129b6c27e01c1e23e205474b550eec87c6ec68ad1fbbb1f51ccecd4c5fbdce33"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong NLP specialization match and remote-compatible full-time role."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-04",
+        "provider": "synthetic",
+        "external_id": "ml-junior-04",
+        "title": "AI Software Engineer",
+        "company": "VectorForge",
+        "description": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+        "location": "Hamburg",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "pandas",
+          "FastAPI",
+          "Docker"
+        ],
+        "url": "https://example.com/jobs/ml-junior-04",
+        "posted_at": null,
+        "fingerprint": "3c942cf5f139d85b14e6706ba1483cede0df5616295648d1bb3a0c096408e4a8"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Relevant AI engineering role with good software overlap but less direct PyTorch/NLP depth."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-05",
+        "provider": "synthetic",
+        "external_id": "ml-junior-05",
+        "title": "Machine Learning Engineer I",
+        "company": "Cedar Analytics",
+        "description": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "pandas",
+          "PyTorch"
+        ],
+        "url": "https://example.com/jobs/ml-junior-05",
+        "posted_at": null,
+        "fingerprint": "5c99cae38439857983b8809ed86f3dc6fa78f6e743289077080fbbfbaf50ec8d"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Clear junior ML fit, though the role emphasizes classical ML more than NLP."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-06",
+        "provider": "synthetic",
+        "external_id": "ml-junior-06",
+        "title": "Junior Data & ML Engineer",
+        "company": "OrbitWorks",
+        "description": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "SQL",
+          "scikit-learn",
+          "Docker"
+        ],
+        "url": "https://example.com/jobs/ml-junior-06",
+        "posted_at": null,
+        "fingerprint": "b3a8d17538a72bc244d1cd51d159c81bae018096d30a9f979eb0ac51a8613bb6"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Relevant ML-adjacent role with some data-engineering emphasis."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-07",
+        "provider": "synthetic",
+        "external_id": "ml-junior-07",
+        "title": "NLP/ML Developer",
+        "company": "SignalNest",
+        "description": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "NLP",
+          "PyTorch",
+          "Hugging Face"
+        ],
+        "url": "https://example.com/jobs/ml-junior-07",
+        "posted_at": null,
+        "fingerprint": "c86715a4bb15516545d2db370f3a6ded9f8a32a0951df03a255e65e4a9becef3"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Good NLP/ML fit but requirements are broader and less directly aligned with the candidate's API experience."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-08",
+        "provider": "synthetic",
+        "external_id": "ml-junior-08",
+        "title": "Machine Learning Associate",
+        "company": "BrightStack",
+        "description": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "pandas"
+        ],
+        "url": "https://example.com/jobs/ml-junior-08",
+        "posted_at": null,
+        "fingerprint": "e1684c7eda61967af2cd72f0cc8782ab44246c70a9781996d16d22408eb145fd"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Valid entry-level ML role but limited overlap with PyTorch, NLP, and deployment experience."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-09",
+        "provider": "synthetic",
+        "external_id": "ml-junior-09",
+        "title": "Junior Applied Scientist",
+        "company": "Alpine Logic",
+        "description": "Run Python experiments for ranking and classification problems. Strong statistics are important; production deployment experience is only a plus. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "statistics",
+          "classification"
+        ],
+        "url": "https://example.com/jobs/ml-junior-09",
+        "posted_at": null,
+        "fingerprint": "86c5c8059d51d654090020e231f26bbdf78c5579d4da9832be169111b053544d"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": ["role_mismatch"],
+      "notes": "Passes hard constraints but leans more toward experimentation than ML engineering."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-10",
+        "provider": "synthetic",
+        "external_id": "ml-junior-10",
+        "title": "ML Product Engineer",
+        "company": "NovaMesh",
+        "description": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "REST APIs",
+          "Docker",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/ml-junior-10",
+        "posted_at": null,
+        "fingerprint": "34f65679cbbb233633a4c74169105223df0d57232657405f4fa78c9f83e36cd2"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Valid but only weakly ML-focused because model development is not a core responsibility."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-11",
+        "provider": "synthetic",
+        "external_id": "ml-junior-11",
+        "title": "Junior AI Engineer",
+        "company": "DataHarbor",
+        "description": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+        "location": "Berlin",
+        "remote": null,
+        "visa_sponsorship": null,
+        "employment_types": [],
+        "raw_employment_types": [],
+        "tags": [
+          "Python",
+          "AI",
+          "testing"
+        ],
+        "url": "https://example.com/jobs/ml-junior-11",
+        "posted_at": null,
+        "fingerprint": "8999d8c512dd2dc8969ae95b607f50d0e61f21a62ef44a9dce90553eb6267a3a"
+      },
+      "expected_accept": true,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [],
+      "notes": "Incomplete-metadata case. Role and required Python keyword match, while unknown location, work mode, and employment type should remain non-fatal under the permissive unknown-data policy."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-12",
+        "provider": "synthetic",
+        "external_id": "ml-junior-12",
+        "title": "Junior Model Operations Assistant",
+        "company": "Kiteframe",
+        "description": "Support Python-based model checks, documentation, and batch evaluation. Some scripting is required, but model development is limited. Hybrid role in Hamburg.",
+        "location": "Hamburg",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "model monitoring",
+          "documentation"
+        ],
+        "url": "https://example.com/jobs/ml-junior-12",
+        "posted_at": null,
+        "fingerprint": "1cf5413a75636984e366baa28be36b3cfe2455289e0550ba9c8b073828b4bef5"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": ["role_mismatch"],
+      "notes": "Admissible distractor: passes hard constraints but should rank below genuine ML engineering roles."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-13",
+        "provider": "synthetic",
+        "external_id": "ml-junior-13",
+        "title": "Frontend Engineer",
+        "company": "QuantaBridge",
+        "description": "Build React and TypeScript interfaces for customer-facing applications. Python is used only for occasional internal scripts. Hybrid role in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "React",
+          "TypeScript",
+          "Python"
+        ],
+        "url": "https://example.com/jobs/ml-junior-13",
+        "posted_at": null,
+        "fingerprint": "8536ee39456b8b05e66bfce00ab01a66070c475a42fd54db0ab3e35bc3f2c44f"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Role-family mismatch despite containing the required Python keyword."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-14",
+        "provider": "synthetic",
+        "external_id": "ml-junior-14",
+        "title": "Junior Machine Learning Engineer",
+        "company": "LumenWorks",
+        "description": "Build Python and PyTorch models for recommendation systems. This full-time role is a hybrid position based in Paris.",
+        "location": "Paris",
+        "remote": null,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "recommendation systems"
+        ],
+        "url": "https://example.com/jobs/ml-junior-14",
+        "posted_at": null,
+        "fingerprint": "453190f4d9e0fcc73bb1ace74abfd9fbbddaf5340b9735892239df80e7705caa"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "notes": "Technically relevant job rejected because its Paris location falls outside the requested German locations."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-15",
+        "provider": "synthetic",
+        "external_id": "ml-junior-15",
+        "title": "Senior Machine Learning Engineer",
+        "company": "CloudBirch",
+        "description": "Senior Python and PyTorch engineering role requiring at least five years of production ML experience. Hybrid position in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "MLOps"
+        ],
+        "url": "https://example.com/jobs/ml-junior-15",
+        "posted_at": null,
+        "fingerprint": "acf160158176f968cc3d8d77a7e966ce87fd542c577706cacbad21dc498a1fb7"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "notes": "Target role and skills match, but seniority exceeds the requested entry/junior range."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-16",
+        "provider": "synthetic",
+        "external_id": "ml-junior-16",
+        "title": "Junior Machine Learning Engineer",
+        "company": "PixelCurrent",
+        "description": "Develop Python ML services with PyTorch and scikit-learn. German at C1 level is mandatory for customer workshops and internal documentation. Hybrid role in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/ml-junior-16",
+        "posted_at": null,
+        "fingerprint": "bf7a828b06543df6f9faeafa39d0b3e3db797c200f89ee43ec96fa5651647b10"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "notes": "Candidate has German A2 while the posting explicitly requires German C1."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-17",
+        "provider": "synthetic",
+        "external_id": "ml-junior-17",
+        "title": "Junior Machine Learning Engineer",
+        "company": "DeepRiver Tech",
+        "description": "Develop production models and services primarily in Java and Scala. The ML stack uses JVM tooling and Spark. Remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Java",
+          "Scala",
+          "Spark"
+        ],
+        "url": "https://example.com/jobs/ml-junior-17",
+        "posted_at": null,
+        "fingerprint": "9f4ae9cbccce745561fc652125a6f9b3cda46bd471375e5bdd91611548b4955a"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "notes": "Otherwise plausible ML role deliberately missing the required Python keyword."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-18",
+        "provider": "synthetic",
+        "external_id": "ml-junior-18",
+        "title": "Junior AI Engineer - SAP Integration",
+        "company": "MetricSpring",
+        "description": "Build Python AI integrations around SAP business workflows. The position focuses on SAP extensions and enterprise integration. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "AI",
+          "SAP"
+        ],
+        "url": "https://example.com/jobs/ml-junior-18",
+        "posted_at": null,
+        "fingerprint": "9832ff718f969dd914f21e05bccfcdd79519cbda167b158be400ab36b65dda9a"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "excluded_keyword_present"
+      ],
+      "notes": "Otherwise valid junior AI role containing the explicitly excluded keyword SAP."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-19",
+        "provider": "synthetic",
+        "external_id": "ml-junior-19",
+        "title": "Junior NLP Engineer",
+        "company": "IronLeaf Software",
+        "description": "Develop Python NLP components using Hugging Face. This opportunity is offered only as a six-month contractor engagement and is remote in Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "contract"
+        ],
+        "raw_employment_types": [
+          "contract"
+        ],
+        "tags": [
+          "Python",
+          "NLP",
+          "Hugging Face"
+        ],
+        "url": "https://example.com/jobs/ml-junior-19",
+        "posted_at": null,
+        "fingerprint": "fb6c8da0cb28f9560d73180c33faa78a373a8ba21e6e8bbaa31e2cd4935a05b6"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "notes": "Strong technical fit rejected because the user requested full-time employment."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:ml-junior-20",
+        "provider": "synthetic",
+        "external_id": "ml-junior-20",
+        "title": "Junior ML Engineer",
+        "company": "Mosaic Compute",
+        "description": "Build Python and PyTorch ML pipelines. The team requires five days per week onsite in Hamburg with no remote or hybrid option.",
+        "location": "Hamburg",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "ML pipelines"
+        ],
+        "url": "https://example.com/jobs/ml-junior-20",
+        "posted_at": null,
+        "fingerprint": "79ab810b14632247adf7583895d896c16d610210f6da05f5aab34ee0fc01071b"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "notes": "Target role and location are valid, but mandatory onsite work violates remote/hybrid preferences."
+    }
+  ]
+}

@@ -1,0 +1,784 @@
+{
+  "name": "data_junior",
+  "version": "1.0.0",
+  "split": "development",
+  "persona": {
+    "name": "Lea Hoffmann",
+    "headline": "Junior Data Scientist",
+    "summary": "Graduate data scientist with strong Python/SQL foundations, classical ML, reporting, and experimentation experience.",
+    "years_experience": 0.8,
+    "education": [
+      "MSc Data Science"
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "pandas",
+      "scikit-learn",
+      "NumPy",
+      "matplotlib",
+      "Tableau",
+      "statistics"
+    ],
+    "languages": {
+      "English": "C1",
+      "German": "B1"
+    },
+    "preferences": {
+      "target_roles": [
+        "Data Scientist",
+        "Junior Data Scientist",
+        "Data Analyst"
+      ],
+      "locations": [
+        "Berlin",
+        "Frankfurt",
+        "Remote Germany"
+      ],
+      "work_modes": [
+        "remote",
+        "hybrid"
+      ],
+      "employment_types": [
+        "full-time"
+      ],
+      "seniority": [
+        "junior",
+        "graduate",
+        "entry-level"
+      ],
+      "required_keywords": [
+        "SQL"
+      ],
+      "excluded_keywords": [
+        "director",
+        "principal"
+      ],
+      "minimum_languages": {
+        "English": "B2"
+      }
+    }
+  },
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-01",
+        "source": "synthetic",
+        "title": "Junior Data Scientist",
+        "company": "DeepRiver Tech",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "scikit-learn",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve junior data scientist solutions using Python, SQL, pandas, scikit-learn. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/01"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-02",
+        "source": "synthetic",
+        "title": "Graduate Data Scientist",
+        "company": "MetricSpring",
+        "location": "Frankfurt",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "scikit-learn",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve graduate data scientist solutions using Python, SQL, pandas, scikit-learn. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/02"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-03",
+        "source": "synthetic",
+        "title": "Data Analyst",
+        "company": "IronLeaf Software",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "scikit-learn",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve data analyst solutions using Python, SQL, pandas, scikit-learn. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/03"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-04",
+        "source": "synthetic",
+        "title": "Junior Analytics Engineer",
+        "company": "Mosaic Compute",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve junior analytics engineer solutions using Python, SQL, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/04"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-05",
+        "source": "synthetic",
+        "title": "Applied Data Scientist",
+        "company": "Northstar Labs",
+        "location": "Frankfurt",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve applied data scientist solutions using Python, SQL, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/05"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-06",
+        "source": "synthetic",
+        "title": "Data Science Associate",
+        "company": "BluePeak Systems",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve data science associate solutions using Python, SQL, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/06"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-07",
+        "source": "synthetic",
+        "title": "Junior Decision Scientist",
+        "company": "RheinCode",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics",
+          "Tableau"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve junior decision scientist solutions using Python, SQL, pandas, statistics. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/07"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-08",
+        "source": "synthetic",
+        "title": "Product Data Analyst",
+        "company": "VectorForge",
+        "location": "Frankfurt",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve product data analyst solutions using Python, SQL, matplotlib. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/08"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-09",
+        "source": "synthetic",
+        "title": "Junior ML Analyst",
+        "company": "Cedar Analytics",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve junior ml analyst solutions using Python, SQL, matplotlib. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/09"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-10",
+        "source": "synthetic",
+        "title": "Data Insights Analyst",
+        "company": "OrbitWorks",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "matplotlib"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve data insights analyst solutions using Python, SQL, matplotlib. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/10"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-11",
+        "source": "synthetic",
+        "title": "Junior Quantitative Analyst",
+        "company": "SignalNest",
+        "location": "Frankfurt",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve junior quantitative analyst solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/11"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-12",
+        "source": "synthetic",
+        "title": "Analytics Associate",
+        "company": "BrightStack",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build and improve analytics associate solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/data_junior/12"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-13",
+        "source": "synthetic",
+        "title": "Frontend Engineer",
+        "company": "Alpine Logic",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Build user-facing features with technologies outside the candidate's target role family.",
+        "url": "https://example.invalid/jobs/data_junior/13"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: role_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-14",
+        "source": "synthetic",
+        "title": "Graduate Data Scientist",
+        "company": "NovaMesh",
+        "location": "Zurich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Role requiring Python, SQL, pandas, statistics with normal product engineering responsibilities. This role requires regular presence in the listed country.",
+        "url": "https://example.invalid/jobs/data_junior/14"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: location_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-15",
+        "source": "synthetic",
+        "title": "Senior Data Scientist",
+        "company": "DataHarbor",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Role requiring Python, SQL, pandas, statistics with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/data_junior/15"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-16",
+        "source": "synthetic",
+        "title": "Principal Data Scientist",
+        "company": "Kiteframe",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Role requiring Python, SQL, pandas, statistics with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/data_junior/16"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 1,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-17",
+        "source": "synthetic",
+        "title": "Applied Data Scientist",
+        "company": "QuantaBridge",
+        "location": "Frankfurt",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "German",
+            "level": "C2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Role requiring Python, SQL, pandas, statistics with normal product engineering responsibilities. Professional German at C2 level is mandatory.",
+        "url": "https://example.invalid/jobs/data_junior/17"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: language_level_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-18",
+        "source": "synthetic",
+        "title": "Data Science Associate",
+        "company": "LumenWorks",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
+        "url": "https://example.invalid/jobs/data_junior/18"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: required_keyword_missing."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-19",
+        "source": "synthetic",
+        "title": "Junior Decision Scientist",
+        "company": "CloudBirch",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "contract",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Role requiring Python, SQL, pandas, statistics with normal product engineering responsibilities. This is a six-month freelance contract.",
+        "url": "https://example.invalid/jobs/data_junior/19"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-data_junior-20",
+        "source": "synthetic",
+        "title": "Product Data Analyst",
+        "company": "PixelCurrent",
+        "location": "Frankfurt",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics"
+        ],
+        "preferred_skills": [
+          "statistics",
+          "Tableau",
+          "NumPy"
+        ],
+        "description": "Role requiring Python, SQL, pandas, statistics with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
+        "url": "https://example.invalid/jobs/data_junior/20"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+    }
+  ]
+}

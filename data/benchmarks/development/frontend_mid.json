@@ -1,0 +1,784 @@
+{
+  "name": "frontend_mid",
+  "version": "1.0.0",
+  "split": "development",
+  "persona": {
+    "name": "Noah Fischer",
+    "headline": "Frontend Engineer",
+    "summary": "Frontend engineer with three years of experience building TypeScript and React web applications.",
+    "years_experience": 3.2,
+    "education": [
+      "BSc Software Engineering"
+    ],
+    "skills": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Vitest",
+      "Playwright",
+      "Git"
+    ],
+    "languages": {
+      "English": "C1",
+      "German": "B2"
+    },
+    "preferences": {
+      "target_roles": [
+        "Frontend Engineer",
+        "Frontend Developer",
+        "React Engineer"
+      ],
+      "locations": [
+        "Berlin",
+        "Hamburg",
+        "Remote Germany"
+      ],
+      "work_modes": [
+        "remote",
+        "hybrid"
+      ],
+      "employment_types": [
+        "full-time"
+      ],
+      "seniority": [
+        "mid-level",
+        "intermediate"
+      ],
+      "required_keywords": [
+        "React"
+      ],
+      "excluded_keywords": [
+        "Angular-only",
+        "principal"
+      ],
+      "minimum_languages": {
+        "English": "B2"
+      }
+    }
+  },
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-01",
+        "source": "synthetic",
+        "title": "Frontend Engineer",
+        "company": "QuantaBridge",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "CSS",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve frontend engineer solutions using TypeScript, React, JavaScript, CSS. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/01"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-02",
+        "source": "synthetic",
+        "title": "React Engineer",
+        "company": "LumenWorks",
+        "location": "Hamburg",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "CSS",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve react engineer solutions using TypeScript, React, JavaScript, CSS. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/02"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-03",
+        "source": "synthetic",
+        "title": "Frontend Developer",
+        "company": "CloudBirch",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "CSS",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve frontend developer solutions using TypeScript, React, JavaScript, CSS. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/03"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-04",
+        "source": "synthetic",
+        "title": "Web UI Engineer",
+        "company": "PixelCurrent",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve web ui engineer solutions using TypeScript, React, JavaScript, Next.js. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/04"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-05",
+        "source": "synthetic",
+        "title": "TypeScript Frontend Engineer",
+        "company": "DeepRiver Tech",
+        "location": "Hamburg",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve typescript frontend engineer solutions using TypeScript, React, JavaScript, Next.js. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/05"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-06",
+        "source": "synthetic",
+        "title": "Product Frontend Engineer",
+        "company": "MetricSpring",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve product frontend engineer solutions using TypeScript, React, JavaScript, Next.js. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/06"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-07",
+        "source": "synthetic",
+        "title": "React/Next.js Engineer",
+        "company": "IronLeaf Software",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js",
+          "Vitest"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve react/next.js engineer solutions using TypeScript, React, JavaScript, Next.js. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/07"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-08",
+        "source": "synthetic",
+        "title": "Frontend Software Engineer",
+        "company": "Mosaic Compute",
+        "location": "Hamburg",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "Git"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve frontend software engineer solutions using TypeScript, React, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/08"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-09",
+        "source": "synthetic",
+        "title": "UI Platform Engineer",
+        "company": "Northstar Labs",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "Git"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve ui platform engineer solutions using TypeScript, React, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/09"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-10",
+        "source": "synthetic",
+        "title": "Web Application Engineer",
+        "company": "BluePeak Systems",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "Git"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve web application engineer solutions using TypeScript, React, Git. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/10"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-11",
+        "source": "synthetic",
+        "title": "Frontend Product Developer",
+        "company": "RheinCode",
+        "location": "Hamburg",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve frontend product developer solutions using TypeScript, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/11"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-12",
+        "source": "synthetic",
+        "title": "JavaScript Engineer",
+        "company": "VectorForge",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build and improve javascript engineer solutions using TypeScript, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/frontend_mid/12"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-13",
+        "source": "synthetic",
+        "title": "Backend Python Engineer",
+        "company": "Cedar Analytics",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Build user-facing features with technologies outside the candidate's target role family.",
+        "url": "https://example.invalid/jobs/frontend_mid/13"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: role_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-14",
+        "source": "synthetic",
+        "title": "React Engineer",
+        "company": "OrbitWorks",
+        "location": "Amsterdam",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Role requiring TypeScript, React, JavaScript, Next.js with normal product engineering responsibilities. This role requires regular presence in the listed country.",
+        "url": "https://example.invalid/jobs/frontend_mid/14"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: location_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-15",
+        "source": "synthetic",
+        "title": "Principal Frontend Engineer",
+        "company": "SignalNest",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Role requiring TypeScript, React, JavaScript, Next.js with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/frontend_mid/15"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-16",
+        "source": "synthetic",
+        "title": "Frontend Engineering Manager",
+        "company": "BrightStack",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Role requiring TypeScript, React, JavaScript, Next.js with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/frontend_mid/16"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 1,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-17",
+        "source": "synthetic",
+        "title": "TypeScript Frontend Engineer",
+        "company": "Alpine Logic",
+        "location": "Hamburg",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "German",
+            "level": "C2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Role requiring TypeScript, React, JavaScript, Next.js with normal product engineering responsibilities. Professional German at C2 level is mandatory.",
+        "url": "https://example.invalid/jobs/frontend_mid/17"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: language_level_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-18",
+        "source": "synthetic",
+        "title": "Product Frontend Engineer",
+        "company": "NovaMesh",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
+        "url": "https://example.invalid/jobs/frontend_mid/18"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: required_keyword_missing."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-19",
+        "source": "synthetic",
+        "title": "React/Next.js Engineer",
+        "company": "DataHarbor",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "contract",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Role requiring TypeScript, React, JavaScript, Next.js with normal product engineering responsibilities. This is a six-month freelance contract.",
+        "url": "https://example.invalid/jobs/frontend_mid/19"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-frontend_mid-20",
+        "source": "synthetic",
+        "title": "Frontend Software Engineer",
+        "company": "Kiteframe",
+        "location": "Hamburg",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "mid-level",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "TypeScript",
+          "React",
+          "JavaScript",
+          "Next.js"
+        ],
+        "preferred_skills": [
+          "Next.js",
+          "Vitest",
+          "Playwright"
+        ],
+        "description": "Role requiring TypeScript, React, JavaScript, Next.js with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
+        "url": "https://example.invalid/jobs/frontend_mid/20"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+    }
+  ]
+}

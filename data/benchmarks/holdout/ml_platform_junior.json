@@ -1,0 +1,788 @@
+{
+  "name": "ml_platform_junior",
+  "version": "1.0.0",
+  "split": "holdout",
+  "persona": {
+    "name": "Felix Braun",
+    "headline": "Junior ML Platform Engineer",
+    "summary": "Junior engineer combining Python ML knowledge with Docker, CI/CD, cloud fundamentals, and model-serving experience.",
+    "years_experience": 1.1,
+    "education": [
+      "MSc Computer Science"
+    ],
+    "skills": [
+      "Python",
+      "Docker",
+      "GitHub Actions",
+      "FastAPI",
+      "PyTorch",
+      "MLflow",
+      "AWS",
+      "Linux"
+    ],
+    "languages": {
+      "English": "C1",
+      "German": "B2"
+    },
+    "preferences": {
+      "target_roles": [
+        "ML Platform Engineer",
+        "MLOps Engineer",
+        "Machine Learning Engineer"
+      ],
+      "locations": [
+        "Munich",
+        "Berlin",
+        "Remote Germany"
+      ],
+      "work_modes": [
+        "remote",
+        "hybrid"
+      ],
+      "employment_types": [
+        "full-time"
+      ],
+      "seniority": [
+        "junior",
+        "graduate",
+        "entry-level"
+      ],
+      "required_keywords": [
+        "Python"
+      ],
+      "excluded_keywords": [
+        "lead",
+        "principal",
+        "staff"
+      ],
+      "minimum_languages": {
+        "English": "B2"
+      }
+    }
+  },
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-01",
+        "source": "synthetic",
+        "title": "Junior MLOps Engineer",
+        "company": "OrbitWorks",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "GitHub Actions",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve junior mlops engineer solutions using Python, Docker, FastAPI, GitHub Actions. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/01"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-02",
+        "source": "synthetic",
+        "title": "ML Platform Engineer",
+        "company": "SignalNest",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "GitHub Actions",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve ml platform engineer solutions using Python, Docker, FastAPI, GitHub Actions. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/02"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-03",
+        "source": "synthetic",
+        "title": "Junior Machine Learning Engineer",
+        "company": "BrightStack",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "GitHub Actions",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve junior machine learning engineer solutions using Python, Docker, FastAPI, GitHub Actions. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/03"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 3,
+      "notes": "Strong fit: target role plus high overlap with core skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-04",
+        "source": "synthetic",
+        "title": "Model Serving Engineer",
+        "company": "Alpine Logic",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve model serving engineer solutions using Python, Docker, FastAPI, PyTorch. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/04"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-05",
+        "source": "synthetic",
+        "title": "ML Infrastructure Engineer",
+        "company": "NovaMesh",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve ml infrastructure engineer solutions using Python, Docker, FastAPI, PyTorch. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/05"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-06",
+        "source": "synthetic",
+        "title": "AI Platform Engineer",
+        "company": "DataHarbor",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve ai platform engineer solutions using Python, Docker, FastAPI, PyTorch. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/06"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-07",
+        "source": "synthetic",
+        "title": "Junior ML Systems Engineer",
+        "company": "Kiteframe",
+        "location": "Munich",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch",
+          "MLflow"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve junior ml systems engineer solutions using Python, Docker, FastAPI, PyTorch. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/07"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 2,
+      "notes": "Relevant fit: solid overlap with some missing or adjacent skills."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-08",
+        "source": "synthetic",
+        "title": "Machine Learning Platform Developer",
+        "company": "QuantaBridge",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "Kubernetes",
+          "Terraform"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve machine learning platform developer solutions using Python, Docker, Kubernetes, Terraform. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/08"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-09",
+        "source": "synthetic",
+        "title": "MLOps Associate",
+        "company": "LumenWorks",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "Kubernetes",
+          "Terraform"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve mlops associate solutions using Python, Docker, Kubernetes, Terraform. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/09"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-10",
+        "source": "synthetic",
+        "title": "Junior Model Deployment Engineer",
+        "company": "CloudBirch",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "Kubernetes",
+          "Terraform"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve junior model deployment engineer solutions using Python, Docker, Kubernetes, Terraform. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/10"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 1,
+      "notes": "Weak but valid fit: passes hard constraints but has notable skill gaps."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-11",
+        "source": "synthetic",
+        "title": "Cloud ML Engineer",
+        "company": "PixelCurrent",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve cloud ml engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/11"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-12",
+        "source": "synthetic",
+        "title": "AI Infrastructure Engineer",
+        "company": "DeepRiver Tech",
+        "location": "Remote Germany",
+        "work_mode": "remote",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Domain-specific tooling",
+          "Stakeholder communication"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build and improve ai infrastructure engineer solutions using Python, Domain-specific tooling, Stakeholder communication. Work in a collaborative product team, write maintainable code, test changes, and document technical decisions.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/12"
+      },
+      "expected_accept": true,
+      "expected_rejection_reasons": [],
+      "relevance_grade": 0,
+      "notes": "Admissible distractor: passes hard constraints but should rank low."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-13",
+        "source": "synthetic",
+        "title": "Frontend Engineer",
+        "company": "MetricSpring",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Build user-facing features with technologies outside the candidate's target role family.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/13"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: role_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-14",
+        "source": "synthetic",
+        "title": "ML Platform Engineer",
+        "company": "IronLeaf Software",
+        "location": "Copenhagen",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Role requiring Python, Docker, FastAPI, PyTorch with normal product engineering responsibilities. This role requires regular presence in the listed country.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/14"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: location_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-15",
+        "source": "synthetic",
+        "title": "Senior MLOps Engineer",
+        "company": "Mosaic Compute",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Role requiring Python, Docker, FastAPI, PyTorch with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/15"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-16",
+        "source": "synthetic",
+        "title": "Staff ML Platform Engineer",
+        "company": "Northstar Labs",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "senior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Role requiring Python, Docker, FastAPI, PyTorch with normal product engineering responsibilities. Requires 7+ years of directly relevant production experience.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/16"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "relevance_grade": 1,
+      "notes": "Rejected by deterministic filter: seniority_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-17",
+        "source": "synthetic",
+        "title": "ML Infrastructure Engineer",
+        "company": "BluePeak Systems",
+        "location": "Berlin",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "German",
+            "level": "C2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Role requiring Python, Docker, FastAPI, PyTorch with normal product engineering responsibilities. Professional German at C2 level is mandatory.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/17"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: language_level_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-18",
+        "source": "synthetic",
+        "title": "AI Platform Engineer",
+        "company": "RheinCode",
+        "location": "Remote Germany",
+        "work_mode": "hybrid",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Work primarily with Java, Scala, and platform tooling; no Python work is involved.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/18"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: required_keyword_missing."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-19",
+        "source": "synthetic",
+        "title": "Junior ML Systems Engineer",
+        "company": "VectorForge",
+        "location": "Munich",
+        "work_mode": "hybrid",
+        "employment_type": "contract",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Role requiring Python, Docker, FastAPI, PyTorch with normal product engineering responsibilities. This is a six-month freelance contract.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/19"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: employment_type_mismatch."
+    },
+    {
+      "job": {
+        "source_id": "synthetic-ml_platform_junior-20",
+        "source": "synthetic",
+        "title": "Machine Learning Platform Developer",
+        "company": "Cedar Analytics",
+        "location": "Berlin",
+        "work_mode": "onsite",
+        "employment_type": "full-time",
+        "seniority": "junior",
+        "language_requirements": [
+          {
+            "language": "English",
+            "level": "B2"
+          }
+        ],
+        "required_skills": [
+          "Python",
+          "Docker",
+          "FastAPI",
+          "PyTorch"
+        ],
+        "preferred_skills": [
+          "PyTorch",
+          "MLflow",
+          "AWS"
+        ],
+        "description": "Role requiring Python, Docker, FastAPI, PyTorch with normal product engineering responsibilities. Five days per week onsite is mandatory with no remote option.",
+        "url": "https://example.invalid/jobs/ml_platform_junior/20"
+      },
+      "expected_accept": false,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "relevance_grade": 0,
+      "notes": "Rejected by deterministic filter: work_mode_mismatch."
+    }
+  ]
+}
