@@ -1,0 +1,1883 @@
+[
+  {
+    "dataset_name": "backend_mid",
+    "dataset_version": "0.1.0-draft",
+    "configuration_name": "hybrid_default",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "ndcg": 1.0
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 1.0,
+          "ndcg": 0.985790646347117
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 7
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 30.63,
+      "ranking_ms": 8025.38,
+      "evaluation_ms": null,
+      "total_ms": 8056.76
+    },
+    "ranked_source_ids": [
+      "synthetic:backend-mid-01",
+      "synthetic:backend-mid-03",
+      "synthetic:backend-mid-02",
+      "synthetic:backend-mid-06",
+      "synthetic:backend-mid-05",
+      "synthetic:backend-mid-04",
+      "synthetic:backend-mid-07",
+      "synthetic:backend-mid-08",
+      "synthetic:backend-mid-10",
+      "synthetic:backend-mid-12",
+      "synthetic:backend-mid-11",
+      "synthetic:backend-mid-09"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.6,
+        "skill_overlap": 0.2,
+        "required_keywords": 0.1,
+        "role_alignment": 0.05,
+        "warning_quality": 0.05
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:backend-mid-01",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 69.32,
+        "semantic_score": 65.54,
+        "skill_overlap_score": 50.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.7347
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.7151
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.5164
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-03",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 67.93,
+        "semantic_score": 58.5,
+        "skill_overlap_score": 66.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.6492
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.5915
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.5141
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-02",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 67.86,
+        "semantic_score": 63.93,
+        "skill_overlap_score": 50.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.7572
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.6414
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.5194
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-06",
+        "expected_relevance_grade": 2,
+        "rank": 4,
+        "hybrid_score": 60.51,
+        "semantic_score": 57.24,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.6182
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.5985
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.5006
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-05",
+        "expected_relevance_grade": 2,
+        "rank": 5,
+        "hybrid_score": 59.83,
+        "semantic_score": 56.1,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.6083
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.5781
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.4966
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-04",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 59.81,
+        "semantic_score": 55.23,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.591
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.5615
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.5046
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-07",
+        "expected_relevance_grade": 2,
+        "rank": 7,
+        "hybrid_score": 57.36,
+        "semantic_score": 54.77,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.6226
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.5107
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.5096
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-08",
+        "expected_relevance_grade": 1,
+        "rank": 8,
+        "hybrid_score": 57.07,
+        "semantic_score": 57.07,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.6387
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.5494
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.5239
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-10",
+        "expected_relevance_grade": 1,
+        "rank": 9,
+        "hybrid_score": 56.33,
+        "semantic_score": 55.84,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.6234
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.5512
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.5005
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-12",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 50.55,
+        "semantic_score": 48.97,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.5592
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.4727
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.4372
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-11",
+        "expected_relevance_grade": 0,
+        "rank": 11,
+        "hybrid_score": 49.64,
+        "semantic_score": 47.45,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.5215
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.4877
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.4143
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-09",
+        "expected_relevance_grade": 1,
+        "rank": 12,
+        "hybrid_score": 46.23,
+        "semantic_score": 38.16,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.4292
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.395
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.3206
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:backend-mid-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      }
+    ]
+  },
+  {
+    "dataset_name": "backend_mid",
+    "dataset_version": "0.1.0-draft",
+    "configuration_name": "semantic_only",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "ndcg": 0.9554550451015821
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 1.0,
+          "ndcg": 0.9755964908133915
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 7
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 43.96,
+      "ranking_ms": 802.77,
+      "evaluation_ms": null,
+      "total_ms": 847.52
+    },
+    "ranked_source_ids": [
+      "synthetic:backend-mid-01",
+      "synthetic:backend-mid-02",
+      "synthetic:backend-mid-03",
+      "synthetic:backend-mid-06",
+      "synthetic:backend-mid-08",
+      "synthetic:backend-mid-05",
+      "synthetic:backend-mid-10",
+      "synthetic:backend-mid-04",
+      "synthetic:backend-mid-07",
+      "synthetic:backend-mid-12",
+      "synthetic:backend-mid-11",
+      "synthetic:backend-mid-09"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 1.0,
+        "skill_overlap": 0.0,
+        "required_keywords": 0.0,
+        "role_alignment": 0.0,
+        "warning_quality": 0.0
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:backend-mid-01",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 65.54,
+        "semantic_score": 65.54,
+        "skill_overlap_score": 50.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.7347
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.7151
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.5164
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-02",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 63.93,
+        "semantic_score": 63.93,
+        "skill_overlap_score": 50.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.7572
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.6414
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.5194
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-03",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 58.5,
+        "semantic_score": 58.5,
+        "skill_overlap_score": 66.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.6492
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.5915
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.5141
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-06",
+        "expected_relevance_grade": 2,
+        "rank": 4,
+        "hybrid_score": 57.24,
+        "semantic_score": 57.24,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.6182
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.5985
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.5006
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-08",
+        "expected_relevance_grade": 1,
+        "rank": 5,
+        "hybrid_score": 57.07,
+        "semantic_score": 57.07,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.6387
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.5494
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.5239
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-05",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 56.1,
+        "semantic_score": 56.1,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.6083
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.5781
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.4966
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-10",
+        "expected_relevance_grade": 1,
+        "rank": 7,
+        "hybrid_score": 55.84,
+        "semantic_score": 55.84,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.6234
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.5512
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.5005
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-04",
+        "expected_relevance_grade": 2,
+        "rank": 8,
+        "hybrid_score": 55.23,
+        "semantic_score": 55.23,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.591
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.5615
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.5046
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-07",
+        "expected_relevance_grade": 2,
+        "rank": 9,
+        "hybrid_score": 54.77,
+        "semantic_score": 54.77,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.6226
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.5107
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.5096
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-12",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 48.97,
+        "semantic_score": 48.97,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.5592
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.4727
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.4372
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-11",
+        "expected_relevance_grade": 0,
+        "rank": 11,
+        "hybrid_score": 47.45,
+        "semantic_score": 47.45,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.5215
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.4877
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.4143
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-09",
+        "expected_relevance_grade": 1,
+        "rank": 12,
+        "hybrid_score": 38.16,
+        "semantic_score": 38.16,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.4292
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.395
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.3206
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:backend-mid-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      }
+    ]
+  },
+  {
+    "dataset_name": "backend_mid",
+    "dataset_version": "0.1.0-draft",
+    "configuration_name": "deterministic_only",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "ndcg": 1.0
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 1.0,
+          "ndcg": 1.0
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 7
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 27.75,
+      "ranking_ms": 948.14,
+      "evaluation_ms": null,
+      "total_ms": 976.25
+    },
+    "ranked_source_ids": [
+      "synthetic:backend-mid-03",
+      "synthetic:backend-mid-01",
+      "synthetic:backend-mid-02",
+      "synthetic:backend-mid-04",
+      "synthetic:backend-mid-06",
+      "synthetic:backend-mid-05",
+      "synthetic:backend-mid-07",
+      "synthetic:backend-mid-09",
+      "synthetic:backend-mid-08",
+      "synthetic:backend-mid-10",
+      "synthetic:backend-mid-12",
+      "synthetic:backend-mid-11"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.0,
+        "skill_overlap": 0.5,
+        "required_keywords": 0.25,
+        "role_alignment": 0.15,
+        "warning_quality": 0.1
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:backend-mid-03",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 82.33,
+        "semantic_score": 58.5,
+        "skill_overlap_score": 66.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.6492
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.5915
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python microservices, design REST APIs with FastAPI, and operate Docker workloads on AWS. Use PostgreSQL, pytest, Git and code review. Fully remote across Germany.",
+            "similarity": 0.5141
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-01",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 75.0,
+        "semantic_score": 65.54,
+        "skill_overlap_score": 50.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.7347
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.7151
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python FastAPI REST services backed by PostgreSQL and Redis. Own reliability, API design, Docker deployments and AWS infrastructure. Hybrid team in Berlin.",
+            "similarity": 0.5164
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-02",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 74.0,
+        "semantic_score": 63.93,
+        "skill_overlap_score": 50.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.7572
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.6414
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain and extend Python Django and Celery services serving transactional workloads. Optimize PostgreSQL queries, implement pytest integration tests and operate AWS deployments. Hybrid in Cologne.",
+            "similarity": 0.5194
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-04",
+        "expected_relevance_grade": 2,
+        "rank": 4,
+        "hybrid_score": 66.67,
+        "semantic_score": 55.23,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.591
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.5615
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build and support Python data ingestion services with PostgreSQL, Docker and REST interfaces. Some scheduled ETL work is required. Hybrid in Berlin.",
+            "similarity": 0.5046
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-06",
+        "expected_relevance_grade": 2,
+        "rank": 5,
+        "hybrid_score": 65.67,
+        "semantic_score": 57.24,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.6182
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.5985
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Build Python services using Django and PostgreSQL, maintain CI pipelines and participate in on-call rotations. Hybrid in Cologne.",
+            "similarity": 0.5006
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-05",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 65.67,
+        "semantic_score": 56.1,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.6083
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.5781
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Implement Python FastAPI endpoints, SQL query optimization and cloud deployments in Azure. Create automated API tests, maintain service dashboards and collaborate with product teams. Remote in Germany.",
+            "similarity": 0.4966
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-07",
+        "expected_relevance_grade": 2,
+        "rank": 7,
+        "hybrid_score": 61.5,
+        "semantic_score": 54.77,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.6226
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.5107
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Develop Python platform APIs, improve CI/CD pipelines and deploy Docker and Kubernetes services. Collaborate with backend teams on authentication and monitoring. Fully remote from Germany.",
+            "similarity": 0.5096
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-09",
+        "expected_relevance_grade": 1,
+        "rank": 8,
+        "hybrid_score": 58.33,
+        "semantic_score": 38.16,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.4292
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.395
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Work on mixed Python and Java services. Develop internal APIs and distributed messaging consumers; some Java platform ownership is expected. Remote throughout Germany.",
+            "similarity": 0.3206
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-08",
+        "expected_relevance_grade": 1,
+        "rank": 9,
+        "hybrid_score": 57.33,
+        "semantic_score": 57.07,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.6387
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.5494
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python and Flask backend APIs and modernize a longstanding relational database application. Add tests, refactor fragile integrations and coordinate migrations. Hybrid in Berlin.",
+            "similarity": 0.5239
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-10",
+        "expected_relevance_grade": 1,
+        "rank": 10,
+        "hybrid_score": 57.33,
+        "semantic_score": 55.84,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.6234
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.5512
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python automation scripts, scheduled tasks and lightweight internal REST endpoints backed by SQLite. This position is hybrid in Cologne.",
+            "similarity": 0.5005
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-12",
+        "expected_relevance_grade": 0,
+        "rank": 11,
+        "hybrid_score": 53.17,
+        "semantic_score": 48.97,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.5592
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.4727
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Maintain Python integration connectors for legacy vendor systems and respond to operational support requests. Most work involves configuration and routine maintenance. Hybrid in Berlin.",
+            "similarity": 0.4372
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-11",
+        "expected_relevance_grade": 0,
+        "rank": 12,
+        "hybrid_score": 53.17,
+        "semantic_score": 47.45,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Production Event API\nSummary: Designed and deployed Python FastAPI endpoints backed by PostgreSQL and Redis, including background processing and observability.\nHighlights: Implemented authenticated REST endpoints and schema migrat\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.5215
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Mid-level backend engineer with four years building and operating Python REST APIs, asynchronous services, and relational database-backed applications. Strong FastAPI, Django, PostgreSQL, Docker and testing experience\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.4877
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Transaction Processing Service\nSummary: Maintained a Django service with PostgreSQL and Celery tasks for reliable internal transaction processing.\nHighlights: Refactored high-traffic API endpoints and improved SQL queries. Added i\u2026",
+            "job_excerpt": "Support existing Python APIs with ticket triage, documentation, configuration updates and occasional bug fixes. Hybrid in Berlin.",
+            "similarity": 0.4143
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:backend-mid-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:backend-mid-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:backend-mid-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      }
+    ]
+  }
+]
