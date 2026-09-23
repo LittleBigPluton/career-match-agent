@@ -1,0 +1,69 @@
+{
+  "suite_name": "career_match_development",
+  "suite_version": "1.0.0",
+  "scenario_count": 4,
+  "method": "Exact scenario bootstrap (all 4^4 ordered resamples)",
+  "caution": "Exploratory intervals from four synthetic calibrated scenarios; not evidence of real-world statistical significance.",
+  "comparisons": [
+    {
+      "contrast": "hybrid_default - deterministic_only",
+      "metric": "nDCG@5",
+      "scenario_differences": {
+        "backend_mid": 0.0,
+        "career_switcher": 0.0,
+        "data_junior": 0.0,
+        "ml_junior": -0.14467817159579033
+      },
+      "mean_paired_difference": -0.03616954289894758,
+      "exploratory_95pct_bootstrap_interval": [
+        -0.10850862869684275,
+        0.0
+      ]
+    },
+    {
+      "contrast": "hybrid_default - deterministic_only",
+      "metric": "nDCG@10",
+      "scenario_differences": {
+        "backend_mid": -0.014209353652883006,
+        "career_switcher": -0.0019079529532612938,
+        "data_junior": -0.020477659218563704,
+        "ml_junior": -0.09662597442840148
+      },
+      "mean_paired_difference": -0.03330523506327737,
+      "exploratory_95pct_bootstrap_interval": [
+        -0.07602181923452186,
+        -0.006550379519586896
+      ]
+    },
+    {
+      "contrast": "hybrid_default - semantic_only",
+      "metric": "nDCG@5",
+      "scenario_differences": {
+        "backend_mid": 0.04454495489841792,
+        "career_switcher": 0.009181689492529399,
+        "data_junior": 0.08908990979683573,
+        "ml_junior": 0.05321090893531566
+      },
+      "mean_paired_difference": 0.04900686578077468,
+      "exploratory_95pct_bootstrap_interval": [
+        0.020188994353225964,
+        0.07795367107223128
+      ]
+    },
+    {
+      "contrast": "hybrid_default - semantic_only",
+      "metric": "nDCG@10",
+      "scenario_differences": {
+        "backend_mid": 0.01019415553372549,
+        "career_switcher": 0.011666603023926414,
+        "data_junior": 0.02057970581981239,
+        "ml_junior": 0.053222316078935794
+      },
+      "mean_paired_difference": 0.023915695114100022,
+      "exploratory_95pct_bootstrap_interval": [
+        0.010930379278825952,
+        0.04283338781518345
+      ]
+    }
+  ]
+}

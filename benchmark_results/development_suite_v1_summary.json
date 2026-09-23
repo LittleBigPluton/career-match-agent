@@ -1,0 +1,178 @@
+{
+  "suite_name": "career_match_development",
+  "suite_version": "1.0.0",
+  "split": "development",
+  "configurations": [
+    {
+      "configuration_name": "hybrid_default",
+      "scenario_count": 4,
+      "filtering_f1": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "reason_code_f1": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "ranking_at_k": [
+        {
+          "k": 5,
+          "precision": {
+            "mean": 0.95,
+            "minimum": 0.8,
+            "maximum": 1.0
+          },
+          "recall": {
+            "mean": 0.6339285714285714,
+            "minimum": 0.5714285714285714,
+            "maximum": 0.7142857142857143
+          },
+          "ndcg": {
+            "mean": 0.8766840937303331,
+            "minimum": 0.6940576657687157,
+            "maximum": 1.0
+          }
+        },
+        {
+          "k": 10,
+          "precision": {
+            "mean": 0.725,
+            "minimum": 0.7,
+            "maximum": 0.8
+          },
+          "recall": {
+            "mean": 0.96875,
+            "minimum": 0.875,
+            "maximum": 1.0
+          },
+          "ndcg": {
+            "mean": 0.8976064886301309,
+            "minimum": 0.8010129271435353,
+            "maximum": 0.985790646347117
+          }
+        }
+      ],
+      "mean_reciprocal_rank": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    },
+    {
+      "configuration_name": "semantic_only",
+      "scenario_count": 4,
+      "filtering_f1": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "reason_code_f1": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "ranking_at_k": [
+        {
+          "k": 5,
+          "precision": {
+            "mean": 0.9,
+            "minimum": 0.8,
+            "maximum": 1.0
+          },
+          "recall": {
+            "mean": 0.5982142857142857,
+            "minimum": 0.5714285714285714,
+            "maximum": 0.625
+          },
+          "ndcg": {
+            "mean": 0.8276772279495583,
+            "minimum": 0.6408467568334001,
+            "maximum": 0.9908183105074706
+          }
+        },
+        {
+          "k": 10,
+          "precision": {
+            "mean": 0.725,
+            "minimum": 0.7,
+            "maximum": 0.8
+          },
+          "recall": {
+            "mean": 0.96875,
+            "minimum": 0.875,
+            "maximum": 1.0
+          },
+          "ndcg": {
+            "mean": 0.873690793516031,
+            "minimum": 0.77830691942634,
+            "maximum": 0.9755964908133915
+          }
+        }
+      ],
+      "mean_reciprocal_rank": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    },
+    {
+      "configuration_name": "deterministic_only",
+      "scenario_count": 4,
+      "filtering_f1": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "reason_code_f1": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "ranking_at_k": [
+        {
+          "k": 5,
+          "precision": {
+            "mean": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0
+          },
+          "recall": {
+            "mean": 0.6696428571428572,
+            "minimum": 0.625,
+            "maximum": 0.7142857142857143
+          },
+          "ndcg": {
+            "mean": 0.9128536366292807,
+            "minimum": 0.8126787091526164,
+            "maximum": 1.0
+          }
+        },
+        {
+          "k": 10,
+          "precision": {
+            "mean": 0.75,
+            "minimum": 0.7,
+            "maximum": 0.8
+          },
+          "recall": {
+            "mean": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0
+          },
+          "ndcg": {
+            "mean": 0.9309117236934084,
+            "minimum": 0.821490586362099,
+            "maximum": 1.0
+          }
+        }
+      ],
+      "mean_reciprocal_rank": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    }
+  ]
+}
