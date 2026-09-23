@@ -1,4 +1,5 @@
 import pytest
+from pathlib import Path
 
 from career_match_agent.models.benchmark import (
     BinaryClassificationMetrics,
@@ -91,3 +92,21 @@ def test_summarize_benchmark_suite_rejects_mismatched_ranking_cutoffs() -> None:
 
     with pytest.raises(ValueError, match="Ranking cutoffs must match across benchmark scenarios"):
         summarize_benchmark_suite(suite_result)
+
+def test_development_suite_aggregation() -> None:
+    path = Path("benchmark_results/development_suite_v1.json")
+    suite_result = JobMatchingBenchmarkSuiteResult.model_validate_json(path.read_text(encoding="utf-8"))
+    summary = summarize_benchmark_suite(suite_result)
+    assert summary.split == "development"
+    assert len(summary.configurations) == 3
+
+    configuration_names = {config.configuration_name for config in summary.configurations}
+    assert configuration_names == {"hybrid_default", "semantic_only", "deterministic_only"}
+
+    for config in summary.configurations:
+        assert config.scenario_count == 4
+        assert config.filtering_f1.mean == 1.0
+        assert config.reason_code_f1.mean == 1.0
+
+        cutoffs = {metric.k for metric in config.ranking_at_k}
+        assert {5, 10}.issubset(cutoffs)
