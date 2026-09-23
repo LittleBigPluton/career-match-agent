@@ -1,0 +1,178 @@
+{
+  "suite_name": "career_match_holdout",
+  "suite_version": "1.0.0",
+  "split": "holdout",
+  "configurations": [
+    {
+      "configuration_name": "hybrid_default",
+      "scenario_count": 2,
+      "filtering_f1": {
+        "mean": 0.9544513457556936,
+        "minimum": 0.9523809523809523,
+        "maximum": 0.9565217391304348
+      },
+      "reason_code_f1": {
+        "mean": 0.9467787114845938,
+        "minimum": 0.9411764705882353,
+        "maximum": 0.9523809523809523
+      },
+      "ranking_at_k": [
+        {
+          "k": 5,
+          "precision": {
+            "mean": 0.9,
+            "minimum": 0.8,
+            "maximum": 1.0
+          },
+          "recall": {
+            "mean": 0.7023809523809523,
+            "minimum": 0.5714285714285714,
+            "maximum": 0.8333333333333334
+          },
+          "ndcg": {
+            "mean": 0.9010353758194054,
+            "minimum": 0.8180355296436479,
+            "maximum": 0.9840352219951628
+          }
+        },
+        {
+          "k": 10,
+          "precision": {
+            "mean": 0.6,
+            "minimum": 0.6,
+            "maximum": 0.6
+          },
+          "recall": {
+            "mean": 0.9285714285714286,
+            "minimum": 0.8571428571428571,
+            "maximum": 1.0
+          },
+          "ndcg": {
+            "mean": 0.9474709923099499,
+            "minimum": 0.9102265261597052,
+            "maximum": 0.9847154584601946
+          }
+        }
+      ],
+      "mean_reciprocal_rank": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    },
+    {
+      "configuration_name": "semantic_only",
+      "scenario_count": 2,
+      "filtering_f1": {
+        "mean": 0.9544513457556936,
+        "minimum": 0.9523809523809523,
+        "maximum": 0.9565217391304348
+      },
+      "reason_code_f1": {
+        "mean": 0.9467787114845938,
+        "minimum": 0.9411764705882353,
+        "maximum": 0.9523809523809523
+      },
+      "ranking_at_k": [
+        {
+          "k": 5,
+          "precision": {
+            "mean": 0.9,
+            "minimum": 0.8,
+            "maximum": 1.0
+          },
+          "recall": {
+            "mean": 0.7023809523809523,
+            "minimum": 0.5714285714285714,
+            "maximum": 0.8333333333333334
+          },
+          "ndcg": {
+            "mean": 0.8972507444917608,
+            "minimum": 0.8104662669883588,
+            "maximum": 0.9840352219951628
+          }
+        },
+        {
+          "k": 10,
+          "precision": {
+            "mean": 0.6,
+            "minimum": 0.6,
+            "maximum": 0.6
+          },
+          "recall": {
+            "mean": 0.9285714285714286,
+            "minimum": 0.8571428571428571,
+            "maximum": 1.0
+          },
+          "ndcg": {
+            "mean": 0.9399792107394687,
+            "minimum": 0.89826671426098,
+            "maximum": 0.9816917072179572
+          }
+        }
+      ],
+      "mean_reciprocal_rank": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    },
+    {
+      "configuration_name": "deterministic_only",
+      "scenario_count": 2,
+      "filtering_f1": {
+        "mean": 0.9544513457556936,
+        "minimum": 0.9523809523809523,
+        "maximum": 0.9565217391304348
+      },
+      "reason_code_f1": {
+        "mean": 0.9467787114845938,
+        "minimum": 0.9411764705882353,
+        "maximum": 0.9523809523809523
+      },
+      "ranking_at_k": [
+        {
+          "k": 5,
+          "precision": {
+            "mean": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0
+          },
+          "recall": {
+            "mean": 0.7738095238095238,
+            "minimum": 0.7142857142857143,
+            "maximum": 0.8333333333333334
+          },
+          "ndcg": {
+            "mean": 0.9588666984771448,
+            "minimum": 0.9437905251661792,
+            "maximum": 0.9739428717881103
+          }
+        },
+        {
+          "k": 10,
+          "precision": {
+            "mean": 0.6,
+            "minimum": 0.6,
+            "maximum": 0.6
+          },
+          "recall": {
+            "mean": 0.9285714285714286,
+            "minimum": 0.8571428571428571,
+            "maximum": 1.0
+          },
+          "ndcg": {
+            "mean": 0.935456198261758,
+            "minimum": 0.9220640984928717,
+            "maximum": 0.9488482980306441
+          }
+        }
+      ],
+      "mean_reciprocal_rank": {
+        "mean": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    }
+  ]
+}
