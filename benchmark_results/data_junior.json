@@ -1,0 +1,1883 @@
+[
+  {
+    "dataset_name": "data_junior",
+    "dataset_version": "0.1.0-draft",
+    "configuration_name": "hybrid_default",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "ndcg": 0.8126787091526164
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 0.875,
+          "ndcg": 0.8010129271435353
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 8
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 35.71,
+      "ranking_ms": 8503.34,
+      "evaluation_ms": null,
+      "total_ms": 8539.63
+    },
+    "ranked_source_ids": [
+      "synthetic:data-junior-08",
+      "synthetic:data-junior-06",
+      "synthetic:data-junior-01",
+      "synthetic:data-junior-03",
+      "synthetic:data-junior-02",
+      "synthetic:data-junior-07",
+      "synthetic:data-junior-05",
+      "synthetic:data-junior-10",
+      "synthetic:data-junior-09",
+      "synthetic:data-junior-11",
+      "synthetic:data-junior-04",
+      "synthetic:data-junior-12"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.6,
+        "skill_overlap": 0.2,
+        "required_keywords": 0.1,
+        "role_alignment": 0.05,
+        "warning_quality": 0.05
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:data-junior-08",
+        "expected_relevance_grade": 2,
+        "rank": 1,
+        "hybrid_score": 61.62,
+        "semantic_score": 55.48,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.577
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.545
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.5425
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-06",
+        "expected_relevance_grade": 2,
+        "rank": 2,
+        "hybrid_score": 61.17,
+        "semantic_score": 54.73,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.6156
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.5642
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.4619
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-01",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 61.16,
+        "semantic_score": 54.71,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.6412
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.5586
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.4417
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-03",
+        "expected_relevance_grade": 3,
+        "rank": 4,
+        "hybrid_score": 59.56,
+        "semantic_score": 52.05,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.6581
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.499
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.4044
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-02",
+        "expected_relevance_grade": 3,
+        "rank": 5,
+        "hybrid_score": 57.37,
+        "semantic_score": 48.4,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.5744
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.5105
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.3671
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-07",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 56.88,
+        "semantic_score": 50.36,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.5663
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.5205
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.424
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-05",
+        "expected_relevance_grade": 2,
+        "rank": 7,
+        "hybrid_score": 54.5,
+        "semantic_score": 46.39,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.5213
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.4651
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.4052
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-10",
+        "expected_relevance_grade": 1,
+        "rank": 8,
+        "hybrid_score": 54.23,
+        "semantic_score": 48.72,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.537
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.4788
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.4458
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-09",
+        "expected_relevance_grade": 1,
+        "rank": 9,
+        "hybrid_score": 52.7,
+        "semantic_score": 48.94,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.567
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.4787
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.4225
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-11",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 51.27,
+        "semantic_score": 38.22,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.4248
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.4027
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.3192
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-04",
+        "expected_relevance_grade": 2,
+        "rank": 11,
+        "hybrid_score": 47.48,
+        "semantic_score": 37.46,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.4099
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.3798
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.3341
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-12",
+        "expected_relevance_grade": 0,
+        "rank": 12,
+        "hybrid_score": 42.81,
+        "semantic_score": 35.24,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.4559
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.3314
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.2699
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:data-junior-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      }
+    ]
+  },
+  {
+    "dataset_name": "data_junior",
+    "dataset_version": "0.1.0-draft",
+    "configuration_name": "semantic_only",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "ndcg": 0.7235887993557807
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 0.875,
+          "ndcg": 0.780433221323723
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 8
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 45.56,
+      "ranking_ms": 1096.01,
+      "evaluation_ms": null,
+      "total_ms": 1141.9
+    },
+    "ranked_source_ids": [
+      "synthetic:data-junior-08",
+      "synthetic:data-junior-06",
+      "synthetic:data-junior-01",
+      "synthetic:data-junior-03",
+      "synthetic:data-junior-07",
+      "synthetic:data-junior-09",
+      "synthetic:data-junior-10",
+      "synthetic:data-junior-02",
+      "synthetic:data-junior-05",
+      "synthetic:data-junior-11",
+      "synthetic:data-junior-04",
+      "synthetic:data-junior-12"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 1.0,
+        "skill_overlap": 0.0,
+        "required_keywords": 0.0,
+        "role_alignment": 0.0,
+        "warning_quality": 0.0
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:data-junior-08",
+        "expected_relevance_grade": 2,
+        "rank": 1,
+        "hybrid_score": 55.48,
+        "semantic_score": 55.48,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.577
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.545
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.5425
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-06",
+        "expected_relevance_grade": 2,
+        "rank": 2,
+        "hybrid_score": 54.73,
+        "semantic_score": 54.73,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.6156
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.5642
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.4619
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-01",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 54.71,
+        "semantic_score": 54.71,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.6412
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.5586
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.4417
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-03",
+        "expected_relevance_grade": 3,
+        "rank": 4,
+        "hybrid_score": 52.05,
+        "semantic_score": 52.05,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.6581
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.499
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.4044
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-07",
+        "expected_relevance_grade": 2,
+        "rank": 5,
+        "hybrid_score": 50.36,
+        "semantic_score": 50.36,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.5663
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.5205
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.424
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-09",
+        "expected_relevance_grade": 1,
+        "rank": 6,
+        "hybrid_score": 48.94,
+        "semantic_score": 48.94,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.567
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.4787
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.4225
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-10",
+        "expected_relevance_grade": 1,
+        "rank": 7,
+        "hybrid_score": 48.72,
+        "semantic_score": 48.72,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.537
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.4788
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.4458
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-02",
+        "expected_relevance_grade": 3,
+        "rank": 8,
+        "hybrid_score": 48.4,
+        "semantic_score": 48.4,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.5744
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.5105
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.3671
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-05",
+        "expected_relevance_grade": 2,
+        "rank": 9,
+        "hybrid_score": 46.39,
+        "semantic_score": 46.39,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.5213
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.4651
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.4052
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-11",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 38.22,
+        "semantic_score": 38.22,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.4248
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.4027
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.3192
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-04",
+        "expected_relevance_grade": 2,
+        "rank": 11,
+        "hybrid_score": 37.46,
+        "semantic_score": 37.46,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.4099
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.3798
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.3341
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-12",
+        "expected_relevance_grade": 0,
+        "rank": 12,
+        "hybrid_score": 35.24,
+        "semantic_score": 35.24,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.4559
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.3314
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.2699
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:data-junior-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      }
+    ]
+  },
+  {
+    "dataset_name": "data_junior",
+    "dataset_version": "0.1.0-draft",
+    "configuration_name": "deterministic_only",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "ndcg": 0.8126787091526164
+        },
+        {
+          "k": 10,
+          "precision": 0.8,
+          "recall": 1.0,
+          "ndcg": 0.821490586362099
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 8
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 41.64,
+      "ranking_ms": 1160.91,
+      "evaluation_ms": null,
+      "total_ms": 1203.04
+    },
+    "ranked_source_ids": [
+      "synthetic:data-junior-08",
+      "synthetic:data-junior-06",
+      "synthetic:data-junior-01",
+      "synthetic:data-junior-03",
+      "synthetic:data-junior-02",
+      "synthetic:data-junior-11",
+      "synthetic:data-junior-07",
+      "synthetic:data-junior-05",
+      "synthetic:data-junior-10",
+      "synthetic:data-junior-04",
+      "synthetic:data-junior-09",
+      "synthetic:data-junior-12"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.0,
+        "skill_overlap": 0.5,
+        "required_keywords": 0.25,
+        "role_alignment": 0.15,
+        "warning_quality": 0.1
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:data-junior-08",
+        "expected_relevance_grade": 2,
+        "rank": 1,
+        "hybrid_score": 70.83,
+        "semantic_score": 55.48,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.577
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.545
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+            "similarity": 0.5425
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-06",
+        "expected_relevance_grade": 2,
+        "rank": 2,
+        "hybrid_score": 70.83,
+        "semantic_score": 54.73,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.6156
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.5642
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+            "similarity": 0.4619
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-01",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 70.83,
+        "semantic_score": 54.71,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.6412
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.5586
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berli\u2026",
+            "similarity": 0.4417
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-03",
+        "expected_relevance_grade": 3,
+        "rank": 4,
+        "hybrid_score": 70.83,
+        "semantic_score": 52.05,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.6581
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.499
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+            "similarity": 0.4044
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-02",
+        "expected_relevance_grade": 3,
+        "rank": 5,
+        "hybrid_score": 70.83,
+        "semantic_score": 48.4,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.5744
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.5105
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates\u2026",
+            "similarity": 0.3671
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-11",
+        "expected_relevance_grade": 0,
+        "rank": 6,
+        "hybrid_score": 70.83,
+        "semantic_score": 38.22,
+        "skill_overlap_score": 41.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.4248
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.4027
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis\u2026",
+            "similarity": 0.3192
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-07",
+        "expected_relevance_grade": 2,
+        "rank": 7,
+        "hybrid_score": 66.67,
+        "semantic_score": 50.36,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.5663
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.5205
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+            "similarity": 0.424
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-05",
+        "expected_relevance_grade": 2,
+        "rank": 8,
+        "hybrid_score": 66.67,
+        "semantic_score": 46.39,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.5213
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.4651
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model developm\u2026",
+            "similarity": 0.4052
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-10",
+        "expected_relevance_grade": 1,
+        "rank": 9,
+        "hybrid_score": 62.5,
+        "semantic_score": 48.72,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.537
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.4788
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Data Science Synthetic University",
+            "job_excerpt": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+            "similarity": 0.4458
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-04",
+        "expected_relevance_grade": 2,
+        "rank": 10,
+        "hybrid_score": 62.5,
+        "semantic_score": 37.46,
+        "skill_overlap_score": 25.0,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.4099
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.3798
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+            "similarity": 0.3341
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-09",
+        "expected_relevance_grade": 1,
+        "rank": 11,
+        "hybrid_score": 58.33,
+        "semantic_score": 48.94,
+        "skill_overlap_score": 16.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.567
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.4787
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hambur\u2026",
+            "similarity": 0.4225
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-12",
+        "expected_relevance_grade": 0,
+        "rank": 12,
+        "hybrid_score": 54.17,
+        "semantic_score": 35.24,
+        "skill_overlap_score": 8.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost noteboo\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.4559
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Subscription Churn Modeling\nSummary: Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.\nHighlights: Created features with pandas and S\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.3314
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Checkout Experiment Analysis\nSummary: Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.\nHighlights: Defined experiment metrics and validated allocation and missingness.\u2026",
+            "job_excerpt": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hyb\u2026",
+            "similarity": 0.2699
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:data-junior-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:data-junior-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:data-junior-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      }
+    ]
+  }
+]
