@@ -19,7 +19,9 @@ ROLE_ALIASES: dict[str, set[str]] = {"machine learning engineer": {"machine lear
                                                                     "applied ai engineer",
                                                                     "generative ai engineer",
                                                                     "genai engineer",
-                                                                    "llm engineer"},
+                                                                    "llm engineer",
+                                                                    "nlp ml developer",
+                                                                    "machine learning associate"},
 
                                      "data scientist": {"data scientist",
                                                         "applied data scientist",
@@ -30,6 +32,9 @@ ROLE_ALIASES: dict[str, set[str]] = {"machine learning engineer": {"machine lear
                                                                     "applied scientist",
                                                                     "applied machine learning scientist",
                                                                     "applied ml scientist"},
+                                    "nlp engineer": {"nlp engineer",
+                                                     "nlp developer",
+                                                     "nlp ml developer"},
 
                                      "applied ml scientist": {"applied ml scientist",
                                                               "applied machine learning scientist",
@@ -83,6 +88,11 @@ ON_SITE_PATTERNS = (r"\bon[ -]?site\b",
                     r"\boffice-based\b",
                     r"\bwork from the office\b",
                     r"\bvor ort\b")
+
+ON_SITE_ONLY_PATTERNS = (r"\bon[ -]?site only\b",
+                         r"\bfully on[ -]?site\b",
+                         r"\bstrictly on[ -]?site\b",
+                         r"\bno remote or hybrid(?: work| option| arrangement)?\b")
 
 
 LANGUAGE_ALIASES: dict[str, tuple[str, ...]] = {"English": ("english", "englisch"),
@@ -218,6 +228,9 @@ def detect_work_modes(job: JobPosting) -> list[WorkMode]:
 
     if not detected_modes and job.remote is False:
         detected_modes.append(WorkMode.ON_SITE)
+
+    if (job.remote is not True and text_matches_any_pattern(searchable_text, ON_SITE_PATTERNS) and text_matches_any_pattern(searchable_text, ON_SITE_ONLY_PATTERNS)):
+        return [WorkMode.ON_SITE]
 
     return list(dict.fromkeys(detected_modes))
 

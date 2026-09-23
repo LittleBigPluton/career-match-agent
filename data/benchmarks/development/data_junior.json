@@ -1,0 +1,778 @@
+{
+  "name": "data_junior",
+  "version": "1.0.0",
+  "profile": {
+    "full_name": "Lea Hoffmann",
+    "location": "Berlin, Germany",
+    "professional_summary": "Junior data scientist with 14 months of hands-on experience in Python, SQL, statistical analysis, customer churn classification and controlled-experiment evaluation. Built reproducible scikit-learn and XGBoost notebooks, evaluated classification models with held-out data, and communicated uncertainty to product teams. Limited production ML and cloud infrastructure experience.",
+    "skills": [
+      "Python",
+      "pandas",
+      "NumPy",
+      "scikit-learn",
+      "SQL",
+      "statistics",
+      "A/B testing",
+      "XGBoost",
+      "Jupyter",
+      "Matplotlib",
+      "Git",
+      "model evaluation"
+    ],
+    "skill_evidence": [],
+    "experience": [],
+    "projects": [
+      {
+        "name": "Subscription Churn Modeling",
+        "summary": "Built supervised classification baselines and an XGBoost model for synthetic subscription-retention data with leakage-aware train/test evaluation.",
+        "technologies": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "XGBoost",
+          "Matplotlib"
+        ],
+        "highlights": [
+          "Created features with pandas and SQL extracts and compared baselines.",
+          "Used stratified holdout validation, precision-recall analysis, and calibration checks.",
+          "Documented errors, data leakage risks and decision-threshold tradeoffs."
+        ],
+        "evidence": []
+      },
+      {
+        "name": "Checkout Experiment Analysis",
+        "summary": "Analyzed an A/B product experiment, investigating conversion differences and uncertainty in user-behavior data.",
+        "technologies": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics",
+          "Jupyter"
+        ],
+        "highlights": [
+          "Defined experiment metrics and validated allocation and missingness.",
+          "Estimated treatment effects and confidence intervals and presented limitations."
+        ],
+        "evidence": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc",
+        "field_of_study": "Data Science",
+        "institution": "Synthetic University",
+        "location": "Germany",
+        "start_date": "2023",
+        "end_date": "2025",
+        "details": [],
+        "evidence": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "C1"
+      },
+      {
+        "language": "German",
+        "proficiency": "B1"
+      }
+    ],
+    "certifications": [],
+    "years_of_experience": 1.2
+  },
+  "preferences": {
+    "roles": [
+      "Data Scientist",
+      "Data Analyst"
+    ],
+    "locations": [
+      "Berlin",
+      "Munich",
+      "Hamburg"
+    ],
+    "work_modes": [
+      "remote",
+      "hybrid"
+    ],
+    "employment_types": [
+      "full_time"
+    ],
+    "seniority_levels": [
+      "entry_level",
+      "junior"
+    ],
+    "required_keywords": [
+      "Python"
+    ],
+    "excluded_keywords": [
+      "SAP",
+      "commission-only"
+    ],
+    "preferred_languages": [
+      "English"
+    ],
+    "maximum_results": 20
+  },
+  "evidence_signals": [],
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-02",
+        "provider": "synthetic",
+        "external_id": "data-junior-02",
+        "title": "Graduate Data Scientist - Experimentation",
+        "company": "Cedar Product Lab",
+        "description": "Use Python, SQL and statistics to design and analyze product A/B tests. Define trustworthy success metrics, diagnose allocation issues, estimate treatment effects and communicate confidence intervals. Hybrid in Munich; graduate candidates are welcome.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "A/B testing",
+          "statistics",
+          "pandas"
+        ],
+        "url": "https://example.com/jobs/data-junior-02",
+        "posted_at": null,
+        "fingerprint": "26e00ed0ea075913a4a5217b07d42718cb338e91c6ab2d482031a402069bcc96"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Direct match to the candidate experiment-analysis project and statistical communication evidence."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-06",
+        "provider": "synthetic",
+        "external_id": "data-junior-06",
+        "title": "Junior Data Scientist - Data Quality",
+        "company": "Bluegate Analytics",
+        "description": "Use Python and pandas to clean large customer datasets, automate data-quality tests, write SQL extracts and occasionally support classification-model evaluation. Most work is data preparation, not training models. Remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "SQL",
+          "data quality",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/data-junior-06",
+        "posted_at": null,
+        "fingerprint": "401d721385a67bf2fe55cd6c4e76235faa1c7038dd93d7a7dc421695c377612f"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Hard constraints pass and skills transfer, but day-to-day work is predominantly preparation."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-03",
+        "provider": "synthetic",
+        "external_id": "data-junior-03",
+        "title": "Junior Applied Data Scientist",
+        "company": "Harbor Signals",
+        "description": "Build reproducible Python predictive models using pandas, scikit-learn and gradient boosting. Review class imbalance, leakage risks and error analysis with stakeholders. Fully remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "XGBoost",
+          "statistics"
+        ],
+        "url": "https://example.com/jobs/data-junior-03",
+        "posted_at": null,
+        "fingerprint": "8c4827410c6c445ea1705ed65f656aff25a5782624a0c9a287002e87b4dba025"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Direct applied modeling and validation role within the demonstrated technical scope."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-14",
+        "provider": "synthetic",
+        "external_id": "data-junior-14",
+        "title": "Junior Data Scientist - Product Analytics",
+        "company": "Seine Decisions",
+        "description": "Apply Python, pandas and statistical tests to product experiments for a hybrid team located in Paris.",
+        "location": "Paris",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "statistics"
+        ],
+        "url": "https://example.com/jobs/data-junior-14",
+        "posted_at": null,
+        "fingerprint": "5abfc04820f77cf42692747fd7507428e81f4a335c2f2d3012d3ced801edcb60"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "notes": "Otherwise suitable data-science opening in a non-preferred location; hybrid does not confer Germany-wide remote eligibility."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-18",
+        "provider": "synthetic",
+        "external_id": "data-junior-18",
+        "title": "Junior Data Scientist - Enterprise Analytics",
+        "company": "Enterprise Brick",
+        "description": "Build Python analytics workflows and support SAP reporting integrations alongside scikit-learn evaluations. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SAP",
+          "scikit-learn",
+          "SQL"
+        ],
+        "url": "https://example.com/jobs/data-junior-18",
+        "posted_at": null,
+        "fingerprint": "6d39e88b25b2527e269a62b9006401be660b70a4de4094abcd96b300ef232dc5"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "excluded_keyword_present"
+      ],
+      "notes": "Otherwise eligible but explicitly includes the persona-excluded technology."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-15",
+        "provider": "synthetic",
+        "external_id": "data-junior-15",
+        "title": "Senior Data Scientist - Classification",
+        "company": "Alpine Risk Lab",
+        "description": "Lead Python scikit-learn model development and statistical evaluation for classification systems. Mentor junior data scientists and own senior architecture decisions. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "statistics",
+          "XGBoost"
+        ],
+        "url": "https://example.com/jobs/data-junior-15",
+        "posted_at": null,
+        "fingerprint": "07ec20f263b0fc4812cae05b761a63f5331c0bfc541a22ee3b90bfe04af56a11"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "notes": "Otherwise suitable role, but explicitly senior rather than junior or graduate."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-05",
+        "provider": "synthetic",
+        "external_id": "data-junior-05",
+        "title": "Junior Data Analyst - Product Experiments",
+        "company": "Nimbus Apps",
+        "description": "Investigate product conversion funnels using SQL and Python. Validate A/B test results, present confidence intervals and maintain stakeholder dashboards. The main responsibility is analytical reporting rather than predictive model development. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "SQL",
+          "Python",
+          "statistics",
+          "A/B testing",
+          "dashboards"
+        ],
+        "url": "https://example.com/jobs/data-junior-05",
+        "posted_at": null,
+        "fingerprint": "f48978cca3915c21c2e4670846283f0c247fc00fbdda208f3655fa40f10169d1"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Strong experimentation overlap; data-analyst responsibilities offer less direct model-development work."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-13",
+        "provider": "synthetic",
+        "external_id": "data-junior-13",
+        "title": "Junior BI Dashboard Developer",
+        "company": "FrameBI",
+        "description": "Build interactive business-intelligence dashboards with Python export scripts, SQL and visualization software. This is a visualization-development opening rather than a data-science or data-analyst position. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "BI",
+          "dashboards"
+        ],
+        "url": "https://example.com/jobs/data-junior-13",
+        "posted_at": null,
+        "fingerprint": "0838a07029430fb105213752f996a75e0cb40cc1d2a0c82e8d15bdbbc8305ddd"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Adjacent data skills but the vacancy title does not match either declared target-role family."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-09",
+        "provider": "synthetic",
+        "external_id": "data-junior-09",
+        "title": "Junior Data Scientist - Model Review Operations",
+        "company": "Sparrow Review",
+        "description": "Review outputs produced by an existing Python classification pipeline, check data samples for consistency, write SQL quality queries and escalate model errors to a separate modeling team. No new model training is expected. Hybrid in Hamburg.",
+        "location": "Hamburg",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "classification",
+          "quality review"
+        ],
+        "url": "https://example.com/jobs/data-junior-09",
+        "posted_at": null,
+        "fingerprint": "9f556675f09acb96aa2a8622cdf06dcf21669a3991425fb8dcace3aadcca64c6"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Attractive job title and terminology, but limited ownership of analysis or modeling."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-17",
+        "provider": "synthetic",
+        "external_id": "data-junior-17",
+        "title": "Junior Data Analyst - R Reporting",
+        "company": "Ridgeway Stats",
+        "description": "Perform statistical analyses with R, tidyverse and SQL. Maintain R Markdown reporting pipelines; the team exclusively uses its existing R tooling. Remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "R",
+          "SQL",
+          "tidyverse",
+          "R Markdown"
+        ],
+        "url": "https://example.com/jobs/data-junior-17",
+        "posted_at": null,
+        "fingerprint": "317c7e25b23e8ba60cef32106d2175f28cd89eb75788fcd401220b08370345a3"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "notes": "Role and location fit, but the required candidate-stack keyword is absent from all searchable job fields."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-11",
+        "provider": "synthetic",
+        "external_id": "data-junior-11",
+        "title": "Junior Data Analyst - Dashboard Migration",
+        "company": "Westwood Metrics",
+        "description": "Migrate dashboards and rewrite report definitions in a new BI tool. Read existing Python, pandas, scikit-learn and XGBoost model summaries supplied by another team when reproducing dashboard labels; no experimentation, statistical analysis, or model development is part of the role. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "XGBoost",
+          "SQL"
+        ],
+        "url": "https://example.com/jobs/data-junior-11",
+        "posted_at": null,
+        "fingerprint": "a37f40ea829b83b2ed41bb6a0a4f25d146cb28e6d679a703156a00154e207f17"
+      },
+      "expected_accept": true,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [],
+      "notes": "Deliberate lexical decoy: core skills appear in the description and tags, but duties are dashboard migration only."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-01",
+        "provider": "synthetic",
+        "external_id": "data-junior-01",
+        "title": "Junior Data Scientist - Customer Modeling",
+        "company": "Northline Insights",
+        "description": "Develop churn classifiers with Python, pandas and scikit-learn. Compare XGBoost against transparent baselines, investigate leakage and evaluate precision-recall tradeoffs. Present uncertainty to a subscription product team. Hybrid in Berlin; English is the working language.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "XGBoost",
+          "model evaluation"
+        ],
+        "url": "https://example.com/jobs/data-junior-01",
+        "posted_at": null,
+        "fingerprint": "cda1fee1d9e69cc1a3cfd8bacf517009e25c92656d9e14b220413e62fe8343d2"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong direct role and skills fit: supervised churn modeling and evaluation are demonstrated by the candidate."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-04",
+        "provider": "synthetic",
+        "external_id": "data-junior-04",
+        "title": "Junior Data Scientist - Forecasting",
+        "company": "River Forecast",
+        "description": "Use Python, pandas and statistics for retail demand forecasting. Compare time-series baselines and communicate forecast uncertainty; familiarity with specialized forecasting methods is helpful. Hybrid in Hamburg.",
+        "location": "Hamburg",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "statistics",
+          "forecasting"
+        ],
+        "url": "https://example.com/jobs/data-junior-04",
+        "posted_at": null,
+        "fingerprint": "8b437f503fa934d5442f27e2be83c29f57e923f845b264f8e91074f544c31cec"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Relevant modeling and statistical work but specialized time-series experience is not established."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-16",
+        "provider": "synthetic",
+        "external_id": "data-junior-16",
+        "title": "Junior Data Scientist - Client Analytics",
+        "company": "Bridgepoint Insight",
+        "description": "Analyze client behavior with Python, SQL and scikit-learn. German C1 proficiency is mandatory for client-facing analysis, workshops and written results. Hybrid in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/data-junior-16",
+        "posted_at": null,
+        "fingerprint": "d120ae482f2211672d6dd857b997cc5effbffe56758ecc3d8f2ccd9b18f06c5a"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "notes": "Hard requirement for German C1 exceeds the candidate German B1 level."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-07",
+        "provider": "synthetic",
+        "external_id": "data-junior-07",
+        "title": "Junior Analytics Scientist",
+        "company": "Horizon Measurement",
+        "description": "Analyze customer cohorts with Python and SQL, apply statistical tests, build lightweight predictive baselines using scikit-learn and explain the results to product teams. Hybrid in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "statistics",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/data-junior-07",
+        "posted_at": null,
+        "fingerprint": "41eb7dd7421e11f0658fc333d0006818d645d625eb814cbf5506814743792fc1"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Data-scientist alias recognized by existing ROLE_ALIASES; moderate predictive work and strong statistics overlap."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-19",
+        "provider": "synthetic",
+        "external_id": "data-junior-19",
+        "title": "Junior Data Scientist - Short Contract",
+        "company": "Contract Grove",
+        "description": "Develop Python models and SQL experiments for clients through a six-month contractor-only engagement. Fully remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "contract"
+        ],
+        "raw_employment_types": [
+          "contract"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/data-junior-19",
+        "posted_at": null,
+        "fingerprint": "9376b4a5e207da225491c492602d1ecd248e888ffbd36a074001f4bd16081e9d"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "notes": "Matches technical domain but contractor-only employment violates the full-time preference."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-20",
+        "provider": "synthetic",
+        "external_id": "data-junior-20",
+        "title": "Junior Data Scientist - Onsite Team",
+        "company": "Officepoint Data",
+        "description": "Develop Python classification models and support A/B experiments. The position requires five days each week onsite in Hamburg with no remote or hybrid option.",
+        "location": "Hamburg",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "statistics"
+        ],
+        "url": "https://example.com/jobs/data-junior-20",
+        "posted_at": null,
+        "fingerprint": "b72d88e75064d554f570a07084b39eee0904bef36f4795eb9b1026637578bd1d"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "notes": "Otherwise suitable but explicitly onsite only; tests the existing negated work-mode regression."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-10",
+        "provider": "synthetic",
+        "external_id": "data-junior-10",
+        "title": "Junior Data Analyst - Business Reporting",
+        "company": "Metro Ledger",
+        "description": "Create recurring SQL reports, use Python and pandas for ad hoc data extracts, and prepare charts for weekly stakeholder meetings. Statistical inference and model development are uncommon. Remote across Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "pandas",
+          "reporting"
+        ],
+        "url": "https://example.com/jobs/data-junior-10",
+        "posted_at": null,
+        "fingerprint": "7d4fd2567f629448aae9852dd970f7a7d68ad58329e65191632ca996c778fe44"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Compatible target role with transferable data skills but routine reporting dominates."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-08",
+        "provider": "synthetic",
+        "external_id": "data-junior-08",
+        "title": "Junior Data Analyst - Retention Insights",
+        "company": "Atlas Commerce",
+        "description": "Own retention dashboards and exploratory analysis using Python, pandas, SQL and Matplotlib. Occasionally evaluate retention interventions with simple A/B testing; predictive-model development belongs to another team. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "SQL",
+          "Matplotlib",
+          "A/B testing"
+        ],
+        "url": "https://example.com/jobs/data-junior-08",
+        "posted_at": null,
+        "fingerprint": "8ec8454fe7f45a6538ec7d6a29d74bcdee7e73050d42614dc4e68a0b3aaa3dc2"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Excellent analytics skill overlap and some experimentation, but no substantive modeling ownership."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:data-junior-12",
+        "provider": "synthetic",
+        "external_id": "data-junior-12",
+        "title": "Junior Data Scientist - Administrative Operations",
+        "company": "OfficeLynx",
+        "description": "Despite the title, this position mainly schedules recurring data deliveries, updates spreadsheets and handles coordination tickets. Python is used only for occasional one-off export scripts; there is no modeling or experiment analysis. Hybrid role based in Munich.",
+        "location": "Munich",
+        "remote": null,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "spreadsheets",
+          "operations"
+        ],
+        "url": "https://example.com/jobs/data-junior-12",
+        "posted_at": null,
+        "fingerprint": "7e6e3b2689de6758b039a095ba1bf27d02744b2b43e01aa509bfc905f7b2d598"
+      },
+      "expected_accept": true,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [],
+      "notes": "Passes hard constraints using explicit hybrid text despite unknown provider remote flag; misleading title, almost no analysis."
+    }
+  ]
+}

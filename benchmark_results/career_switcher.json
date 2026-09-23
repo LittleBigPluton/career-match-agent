@@ -1,0 +1,1883 @@
+[
+  {
+    "dataset_name": "career_switcher",
+    "dataset_version": "0.1.0",
+    "configuration_name": "hybrid_default",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "ndcg": 1.0
+        },
+        {
+          "k": 10,
+          "precision": 0.8,
+          "recall": 1.0,
+          "ndcg": 0.9720931455245957
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 8
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 36.15,
+      "ranking_ms": 9150.79,
+      "evaluation_ms": null,
+      "total_ms": 9187.55
+    },
+    "ranked_source_ids": [
+      "synthetic:career-switcher-04",
+      "synthetic:career-switcher-01",
+      "synthetic:career-switcher-02",
+      "synthetic:career-switcher-03",
+      "synthetic:career-switcher-07",
+      "synthetic:career-switcher-08",
+      "synthetic:career-switcher-06",
+      "synthetic:career-switcher-12",
+      "synthetic:career-switcher-05",
+      "synthetic:career-switcher-11",
+      "synthetic:career-switcher-10",
+      "synthetic:career-switcher-09"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.6,
+        "skill_overlap": 0.2,
+        "required_keywords": 0.1,
+        "role_alignment": 0.05,
+        "warning_quality": 0.05
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:career-switcher-04",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 63.56,
+        "semantic_score": 60.69,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.7367
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.5818
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.5022
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-01",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 63.55,
+        "semantic_score": 60.68,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.6517
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.6147
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.5541
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-02",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 61.99,
+        "semantic_score": 58.07,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.7854
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.4822
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.4746
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-03",
+        "expected_relevance_grade": 3,
+        "rank": 4,
+        "hybrid_score": 58.07,
+        "semantic_score": 53.92,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.6464
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.5268
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.4444
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-07",
+        "expected_relevance_grade": 2,
+        "rank": 5,
+        "hybrid_score": 57.68,
+        "semantic_score": 55.65,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.6179
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.5727
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.4789
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-08",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 54.48,
+        "semantic_score": 50.32,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.553
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.5204
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.4363
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-06",
+        "expected_relevance_grade": 2,
+        "rank": 7,
+        "hybrid_score": 53.24,
+        "semantic_score": 45.87,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.5444
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.4894
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.3423
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-12",
+        "expected_relevance_grade": 0,
+        "rank": 8,
+        "hybrid_score": 53.17,
+        "semantic_score": 48.15,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.6033
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.4883
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.3529
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-05",
+        "expected_relevance_grade": 2,
+        "rank": 9,
+        "hybrid_score": 52.31,
+        "semantic_score": 44.32,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.4735
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.4341
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.422
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-11",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 51.22,
+        "semantic_score": 44.89,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4748
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4598
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4121
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-10",
+        "expected_relevance_grade": 1,
+        "rank": 11,
+        "hybrid_score": 46.47,
+        "semantic_score": 36.98,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.464
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.34
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.3053
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-09",
+        "expected_relevance_grade": 1,
+        "rank": 12,
+        "hybrid_score": 45.66,
+        "semantic_score": 40.39,
+        "skill_overlap_score": 7.14,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.4227
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.4011
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.3878
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:career-switcher-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      }
+    ]
+  },
+  {
+    "dataset_name": "career_switcher",
+    "dataset_version": "0.1.0",
+    "configuration_name": "semantic_only",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "ndcg": 0.9908183105074706
+        },
+        {
+          "k": 10,
+          "precision": 0.8,
+          "recall": 1.0,
+          "ndcg": 0.9604265425006693
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 8
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 51.83,
+      "ranking_ms": 1068.37,
+      "evaluation_ms": null,
+      "total_ms": 1120.51
+    },
+    "ranked_source_ids": [
+      "synthetic:career-switcher-04",
+      "synthetic:career-switcher-01",
+      "synthetic:career-switcher-02",
+      "synthetic:career-switcher-07",
+      "synthetic:career-switcher-03",
+      "synthetic:career-switcher-08",
+      "synthetic:career-switcher-12",
+      "synthetic:career-switcher-06",
+      "synthetic:career-switcher-11",
+      "synthetic:career-switcher-05",
+      "synthetic:career-switcher-09",
+      "synthetic:career-switcher-10"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 1.0,
+        "skill_overlap": 0.0,
+        "required_keywords": 0.0,
+        "role_alignment": 0.0,
+        "warning_quality": 0.0
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:career-switcher-04",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 60.69,
+        "semantic_score": 60.69,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.7367
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.5818
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.5022
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-01",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 60.68,
+        "semantic_score": 60.68,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.6517
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.6147
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.5541
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-02",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 58.07,
+        "semantic_score": 58.07,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.7854
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.4822
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.4746
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-07",
+        "expected_relevance_grade": 2,
+        "rank": 4,
+        "hybrid_score": 55.65,
+        "semantic_score": 55.65,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.6179
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.5727
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.4789
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-03",
+        "expected_relevance_grade": 3,
+        "rank": 5,
+        "hybrid_score": 53.92,
+        "semantic_score": 53.92,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.6464
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.5268
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.4444
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-08",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 50.32,
+        "semantic_score": 50.32,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.553
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.5204
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.4363
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-12",
+        "expected_relevance_grade": 0,
+        "rank": 7,
+        "hybrid_score": 48.15,
+        "semantic_score": 48.15,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.6033
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.4883
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.3529
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-06",
+        "expected_relevance_grade": 2,
+        "rank": 8,
+        "hybrid_score": 45.87,
+        "semantic_score": 45.87,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.5444
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.4894
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.3423
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-11",
+        "expected_relevance_grade": 0,
+        "rank": 9,
+        "hybrid_score": 44.89,
+        "semantic_score": 44.89,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4748
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4598
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4121
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-05",
+        "expected_relevance_grade": 2,
+        "rank": 10,
+        "hybrid_score": 44.32,
+        "semantic_score": 44.32,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.4735
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.4341
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.422
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-09",
+        "expected_relevance_grade": 1,
+        "rank": 11,
+        "hybrid_score": 40.39,
+        "semantic_score": 40.39,
+        "skill_overlap_score": 7.14,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.4227
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.4011
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.3878
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-10",
+        "expected_relevance_grade": 1,
+        "rank": 12,
+        "hybrid_score": 36.98,
+        "semantic_score": 36.98,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.464
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.34
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.3053
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:career-switcher-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      }
+    ]
+  },
+  {
+    "dataset_name": "career_switcher",
+    "dataset_version": "0.1.0",
+    "configuration_name": "deterministic_only",
+    "filtering": {
+      "true_positive": 12,
+      "true_negative": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 8,
+      "predicted_count": 8,
+      "correct_count": 8
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "ndcg": 1.0
+        },
+        {
+          "k": 10,
+          "precision": 0.8,
+          "recall": 1.0,
+          "ndcg": 0.974001098477857
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 8
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 37.29,
+      "ranking_ms": 1013.15,
+      "evaluation_ms": null,
+      "total_ms": 1050.93
+    },
+    "ranked_source_ids": [
+      "synthetic:career-switcher-04",
+      "synthetic:career-switcher-01",
+      "synthetic:career-switcher-02",
+      "synthetic:career-switcher-03",
+      "synthetic:career-switcher-06",
+      "synthetic:career-switcher-05",
+      "synthetic:career-switcher-07",
+      "synthetic:career-switcher-08",
+      "synthetic:career-switcher-12",
+      "synthetic:career-switcher-11",
+      "synthetic:career-switcher-10",
+      "synthetic:career-switcher-09"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.0,
+        "skill_overlap": 0.5,
+        "required_keywords": 0.25,
+        "role_alignment": 0.15,
+        "warning_quality": 0.1
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:career-switcher-04",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 67.86,
+        "semantic_score": 60.69,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.7367
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.5818
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+            "similarity": 0.5022
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-01",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 67.86,
+        "semantic_score": 60.68,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.6517
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.6147
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+            "similarity": 0.5541
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-02",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 67.86,
+        "semantic_score": 58.07,
+        "skill_overlap_score": 35.71,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.7854
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.4822
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munic\u2026",
+            "similarity": 0.4746
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-03",
+        "expected_relevance_grade": 3,
+        "rank": 4,
+        "hybrid_score": 64.29,
+        "semantic_score": 53.92,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.6464
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.5268
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+            "similarity": 0.4444
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-06",
+        "expected_relevance_grade": 2,
+        "rank": 5,
+        "hybrid_score": 64.29,
+        "semantic_score": 45.87,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.5444
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.4894
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in\u2026",
+            "similarity": 0.3423
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-05",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 64.29,
+        "semantic_score": 44.32,
+        "skill_overlap_score": 28.57,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.4735
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.4341
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+            "similarity": 0.422
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-07",
+        "expected_relevance_grade": 2,
+        "rank": 7,
+        "hybrid_score": 60.71,
+        "semantic_score": 55.65,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.6179
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.5727
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+            "similarity": 0.4789
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-08",
+        "expected_relevance_grade": 2,
+        "rank": 8,
+        "hybrid_score": 60.71,
+        "semantic_score": 50.32,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.553
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.5204
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+            "similarity": 0.4363
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-12",
+        "expected_relevance_grade": 0,
+        "rank": 9,
+        "hybrid_score": 60.71,
+        "semantic_score": 48.15,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.6033
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.4883
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development.\u2026",
+            "similarity": 0.3529
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-11",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 60.71,
+        "semantic_score": 44.89,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4748
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4598
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is pa\u2026",
+            "similarity": 0.4121
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-10",
+        "expected_relevance_grade": 1,
+        "rank": 11,
+        "hybrid_score": 60.71,
+        "semantic_score": 36.98,
+        "skill_overlap_score": 21.43,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.464
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.34
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+            "similarity": 0.3053
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-09",
+        "expected_relevance_grade": 1,
+        "rank": 12,
+        "hybrid_score": 53.57,
+        "semantic_score": 40.39,
+        "skill_overlap_score": 7.14,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Equipment Fault Prediction\nSummary: Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and ch\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.4227
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Factory Yield and Quality Analytics\nSummary: Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.\nHighlights: Analyzed defect trends\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.4011
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI repo\u2026",
+            "job_excerpt": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+            "similarity": 0.3878
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:career-switcher-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-09",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:career-switcher-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:career-switcher-12",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      }
+    ]
+  }
+]

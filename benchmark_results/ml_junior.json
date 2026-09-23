@@ -1,0 +1,1715 @@
+[
+  {
+    "dataset_name": "ml_junior",
+    "dataset_version": "1.0.0",
+    "configuration_name": "hybrid_default",
+    "filtering": {
+      "true_positive": 10,
+      "true_negative": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 10,
+      "predicted_count": 10,
+      "correct_count": 10
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "ndcg": 0.6940576657687157
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 1.0,
+          "ndcg": 0.8315292355052758
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 7
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 57.26,
+      "ranking_ms": 7605.04,
+      "evaluation_ms": null,
+      "total_ms": 7663.03
+    },
+    "ranked_source_ids": [
+      "synthetic:ml-junior-04",
+      "synthetic:ml-junior-01",
+      "synthetic:ml-junior-06",
+      "synthetic:ml-junior-08",
+      "synthetic:ml-junior-02",
+      "synthetic:ml-junior-05",
+      "synthetic:ml-junior-03",
+      "synthetic:ml-junior-10",
+      "synthetic:ml-junior-07",
+      "synthetic:ml-junior-11"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.6,
+        "skill_overlap": 0.2,
+        "required_keywords": 0.1,
+        "role_alignment": 0.05,
+        "warning_quality": 0.05
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:ml-junior-04",
+        "expected_relevance_grade": 2,
+        "rank": 1,
+        "hybrid_score": 63.06,
+        "semantic_score": 50.38,
+        "skill_overlap_score": 66.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.5685
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.4822
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.4607
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-01",
+        "expected_relevance_grade": 3,
+        "rank": 2,
+        "hybrid_score": 60.32,
+        "semantic_score": 41.27,
+        "skill_overlap_score": 77.78,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.5054
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.3708
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.362
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-06",
+        "expected_relevance_grade": 2,
+        "rank": 3,
+        "hybrid_score": 54.15,
+        "semantic_score": 42.09,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.4761
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.4333
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.3533
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-08",
+        "expected_relevance_grade": 1,
+        "rank": 4,
+        "hybrid_score": 53.43,
+        "semantic_score": 45.44,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.5027
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.4313
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.4292
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-02",
+        "expected_relevance_grade": 3,
+        "rank": 5,
+        "hybrid_score": 52.8,
+        "semantic_score": 43.55,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.4858
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.4502
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.3707
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-05",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 51.96,
+        "semantic_score": 39.29,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.4272
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.3761
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.3755
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-03",
+        "expected_relevance_grade": 3,
+        "rank": 7,
+        "hybrid_score": 50.03,
+        "semantic_score": 35.24,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.4116
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.3878
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.2578
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-10",
+        "expected_relevance_grade": 1,
+        "rank": 8,
+        "hybrid_score": 49.45,
+        "semantic_score": 38.81,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.4559
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.4372
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.2711
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-07",
+        "expected_relevance_grade": 2,
+        "rank": 9,
+        "hybrid_score": 45.85,
+        "semantic_score": 32.81,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.3941
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.3124
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.2778
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-11",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 41.49,
+        "semantic_score": 33.77,
+        "skill_overlap_score": 11.11,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 80.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.3875
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.354
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.2717
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:ml-junior-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-09",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-12",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      }
+    ]
+  },
+  {
+    "dataset_name": "ml_junior",
+    "dataset_version": "1.0.0",
+    "configuration_name": "semantic_only",
+    "filtering": {
+      "true_positive": 10,
+      "true_negative": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 10,
+      "predicted_count": 10,
+      "correct_count": 10
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "ndcg": 0.6408467568334001
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 1.0,
+          "ndcg": 0.77830691942634
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 7
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 39.25,
+      "ranking_ms": 684.01,
+      "evaluation_ms": null,
+      "total_ms": 723.66
+    },
+    "ranked_source_ids": [
+      "synthetic:ml-junior-04",
+      "synthetic:ml-junior-08",
+      "synthetic:ml-junior-02",
+      "synthetic:ml-junior-06",
+      "synthetic:ml-junior-01",
+      "synthetic:ml-junior-05",
+      "synthetic:ml-junior-10",
+      "synthetic:ml-junior-03",
+      "synthetic:ml-junior-11",
+      "synthetic:ml-junior-07"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 1.0,
+        "skill_overlap": 0.0,
+        "required_keywords": 0.0,
+        "role_alignment": 0.0,
+        "warning_quality": 0.0
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:ml-junior-04",
+        "expected_relevance_grade": 2,
+        "rank": 1,
+        "hybrid_score": 50.38,
+        "semantic_score": 50.38,
+        "skill_overlap_score": 66.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.5685
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.4822
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.4607
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-08",
+        "expected_relevance_grade": 1,
+        "rank": 2,
+        "hybrid_score": 45.44,
+        "semantic_score": 45.44,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.5027
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.4313
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.4292
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-02",
+        "expected_relevance_grade": 3,
+        "rank": 3,
+        "hybrid_score": 43.55,
+        "semantic_score": 43.55,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.4858
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.4502
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.3707
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-06",
+        "expected_relevance_grade": 2,
+        "rank": 4,
+        "hybrid_score": 42.09,
+        "semantic_score": 42.09,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.4761
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.4333
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.3533
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-01",
+        "expected_relevance_grade": 3,
+        "rank": 5,
+        "hybrid_score": 41.27,
+        "semantic_score": 41.27,
+        "skill_overlap_score": 77.78,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.5054
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.3708
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.362
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-05",
+        "expected_relevance_grade": 2,
+        "rank": 6,
+        "hybrid_score": 39.29,
+        "semantic_score": 39.29,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.4272
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.3761
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.3755
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-10",
+        "expected_relevance_grade": 1,
+        "rank": 7,
+        "hybrid_score": 38.81,
+        "semantic_score": 38.81,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.4559
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.4372
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.2711
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-03",
+        "expected_relevance_grade": 3,
+        "rank": 8,
+        "hybrid_score": 35.24,
+        "semantic_score": 35.24,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.4116
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.3878
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.2578
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-11",
+        "expected_relevance_grade": 0,
+        "rank": 9,
+        "hybrid_score": 33.77,
+        "semantic_score": 33.77,
+        "skill_overlap_score": 11.11,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 80.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.3875
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.354
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.2717
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-07",
+        "expected_relevance_grade": 2,
+        "rank": 10,
+        "hybrid_score": 32.81,
+        "semantic_score": 32.81,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.3941
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.3124
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.2778
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:ml-junior-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-09",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-12",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      }
+    ]
+  },
+  {
+    "dataset_name": "ml_junior",
+    "dataset_version": "1.0.0",
+    "configuration_name": "deterministic_only",
+    "filtering": {
+      "true_positive": 10,
+      "true_negative": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_acceptance_rate": 0.0,
+      "false_rejection_rate": 0.0
+    },
+    "reason_codes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "expected_count": 10,
+      "predicted_count": 10,
+      "correct_count": 10
+    },
+    "ranking": {
+      "at_k": [
+        {
+          "k": 5,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "ndcg": 0.8387358373645061
+        },
+        {
+          "k": 10,
+          "precision": 0.7,
+          "recall": 1.0,
+          "ndcg": 0.9281552099336773
+        }
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "relevant_job_count": 7
+    },
+    "evaluation": null,
+    "latency": {
+      "filtering_ms": 34.61,
+      "ranking_ms": 719.11,
+      "evaluation_ms": null,
+      "total_ms": 754.17
+    },
+    "ranked_source_ids": [
+      "synthetic:ml-junior-01",
+      "synthetic:ml-junior-04",
+      "synthetic:ml-junior-06",
+      "synthetic:ml-junior-03",
+      "synthetic:ml-junior-05",
+      "synthetic:ml-junior-02",
+      "synthetic:ml-junior-08",
+      "synthetic:ml-junior-10",
+      "synthetic:ml-junior-07",
+      "synthetic:ml-junior-11"
+    ],
+    "ranking_configuration": {
+      "weights": {
+        "semantic": 0.0,
+        "skill_overlap": 0.5,
+        "required_keywords": 0.25,
+        "role_alignment": 0.15,
+        "warning_quality": 0.1
+      },
+      "top_k": 20,
+      "semantic_evidence_count": 3,
+      "chunk_max_characters": 700,
+      "maximum_candidate_chunks": 24,
+      "maximum_job_chunks": 12,
+      "warning_penalty": 0.1
+    },
+    "ranking_diagnostics": [
+      {
+        "source_id": "synthetic:ml-junior-01",
+        "expected_relevance_grade": 3,
+        "rank": 1,
+        "hybrid_score": 88.89,
+        "semantic_score": 41.27,
+        "skill_overlap_score": 77.78,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.5054
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.3708
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Build Python and PyTorch machine learning systems for text products. Use Hugging Face Transformers, FastAPI, Docker, and Git. This junior full-time role is hybrid in Berlin and requires English B2 or higher.",
+            "similarity": 0.362
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-04",
+        "expected_relevance_grade": 2,
+        "rank": 2,
+        "hybrid_score": 82.33,
+        "semantic_score": 50.38,
+        "skill_overlap_score": 66.67,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.5685
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.4822
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Build Python services around machine learning models. Experience with scikit-learn, pandas, FastAPI, Git, and basic Docker is useful. Junior applicants are welcome. Hybrid work in Hamburg.",
+            "similarity": 0.4607
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-06",
+        "expected_relevance_grade": 2,
+        "rank": 3,
+        "hybrid_score": 72.22,
+        "semantic_score": 42.09,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.4761
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.4333
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Use Python, pandas, SQL, and scikit-learn to prepare data and productionize ML workflows. Docker and API experience are helpful. Hybrid role in Berlin.",
+            "similarity": 0.3533
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-03",
+        "expected_relevance_grade": 3,
+        "rank": 4,
+        "hybrid_score": 72.22,
+        "semantic_score": 35.24,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.4116
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.3878
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Develop NLP pipelines in Python with Hugging Face and PyTorch. Evaluate transformer models and expose selected capabilities through FastAPI. Remote work is available within Germany.",
+            "similarity": 0.2578
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-05",
+        "expected_relevance_grade": 2,
+        "rank": 5,
+        "hybrid_score": 71.22,
+        "semantic_score": 39.29,
+        "skill_overlap_score": 44.44,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.4272
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.3761
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Implement and evaluate Python machine learning pipelines using scikit-learn and pandas. Exposure to PyTorch is preferred. The team works remotely across Germany.",
+            "similarity": 0.3755
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-02",
+        "expected_relevance_grade": 3,
+        "rank": 6,
+        "hybrid_score": 66.67,
+        "semantic_score": 43.55,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 100.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.4858
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.4502
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Graduate AI engineering role using Python, PyTorch, Transformers, and REST APIs. Work in a hybrid Munich team on model evaluation and deployment. English is the working language.",
+            "similarity": 0.3707
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-08",
+        "expected_relevance_grade": 1,
+        "rank": 7,
+        "hybrid_score": 65.67,
+        "semantic_score": 45.44,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.5027
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.4313
+          },
+          {
+            "candidate_chunk_kind": "education",
+            "candidate_excerpt": "Education: MSc Computational Science Synthetic University",
+            "job_excerpt": "Support Python ML experimentation, feature preparation, and evaluation. The stack uses scikit-learn, pandas, and cloud notebooks. Hybrid in Munich.",
+            "similarity": 0.4292
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-10",
+        "expected_relevance_grade": 1,
+        "rank": 8,
+        "hybrid_score": 65.67,
+        "semantic_score": 38.81,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.4559
+          },
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.4372
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Integrate Python model outputs into product workflows. The role uses REST APIs, Docker, and some scikit-learn; most models are maintained by another team. Remote within Germany.",
+            "similarity": 0.2711
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-07",
+        "expected_relevance_grade": 2,
+        "rank": 9,
+        "hybrid_score": 65.67,
+        "semantic_score": 32.81,
+        "skill_overlap_score": 33.33,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 90.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.3941
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.3124
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Develop Python NLP components, evaluate text models, and integrate model outputs into services. PyTorch or Hugging Face experience is preferred. Remote within Germany.",
+            "similarity": 0.2778
+          }
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-11",
+        "expected_relevance_grade": 0,
+        "rank": 10,
+        "hybrid_score": 53.56,
+        "semantic_score": 33.77,
+        "skill_overlap_score": 11.11,
+        "required_keyword_score": 100.0,
+        "role_alignment_score": 100.0,
+        "warning_quality_score": 80.0,
+        "semantic_matches": [
+          {
+            "candidate_chunk_kind": "profile_overview",
+            "candidate_excerpt": "Professional summary: Early-career machine learning engineer with hands-on experience in NLP, model evaluation, and lightweight API deployment.",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.3875
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: ML Prediction API\nSummary: Packaged a trained model behind a FastAPI inference endpoint.\nHighlights: Added API validation and containerized local deployment.",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.354
+          },
+          {
+            "candidate_chunk_kind": "project",
+            "candidate_excerpt": "Project: Multilingual Text Classifier\nSummary: Fine-tuned and evaluated transformer models for multilingual text classification.\nHighlights: Built reproducible training and evaluation workflows. Compared transformer variants using held-out\u2026",
+            "job_excerpt": "Work on Python-based AI features, testing, and model integration. The posting does not specify location, work arrangement, or employment type.",
+            "similarity": 0.2717
+          }
+        ]
+      }
+    ],
+    "filtering_diagnostics": [
+      {
+        "source_id": "synthetic:ml-junior-01",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-02",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-03",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-04",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-05",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-06",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-07",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-08",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-09",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-10",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-11",
+        "expected_accept": true,
+        "actual_accept": true,
+        "expected_rejection_reasons": [],
+        "actual_rejection_reasons": []
+      },
+      {
+        "source_id": "synthetic:ml-junior-12",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-13",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "role_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "role_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-14",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "location_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "location_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-15",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "seniority_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "seniority_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-16",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "language_level_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "language_level_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-17",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "required_keyword_missing"
+        ],
+        "actual_rejection_reasons": [
+          "required_keyword_missing"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-18",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "excluded_keyword_present"
+        ],
+        "actual_rejection_reasons": [
+          "excluded_keyword_present"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-19",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "employment_type_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "employment_type_mismatch"
+        ]
+      },
+      {
+        "source_id": "synthetic:ml-junior-20",
+        "expected_accept": false,
+        "actual_accept": false,
+        "expected_rejection_reasons": [
+          "work_mode_mismatch"
+        ],
+        "actual_rejection_reasons": [
+          "work_mode_mismatch"
+        ]
+      }
+    ]
+  }
+]

@@ -130,6 +130,14 @@ class RankingJobDiagnostic(BenchmarkModel):
     warning_quality_score: float = Field(ge=0, le=100)
     semantic_matches: list[SemanticMatchEvidence]
 
+class FilteringJobDiagnostic(BenchmarkModel):
+    """Expected and observed filtering behaviour for one benchmark job."""
+    source_id: str
+    expected_accept: bool
+    actual_accept: bool
+    expected_rejection_reasons: list[str] = Field(default_factory=list)
+    actual_rejection_reasons: list[str] = Field(default_factory=list)
+    
 class JobMatchingBenchmarkResult(BenchmarkModel):
     """Complete result from one benchmark configuration."""
     dataset_name: str
@@ -143,6 +151,7 @@ class JobMatchingBenchmarkResult(BenchmarkModel):
     ranked_source_ids: list[str]
     ranking_configuration: HybridRankingConfiguration
     ranking_diagnostics: list[RankingJobDiagnostic]
+    filtering_diagnostics: list[FilteringJobDiagnostic] = Field(default_factory=list)
 
 class JobMatchingBenchmarkSuiteResult(BenchmarkModel):
     """Results for all scenarios and ranking configurations in one suite."""
@@ -150,3 +159,35 @@ class JobMatchingBenchmarkSuiteResult(BenchmarkModel):
     suite_version: str
     split: BenchmarkSplit
     results: list[JobMatchingBenchmarkResult] = Field(min_length=1)
+
+class AggregateMetricSummary(BenchmarkModel):
+    """Macro summary of one metric across benchmark scenarios."""
+    mean: float = Field(ge=0)
+    minimum: float = Field(ge=0)
+    maximum: float = Field(ge=0)
+
+
+class RankingAtKSummary(BenchmarkModel):
+    """Aggregated ranking metrics for one cutoff."""
+    k: int = Field(ge=1)
+    precision: AggregateMetricSummary
+    recall: AggregateMetricSummary
+    ndcg: AggregateMetricSummary
+
+
+class BenchmarkConfigurationSummary(BenchmarkModel):
+    """Cross-scenario summary for one ranking configuration."""
+    configuration_name: str = Field(min_length=1)
+    scenario_count: int = Field(ge=1)
+    filtering_f1: AggregateMetricSummary
+    reason_code_f1: AggregateMetricSummary
+    ranking_at_k: list[RankingAtKSummary] = Field(min_length=1)
+    mean_reciprocal_rank: AggregateMetricSummary
+
+
+class JobMatchingBenchmarkSuiteSummary(BenchmarkModel):
+    """Aggregated benchmark results across all scenarios."""
+    suite_name: str
+    suite_version: str
+    split: BenchmarkSplit
+    configurations: list[BenchmarkConfigurationSummary] = Field(min_length=1)

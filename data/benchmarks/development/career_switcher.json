@@ -1,0 +1,786 @@
+{
+  "name": "career_switcher",
+  "version": "1.0.0",
+  "profile": {
+    "full_name": "Alex Morgan",
+    "location": "Stuttgart, Germany",
+    "professional_summary": "Career switcher moving from five years in manufacturing quality and process engineering into entry-level data science and machine learning. Used statistical process control, root-cause analysis and production KPI reporting professionally; recently built portfolio projects with Python, pandas, SQL and scikit-learn on equipment sensor data and plant defect rates. Strong industrial-domain knowledge and tabular-data skills, but no professional model-deployment, NLP, cloud or production ML experience. Seeking a first dedicated data/ML role.",
+    "skills": [
+      "Python",
+      "pandas",
+      "NumPy",
+      "SQL",
+      "scikit-learn",
+      "statistics",
+      "statistical process control",
+      "root-cause analysis",
+      "sensor data",
+      "feature engineering",
+      "model evaluation",
+      "Matplotlib",
+      "Power BI",
+      "Git"
+    ],
+    "skill_evidence": [],
+    "experience": [],
+    "projects": [
+      {
+        "name": "Equipment Fault Prediction",
+        "summary": "Portfolio project using simulated factory sensor measurements to predict equipment faults with Python and scikit-learn. Compared baseline models, engineered rolling-window sensor features and checked leakage.",
+        "technologies": [
+          "Python",
+          "pandas",
+          "NumPy",
+          "scikit-learn",
+          "Matplotlib",
+          "Git"
+        ],
+        "highlights": [
+          "Combined engineering domain knowledge with sensor-based feature engineering.",
+          "Used train/test splits, precision-recall curves and error analysis.",
+          "Documented limitations of synthetic sensor data; no production deployment."
+        ],
+        "evidence": []
+      },
+      {
+        "name": "Factory Yield and Quality Analytics",
+        "summary": "Built a portfolio SQL and Python analysis of synthetic production batches, quality inspections and defect rates with management-facing KPI summaries.",
+        "technologies": [
+          "Python",
+          "SQL",
+          "pandas",
+          "statistics",
+          "Power BI"
+        ],
+        "highlights": [
+          "Analyzed defect trends using statistical summaries and root-cause hypotheses.",
+          "Built reproducible extracts and a quality KPI dashboard.",
+          "Described confounding and the limits of causal interpretation."
+        ],
+        "evidence": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc",
+        "field_of_study": "Mechanical Engineering",
+        "institution": "Synthetic Technical University",
+        "location": "Germany",
+        "start_date": "2015",
+        "end_date": "2017",
+        "details": [
+          "Focused on manufacturing processes, measurements and quality engineering."
+        ],
+        "evidence": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "C1"
+      },
+      {
+        "language": "German",
+        "proficiency": "B1"
+      }
+    ],
+    "certifications": [],
+    "years_of_experience": 0.8
+  },
+  "preferences": {
+    "roles": [
+      "Data Scientist",
+      "Machine Learning Engineer",
+      "Data Analyst"
+    ],
+    "locations": [
+      "Stuttgart",
+      "Munich",
+      "Berlin"
+    ],
+    "work_modes": [
+      "remote",
+      "hybrid"
+    ],
+    "employment_types": [
+      "full_time"
+    ],
+    "seniority_levels": [
+      "entry_level",
+      "junior"
+    ],
+    "required_keywords": [
+      "Python"
+    ],
+    "excluded_keywords": [
+      "SAP",
+      "commission-only"
+    ],
+    "preferred_languages": [
+      "English"
+    ],
+    "maximum_results": 20
+  },
+  "evidence_signals": [],
+  "jobs": [
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-02",
+        "provider": "synthetic",
+        "external_id": "career-switcher-02",
+        "title": "Graduate Machine Learning Engineer - Predictive Maintenance",
+        "company": "SensorBridge",
+        "description": "Build Python and scikit-learn fault classifiers from equipment sensor readings. Engineer time-window features, evaluate precision and recall and work with engineers on dataset quality. Model deployment training is provided. Hybrid in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "sensor data",
+          "feature engineering",
+          "model evaluation"
+        ],
+        "url": "https://example.com/jobs/career-switcher-02",
+        "posted_at": null,
+        "fingerprint": "2e61b73035bbdbdd135bfb50f4ba6cde7b4e46f5974065644b4d68975beae9cd"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Graduate-level equipment-fault ML strongly matches engineering background and portfolio evidence."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-06",
+        "provider": "synthetic",
+        "external_id": "career-switcher-06",
+        "title": "Junior Machine Learning Engineer - Credit Risk",
+        "company": "CivicRisk",
+        "description": "Create Python and scikit-learn models for tabular credit-risk features. Test validation splits, document errors and work with specialists on responsible deployment. Financial-regulation and model-serving experience is beneficial. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "feature engineering",
+          "model evaluation",
+          "financial risk"
+        ],
+        "url": "https://example.com/jobs/career-switcher-06",
+        "posted_at": null,
+        "fingerprint": "c441b841b3bab60fca12f29b206bc56d411c10a60f7fa4d059b5894d9ec6bcb8"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Substantial transferable tabular ML, offset by absent finance domain and production model experience."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-03",
+        "provider": "synthetic",
+        "external_id": "career-switcher-03",
+        "title": "Junior Data Scientist - Equipment Reliability",
+        "company": "PlantSight",
+        "description": "Use Python, SQL and pandas to investigate maintenance events, process anomaly signals and reliability patterns. Develop interpretable scikit-learn baselines and explain error patterns to operations teams. Fully remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "pandas",
+          "scikit-learn",
+          "reliability"
+        ],
+        "url": "https://example.com/jobs/career-switcher-03",
+        "posted_at": null,
+        "fingerprint": "96c9beed99d6146ca238a664dbf1b58cd998f7c12e9b89db8b65d2da158fcffd"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Strong industrial context and direct overlap with tabular modeling and engineering communication."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-14",
+        "provider": "synthetic",
+        "external_id": "career-switcher-14",
+        "title": "Graduate Data Scientist - Industrial Quality",
+        "company": "SeinePlant",
+        "description": "Develop Python and scikit-learn defect models using manufacturing measurements. Hybrid work in Paris with the local factory analytics team.",
+        "location": "Paris",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "quality"
+        ],
+        "url": "https://example.com/jobs/career-switcher-14",
+        "posted_at": null,
+        "fingerprint": "227084dfc2f911ee6e745639bd18a574138a46cb52639261bba2d72eb9eae21f"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "location_mismatch"
+      ],
+      "notes": "Strong role fit but Paris-based hybrid location is not in the accepted list."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-18",
+        "provider": "synthetic",
+        "external_id": "career-switcher-18",
+        "title": "Junior Data Scientist - ERP Quality Analytics",
+        "company": "FactoryLedger",
+        "description": "Build Python and SQL industrial-quality reports and integrate them with SAP production data. Use scikit-learn to test selected anomaly baselines. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "SAP",
+          "scikit-learn"
+        ],
+        "url": "https://example.com/jobs/career-switcher-18",
+        "posted_at": null,
+        "fingerprint": "6716158a24800632e233b5918cf9aaaf1bdfa42f5a79ec1abf53663a2c0ecbc1"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "excluded_keyword_present"
+      ],
+      "notes": "Otherwise compatible posting includes a consciously excluded technology."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-15",
+        "provider": "synthetic",
+        "external_id": "career-switcher-15",
+        "title": "Senior Data Scientist - Predictive Maintenance",
+        "company": "AlpineSignal",
+        "description": "Lead Python equipment-failure modeling, mentor junior scientists and own senior-level reliability-ML decisions. Hybrid in Stuttgart.",
+        "location": "Stuttgart",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "sensor data"
+        ],
+        "url": "https://example.com/jobs/career-switcher-15",
+        "posted_at": null,
+        "fingerprint": "ff2908414c4df73ec67da6d2b25b03f6f4576cb104123f52271a651901141a86"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "seniority_mismatch"
+      ],
+      "notes": "Otherwise suitable industrial ML position but explicitly senior."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-05",
+        "provider": "synthetic",
+        "external_id": "career-switcher-05",
+        "title": "Junior Data Scientist - Retail Forecasting",
+        "company": "MarketPulse",
+        "description": "Build Python demand-forecasting baselines with pandas and scikit-learn for a retail planning team. Apply statistical evaluation and communicate forecast errors. Industry forecasting experience is helpful but not required. Hybrid in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "scikit-learn",
+          "forecasting",
+          "statistics"
+        ],
+        "url": "https://example.com/jobs/career-switcher-05",
+        "posted_at": null,
+        "fingerprint": "96e340a92ae9d65cd1334dfd138666a98323c5df36e0dd274c421bba0abd7b9b"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Transfers tabular and statistical skills, but retail context and specialized forecasting are new."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-13",
+        "provider": "synthetic",
+        "external_id": "career-switcher-13",
+        "title": "Junior Embedded Firmware Engineer",
+        "company": "CircuitNest",
+        "description": "Implement C and C++ firmware for factory sensor hardware and use Python scripts only for device testing. No data-analysis or machine-learning responsibilities. Hybrid in Stuttgart.",
+        "location": "Stuttgart",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "C",
+          "C++",
+          "embedded systems"
+        ],
+        "url": "https://example.com/jobs/career-switcher-13",
+        "posted_at": null,
+        "fingerprint": "11f92773a8c33ee6f5543adb831777a3175c9d14f5d60558b7df2fc76bd1c5a9"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "role_mismatch"
+      ],
+      "notes": "Relevant industrial context and searchable required keyword, but outside all preferred role families."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-09",
+        "provider": "synthetic",
+        "external_id": "career-switcher-09",
+        "title": "Junior Machine Learning Engineer - NLP Applications",
+        "company": "LexiWorks",
+        "description": "Build Python text-processing services with PyTorch, Transformers and Docker. Create evaluation suites for language models and collaborate with engineers on production APIs. Hybrid in Munich; training is available for junior hires.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "PyTorch",
+          "Transformers",
+          "Docker",
+          "NLP"
+        ],
+        "url": "https://example.com/jobs/career-switcher-09",
+        "posted_at": null,
+        "fingerprint": "5c56fe0f5e16612589662112406fa91d650a569ac447786409779c48d4a15e52"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "Matches entry-level role and basic Python, but evidence for NLP frameworks and production APIs is absent."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-17",
+        "provider": "synthetic",
+        "external_id": "career-switcher-17",
+        "title": "Junior Data Scientist - R Statistical Methods",
+        "company": "StatsRidge",
+        "description": "Perform manufacturing statistics with R, tidyverse, ggplot2 and SQL. Maintain established R Markdown analyses and reporting workflows. Fully remote within Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "R",
+          "tidyverse",
+          "ggplot2",
+          "SQL"
+        ],
+        "url": "https://example.com/jobs/career-switcher-17",
+        "posted_at": null,
+        "fingerprint": "9e1fdfcb7e18b7d87bdf11379329cd8647cbfce05474b340858a70e4f227be4d"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "required_keyword_missing"
+      ],
+      "notes": "Otherwise compatible role; mandatory candidate-stack keyword is absent from searchable job data."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-11",
+        "provider": "synthetic",
+        "external_id": "career-switcher-11",
+        "title": "Junior Data Scientist - Model Approval Operations",
+        "company": "LedgerReview",
+        "description": "Coordinate approval tickets for prebuilt Python and scikit-learn reports created by another team. Copy performance figures to governance templates, arrange review meetings and manage documentation; no modeling or statistical analysis is part of the role. Hybrid in Stuttgart.",
+        "location": "Stuttgart",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "model evaluation",
+          "documentation"
+        ],
+        "url": "https://example.com/jobs/career-switcher-11",
+        "posted_at": null,
+        "fingerprint": "013b04feeacba3d2a317f36bf774fad0a11bbfa98a376775213a9bab971518af"
+      },
+      "expected_accept": true,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [],
+      "notes": "Lexical decoy: a compatible title and matching technical vocabulary, but administrative work only."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-01",
+        "provider": "synthetic",
+        "external_id": "career-switcher-01",
+        "title": "Junior Data Scientist - Industrial Quality",
+        "company": "ForgeTrace Analytics",
+        "description": "Develop Python, pandas and SQL analyses of production-defect patterns. Use statistical process control, scikit-learn baselines and root-cause reasoning alongside factory engineers. The team is hybrid in Stuttgart.",
+        "location": "Stuttgart",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "pandas",
+          "SQL",
+          "scikit-learn",
+          "quality control"
+        ],
+        "url": "https://example.com/jobs/career-switcher-01",
+        "posted_at": null,
+        "fingerprint": "689a43c9e94714ba54b267f9d2dd87815d4715e545f6b88f82992ca138467a5a"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Directly combines demonstrated production-quality experience, statistical analysis and portfolio ML."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-04",
+        "provider": "synthetic",
+        "external_id": "career-switcher-04",
+        "title": "Junior Data Analyst - Production Yield",
+        "company": "LineMetrics",
+        "description": "Analyze manufacturing yield using Python, SQL and Power BI. Investigate defect trends, document statistical process control indicators and present findings to quality engineers. Hybrid team in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "Power BI",
+          "quality",
+          "statistics"
+        ],
+        "url": "https://example.com/jobs/career-switcher-04",
+        "posted_at": null,
+        "fingerprint": "757b36f43906db293ac2892c4fdab9de38c7247b2033f72e217413fbc380b960"
+      },
+      "expected_accept": true,
+      "relevance_grade": 3,
+      "expected_rejection_reasons": [],
+      "notes": "Very strong first data-role transition using existing professional domain and analytics experience."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-16",
+        "provider": "synthetic",
+        "external_id": "career-switcher-16",
+        "title": "Junior Data Scientist - Client Workshops",
+        "company": "InsightBerg",
+        "description": "Analyze production data in Python and scikit-learn. German C1 is required for client workshops, plant visits and written stakeholder reports. Hybrid in Munich.",
+        "location": "Munich",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "client analytics"
+        ],
+        "url": "https://example.com/jobs/career-switcher-16",
+        "posted_at": null,
+        "fingerprint": "dba5651930ce6554c5ca65334db191df12eeeeed78bfa320996b884a5c8e0c70"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "language_level_mismatch"
+      ],
+      "notes": "Hard German C1 requirement exceeds the synthetic candidate German B1 level."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-07",
+        "provider": "synthetic",
+        "external_id": "career-switcher-07",
+        "title": "Junior Data Analyst - Product Experimentation",
+        "company": "TrialMetric",
+        "description": "Use Python, SQL and descriptive statistics to assess product A/B tests, validate experiment datasets and communicate uncertainty to stakeholders. Reporting work is shared with product analysts. Fully remote in Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "statistics",
+          "A/B testing"
+        ],
+        "url": "https://example.com/jobs/career-switcher-07",
+        "posted_at": null,
+        "fingerprint": "4be79a1d9c3a34ac2d0fb37df2d3632585599eb88c0672592f017fc199f3eb5f"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Relevant quantitative and reporting skills but no documented professional experimentation history."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-19",
+        "provider": "synthetic",
+        "external_id": "career-switcher-19",
+        "title": "Graduate Machine Learning Engineer - Equipment Monitoring",
+        "company": "TempContract AI",
+        "description": "Develop Python equipment-anomaly baselines with scikit-learn for clients during a six-month contractor-only engagement. Fully remote in Germany.",
+        "location": "Germany",
+        "remote": true,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "contract"
+        ],
+        "raw_employment_types": [
+          "contract"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "sensor data"
+        ],
+        "url": "https://example.com/jobs/career-switcher-19",
+        "posted_at": null,
+        "fingerprint": "8b6f67c0a5f5fbc2b305ddb99fbe2df3f0b0560b007a61cead05f17b35c12d4c"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "employment_type_mismatch"
+      ],
+      "notes": "Role and technical scope fit; employment is exclusively contract rather than requested full-time."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-20",
+        "provider": "synthetic",
+        "external_id": "career-switcher-20",
+        "title": "Junior Data Scientist - Onsite Factory Team",
+        "company": "PlantOffice Analytics",
+        "description": "Use Python and scikit-learn to analyze equipment failures. This role requires five days each week onsite in Stuttgart with no remote or hybrid option.",
+        "location": "Stuttgart",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "scikit-learn",
+          "manufacturing"
+        ],
+        "url": "https://example.com/jobs/career-switcher-20",
+        "posted_at": null,
+        "fingerprint": "af84923b47f898bebb988f218c25548e16cfed533cc4b823fef0e2d51ec6797d"
+      },
+      "expected_accept": false,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [
+        "work_mode_mismatch"
+      ],
+      "notes": "Explicitly onsite-only arrangement conflicts with hard remote/hybrid preference."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-10",
+        "provider": "synthetic",
+        "external_id": "career-switcher-10",
+        "title": "Junior Data Analyst - Marketing Insights",
+        "company": "CampaignOrbit",
+        "description": "Use Python, SQL and pandas to maintain campaign-performance analyses and explain marketing attribution dashboards. Some regression analysis is useful. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "pandas",
+          "marketing attribution"
+        ],
+        "url": "https://example.com/jobs/career-switcher-10",
+        "posted_at": null,
+        "fingerprint": "e488ec0cd03997184d7fa5d4a8892ebed650dc6f81dde5416fce36722d4f0852"
+      },
+      "expected_accept": true,
+      "relevance_grade": 1,
+      "expected_rejection_reasons": [],
+      "notes": "General analytics transfers; domain-specific attribution methods and marketing experience are absent."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-08",
+        "provider": "synthetic",
+        "external_id": "career-switcher-08",
+        "title": "Graduate Data Scientist - Logistics Optimization",
+        "company": "RouteVantage",
+        "description": "Analyze supply-chain process data in Python and SQL, model shipment delay risks with scikit-learn and prototype simple optimization analyses. Prior operations knowledge is welcome. Hybrid in Stuttgart.",
+        "location": "Stuttgart",
+        "remote": false,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "scikit-learn",
+          "process analysis",
+          "optimization"
+        ],
+        "url": "https://example.com/jobs/career-switcher-08",
+        "posted_at": null,
+        "fingerprint": "d7c889f3f6304f1fff674118af6a2ccf9d9d3c6af0e430ca3dceee3125d0a3a8"
+      },
+      "expected_accept": true,
+      "relevance_grade": 2,
+      "expected_rejection_reasons": [],
+      "notes": "Manufacturing process insight and tabular modeling transfer, but logistics and optimization are not proven."
+    },
+    {
+      "job": {
+        "source_id": "synthetic:career-switcher-12",
+        "provider": "synthetic",
+        "external_id": "career-switcher-12",
+        "title": "Junior Data Analyst - Reporting Migration",
+        "company": "ReportTransit",
+        "description": "Migrate existing manufacturing KPI dashboards into a new reporting system. Read Python and SQL extracts written by other teams, map historical Power BI definitions and validate presentation formatting; no new analysis or model development. Hybrid in Berlin.",
+        "location": "Berlin",
+        "remote": null,
+        "visa_sponsorship": null,
+        "employment_types": [
+          "full_time"
+        ],
+        "raw_employment_types": [
+          "full_time"
+        ],
+        "tags": [
+          "Python",
+          "SQL",
+          "Power BI",
+          "manufacturing"
+        ],
+        "url": "https://example.com/jobs/career-switcher-12",
+        "posted_at": null,
+        "fingerprint": "9bd72be77a55516da55c44d617b1f586b003c6fe77220fec1645426159e500ac"
+      },
+      "expected_accept": true,
+      "relevance_grade": 0,
+      "expected_rejection_reasons": [],
+      "notes": "Lexical and industrial-domain decoy: compatibility with hard filters but largely mechanical migration."
+    }
+  ]
+}

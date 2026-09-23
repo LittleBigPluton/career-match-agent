@@ -1,10 +1,17 @@
+from pathlib import Path
+
+from career_match_agent.models.benchmark import JobMatchingBenchmarkDataset
+from career_match_agent.services.job_filter import location_matches
+from career_match_agent.services.job_normalizer import create_job_fingerprint
+from career_match_agent.models.job import JobPosting
+
 from career_match_agent.models.candidate import (
     CandidateProfile,
     LanguageEntry,
     SeniorityLevel,
     WorkMode
 )
-from career_match_agent.models.job import JobPosting
+
 from career_match_agent.services.job_classifier import (
     build_candidate_language_map,
     detect_language_requirements,
@@ -14,8 +21,8 @@ from career_match_agent.services.job_classifier import (
     language_level_satisfies,
     contains_normalized_phrase
 )
-from career_match_agent.services.job_filter import location_matches
-from career_match_agent.services.job_normalizer import create_job_fingerprint
+
+
 
 
 def make_job(*, title: str, description: str, remote: bool | None = False, location: str = "Berlin") -> JobPosting:
@@ -120,3 +127,19 @@ def test_native_and_fluent_languages_are_not_merged() -> None:
 def test_munich_matches_muenchen_metro_location() -> None:
     job = make_job(title="Machine Learning Engineer", location="Garching bei München, Bayern", description="Build ML systems.")
     assert location_matches(job, ["Munich"])
+
+def load_benchmark_jobs():
+    dataset = JobMatchingBenchmarkDataset.model_validate_json(Path("data/benchmarks/development/ml_junior.json").read_text(encoding="utf-8"))
+    return dataset, {case.job.source_id: case.job for case in dataset.jobs}
+
+def test_ml_role_aliases() -> None:
+    dataset, jobs = load_benchmark_jobs()
+    job_07 = jobs["synthetic:ml-junior-07"]
+    job_08 = jobs["synthetic:ml-junior-08"]
+    assert "NLP Engineer" in detect_matching_roles(job_07, dataset.preferences.roles)
+    assert "Machine Learning Engineer" in detect_matching_roles(job_08, dataset.preferences.roles)
+
+def test_explicit_onsite_only_negation() -> None:
+    _, jobs = load_benchmark_jobs()
+    job_20 = jobs["synthetic:ml-junior-20"]
+    assert detect_work_modes(job_20) == [WorkMode.ON_SITE]
