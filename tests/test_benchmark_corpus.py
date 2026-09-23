@@ -1,3 +1,4 @@
+import pytest
 from pathlib import Path
 
 from career_match_agent.models.benchmark import JobMatchingBenchmarkDataset
@@ -91,3 +92,16 @@ def test_career_switcher_benchmark_dataset_is_valid() -> None:
     assert len(source_ids) == len(set(source_ids))
     assert sum(case.relevance_grade >= 2 for case in accepted) == 8
     assert all(not case.expected_rejection_reasons for case in accepted)
+
+
+
+@pytest.mark.parametrize(("name", "expected_accepts"), [("nlp_junior", 11), ("ml_platform_junior", 10)])
+def test_holdout_dataset_schema(name: str, expected_accepts: int) -> None:
+    path = Path(f"data/benchmarks/holdout/{name}.json")
+    dataset = JobMatchingBenchmarkDataset.model_validate_json(path.read_text(encoding="utf-8"))
+    assert dataset.name == name
+    assert len(dataset.jobs) == 20
+    assert sum(case.expected_accept for case in dataset.jobs) == expected_accepts
+
+    source_ids = [case.job.source_id for case in dataset.jobs]
+    assert len(source_ids) == len(set(source_ids))
