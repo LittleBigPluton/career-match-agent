@@ -143,3 +143,78 @@ def test_explicit_onsite_only_negation() -> None:
     _, jobs = load_benchmark_jobs()
     job_20 = jobs["synthetic:ml-junior-20"]
     assert detect_work_modes(job_20) == [WorkMode.ON_SITE]
+
+def test_role_phrase_requires_correct_token_order() -> None:
+    assert contains_normalized_phrase("Junior AI Engineer", "AI Engineer")
+    assert not contains_normalized_phrase("Junior Frontend Engineer - AI Text Interface", "AI Engineer")
+
+def test_ml_term_does_not_turn_frontend_role_into_ml_engineer() -> None:
+    job = JobPosting(
+        source_id="test:frontend-ml-dashboard",
+        provider="test",
+        external_id="frontend-ml-dashboard",
+        title="Junior Frontend Engineer - ML Dashboard",
+        company="Test Company",
+        description="Build frontend dashboards for machine learning products.",
+        location="Berlin",
+        remote=True,
+        visa_sponsorship=None,
+        employment_types=["full_time"],
+        raw_employment_types=["full_time"],
+        tags=["ML", "React", "TypeScript"],
+        url="https://example.com/jobs/frontend-ml-dashboard",
+        posted_at=None,
+        fingerprint="0" * 64,
+    )
+
+    assert detect_matching_roles(
+        job,
+        ["Machine Learning Engineer"],
+    ) == []
+
+def test_supported_role_aliases_still_match() -> None:
+    ml_job = JobPosting(
+        source_id="test:ml-associate",
+        provider="test",
+        external_id="ml-associate",
+        title="Machine Learning Associate",
+        company="Test Company",
+        description="Build and evaluate machine learning systems.",
+        location="Berlin",
+        remote=True,
+        visa_sponsorship=None,
+        employment_types=["full_time"],
+        raw_employment_types=["full_time"],
+        tags=["Python", "Machine Learning"],
+        url="https://example.com/jobs/ml-associate",
+        posted_at=None,
+        fingerprint="1" * 64,
+    )
+
+    nlp_job = JobPosting(
+        source_id="test:nlp-ml-developer",
+        provider="test",
+        external_id="nlp-ml-developer",
+        title="NLP/ML Developer",
+        company="Test Company",
+        description="Develop NLP and machine learning systems.",
+        location="Berlin",
+        remote=True,
+        visa_sponsorship=None,
+        employment_types=["full_time"],
+        raw_employment_types=["full_time"],
+        tags=["Python", "NLP", "PyTorch"],
+        url="https://example.com/jobs/nlp-ml-developer",
+        posted_at=None,
+        fingerprint="2" * 64,
+    )
+
+    assert detect_matching_roles(
+        ml_job,
+        ["Machine Learning Engineer"],
+    ) == ["Machine Learning Engineer"]
+
+    assert detect_matching_roles(
+        nlp_job,
+        ["NLP Engineer"],
+    ) == ["NLP Engineer"]

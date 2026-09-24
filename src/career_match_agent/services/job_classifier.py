@@ -161,21 +161,26 @@ def create_job_searchable_text(job: JobPosting) -> str:
 
 
 def contains_normalized_phrase(text: str, phrase: str) -> bool:
-    """Match phrases using complete normalized tokens."""
+    """Match normalized phrase tokens in their original order."""
     normalized_text = normalize_for_matching(text)
     normalized_phrase = normalize_for_matching(phrase)
-
     if not normalized_text or not normalized_phrase:
         return False
 
     text_tokens = normalized_text.split()
     phrase_tokens = normalized_phrase.split()
-
-    if not phrase_tokens:
+    if not phrase_tokens or len(phrase_tokens) > len(text_tokens):
         return False
 
-    text_token_set = set(text_tokens)
-    return all(token in text_token_set for token in phrase_tokens)
+    phrase_index = 0
+    for token in text_tokens:
+        if token == phrase_tokens[phrase_index]:
+            phrase_index += 1
+
+            if phrase_index == len(phrase_tokens):
+                return True
+
+    return False
 
 
 def role_terms(role: str) -> set[str]:
@@ -191,10 +196,9 @@ def role_terms(role: str) -> set[str]:
 
 def detect_matching_roles(job: JobPosting, preferred_roles: list[str]) -> list[str]:
     """Return preferred roles compatible with the job title."""
-    title_and_tags = " ".join([job.title, " ".join(job.tags)])
     matching_roles: list[str] = []
     for role in preferred_roles:
-        if any(contains_normalized_phrase(title_and_tags, candidate_term) for candidate_term in role_terms(role)):
+        if any(contains_normalized_phrase(job.title, candidate_term) for candidate_term in role_terms(role)):
             matching_roles.append(role)
 
     return matching_roles
