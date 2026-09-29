@@ -7,6 +7,7 @@ The system accepts a CV PDF and natural-language job preferences, builds a struc
 Users can select the LLM provider/model and job providers at runtime. Prepared workflow state can also be exported and reused to avoid repeating expensive CV and preference preprocessing.
 
 > Current release: `v0.3.0-alpha`
+
 ---
 
 ## Overview
@@ -22,6 +23,16 @@ CareerMatch Agent uses a hybrid architecture instead:
 - deterministic grounding validation checks LLM-generated evaluation claims.
 
 LLMs assist with interpretation, planning and explanation, while explicit user constraints and core matching rules remain deterministic.
+
+---
+
+## Demo
+
+▶️ [Watch the CareerMatch Agent demo](https://youtu.be/4XPgqTteNRs)
+
+The demo shows the end-to-end workflow:
+
+CV parsing → preference extraction → multi-provider job retrieval → deterministic filtering → semantic ranking → grounded job recommendations.
 
 ---
 
